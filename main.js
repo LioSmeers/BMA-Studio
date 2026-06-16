@@ -14,7 +14,7 @@ const packageDetails = {
   },
   content: {
     title: "Website + Content",
-    price: "Vanaf €750 setup + €149/mnd",
+    price: "Vanaf €700 setup + €149/mnd",
     description: "Voor bedrijven die naast een website ook sterker zichtbaar willen zijn op sociale media.",
     benefits: ["4 tot 5 pagina's", "2 korte social media edits per maand", "2 uur onderhoud per maand"],
   },
