@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Forma bouwt websites, onderhoud en social media content voor lokale ondernemingen."
+    />
+    <title>Forma - Online basis voor lokale bedrijven</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <button class="brand-lockup" type="button" data-scroll-top aria-label="Ga naar boven">
+          <img src="./public/forma-logo.svg" alt="Forma - Be visible" class="brand-logo brand-logo-header" />
+        </button>
+
+        <nav class="desktop-nav" aria-label="Hoofdnavigatie">
+          <button class="nav-link" type="button" data-target="diensten">Diensten</button>
+          <button class="nav-link" type="button" data-target="pakketten">Pakketten</button>
+          <button class="nav-link" type="button" data-target="contact">Contact</button>
+        </nav>
+
+        <div class="header-actions">
+          <button class="pill-button header-cta" type="button" data-target="contact">Vraag info aan</button>
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu">
+        <div class="container mobile-menu-inner">
+          <button class="mobile-nav-link" type="button" data-target="diensten">Diensten</button>
+          <button class="mobile-nav-link" type="button" data-target="pakketten">Pakketten</button>
+          <button class="mobile-nav-link" type="button" data-target="contact">Contact</button>
+          <button class="pill-button" type="button" data-target="contact">Vraag info aan</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <article class="card hero-card reveal">
+            <div class="hero-copy">
+              <p class="eyebrow">Websites · Onderhoud · Content</p>
+              <h1 id="hero-title">De online basis voor lokale bedrijven.</h1>
+              <p class="hero-text">
+                Forma helpt lokale ondernemingen met duidelijke websites, maandelijks onderhoud
+                en social media content die vertrouwen opbouwen en klanten sneller laten contact opnemen.
+              </p>
+
+              <div class="button-row">
+                <button class="primary-button" type="button" data-target="pakketten">Bekijk pakketten</button>
+                <button class="secondary-button" type="button" data-target="contact">Vraag info aan</button>
+              </div>
+            </div>
+
+            <div class="hero-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=82"
+                alt="Barista aan het werk in een lokaal cafe"
+                class="media-image"
+              />
+            </div>
+          </article>
+
+          <div class="hero-stats">
+            <article class="card stat-card hover-lift reveal">
+              <span class="stat-label">01</span>
+              <h2>100% mobile-first</h2>
+              <p>Voor klanten die zoeken, vergelijken en boeken via hun smartphone.</p>
+            </article>
+            <article class="card stat-card hover-lift reveal">
+              <span class="stat-label">02</span>
+              <h2>Vanaf €49/mnd</h2>
+              <p>Vaste onderhoudspakketten zodat je website actueel blijft.</p>
+            </article>
+            <article class="card stat-card hover-lift reveal">
+              <span class="stat-label">03</span>
+              <h2>Voor lokale zaken</h2>
+              <p>Kappers, horeca, salons, shops, trainers en creatieve ondernemers.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="diensten" aria-labelledby="services-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Diensten</span>
+            <h2 id="services-title">Geen losse website. Een volledige online basis.</h2>
+          </div>
+
+          <div class="services-grid">
+            <article class="card service-card service-card-featured hover-lift reveal">
+              <div>
+                <span class="service-number">01</span>
+                <h3>Websites</h3>
+                <p>Duidelijke, mobiele websites die tonen wie je bent, wat je aanbiedt en hoe klanten je bereiken.</p>
+              </div>
+              <div class="tag-row">
+                <span class="tag">Webdesign</span>
+                <span class="tag">Mobile-first</span>
+                <span class="tag">SEO basis</span>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=82"
+                alt="Lokale zaak met koffie en werkmateriaal op de toonbank"
+                class="service-image"
+              />
+            </article>
+
+            <article class="card service-card hover-lift reveal">
+              <div>
+                <span class="service-number">02</span>
+                <h3>Onderhoud</h3>
+                <p>Maandelijkse updates, kleine aanpassingen en technische controle zodat je site professioneel blijft.</p>
+              </div>
+              <div class="tag-row">
+                <span class="tag">Updates</span>
+                <span class="tag">Controle</span>
+                <span class="tag">Aanpassingen</span>
+              </div>
+            </article>
+
+            <article class="card service-card hover-lift reveal">
+              <div>
+                <span class="service-number">03</span>
+                <h3>Content</h3>
+                <p>Korte video's, visuals en social media content die je bedrijf herkenbaar maken.</p>
+              </div>
+              <div class="tag-row">
+                <span class="tag">Video</span>
+                <span class="tag">Visuals</span>
+                <span class="tag">Social</span>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=82"
+                alt="Ondernemer maakt social media content met een smartphone"
+                class="service-thumb"
+              />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pakketten" aria-labelledby="packages-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Pakketten</span>
+            <h2 id="packages-title">Kies een pakket dat past bij je bedrijf.</h2>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="card pricing-card hover-lift reveal" data-package="starter">
+              <div>
+                <div class="pricing-title-row">
+                  <h3>Starter Website</h3>
+                </div>
+                <p class="price">Vanaf €350 setup + €49/mnd</p>
+                <p class="pricing-description">Voor kleine zelfstandigen die snel professioneel online willen staan.</p>
+              </div>
+              <ul class="benefit-list" aria-label="Voordelen">
+                <li><span class="checkmark">✓</span><span>1 pagina</span></li>
+                <li><span class="checkmark">✓</span><span>Mobielvriendelijk ontwerp</span></li>
+                <li><span class="checkmark">✓</span><span>30 minuten onderhoud per maand</span></li>
+              </ul>
+              <button class="outline-button package-button" type="button">Vraag Starter aan</button>
+            </article>
+
+            <article class="card pricing-card hover-lift reveal" data-package="local">
+              <div>
+                <div class="pricing-title-row">
+                  <h3>Local Business Website</h3>
+                  <span class="badge">Aanbevolen</span>
+                </div>
+                <p class="price">Vanaf €550 setup + €79/mnd</p>
+                <p class="pricing-description">Voor lokale bedrijven die een duidelijke bedrijfswebsite nodig hebben.</p>
+              </div>
+              <ul class="benefit-list" aria-label="Voordelen">
+                <li><span class="checkmark">✓</span><span>3 tot 4 pagina's</span></li>
+                <li><span class="checkmark">✓</span><span>Contactformulier en Google Maps</span></li>
+                <li><span class="checkmark">✓</span><span>1 uur onderhoud per maand</span></li>
+              </ul>
+              <button class="outline-button package-button" type="button">Vraag Local Business aan</button>
+            </article>
+
+            <article class="card pricing-card hover-lift reveal" data-package="content">
+              <div>
+                <div class="pricing-title-row">
+                  <h3>Website + Content</h3>
+                </div>
+                <p class="price">Vanaf €750 setup + €149/mnd</p>
+                <p class="pricing-description">Voor bedrijven die naast een website ook sterker zichtbaar willen zijn op sociale media.</p>
+              </div>
+              <ul class="benefit-list" aria-label="Voordelen">
+                <li><span class="checkmark">✓</span><span>4 tot 5 pagina's</span></li>
+                <li><span class="checkmark">✓</span><span>2 korte social media edits per maand</span></li>
+                <li><span class="checkmark">✓</span><span>2 uur onderhoud per maand</span></li>
+              </ul>
+              <button class="outline-button package-button" type="button">Vraag Content pakket aan</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <article class="contact-info-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=82"
+              alt="Interieur van een lokaal restaurant met warme verlichting"
+              class="contact-bg"
+            />
+            <div class="contact-overlay"></div>
+            <div class="contact-info-content">
+              <span class="eyebrow dark-eyebrow">Contact</span>
+              <h2 id="contact-title">Klaar voor een sterkere online basis?</h2>
+              <p>Vertel kort wat je bedrijf nodig heeft. We bekijken welk pakket het best past.</p>
+              <ul class="contact-list">
+                <li>Mail: <a href="mailto:hallo@forma.studio">hallo@forma.studio</a></li>
+                <li>Reactietijd: binnen 1 tot 2 werkdagen</li>
+                <li>Voor lokale ondernemers, starters en kleine bedrijven</li>
+              </ul>
+            </div>
+          </article>
+
+          <form class="card contact-form reveal" novalidate>
+            <div class="form-row">
+              <label for="name">Naam</label>
+              <input id="name" name="name" type="text" />
+              <p class="field-error" data-error-for="name"></p>
+            </div>
+            <div class="form-row">
+              <label for="company">Bedrijf</label>
+              <input id="company" name="company" type="text" />
+            </div>
+            <div class="form-row">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" />
+              <p class="field-error" data-error-for="email"></p>
+            </div>
+            <div class="form-row">
+              <label for="message">Bericht</label>
+              <textarea id="message" name="message" rows="5"></textarea>
+              <p class="field-error" data-error-for="message"></p>
+            </div>
+            <button class="primary-button full-width" type="submit">Verstuur aanvraag</button>
+            <p class="success-message" role="status" hidden>
+              Bedankt. Je aanvraag is geregistreerd in deze demo.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="brand-lockup">
+          <img src="./public/forma-logo.svg" alt="Forma - Be visible" class="brand-logo brand-logo-footer" />
+        </div>
+        <p>Websites · Onderhoud · Content</p>
+        <p>© <span id="year"></span> Forma. Alle rechten voorbehouden.</p>
+      </div>
+    </footer>
+
+    <div class="package-spotlight" hidden>
+      <article class="spotlight-card" role="dialog" aria-modal="true" aria-labelledby="spotlight-title">
+        <button class="spotlight-close" type="button" aria-label="Sluit pakket">×</button>
+        <div class="spotlight-header">
+          <span class="eyebrow">Gekozen pakket</span>
+          <span class="badge spotlight-badge" hidden></span>
+        </div>
+        <h2 id="spotlight-title"></h2>
+        <p class="price spotlight-price"></p>
+        <p class="pricing-description spotlight-description"></p>
+        <ul class="benefit-list spotlight-benefits"></ul>
+        <div class="spotlight-actions">
+          <button class="primary-button" type="button" data-target="contact">Vraag dit pakket aan</button>
+          <button class="secondary-button spotlight-back" type="button">Terug naar pakketten</button>
+        </div>
+      </article>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
