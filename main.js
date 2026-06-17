@@ -54,6 +54,8 @@ const spotlightCard = document.querySelector(".spotlight-card");
 const spotlightClose = document.querySelector(".spotlight-close");
 const spotlightBack = document.querySelector(".spotlight-back");
 const contactForm = document.querySelector(".contact-form");
+const contactSubmit = contactForm.querySelector("[type='submit']");
+const contactStatus = contactForm.querySelector(".success-message");
 const year = document.querySelector("#year");
 let activePackageKey = "";
 
@@ -141,7 +143,7 @@ function fillPackageMessage(packageKey) {
 
 	messageField.value = item.inquiryMessage;
 	setError("message", "");
-	contactForm.querySelector(".success-message").hidden = true;
+	hideContactStatus();
 
 	window.setTimeout(() => {
 		messageField.focus({ preventScroll: true });
@@ -156,6 +158,17 @@ function setError(field, message) {
 
 	input.setAttribute("aria-invalid", message ? "true" : "false");
 	error.textContent = message;
+}
+
+function hideContactStatus() {
+	contactStatus.hidden = true;
+	contactStatus.classList.remove("is-error");
+}
+
+function showContactStatus(message, type = "success") {
+	contactStatus.textContent = message;
+	contactStatus.classList.toggle("is-error", type === "error");
+	contactStatus.hidden = false;
 }
 
 function validateForm() {
@@ -259,16 +272,42 @@ window.addEventListener("resize", updateScrollState);
 
 contactForm.addEventListener("input", (event) => {
 	if (event.target.name) setError(event.target.name, "");
-	contactForm.querySelector(".success-message").hidden = true;
+	hideContactStatus();
 });
 
-contactForm.addEventListener("submit", (event) => {
+contactForm.addEventListener("submit", async (event) => {
 	event.preventDefault();
 
 	if (!validateForm()) return;
 
-	contactForm.reset();
-	contactForm.querySelector(".success-message").hidden = false;
+	hideContactStatus();
+	contactSubmit.disabled = true;
+	contactSubmit.textContent = "Versturen...";
+
+	try {
+		const response = await fetch(contactForm.dataset.endpoint, {
+			method: "POST",
+			body: new FormData(contactForm),
+			headers: {
+				Accept: "application/json",
+			},
+		});
+
+		if (!response.ok) {
+			throw new Error("Contact form submission failed");
+		}
+
+		contactForm.reset();
+		showContactStatus("Bedankt. Je aanvraag is verzonden.");
+	} catch (error) {
+		showContactStatus(
+			"Versturen lukt niet. Mail ons rechtstreeks via info@bmastudio.be.",
+			"error",
+		);
+	} finally {
+		contactSubmit.disabled = false;
+		contactSubmit.textContent = "Verstuur aanvraag";
+	}
 });
 
 setupReveal();

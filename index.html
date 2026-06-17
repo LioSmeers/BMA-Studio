@@ -232,36 +232,46 @@
               <h2 id="contact-title">Klaar voor een sterkere online basis?</h2>
               <p>Vertel kort wat je bedrijf nodig heeft. We bekijken welk pakket het best past.</p>
               <ul class="contact-list">
-                <li>Mail: <a href="mailto:hallo@bmastudio.be">hallo@bmastudio.be</a></li>
+                <li>Mail: <a href="mailto:info@bmastudio.be">info@bmastudio.be</a></li>
                 <li>Reactietijd: dezelfde dag</li>
                 <li>Voor lokale ondernemers, starters en kleine bedrijven</li>
               </ul>
             </div>
           </article>
 
-          <form class="card contact-form reveal" novalidate>
+          <form
+            class="card contact-form reveal"
+            action="https://formsubmit.co/info@bmastudio.be"
+            data-endpoint="https://formsubmit.co/ajax/info@bmastudio.be"
+            method="POST"
+            novalidate
+          >
+            <input type="hidden" name="_subject" value="Nieuwe aanvraag via bmastudio.be" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" />
             <div class="form-row">
               <label for="name">Naam</label>
-              <input id="name" name="name" type="text" />
+              <input id="name" name="name" type="text" autocomplete="name" required />
               <p class="field-error" data-error-for="name"></p>
             </div>
             <div class="form-row">
               <label for="company">Bedrijf</label>
-              <input id="company" name="company" type="text" />
+              <input id="company" name="company" type="text" autocomplete="organization" />
             </div>
             <div class="form-row">
               <label for="email">E-mail</label>
-              <input id="email" name="email" type="email" />
+              <input id="email" name="email" type="email" autocomplete="email" required />
               <p class="field-error" data-error-for="email"></p>
             </div>
             <div class="form-row">
               <label for="message">Bericht</label>
-              <textarea id="message" name="message" rows="5"></textarea>
+              <textarea id="message" name="message" rows="5" required></textarea>
               <p class="field-error" data-error-for="message"></p>
             </div>
             <button class="primary-button full-width" type="submit">Verstuur aanvraag</button>
             <p class="success-message" role="status" hidden>
-              Bedankt. Je aanvraag is goed ontvangen.
+              Bedankt. Je aanvraag is verzonden.
             </p>
           </form>
         </div>
