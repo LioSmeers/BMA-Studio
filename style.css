@@ -272,6 +272,11 @@ img {
   transform: translateY(0) scale(0.98);
 }
 
+.primary-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .menu-toggle {
   display: inline-grid;
   width: 2.75rem;
@@ -797,6 +802,10 @@ p {
   padding: clamp(1.35rem, 3vw, 2rem);
 }
 
+.form-honey {
+  display: none;
+}
+
 .form-row {
   display: grid;
   gap: 0.45rem;
@@ -857,6 +866,12 @@ p {
   color: var(--color-success);
   padding: 0.95rem 1rem;
   font-weight: 800;
+}
+
+.success-message.is-error {
+  border-color: color-mix(in srgb, var(--color-error), transparent 65%);
+  background: color-mix(in srgb, var(--color-error), transparent 92%);
+  color: var(--color-error);
 }
 
 .full-width {
