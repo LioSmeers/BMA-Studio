@@ -8,12 +8,8 @@ const packageDetails = {
 		benefits: [
 			"1 kleine HTML-basiswebsite met de belangrijkste info",
 			"Geen maandelijkse betaling of onderhoudskost",
-			"Google Bedrijfsprofiel verbeteren",
-			"Juiste diensten, beschrijving en contactgegevens",
-			"Google Maps-link, WhatsApp of boekingslink",
-			"5 tot 10 eenvoudige visuele posts of storytemplates",
-			"Korte analyse van je huidige online aanwezigheid",
-			"Oplevering binnen 5 dagen",
+			"Google Bedrijfsprofiel met juiste info en links",
+			"5 tot 10 visuele posts, korte analyse en oplevering binnen 5 dagen",
 		],
 		inquiryMessage:
 			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in de BMA Local Visibility Sprint van €150. Ik wil graag lokaal zichtbaarder worden met een kleine HTML-basiswebsite met de belangrijkste info, zonder maandelijkse betaling of onderhoudskost.\n\nAlvast bedankt!",
