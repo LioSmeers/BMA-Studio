@@ -229,6 +229,35 @@ a.is-pressure-active {
   gap: 0.75rem;
 }
 
+.language-switcher {
+  display: inline-flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--color-surface), transparent 8%);
+  box-shadow: 0 8px 18px rgba(11, 17, 28, 0.05);
+}
+
+.language-option {
+  min-width: 2.35rem;
+  min-height: 2.35rem;
+  border: 0;
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 900;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.language-option:hover,
+.language-option.is-active {
+  background: var(--color-accent);
+  color: var(--color-surface);
+}
+
 .nav-link,
 .mobile-nav-link {
   position: relative;
