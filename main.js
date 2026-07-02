@@ -2,10 +2,12 @@ const packageDetails = {
 	visibility: {
 		title: "BMA Local Visibility Sprint",
 		badge: "Instappakket",
-		price: "€149 tot €199",
+		price: "€150 eenmalig",
 		description:
-			"Voor ondernemers die sneller zichtbaar willen worden zonder meteen een volledige website te laten maken.",
+			"Voor ondernemers die lokaal zichtbaar willen worden met een kleine basiswebsite, zonder maandelijkse betaling.",
 		benefits: [
+			"1 kleine HTML-basiswebsite met de belangrijkste info",
+			"Geen maandelijkse betaling of onderhoudskost",
 			"Google Bedrijfsprofiel verbeteren",
 			"Juiste diensten, beschrijving en contactgegevens",
 			"Google Maps-link, WhatsApp of boekingslink",
@@ -14,7 +16,7 @@ const packageDetails = {
 			"Oplevering binnen 5 dagen",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in de BMA Local Visibility Sprint. Ik wil graag mijn Google Bedrijfsprofiel en online zichtbaarheid verbeteren zonder meteen een volledige website te laten maken.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in de BMA Local Visibility Sprint van €150. Ik wil graag lokaal zichtbaarder worden met een kleine HTML-basiswebsite met de belangrijkste info, zonder maandelijkse betaling of onderhoudskost.\n\nAlvast bedankt!",
 	},
 	starter: {
 		title: "Starter Website",
