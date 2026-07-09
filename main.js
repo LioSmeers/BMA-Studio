@@ -2,7 +2,7 @@ const packageDetails = {
 	visibility: {
 		title: "BMA Local Visibility Sprint",
 		badge: "Instappakket",
-		price: "€150 eenmalig",
+		price: "€180 eenmalig",
 		description:
 			"Voor ondernemers die lokaal zichtbaar willen worden met een kleine basiswebsite, zonder maandelijkse betaling.",
 		benefits: [
@@ -11,7 +11,7 @@ const packageDetails = {
 			"Google Bedrijfsprofiel met juiste info en links",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in de BMA Local Visibility Sprint van €150. Ik wil graag lokaal zichtbaarder worden met een kleine HTML-basiswebsite met de belangrijkste info, zonder maandelijkse betaling of onderhoudskost.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in de BMA Local Visibility Sprint van €180. Ik wil graag lokaal zichtbaarder worden met een kleine HTML-basiswebsite met de belangrijkste info, zonder maandelijkse betaling of onderhoudskost.\n\nAlvast bedankt!",
 	},
 	starter: {
 		title: "Starter Website",
@@ -59,7 +59,7 @@ const englishPackageDetails = {
 	visibility: {
 		title: "BMA Local Visibility Sprint",
 		badge: "Starter package",
-		price: "€150 one-time",
+		price: "€180 one-time",
 		description:
 			"For business owners who want to become locally visible with a small starter website, without a monthly payment.",
 		benefits: [
@@ -68,7 +68,7 @@ const englishPackageDetails = {
 			"Google Business Profile with the right info and links",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI am interested in the BMA Local Visibility Sprint for €150. I would like to become more visible locally with a small HTML starter website with the most important info, without a monthly payment or maintenance fee.\n\nThank you!",
+			"Hello BMA Studio,\n\nI am interested in the BMA Local Visibility Sprint for €180. I would like to become more visible locally with a small HTML starter website with the most important info, without a monthly payment or maintenance fee.\n\nThank you!",
 	},
 	starter: {
 		title: "Starter Website",
@@ -176,7 +176,7 @@ const translations = {
 	"Vier duidelijke routes.": "Four clear routes.",
 	"BMA Local Visibility Sprint": "BMA Local Visibility Sprint",
 	"Instappakket": "Starter package",
-	"€150 eenmalig": "€150 one-time",
+	"€180 eenmalig": "€180 one-time",
 	"Voor starters die lokaal zichtbaar willen worden met een kleine basiswebsite, zonder maandelijkse betaling.": "For starters who want to become locally visible with a small starter website, without a monthly payment.",
 	"1 kleine HTML-basiswebsite met de belangrijkste info": "1 small HTML starter website with the most important info",
 	"Geen maandelijkse betaling of onderhoudskost": "No monthly payment or maintenance fee",
