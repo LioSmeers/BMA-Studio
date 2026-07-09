@@ -714,6 +714,16 @@ a.is-pressure-active {
   padding-block: clamp(7.25rem, 13vw, 10rem) clamp(2.8rem, 6vw, 5rem);
 }
 
+.about-main .page-hero {
+  display: flex;
+  min-height: clamp(42rem, 92vh, 54rem);
+  align-items: center;
+}
+
+.about-main .page-hero-grid {
+  width: min(var(--container-width), calc(100% - 2rem));
+}
+
 .page-hero-grid {
   display: grid;
   gap: clamp(1.5rem, 4vw, 3rem);
