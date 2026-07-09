@@ -232,30 +232,38 @@ a.is-pressure-active {
 .language-switcher {
   display: inline-flex;
   flex-shrink: 0;
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  border-radius: 0.8rem;
-  background: color-mix(in srgb, var(--color-surface), transparent 8%);
-  box-shadow: 0 8px 18px rgba(11, 17, 28, 0.05);
+  gap: 0.15rem;
+  padding: 0.2rem;
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 18%);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 8px 18px rgba(11, 17, 28, 0.045);
+  backdrop-filter: blur(14px) saturate(1.08);
 }
 
 .language-option {
-  min-width: 2.35rem;
-  min-height: 2.35rem;
+  min-width: 2.15rem;
+  min-height: 2rem;
   border: 0;
+  border-radius: 0.68rem;
   background: transparent;
   color: var(--color-muted);
   cursor: pointer;
   font: inherit;
-  font-size: 0.78rem;
-  font-weight: 900;
-  transition: background 160ms ease, color 160ms ease;
+  font-size: 0.75rem;
+  font-weight: 850;
+  transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease;
 }
 
-.language-option:hover,
+.language-option:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
 .language-option.is-active {
-  background: var(--color-accent);
-  color: var(--color-surface);
+  background: var(--color-surface);
+  color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(11, 17, 28, 0.08);
 }
 
 .nav-link,
