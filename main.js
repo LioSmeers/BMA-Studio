@@ -112,6 +112,97 @@ const englishPackageDetails = {
 	},
 };
 
+const portfolioProjectDetails = {
+	vergoot: {
+		number: "01",
+		title: "Vergoot - Local Business",
+		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
+		summary:
+			"Conceptwebsite voor een lokale dakwerker, bedoeld om vertrouwen, diensten en offerte-aanvragen duidelijk te tonen.",
+		image: "./public/portfolio-vergoot-result.png",
+		imageAlt: "Hero screenshot van Vergoot dakwerken conceptwebsite",
+		caption: "Screenshot van de tijdelijke demonstratieomgeving.",
+		hideModalMedia: true,
+		link: "https://liosmeers.github.io/dakwerken-vergoot/",
+		linkLabel: "Bekijk Vergoot",
+		tags: ["Concept", "Tijdelijke demo via GitHub Pages"],
+		details: [
+			["Projecttype", "Conceptwebsite"],
+			["Sector", "Dakwerken en renovatie"],
+			["Dienst", "Local Business Website"],
+			["Uitdaging", "Een dienstverlener snel betrouwbaar laten overkomen en bezoekers naar een aanvraag sturen."],
+			["Oplossing", "Een duidelijke bedrijfswebsite met diensten, vertrouwen en contactmomenten op logische plaatsen."],
+			["Belangrijkste functies", "Dienstenoverzicht, offertefocus, mobiele opbouw en contactknoppen."],
+		],
+	},
+	fleur: {
+		number: "02",
+		title: "Fleur - Website + Content",
+		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
+		summary:
+			"Conceptwebsite voor een beautyzaak, bedoeld om een warme stijl, diensten en contentmogelijkheden te tonen.",
+		image: "./public/portfolio-fleura-result.png",
+		imageAlt: "Hero screenshot van Fleur beauty clinic conceptwebsite",
+		caption: "Conceptwebsite in een tijdelijke demonstratieomgeving.",
+		link: "https://liosmeers.github.io/Beauty-clinic-fleura/",
+		linkLabel: "Bekijk Fleur",
+		tags: ["Concept", "Tijdelijke demo via GitHub Pages"],
+		details: [
+			["Projecttype", "Conceptwebsite"],
+			["Sector", "Beauty en verzorging"],
+			["Dienst", "Website + Content"],
+			["Uitdaging", "Een visuele stijl tonen die zacht, professioneel en overzichtelijk blijft."],
+			["Oplossing", "Een uitgebreidere conceptsite met diensten, sfeer, navigatie en duidelijke contactmomenten."],
+			["Belangrijkste functies", "Meerdere pagina's, dienstpresentatie, visuele sfeer en call-to-action."],
+		],
+	},
+	nova: {
+		number: "03",
+		title: "Nova - Starter Website",
+		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
+		summary:
+			"Compacte conceptwebsite voor een starter, bedoeld om te tonen hoe een eenvoudige eerste online basis eruit kan zien.",
+		image: "./public/portfolio-nova-result.png",
+		imageAlt: "Hero screenshot van de Nova starter conceptwebsite",
+		caption: "Conceptwebsite in een tijdelijke demonstratieomgeving.",
+		link: "https://liosmeers.github.io/Nova-website/",
+		linkLabel: "Bekijk Nova",
+		tags: ["Concept", "Tijdelijke demo via GitHub Pages"],
+		details: [
+			["Projecttype", "Conceptwebsite"],
+			["Sector", "Starter of kleine zelfstandige"],
+			["Dienst", "Starter Website"],
+			["Uitdaging", "Met weinig pagina's toch snel duidelijk maken wat het bedrijf doet."],
+			["Oplossing", "Een compacte pagina met een sterke eerste indruk, kerninformatie en directe call-to-action."],
+			["Belangrijkste functies", "Hero, korte uitleg, duidelijke CTA en mobiele basisstructuur."],
+		],
+	},
+	walk: {
+		number: "04",
+		title: "Walk Brussels",
+		badges: [
+			{ label: "UX-project", className: "portfolio-badge-ux" },
+			{ label: "Schoolproject", className: "portfolio-badge-school" },
+		],
+		summary:
+			"UX- en schoolproject waarin een bestaande rapportageflow mobieler, korter en duidelijker werd uitgewerkt.",
+		image: "./public/portfolio-walk-brussels-result.png",
+		imageAlt: "Mobiele Walk Brussels registratieflow",
+		caption: "UX- en schoolproject in een tijdelijke demonstratieomgeving.",
+		link: "https://ehb-mct.github.io/fullprojects2-walk-walk4/",
+		linkLabel: "Bekijk Walk Brussels",
+		tags: ["Mobiele app-flow", "Tijdelijke demo via GitHub Pages"],
+		details: [
+			["Projecttype", "UX-project en schoolproject"],
+			["Sector", "Mobiliteit en stadsbeleving"],
+			["Dienst", "UX-flow en digitaal ontwerp"],
+			["Uitdaging", "Een rapportageflow duidelijker maken op kleine schermen."],
+			["Oplossing", "Een mobiele stappenstructuur met korte schermen en duidelijke keuzes per stap."],
+			["Belangrijkste functies", "Mobiele flow, stapsgewijze invoer, overzichtelijke schermen en visuele feedback."],
+		],
+	},
+};
+
 const translations = {
 	"Home": "Home",
 	"Pakketten": "Packages",
@@ -352,14 +443,22 @@ const spotlightClose = document.querySelector(".spotlight-close");
 const spotlightBack = document.querySelector(".spotlight-back");
 const portfolioToggle = document.querySelector("[data-portfolio-toggle]");
 const portfolioProjects = document.querySelector("#portfolio-projects");
+const portfolioCards = document.querySelectorAll("[data-portfolio-project]");
+const portfolioTriggers = document.querySelectorAll("[data-portfolio-trigger]");
+const portfolioModal = document.querySelector(".portfolio-modal");
+const portfolioModalCard = document.querySelector(".portfolio-modal-card");
+const portfolioModalClose = document.querySelector(".portfolio-modal-close");
 const contactForm = document.querySelector(".contact-form");
 const contactSubmit = contactForm?.querySelector("[type='submit']");
 const contactStatus = contactForm?.querySelector(".success-message");
 const year = document.querySelector("#year");
 let activePackageKey = "";
+let previousPortfolioFocus = null;
 let scrollUpdateQueued = false;
 let currentLanguage = localStorage.getItem("bma-language") || "nl";
 const originalTextByNode = new WeakMap();
+const livePreviewWidth = 1280;
+const livePreviewHeight = 800;
 
 if (year) year.textContent = new Date().getFullYear();
 
@@ -580,6 +679,111 @@ function closeSpotlight() {
 
 	spotlight.hidden = true;
 	document.body.style.overflow = "";
+}
+
+function renderPortfolioModal(projectKey) {
+	const item = portfolioProjectDetails[projectKey];
+	if (!item || !portfolioModal) return;
+
+	previousPortfolioFocus = document.activeElement;
+	portfolioModal.querySelector(".portfolio-modal-number").textContent = item.number;
+	portfolioModal.querySelector("#portfolio-modal-title").textContent = item.title;
+	portfolioModal.querySelector(".portfolio-modal-summary").textContent =
+		item.summary;
+
+	const image = portfolioModal.querySelector(".portfolio-modal-media img");
+	const media = portfolioModal.querySelector(".portfolio-modal-media");
+	const livePreview = portfolioModal.querySelector(".portfolio-modal-live-preview");
+	const liveFrame = livePreview?.querySelector("iframe");
+	const hideModalMedia = Boolean(item.hideModalMedia);
+	portfolioModal.classList.toggle("has-live-preview", Boolean(item.previewUrl));
+	portfolioModal.classList.toggle("no-modal-media", hideModalMedia);
+
+	if (hideModalMedia) {
+		media.hidden = true;
+		livePreview.hidden = true;
+		if (liveFrame) {
+			liveFrame.src = "";
+			liveFrame.title = "";
+		}
+		image.hidden = true;
+		image.removeAttribute("src");
+		image.alt = "";
+	} else if (item.previewUrl && livePreview && liveFrame) {
+		media.hidden = false;
+		image.hidden = true;
+		image.removeAttribute("src");
+		image.alt = "";
+		livePreview.hidden = false;
+		liveFrame.src = item.previewUrl;
+		liveFrame.title = item.previewTitle || item.title;
+	} else {
+		media.hidden = false;
+		livePreview.hidden = true;
+		if (liveFrame) {
+			liveFrame.src = "";
+			liveFrame.title = "";
+		}
+		image.hidden = false;
+		image.src = item.image;
+		image.alt = item.imageAlt;
+	}
+
+	portfolioModal.querySelector(".portfolio-modal-media figcaption").textContent =
+		item.caption;
+
+	portfolioModal.querySelector(".portfolio-modal-badges").innerHTML = item.badges
+		.map(
+			(badge) =>
+				`<span class="portfolio-badge ${badge.className}">${badge.label}</span>`,
+		)
+		.join("");
+
+	portfolioModal.querySelector(".portfolio-modal-details").innerHTML = item.details
+		.map(
+			([label, value]) => `
+				<div>
+					<h4>${label}</h4>
+					<p>${value}</p>
+				</div>
+			`,
+		)
+		.join("");
+
+	portfolioModal.querySelector(".portfolio-modal-tags").innerHTML = item.tags
+		.map((tag) => `<span class="tag">${tag}</span>`)
+		.join("");
+
+	const link = portfolioModal.querySelector(".portfolio-modal-link");
+	link.href = item.link;
+	link.textContent = item.linkLabel;
+
+	portfolioModal.hidden = false;
+	document.body.style.overflow = "hidden";
+	updateLiveSitePreviews();
+	portfolioModalClose?.focus({ preventScroll: true });
+}
+
+function closePortfolioModal() {
+	if (!portfolioModal || portfolioModal.hidden) return;
+
+	portfolioModal.hidden = true;
+	document.body.style.overflow = "";
+	previousPortfolioFocus?.focus?.({ preventScroll: true });
+	previousPortfolioFocus = null;
+}
+
+function updateLiveSitePreviews() {
+	document.querySelectorAll(".live-site-preview").forEach((preview) => {
+		if (preview.hidden) return;
+
+		const width = preview.getBoundingClientRect().width;
+		if (!width) return;
+
+		const scale = width / livePreviewWidth;
+		preview.style.setProperty("--preview-scale", scale.toFixed(4));
+		preview.style.setProperty("--preview-height", `${livePreviewHeight * scale}px`);
+	});
 }
 
 function fillPackageMessage(packageKey) {
@@ -926,12 +1130,39 @@ if (spotlight) {
 		});
 }
 
+if (portfolioModal) {
+	portfolioTriggers.forEach((button) => {
+		button.addEventListener("click", () =>
+			renderPortfolioModal(button.dataset.portfolioTrigger),
+		);
+	});
+
+	portfolioModal.addEventListener("click", closePortfolioModal);
+	portfolioModalCard?.addEventListener("click", (event) => event.stopPropagation());
+	portfolioModalClose?.addEventListener("click", closePortfolioModal);
+}
+
+document.addEventListener("click", (event) => {
+	if (event.target.closest(".portfolio-modal-close")) {
+		closePortfolioModal();
+	}
+});
+
 window.addEventListener("keydown", (event) => {
 	if (event.key === "Escape" && spotlight && !spotlight.hidden) closeSpotlight();
+	if (event.key === "Escape" && portfolioModal && !portfolioModal.hidden) {
+		closePortfolioModal();
+	}
 });
 
 window.addEventListener("scroll", scheduleScrollStateUpdate, { passive: true });
-window.addEventListener("resize", updateScrollState);
+window.addEventListener("resize", () => {
+	updateScrollState();
+	updateLiveSitePreviews();
+});
+
+window.addEventListener("load", updateLiveSitePreviews);
+window.requestAnimationFrame(updateLiveSitePreviews);
 
 contactForm?.addEventListener("input", (event) => {
 	if (event.target.name) setError(event.target.name, "");
