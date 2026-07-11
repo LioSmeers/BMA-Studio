@@ -1597,6 +1597,11 @@ p {
   max-width: 38rem;
 }
 
+.portfolio-preview-app {
+  max-width: 24rem;
+  justify-self: center;
+}
+
 .portfolio-before img,
 .portfolio-preview img {
   width: 100%;
@@ -1633,12 +1638,17 @@ p {
     0 18px 40px rgba(49, 95, 154, 0.12);
 }
 
+.portfolio-preview-app .live-site-preview {
+  aspect-ratio: 9 / 14;
+  max-height: 34rem;
+}
+
 .live-site-preview iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1280px;
-  height: 800px;
+  width: var(--iframe-width, 1280px);
+  height: var(--iframe-height, 800px);
   border: 0;
   transform: scale(var(--preview-scale, 0.375));
   transform-origin: top left;

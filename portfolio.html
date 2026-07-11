@@ -222,7 +222,7 @@
             </p>
           </div>
           <div class="portfolio-projects">
-            <article class="card portfolio-card reveal" data-portfolio-project="walk">
+            <article class="card portfolio-card portfolio-card-live reveal" data-portfolio-project="walk">
               <div class="portfolio-copy">
                 <div class="portfolio-title-row">
                   <span class="service-number">04</span>
@@ -240,9 +240,20 @@
                 </div>
                 <button class="secondary-button portfolio-link portfolio-info-button" type="button" data-portfolio-trigger="walk">Meer info</button>
               </div>
-              <figure class="portfolio-before portfolio-preview-wide">
-                <img src="./public/portfolio-walk-brussels-result.png" alt="Mobiele Walk Brussels registratieflow" />
-                <figcaption>UX- en schoolproject in een tijdelijke demonstratieomgeving.</figcaption>
+              <figure class="portfolio-preview portfolio-preview-wide portfolio-preview-live portfolio-preview-app">
+                <div class="live-site-preview" aria-label="Live mini-preview van Walk Brussels">
+                  <iframe
+                    src="https://ehb-mct.github.io/fullprojects2-walk-walk4/"
+                    title="Live mini-preview van Walk Brussels"
+                    width="390"
+                    height="760"
+                    loading="lazy"
+                    tabindex="-1"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                    referrerpolicy="no-referrer"
+                  ></iframe>
+                </div>
+                <figcaption>Live preview van de tijdelijke demonstratieomgeving.</figcaption>
               </figure>
             </article>
           </div>
