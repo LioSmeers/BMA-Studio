@@ -191,6 +191,7 @@ const portfolioProjectDetails = {
 		image: "./public/portfolio-walk-brussels-result.png",
 		imageAlt: "Mobiele Walk Brussels registratieflow",
 		caption: "UX- en schoolproject in een tijdelijke demonstratieomgeving.",
+		hideModalMedia: true,
 		link: "https://ehb-mct.github.io/fullprojects2-walk-walk4/",
 		linkLabel: "Bekijk Walk Brussels",
 		tags: ["Mobiele app-flow", "Tijdelijke demo via GitHub Pages"],
@@ -779,12 +780,17 @@ function updateLiveSitePreviews() {
 	document.querySelectorAll(".live-site-preview").forEach((preview) => {
 		if (preview.hidden) return;
 
+		const frame = preview.querySelector("iframe");
+		const frameWidth = Number(frame?.getAttribute("width")) || livePreviewWidth;
+		const frameHeight = Number(frame?.getAttribute("height")) || livePreviewHeight;
 		const width = preview.getBoundingClientRect().width;
 		if (!width) return;
 
-		const scale = width / livePreviewWidth;
+		const scale = width / frameWidth;
+		preview.style.setProperty("--iframe-width", `${frameWidth}px`);
+		preview.style.setProperty("--iframe-height", `${frameHeight}px`);
 		preview.style.setProperty("--preview-scale", scale.toFixed(4));
-		preview.style.setProperty("--preview-height", `${livePreviewHeight * scale}px`);
+		preview.style.setProperty("--preview-height", `${frameHeight * scale}px`);
 	});
 }
 
