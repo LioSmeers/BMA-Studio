@@ -1101,6 +1101,11 @@ function setupPagePressure() {
 				return;
 			}
 
+			if (targetElement?.closest(".language-switcher")) {
+				resetTarget();
+				return;
+			}
+
 			const target = targetElement?.closest(pressureSelector);
 
 			if (!target) {
