@@ -227,7 +227,8 @@ const translations = {
 	"Terug naar home": "Back to home",
 	"Bespreek je project": "Discuss your project",
 	"Vergelijk pakketten": "Compare packages",
-	"Websites · Onderhoud · Content": "Websites · Maintenance · Content",
+	"Meer info": "More info",
+	"Websites · Maintain · Content": "Websites · Maintain · Content",
 	"BMA Studio · Lio Smeers. Alle rechten voorbehouden.": "BMA Studio · Lio Smeers. All rights reserved.",
 	"De online basis voor lokale bedrijven.": "The online foundation for local businesses.",
 	"BMA Studio helpt lokale ondernemingen met duidelijke websites, maandelijks onderhoud en social media content die vertrouwen opbouwen en klanten sneller laten contact opnemen.": "BMA Studio helps local businesses with clear websites, monthly maintenance and social media content that builds trust and makes it easier for customers to get in touch.",
@@ -337,6 +338,7 @@ const translations = {
 	"Wil je weten welk pakket past?": "Want to know which package fits?",
 	"Bekijk eerst de pakketten of stuur meteen kort door wat je bedrijf nodig heeft.": "First view the packages or immediately send a short note about what your business needs.",
 	"Voorbeelden van websites voor lokale ondernemers.": "Examples of websites for local business owners.",
+	"Een selectie van klantprojecten, conceptwebsites en digitale ontwerpen.": "A selection of client projects, concept websites and digital designs.",
 	"Bekijk hoe een starter website, lokale bedrijfswebsite of website met content eruit kan zien.": "See what a starter website, local business website or website with content can look like.",
 	"Kijkrichting": "What to look for",
 	"Bekijk welk voorbeeld het dichtst bij jouw zaak ligt.": "See which example is closest to your business.",
@@ -344,6 +346,21 @@ const translations = {
 	"Stuur je aanvraag door met die richting als startpunt.": "Send your request with that direction as a starting point.",
 	"Projecten": "Projects",
 	"Werk en voorbeeldsites.": "Work and example sites.",
+	"Relevante voorbeelden voor lokale bedrijven.": "Relevant examples for local businesses.",
+	"Deze conceptwebsites tonen stijl, structuur en mogelijkheden voor verschillende soorten ondernemers. Links naar GitHub Pages zijn tijdelijke demonstratieomgevingen.": "These concept websites show style, structure and possibilities for different types of business owners. GitHub Pages links are temporary demo environments.",
+	"Conceptwebsite": "Concept website",
+	"Conceptwebsite voor een lokale dakwerker, bedoeld om vertrouwen, diensten en offerte-aanvragen duidelijk te tonen.": "Concept website for a local roofer, designed to clearly show trust, services and quote requests.",
+	"Conceptwebsite voor een beautyzaak, bedoeld om een warme stijl, diensten en contentmogelijkheden te tonen.": "Concept website for a beauty business, designed to show a warm style, services and content possibilities.",
+	"Compacte conceptwebsite voor een starter, bedoeld om te tonen hoe een eenvoudige eerste online basis eruit kan zien.": "Compact concept website for a starter, designed to show what a simple first online foundation can look like.",
+	"Concept": "Concept",
+	"Tijdelijke demo via GitHub Pages": "Temporary demo via GitHub Pages",
+	"Live preview van de tijdelijke demonstratieomgeving.": "Live preview of the temporary demo environment.",
+	"UX en digitaal ontwerp": "UX and digital design",
+	"Andere digitale projecten.": "Other digital projects.",
+	"Minder gericht op lokale bedrijfswebsites, maar wel relevant als voorbeeld van structuur, gebruiksflow en mobiele interfacekeuzes.": "Less focused on local business websites, but still relevant as examples of structure, user flow and mobile interface choices.",
+	"UX-project": "UX project",
+	"Schoolproject": "School project",
+	"UX- en schoolproject waarin een bestaande rapportageflow mobieler, korter en duidelijker werd uitgewerkt.": "UX and school project in which an existing reporting flow was made more mobile, shorter and clearer.",
 	"Een bestaande rapportageflow werd mobieler, korter en duidelijker gemaakt.": "An existing reporting flow was made more mobile, shorter and clearer.",
 	"Mobiele app-flow": "Mobile app flow",
 	"Stappenstructuur": "Step structure",
@@ -365,6 +382,70 @@ const translations = {
 	"5 pagina's": "5 pages",
 	"Bekijk Fleur": "View Fleur",
 	"Voorbeeld van Website + Content.": "Example of Website + Content.",
+	"Projecttype": "Project type",
+	"Sector": "Sector",
+	"Dienst": "Service",
+	"Uitdaging": "Challenge",
+	"Oplossing": "Solution",
+	"Belangrijkste functies": "Key features",
+	"Dakwerken en renovatie": "Roofing and renovation",
+	"Local Business Website": "Local Business Website",
+	"Een dienstverlener snel betrouwbaar laten overkomen en bezoekers naar een aanvraag sturen.": "Make a service provider feel trustworthy quickly and guide visitors toward an enquiry.",
+	"Een duidelijke bedrijfswebsite met diensten, vertrouwen en contactmomenten op logische plaatsen.": "A clear business website with services, trust signals and contact moments in logical places.",
+	"Dienstenoverzicht, offertefocus, mobiele opbouw en contactknoppen.": "Service overview, quote focus, mobile structure and contact buttons.",
+	"Beauty en verzorging": "Beauty and care",
+	"Een visuele stijl tonen die zacht, professioneel en overzichtelijk blijft.": "Show a visual style that stays soft, professional and clear.",
+	"Een uitgebreidere conceptsite met diensten, sfeer, navigatie en duidelijke contactmomenten.": "A more extensive concept site with services, atmosphere, navigation and clear contact moments.",
+	"Meerdere pagina's, dienstpresentatie, visuele sfeer en call-to-action.": "Multiple pages, service presentation, visual atmosphere and call to action.",
+	"Starter of kleine zelfstandige": "Starter or small independent business",
+	"Met weinig pagina's toch snel duidelijk maken wat het bedrijf doet.": "Quickly make clear what the business does with only a few pages.",
+	"Een compacte pagina met een sterke eerste indruk, kerninformatie en directe call-to-action.": "A compact page with a strong first impression, core information and direct call to action.",
+	"Hero, korte uitleg, duidelijke CTA en mobiele basisstructuur.": "Hero, short explanation, clear CTA and mobile-first basic structure.",
+	"UX-project en schoolproject": "UX project and school project",
+	"Mobiliteit en stadsbeleving": "Mobility and city experience",
+	"UX-flow en digitaal ontwerp": "UX flow and digital design",
+	"Een rapportageflow duidelijker maken op kleine schermen.": "Make a reporting flow clearer on small screens.",
+	"Een mobiele stappenstructuur met korte schermen en duidelijke keuzes per stap.": "A mobile step-by-step structure with short screens and clear choices per step.",
+	"Mobiele flow, stapsgewijze invoer, overzichtelijke schermen en visuele feedback.": "Mobile flow, step-by-step input, clear screens and visual feedback.",
+	"Screenshot van de tijdelijke demonstratieomgeving.": "Screenshot of the temporary demo environment.",
+	"Conceptwebsite in een tijdelijke demonstratieomgeving.": "Concept website in a temporary demo environment.",
+	"UX- en schoolproject in een tijdelijke demonstratieomgeving.": "UX and school project in a temporary demo environment.",
+	"Een directe partner voor je online basis.": "A direct partner for your online foundation.",
+	"BMA Studio helpt starters en lokale ondernemers met websites, onderhoud en online zichtbaarheid. Je werkt rechtstreeks met Lio, zonder accountmanagers of onnodige tussenpersonen.": "BMA Studio helps starters and local business owners with websites, maintenance and online visibility. You work directly with Lio, without account managers or unnecessary middlemen.",
+	"Direct contact met de persoon die je website bouwt.": "Direct contact with the person building your website.",
+	"Een duidelijke structuur voor inhoud, planning en opvolging.": "A clear structure for content, planning and follow-up.",
+	"Oplossingen die passen bij je bedrijf en je fase.": "Solutions that fit your business and its stage.",
+	"Websites en onderhoud voor ondernemers die helder online willen staan.": "Websites and maintenance for business owners who want to be clearly present online.",
+	"BMA Studio bouwt websites die snel duidelijk maken wie je bent, wat je aanbiedt en hoe klanten je kunnen bereiken. Daarnaast helpen we met onderhoud en online zichtbaarheid, zodat je website niet stilvalt na de oplevering.": "BMA Studio builds websites that quickly make clear who you are, what you offer and how customers can reach you. We also help with maintenance and online visibility, so your website does not stand still after delivery.",
+	"De aanpak blijft bewust overzichtelijk: eerst begrijpen wat je bedrijf nodig heeft, daarna kiezen welke pagina's, inhoud en opvolging daarbij horen.": "The approach stays deliberately clear: first we understand what your business needs, then we choose which pages, content and follow-up belong with it.",
+	"Wie achter BMA Studio zit": "Who is behind BMA Studio",
+	"Oprichter en webdesigner": "Founder and web designer",
+	"Als klant werk je rechtstreeks met mij samen. Dat houdt de communicatie kort en duidelijk: je weet wie je aanspreekt, waar we mee bezig zijn en welke stap daarna volgt.": "As a client, you work directly with me. That keeps communication short and clear: you know who you are talking to, what we are working on and which step comes next.",
+	"Ik denk mee over structuur, inhoud en praktische keuzes, met focus op wat jouw zaak echt nodig heeft. Geen onnodige lagen, wel een website die professioneel aanvoelt en begrijpelijk blijft.": "I think along about structure, content and practical choices, with a focus on what your business really needs. No unnecessary layers, just a website that feels professional and stays understandable.",
+	"Een vaste aanpak die rustig en duidelijk blijft.": "A fixed approach that stays calm and clear.",
+	"Luisteren": "Listen",
+	"We bespreken je bedrijf, je doelgroep en wat bezoekers snel moeten begrijpen.": "We discuss your business, your audience and what visitors need to understand quickly.",
+	"Structuur bepalen": "Define the structure",
+	"We kiezen de juiste pagina's, inhoud en contactflow voor jouw situatie.": "We choose the right pages, content and contact flow for your situation.",
+	"Bouwen en opvolgen": "Build and follow up",
+	"De website wordt uitgewerkt, mobiel nagekeken en nadien netjes opgevolgd.": "The website is built, checked on mobile and followed up neatly afterwards.",
+	"Kernwaarden": "Core values",
+	"Waar de samenwerking op steunt.": "What the collaboration is built on.",
+	"Duidelijke communicatie": "Clear communication",
+	"Je krijgt heldere uitleg, realistische keuzes en een duidelijk zicht op de volgende stap.": "You get clear explanation, realistic choices and a clear view of the next step.",
+	"Overzichtelijke structuur": "Clear structure",
+	"We maken websites die logisch lezen, makkelijk navigeerbaar zijn en praktisch blijven in onderhoud.": "We create websites that read logically, are easy to navigate and stay practical to maintain.",
+	"Passend bij je bedrijf": "Fitting your business",
+	"Geen standaardverhaal om het standaardverhaal. De oplossing moet kloppen met je zaak, budget en doelen.": "No standard story for the sake of it. The solution has to fit your business, budget and goals.",
+	"Werkgebied": "Service area",
+	"Actief vanuit Limburg en Brussel, voor ondernemingen in België.": "Active from Limburg and Brussels, for businesses in Belgium.",
+	"BMA Studio werkt voor starters, zelfstandigen en lokale bedrijven in België. Veel overleg kan vlot online, maar de aanpak blijft persoonlijk en praktisch.": "BMA Studio works for starters, independent professionals and local businesses in Belgium. A lot of consultation can happen smoothly online, while the approach stays personal and practical.",
+	"Limburg": "Limburg",
+	"Brussel": "Brussels",
+	"Ondernemingen in België": "Businesses in Belgium",
+	"Wil je weten wat je website nodig heeft?": "Want to know what your website needs?",
+	"Stuur kort door wie je bent, wat je doet en waar je online naartoe wil.": "Send a short note about who you are, what you do and where you want to go online.",
+	"Start een gesprek": "Start a conversation",
 	"Duidelijk, bereikbaar en betrokken.": "Clear, reachable and involved.",
 	"BMA Studio helpt lokale ondernemers online sterker overkomen met websites, onderhoud en content die helder aanvoelen. Je werkt rechtstreeks met ons samen, met duidelijke afspraken en snelle opvolging.": "BMA Studio helps local business owners make a stronger impression online with websites, maintenance and content that feel clear. You work directly with us, with clear agreements and fast follow-up.",
 	"Waar je op kan rekenen": "What you can count on",
@@ -422,11 +503,17 @@ const translations = {
 
 const titleTranslations = {
 	"BMA Studio - Websites voor lokale ondernemers": "BMA Studio - Websites for local business owners",
+	"BMA Studio | Webdesign voor starters en ondernemers": "BMA Studio | Web design for starters and business owners",
 	"Pakketten - BMA Studio": "Packages - BMA Studio",
+	"Website pakketten voor starters | BMA Studio": "Website packages for starters | BMA Studio",
 	"Diensten - BMA Studio": "Services - BMA Studio",
+	"Webdesign, branding en marketing | BMA Studio": "Web design, branding and marketing | BMA Studio",
 	"Portfolio - BMA Studio": "Portfolio - BMA Studio",
+	"Website voorbeelden voor ondernemers | BMA Studio": "Website examples for business owners | BMA Studio",
 	"Over ons - BMA Studio": "About us - BMA Studio",
+	"Over BMA Studio | Webdesign en marketing": "About BMA Studio | Web design and marketing",
 	"Contact - BMA Studio": "Contact - BMA Studio",
+	"Contacteer BMA Studio | Website laten maken": "Contact BMA Studio | Have a website made",
 	"Bedankt - BMA Studio": "Thank you - BMA Studio",
 	"Privacyverklaring - BMA Studio": "Privacy statement - BMA Studio",
 };
@@ -456,12 +543,14 @@ const contactSubmit = contactForm?.querySelector("[type='submit']");
 const contactStatus = contactForm?.querySelector(".success-message");
 const year = document.querySelector("#year");
 let activePackageKey = "";
+let activePortfolioProjectKey = "";
 let previousPortfolioFocus = null;
 let scrollUpdateQueued = false;
 let currentLanguage = localStorage.getItem("bma-language") || "nl";
 const originalTextByNode = new WeakMap();
 const livePreviewWidth = 1280;
 const livePreviewHeight = 800;
+const untranslatedText = new Set();
 
 if (year) year.textContent = new Date().getFullYear();
 
@@ -496,13 +585,24 @@ function translateTextNode(node) {
 	node.nodeValue = preserveSpacing(node.nodeValue, nextText);
 }
 
+function translateValue(value) {
+	return currentLanguage === "en" ? translations[value] || value : value;
+}
+
+function shouldSkipTranslation(node) {
+	const parent = node.parentElement;
+	if (!parent) return true;
+	if (parent.closest("script, style, .language-switcher, .brand-lockup, [data-no-translate]")) {
+		return true;
+	}
+	return untranslatedText.has(normalizeText(node.nodeValue));
+}
+
 function translateStaticText() {
 	const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
 		acceptNode(node) {
 			if (!normalizeText(node.nodeValue)) return NodeFilter.FILTER_REJECT;
-			const parent = node.parentElement;
-			if (!parent) return NodeFilter.FILTER_REJECT;
-			if (parent.closest("script, style, .language-switcher")) {
+			if (shouldSkipTranslation(node)) {
 				return NodeFilter.FILTER_REJECT;
 			}
 			return NodeFilter.FILTER_ACCEPT;
@@ -538,6 +638,10 @@ function setLanguage(language) {
 	localStorage.setItem("bma-language", language);
 	translateStaticText();
 	updateLanguageSwitcher();
+
+	if (activePortfolioProjectKey && portfolioModal && !portfolioModal.hidden) {
+		renderPortfolioModal(activePortfolioProjectKey, { keepFocus: true });
+	}
 
 	if (contactForm?.dataset.prefilledPackage) {
 		fillPackageMessage(contactForm.dataset.prefilledPackage);
@@ -684,15 +788,17 @@ function closeSpotlight() {
 	document.body.style.overflow = "";
 }
 
-function renderPortfolioModal(projectKey) {
+function renderPortfolioModal(projectKey, options = {}) {
 	const item = portfolioProjectDetails[projectKey];
 	if (!item || !portfolioModal) return;
 
-	previousPortfolioFocus = document.activeElement;
+	activePortfolioProjectKey = projectKey;
+	if (!options.keepFocus) previousPortfolioFocus = document.activeElement;
 	portfolioModal.querySelector(".portfolio-modal-number").textContent = item.number;
-	portfolioModal.querySelector("#portfolio-modal-title").textContent = item.title;
+	portfolioModal.querySelector("#portfolio-modal-title").textContent =
+		translateValue(item.title);
 	portfolioModal.querySelector(".portfolio-modal-summary").textContent =
-		item.summary;
+		translateValue(item.summary);
 
 	const image = portfolioModal.querySelector(".portfolio-modal-media img");
 	const media = portfolioModal.querySelector(".portfolio-modal-media");
@@ -719,7 +825,7 @@ function renderPortfolioModal(projectKey) {
 		image.alt = "";
 		livePreview.hidden = false;
 		liveFrame.src = item.previewUrl;
-		liveFrame.title = item.previewTitle || item.title;
+		liveFrame.title = translateValue(item.previewTitle || item.title);
 	} else {
 		media.hidden = false;
 		livePreview.hidden = true;
@@ -729,16 +835,16 @@ function renderPortfolioModal(projectKey) {
 		}
 		image.hidden = false;
 		image.src = item.image;
-		image.alt = item.imageAlt;
+		image.alt = translateValue(item.imageAlt);
 	}
 
 	portfolioModal.querySelector(".portfolio-modal-media figcaption").textContent =
-		item.caption;
+		translateValue(item.caption);
 
 	portfolioModal.querySelector(".portfolio-modal-badges").innerHTML = item.badges
 		.map(
 			(badge) =>
-				`<span class="portfolio-badge ${badge.className}">${badge.label}</span>`,
+				`<span class="portfolio-badge ${badge.className}">${translateValue(badge.label)}</span>`,
 		)
 		.join("");
 
@@ -746,25 +852,25 @@ function renderPortfolioModal(projectKey) {
 		.map(
 			([label, value]) => `
 				<div>
-					<h4>${label}</h4>
-					<p>${value}</p>
+					<h4>${translateValue(label)}</h4>
+					<p>${translateValue(value)}</p>
 				</div>
 			`,
 		)
 		.join("");
 
 	portfolioModal.querySelector(".portfolio-modal-tags").innerHTML = item.tags
-		.map((tag) => `<span class="tag">${tag}</span>`)
+		.map((tag) => `<span class="tag">${translateValue(tag)}</span>`)
 		.join("");
 
 	const link = portfolioModal.querySelector(".portfolio-modal-link");
 	link.href = item.link;
-	link.textContent = item.linkLabel;
+	link.textContent = translateValue(item.linkLabel);
 
 	portfolioModal.hidden = false;
 	document.body.style.overflow = "hidden";
 	updateLiveSitePreviews();
-	portfolioModalClose?.focus({ preventScroll: true });
+	if (!options.keepFocus) portfolioModalClose?.focus({ preventScroll: true });
 }
 
 function closePortfolioModal() {
@@ -774,6 +880,7 @@ function closePortfolioModal() {
 	document.body.style.overflow = "";
 	previousPortfolioFocus?.focus?.({ preventScroll: true });
 	previousPortfolioFocus = null;
+	activePortfolioProjectKey = "";
 }
 
 function updateLiveSitePreviews() {
