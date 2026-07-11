@@ -44,6 +44,7 @@ body.menu-open {
 }
 
 .cursor-glow {
+  display: none;
   position: fixed;
   z-index: 90;
   top: 0;
@@ -72,6 +73,23 @@ textarea {
 
 button {
   cursor: pointer;
+}
+
+a,
+summary,
+[role="button"],
+.primary-button,
+.secondary-button,
+.language-option,
+.menu-toggle,
+.spotlight-close {
+  cursor: pointer;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: text;
 }
 
 button:focus-visible,
