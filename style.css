@@ -274,12 +274,13 @@ a.is-pressure-active {
   font: inherit;
   font-size: 0.75rem;
   font-weight: 850;
-  transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+  transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
 .language-option:hover {
   background: var(--color-accent-soft);
   color: var(--color-accent);
+  transform: scale(0.97);
 }
 
 .language-option.is-active {
