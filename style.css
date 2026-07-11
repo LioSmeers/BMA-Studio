@@ -87,6 +87,10 @@ img {
   max-width: 100%;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .is-pressure-active {
   --surface-press: 2px;
   --surface-tilt-x: 0deg;
@@ -1466,7 +1470,7 @@ p {
 
 .portfolio-projects {
   display: grid;
-  gap: clamp(1rem, 2vw, 1.35rem);
+  gap: clamp(1.15rem, 2.4vw, 1.65rem);
   margin-top: clamp(1rem, 3vw, 1.5rem);
 }
 
@@ -1477,11 +1481,67 @@ p {
   padding: clamp(1.15rem, 3vw, 1.8rem);
   border-color: rgba(49, 95, 154, 0.17);
   background: rgba(255, 255, 255, 0.88);
+  transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus-within {
+  z-index: 5;
+  border-color: color-mix(in srgb, var(--color-accent), var(--color-border) 45%);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+}
+
+.portfolio-section-secondary {
+  background:
+    linear-gradient(180deg, rgba(245, 248, 252, 0.2), rgba(227, 237, 249, 0.76)),
+    radial-gradient(circle at 82% 8%, rgba(49, 95, 154, 0.12), transparent 24rem);
+}
+
+.portfolio-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.portfolio-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  padding: 0.55rem 0.7rem;
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.portfolio-badge-concept {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.portfolio-badge-ux {
+  background: #e8f7f2;
+  color: #0f766e;
+}
+
+.portfolio-badge-school {
+  background: #f1ecff;
+  color: #5b21b6;
 }
 
 .portfolio-copy p {
   max-width: 42rem;
   margin-top: 0.8rem;
+}
+
+.portfolio-summary {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.portfolio-card .portfolio-summary {
+  font-size: clamp(1rem, 1.5vw, 1.08rem);
 }
 
 .portfolio-detail-grid {
@@ -1514,10 +1574,15 @@ p {
   margin-top: 1.15rem;
 }
 
+.portfolio-card .portfolio-link {
+  width: max-content;
+}
+
 .portfolio-before,
 .portfolio-preview {
   display: grid;
-  width: min(16rem, 100%);
+  width: 100%;
+  max-width: 28rem;
   justify-items: center;
   margin: 0;
   justify-self: end;
@@ -1525,21 +1590,58 @@ p {
 }
 
 .portfolio-preview-wide {
-  width: min(22rem, 100%);
+  max-width: 32rem;
+}
+
+.portfolio-preview-live {
+  max-width: 38rem;
 }
 
 .portfolio-before img,
 .portfolio-preview img {
   width: 100%;
-  max-height: 31rem;
+  aspect-ratio: 16 / 10;
+  max-height: 22rem;
   object-fit: contain;
   border: 0;
-  border-radius: 0;
-  background: transparent;
+  border-radius: calc(var(--radius-card) - 0.25rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(227, 237, 249, 0.46));
+  box-shadow: inset 0 0 0 1px rgba(49, 95, 154, 0.1);
 }
 
 .portfolio-preview-wide img {
-  max-height: 16rem;
+  max-height: 22rem;
+}
+
+.live-site-preview {
+  position: relative;
+  width: 100%;
+  min-height: var(--preview-height, auto);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: calc(var(--radius-card) - 0.25rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(227, 237, 249, 0.46));
+  box-shadow: inset 0 0 0 1px rgba(49, 95, 154, 0.1);
+}
+
+.portfolio-preview-live .live-site-preview {
+  border: 1px solid rgba(49, 95, 154, 0.18);
+  box-shadow:
+    inset 0 0 0 1px rgba(49, 95, 154, 0.1),
+    0 18px 40px rgba(49, 95, 154, 0.12);
+}
+
+.live-site-preview iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 800px;
+  border: 0;
+  transform: scale(var(--preview-scale, 0.375));
+  transform-origin: top left;
 }
 
 .portfolio-before figcaption,
@@ -1548,6 +1650,124 @@ p {
   color: var(--color-muted);
   font-size: 0.82rem;
   font-weight: 700;
+}
+
+.portfolio-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  background: rgba(11, 17, 28, 0.28);
+  padding: 1rem;
+  backdrop-filter: blur(18px) saturate(1.08);
+  animation: spotlight-fade 180ms ease both;
+}
+
+.portfolio-modal[hidden] {
+  display: none;
+}
+
+.portfolio-modal-card {
+  position: relative;
+  width: min(78rem, 100%);
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+  border: 1px solid color-mix(in srgb, var(--color-accent), var(--color-border) 28%);
+  border-radius: var(--radius-card);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 248, 252, 0.98));
+  box-shadow: 0 28px 90px rgba(11, 17, 28, 0.24);
+  padding: clamp(1rem, 2.8vw, 1.6rem);
+  animation: spotlight-pop 340ms cubic-bezier(0.2, 0.85, 0.2, 1) both;
+}
+
+.portfolio-modal-close {
+  z-index: 3;
+  box-shadow: 0 10px 24px rgba(11, 17, 28, 0.12);
+}
+
+.portfolio-modal-layout {
+  display: grid;
+  grid-template-areas:
+    "media"
+    "content";
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
+}
+
+.portfolio-modal-media {
+  grid-area: media;
+  display: grid;
+  gap: 0.65rem;
+  width: 100%;
+  max-width: 36rem;
+  justify-items: center;
+  justify-self: center;
+  margin: 0;
+  text-align: center;
+}
+
+.portfolio-modal-live-preview {
+  width: 100%;
+  max-width: 100%;
+  justify-self: stretch;
+}
+
+.portfolio-modal-media img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: min(20rem, 42vh);
+  object-fit: contain;
+  border-radius: calc(var(--radius-card) - 0.25rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(227, 237, 249, 0.58));
+  box-shadow: inset 0 0 0 1px rgba(49, 95, 154, 0.1);
+}
+
+.portfolio-modal-media figcaption {
+  color: var(--color-muted);
+  font-size: 0.84rem;
+  font-weight: 750;
+  text-align: center;
+}
+
+.portfolio-modal-content {
+  grid-area: content;
+  min-width: 0;
+  width: 100%;
+  padding-right: 0;
+}
+
+.portfolio-modal-content h2 {
+  margin-top: 0.75rem;
+  max-width: none;
+  font-size: clamp(1.85rem, 4vw, 3.15rem);
+}
+
+.portfolio-modal.no-modal-media .portfolio-modal-card {
+  width: min(54rem, 100%);
+}
+
+.portfolio-modal.no-modal-media .portfolio-modal-layout {
+  grid-template-areas: "content";
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.portfolio-modal-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.portfolio-modal-details {
+  margin-top: 1.25rem;
+}
+
+.portfolio-modal-tags,
+.portfolio-modal-link {
+  margin-top: 1.25rem;
 }
 
 .pricing-card {
@@ -2105,7 +2325,25 @@ p {
   }
 
   .portfolio-card {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.78fr);
+  }
+
+  .portfolio-card-live {
+    grid-template-columns: minmax(0, 0.85fr) minmax(26rem, 1fr);
+  }
+
+  .portfolio-modal-layout {
+    grid-template-areas: "content media";
+    grid-template-columns: minmax(0, 1fr) minmax(24rem, 0.9fr);
+    align-items: start;
+  }
+
+  .portfolio-modal-media {
+    justify-self: end;
+  }
+
+  .portfolio-modal.has-live-preview .portfolio-modal-media {
+    margin-top: clamp(2.5rem, 3.4vw, 3rem);
   }
 
   .founder-grid {
@@ -2225,6 +2463,14 @@ p {
 
   .contact-info-card {
     min-height: 28rem;
+  }
+
+  .portfolio-modal {
+    align-items: start;
+  }
+
+  .portfolio-modal-card {
+    max-height: none;
   }
 
 }
