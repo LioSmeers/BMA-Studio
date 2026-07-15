@@ -1131,7 +1131,13 @@ p {
   box-shadow:
     0 28px 70px rgba(15, 23, 42, 0.2),
     inset 0 0 0 1px rgba(255, 255, 255, 0.12);
-  transform: translateY(-0.55rem) scale(1.018) rotate(0deg);
+  transform:
+    perspective(1200px)
+    translateY(-0.55rem)
+    rotateX(var(--phone-tilt-x))
+    rotateY(var(--phone-tilt-y))
+    scale(1.018)
+    rotate(0deg);
 }
 
 .iphone-shell:hover {
