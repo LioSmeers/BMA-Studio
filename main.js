@@ -6,16 +6,17 @@ const packageDetails = {
 		description:
 			"Voor ondernemers die lokaal zichtbaar willen worden met een kleine basiswebsite, zonder maandelijkse betaling.",
 		benefits: [
-			"1 kleine HTML-basiswebsite met de belangrijkste info",
-			"Geen maandelijkse betaling of onderhoudskost",
-			"Google Bedrijfsprofiel met juiste info en links",
+			"Compacte one-page website",
+			"Klant levert teksten en foto's aan",
+			"1 revisieronde",
+			"Geen maandelijkse betaling of onderhoud",
 		],
 		inquiryMessage:
 			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in de BMA Local Visibility Sprint van €199. Ik wil graag lokaal zichtbaarder worden met een kleine HTML-basiswebsite met de belangrijkste info, zonder maandelijkse betaling of onderhoudskost.\n\nAlvast bedankt!",
 	},
 	starter: {
 		title: "Starter Website",
-		price: "Vanaf €350 setup + €49/mnd",
+		price: "€299 setup + €25/mnd",
 		description:
 			"Voor kleine zelfstandigen die snel professioneel online willen staan.",
 		benefits: [
@@ -63,16 +64,17 @@ const englishPackageDetails = {
 		description:
 			"For business owners who want to become locally visible with a small starter website, without a monthly payment.",
 		benefits: [
-			"1 small HTML starter website with the most important info",
-			"No monthly payment or maintenance fee",
-			"Google Business Profile with the right info and links",
+			"Compact one-page website",
+			"Client provides text and photos",
+			"1 revision round",
+			"No monthly payment or maintenance",
 		],
 		inquiryMessage:
 			"Hello BMA Studio,\n\nI am interested in the BMA Local Visibility Sprint for €199. I would like to become more visible locally with a small HTML starter website with the most important info, without a monthly payment or maintenance fee.\n\nThank you!",
 	},
 	starter: {
 		title: "Starter Website",
-		price: "From €350 setup + €49/month",
+		price: "€299 setup + €25/month",
 		description:
 			"For small independent businesses that want to look professional online quickly.",
 		benefits: [
@@ -273,12 +275,13 @@ const translations = {
 	"Instappakket": "Starter package",
 	"€199 eenmalig": "€199 one-time",
 	"Voor starters die lokaal zichtbaar willen worden met een kleine basiswebsite, zonder maandelijkse betaling.": "For starters who want to become locally visible with a small starter website, without a monthly payment.",
-	"1 kleine HTML-basiswebsite met de belangrijkste info": "1 small HTML starter website with the most important info",
-	"Geen maandelijkse betaling of onderhoudskost": "No monthly payment or maintenance fee",
-	"Google Bedrijfsprofiel met juiste info en links": "Google Business Profile with the right info and links",
+	"Compacte one-page website": "Compact one-page website",
+	"Klant levert teksten en foto's aan": "Client provides text and photos",
+	"1 revisieronde": "1 revision round",
+	"Geen maandelijkse betaling of onderhoud": "No monthly payment or maintenance",
 	"Vraag Visibility Sprint aan": "Request Visibility Sprint",
 	"Starter Website": "Starter Website",
-	"Vanaf €350 setup + €49/mnd": "From €350 setup + €49/month",
+	"€299 setup + €25/mnd": "€299 setup + €25/month",
 	"Voor kleine zelfstandigen die snel professioneel online willen staan.": "For small independent businesses that want to look professional online quickly.",
 	"1 pagina": "1 page",
 	"Mobielvriendelijk ontwerp": "Mobile-friendly design",
