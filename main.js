@@ -999,6 +999,11 @@ function setupReveal() {
 	const observer = new IntersectionObserver(
 		(entries) => {
 			entries.forEach((entry) => {
+				if (entry.target.classList.contains("phone-reveal")) {
+					entry.target.classList.toggle("is-visible", entry.isIntersecting);
+					return;
+				}
+
 				if (entry.isIntersecting) {
 					entry.target.classList.add("is-visible");
 					observer.unobserve(entry.target);

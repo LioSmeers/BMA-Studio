@@ -1121,7 +1121,7 @@ p {
   box-shadow:
     0 34px 85px rgba(15, 23, 42, 0.22),
     inset 0 0 0 1px rgba(255, 255, 255, 0.12);
-  transform: rotate(-2deg);
+  transform: rotate(0deg);
   transform-style: preserve-3d;
   transition: transform 220ms ease, box-shadow 220ms ease;
   will-change: transform;
@@ -1131,11 +1131,14 @@ p {
   box-shadow:
     0 28px 70px rgba(15, 23, 42, 0.2),
     inset 0 0 0 1px rgba(255, 255, 255, 0.12);
-  transform:
-    rotateX(var(--phone-tilt-x))
-    rotateY(var(--phone-tilt-y))
-    rotate(-2deg)
-    translateY(var(--phone-press));
+  transform: translateY(-0.55rem) scale(1.018) rotate(0deg);
+}
+
+.iphone-shell:hover {
+  box-shadow:
+    0 26px 76px rgba(15, 23, 42, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transform: translateY(-0.55rem) scale(1.018) rotate(0deg);
 }
 
 .iphone-shell::before {
@@ -1177,7 +1180,7 @@ p {
     radial-gradient(circle at 22% 10%, rgba(76, 119, 183, 0.22), transparent 36%),
     linear-gradient(180deg, #ffffff 0%, #f3f6f9 100%);
   padding: 3.15rem 1rem 1.05rem;
-  transform: translateZ(0) translateY(calc(var(--phone-press) * 0.55));
+  transform: translateZ(0) translateY(calc(var(--phone-press) * -0.18));
   transition: transform 180ms ease, filter 180ms ease;
 }
 
@@ -1191,12 +1194,17 @@ p {
       transparent 30%
     );
   content: "";
-  opacity: var(--phone-glow, 0);
+  opacity: 0;
   pointer-events: none;
   transition: opacity 180ms ease;
 }
 
 .iphone-shell.is-pointer-active .iphone-screen {
+  filter: saturate(1.04) contrast(1.02);
+}
+
+.iphone-shell:hover .iphone-screen {
+  transform: translateZ(0) translateY(-0.12rem);
   filter: saturate(1.04) contrast(1.02);
 }
 
