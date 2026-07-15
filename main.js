@@ -1049,8 +1049,8 @@ function setupPhonePointerEffect() {
 		const rect = phone.getBoundingClientRect();
 		const x = clamp((event.clientX - rect.left) / rect.width, 0, 1);
 		const y = clamp((event.clientY - rect.top) / rect.height, 0, 1);
-		const tiltY = (x - 0.5) * 9;
-		const tiltX = (0.5 - y) * 7;
+		const tiltY = (x - 0.5) * 5;
+		const tiltX = (0.5 - y) * 4;
 
 		phone.classList.add("is-pointer-active");
 		phone.style.setProperty("--phone-press", "4px");
