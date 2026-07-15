@@ -20,8 +20,9 @@ const packageDetails = {
 		description:
 			"Voor kleine zelfstandigen die snel professioneel online willen staan.",
 		benefits: [
-			"1 pagina",
-			"Mobielvriendelijk ontwerp",
+			"Persoonlijk one-page ontwerp",
+			"Hulp bij structuur en teksten",
+			"Contactformulier",
 			"30 minuten onderhoud per maand",
 		],
 		inquiryMessage:
@@ -78,8 +79,9 @@ const englishPackageDetails = {
 		description:
 			"For small independent businesses that want to look professional online quickly.",
 		benefits: [
-			"1 page",
-			"Mobile-friendly design",
+			"Personal one-page design",
+			"Help with structure and copy",
+			"Contact form",
 			"30 minutes of maintenance per month",
 		],
 		inquiryMessage:
@@ -234,7 +236,7 @@ const translations = {
 	"BMA Studio · Lio Smeers. Alle rechten voorbehouden.": "BMA Studio · Lio Smeers. All rights reserved.",
 	"De online basis voor lokale bedrijven.": "The online foundation for local businesses.",
 	"BMA Studio helpt lokale ondernemingen met duidelijke websites, maandelijks onderhoud en social media content die vertrouwen opbouwen en klanten sneller laten contact opnemen.": "BMA Studio helps local businesses with clear websites, monthly maintenance and social media content that builds trust and makes it easier for customers to get in touch.",
-	"4 sterren op Trustpilot": "4 stars on Trustpilot",
+	"Persoonlijk contact met Lio": "Personal contact with Lio",
 	"Antwoord binnen dezelfde dag": "Reply the same day",
 	"Websites voor lokale ondernemers": "Websites for local business owners",
 	"Basis": "Foundation",
@@ -243,10 +245,10 @@ const translations = {
 	"Online": "Online",
 	"100% mobile-first": "100% mobile-first",
 	"Voor klanten die zoeken, vergelijken en boeken via hun smartphone.": "For customers who search, compare and book on their smartphone.",
-	"Vanaf €49/mnd": "From €49/month",
+	"Vanaf €25/mnd": "From €25/month",
 	"Alleen voor onderhoud: vaste pakketten zodat je website actueel blijft.": "Maintenance only: fixed packages to keep your website up to date.",
 	"Voor lokale zaken": "For local businesses",
-	"Kappers, horeca, salons, shops, trainers en creatieve ondernemers.": "Hairdressers, hospitality, salons, shops, trainers and creative entrepreneurs.",
+	"Vakmannen, horeca, salons, handelszaken, trainers en creatieve ondernemers.": "Tradespeople, hospitality, salons, shops, trainers and creative entrepreneurs.",
 	"Werkwijze": "Approach",
 	"Strak, persoonlijk en zonder gedoe.": "Clean, personal and hassle-free.",
 	"We denken mee over je aanbod, houden je website netjes bij en reageren dezelfde dag op je aanvraag.": "We think along with your offer, keep your website tidy and reply to your request the same day.",
@@ -283,8 +285,9 @@ const translations = {
 	"Starter Website": "Starter Website",
 	"€299 setup + €25/mnd": "€299 setup + €25/month",
 	"Voor kleine zelfstandigen die snel professioneel online willen staan.": "For small independent businesses that want to look professional online quickly.",
-	"1 pagina": "1 page",
-	"Mobielvriendelijk ontwerp": "Mobile-friendly design",
+	"Persoonlijk one-page ontwerp": "Personal one-page design",
+	"Hulp bij structuur en teksten": "Help with structure and copy",
+	"Contactformulier": "Contact form",
 	"30 minuten onderhoud per maand": "30 minutes of maintenance per month",
 	"Vraag Starter aan": "Request Starter",
 	"Local Business Website": "Local Business Website",
