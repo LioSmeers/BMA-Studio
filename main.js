@@ -125,8 +125,29 @@ const englishPackageDetails = {
 };
 
 const portfolioProjectDetails = {
-	vergoot: {
+	moeskops: {
 		number: "01",
+		title: "Moeskops Gevelwerken — Local Business",
+		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
+		summary:
+			"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.",
+		caption: "Live preview van de klantwebsite.",
+		previewUrl: "https://moeskopsgevelwerken.be/",
+		previewTitle: "Live preview van Moeskops Gevelwerken",
+		link: "https://moeskopsgevelwerken.be/",
+		linkLabel: "Bekijk Moeskops Gevelwerken",
+		tags: ["Klantwebsite", "Live website"],
+		details: [
+			["Projecttype", "Klantproject"],
+			["Sector", "Voegwerken en gevelrenovatie"],
+			["Dienst", "Local Business Website"],
+			["Uitdaging", "Een ervaren vakman online betrouwbaar positioneren en bezoekers vlot naar een offerteaanvraag sturen."],
+			["Oplossing", "Een duidelijke bedrijfswebsite met diensten, bewijs van vakmanschap en contactmomenten op logische plaatsen."],
+			["Belangrijkste functies", "Dienstenoverzicht, vertrouwen, offertefocus en mobiele contactknoppen."],
+		],
+	},
+	vergoot: {
+		number: "02",
 		title: "Vergoot - Local Business",
 		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
 		summary:
@@ -148,7 +169,7 @@ const portfolioProjectDetails = {
 		],
 	},
 	fleur: {
-		number: "02",
+		number: "03",
 		title: "Fleur - Website + Content",
 		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
 		summary:
@@ -170,7 +191,7 @@ const portfolioProjectDetails = {
 		],
 	},
 	nova: {
-		number: "03",
+		number: "04",
 		title: "Nova - Starter Website",
 		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
 		summary:
@@ -192,7 +213,7 @@ const portfolioProjectDetails = {
 		],
 	},
 	walk: {
-		number: "04",
+		number: "05",
 		title: "Walk Brussels",
 		badges: [
 			{ label: "UX-project", className: "portfolio-badge-ux" },
@@ -363,7 +384,13 @@ const translations = {
 	"Projecten": "Projects",
 	"Werk en voorbeeldsites.": "Work and example sites.",
 	"Relevante voorbeelden voor lokale bedrijven.": "Relevant examples for local businesses.",
-	"Deze conceptwebsites tonen stijl, structuur en mogelijkheden voor verschillende soorten ondernemers. Links naar GitHub Pages zijn tijdelijke demonstratieomgevingen.": "These concept websites show style, structure and possibilities for different types of business owners. GitHub Pages links are temporary demo environments.",
+	"Deze websites en conceptwebsites tonen stijl, structuur en mogelijkheden voor verschillende soorten ondernemers. Links naar GitHub Pages zijn tijdelijke demonstratieomgevingen.": "These websites and concept websites show style, structure and possibilities for different types of business owners. GitHub Pages links are temporary demo environments.",
+	"Klantproject": "Client project",
+	"Moeskops Gevelwerken — Local Business": "Moeskops Gevelwerken — Local Business",
+	"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Website for an experienced craftsman in jointing and facade renovation, focused on trust and quote requests.",
+	"Klantwebsite": "Client website",
+	"Live website": "Live website",
+	"Live preview van de klantwebsite.": "Live preview of the client website.",
 	"Conceptwebsite": "Concept website",
 	"Conceptwebsite voor een lokale dakwerker, bedoeld om vertrouwen, diensten en offerte-aanvragen duidelijk te tonen.": "Concept website for a local roofer, designed to clearly show trust, services and quote requests.",
 	"Conceptwebsite voor een beautyzaak, bedoeld om een warme stijl, diensten en contentmogelijkheden te tonen.": "Concept website for a beauty business, designed to show a warm style, services and content possibilities.",
@@ -393,6 +420,12 @@ const translations = {
 	"Offertegericht": "Quote-focused",
 	"Bekijk Vergoot": "View Vergoot",
 	"Voorbeeld van een Local Business Website.": "Example of a Local Business Website.",
+	"Bekijk Moeskops Gevelwerken": "View Moeskops Gevelwerken",
+	"Voegwerken en gevelrenovatie": "Jointing and facade renovation",
+	"Een ervaren vakman online betrouwbaar positioneren en bezoekers vlot naar een offerteaanvraag sturen.": "Position an experienced craftsman as trustworthy online and guide visitors smoothly toward a quote request.",
+	"Een duidelijke bedrijfswebsite met diensten, bewijs van vakmanschap en contactmomenten op logische plaatsen.": "A clear business website with services, proof of craftsmanship and contact moments in logical places.",
+	"Dienstenoverzicht, vertrouwen, offertefocus en mobiele contactknoppen.": "Service overview, trust, quote focus and mobile contact buttons.",
+	"Live preview van Moeskops Gevelwerken": "Live preview of Moeskops Gevelwerken",
 	"Fleur - Website + Content": "Fleur - Website + Content",
 	"Een uitgebreider voorbeeld voor een zaak die warm, professioneel en herkenbaar wil overkomen.": "A more extensive example for a business that wants to feel warm, professional and recognizable.",
 	"5 pagina's": "5 pages",
