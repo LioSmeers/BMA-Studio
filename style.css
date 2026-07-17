@@ -1553,6 +1553,11 @@ p {
   color: var(--color-accent);
 }
 
+.portfolio-badge-client {
+  background: #e8f7f2;
+  color: #0f766e;
+}
+
 .portfolio-badge-ux {
   background: #e8f7f2;
   color: #0f766e;
