@@ -2192,6 +2192,16 @@ p {
   font-weight: 700;
 }
 
+.footer-legal {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.footer-legal p:last-child {
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
 .footer .brand-lockup {
   flex: 0 0 auto;
 }
@@ -2439,7 +2449,7 @@ p {
   }
 
   .footer-inner {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 }
 

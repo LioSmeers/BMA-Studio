@@ -263,6 +263,7 @@ const translations = {
 	"Meer info": "More info",
 	"Websites · Maintain · Content": "Websites · Maintain · Content",
 	"BMA Studio · Lio Smeers. Alle rechten voorbehouden.": "BMA Studio · Lio Smeers. All rights reserved.",
+	"Ondernemingsnummer: 1040.082.401": "Enterprise number: 1040.082.401",
 	"De online basis voor lokale bedrijven.": "The online foundation for local businesses.",
 	"BMA Studio helpt lokale ondernemingen met duidelijke websites, maandelijks onderhoud en social media content die vertrouwen opbouwen en klanten sneller laten contact opnemen.": "BMA Studio helps local businesses with clear websites, monthly maintenance and social media content that builds trust and makes it easier for customers to get in touch.",
 	"Persoonlijk contact met Lio": "Personal contact with Lio",
