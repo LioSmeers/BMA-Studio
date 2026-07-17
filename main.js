@@ -11,6 +11,7 @@ const packageDetails = {
 			"1 revisieronde",
 			"1 jaar hosting + .be-domeinnaam inbegrepen",
 			"Geen maandelijkse betaling of onderhoud",
+			"Later uitbreiden? Stap gemakkelijk over naar Starter Website.",
 		],
 		inquiryMessage:
 			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in de BMA Local Visibility Sprint van €249. Ik wil graag lokaal zichtbaarder worden met een kleine HTML-basiswebsite met de belangrijkste info, zonder maandelijkse betaling of onderhoudskost.\n\nAlvast bedankt!",
@@ -33,7 +34,7 @@ const packageDetails = {
 	local: {
 		title: "Local Business Website",
 		badge: "Aanbevolen",
-		price: "Vanaf €499 setup + €59/mnd",
+		price: "€499 setup + €59/mnd",
 		description:
 			"Voor lokale bedrijven die een duidelijke bedrijfswebsite nodig hebben.",
 		benefits: [
@@ -47,7 +48,7 @@ const packageDetails = {
 	},
 	content: {
 		title: "Website + Content",
-		price: "Vanaf €699 setup + €129/mnd",
+		price: "€699 setup + €129/mnd",
 		description:
 			"Voor bedrijven die naast een website ook sterker zichtbaar willen zijn op sociale media.",
 		benefits: [
@@ -74,6 +75,7 @@ const englishPackageDetails = {
 			"1 revision round",
 			"1 year of hosting + .be domain name included",
 			"No monthly payment or maintenance",
+			"Want to expand later? Easily move to Starter Website.",
 		],
 		inquiryMessage:
 			"Hello BMA Studio,\n\nI am interested in the BMA Local Visibility Sprint for €249. I would like to become more visible locally with a small HTML starter website with the most important info, without a monthly payment or maintenance fee.\n\nThank you!",
@@ -96,7 +98,7 @@ const englishPackageDetails = {
 	local: {
 		title: "Local Business Website",
 		badge: "Recommended",
-		price: "From €499 setup + €59/month",
+		price: "€499 setup + €59/month",
 		description:
 			"For local businesses that need a clear company website.",
 		benefits: [
@@ -110,7 +112,7 @@ const englishPackageDetails = {
 	},
 	content: {
 		title: "Website + Content",
-		price: "From €699 setup + €129/month",
+		price: "€699 setup + €129/month",
 		description:
 			"For businesses that want stronger social media visibility alongside their website.",
 		benefits: [
@@ -312,6 +314,7 @@ const translations = {
 	"1 revisieronde": "1 revision round",
 	"1 jaar hosting + .be-domeinnaam inbegrepen": "1 year of hosting + .be domain name included",
 	"Geen maandelijkse betaling of onderhoud": "No monthly payment or maintenance",
+	"Later uitbreiden? Stap gemakkelijk over naar Starter Website.": "Want to expand later? Easily move to Starter Website.",
 	"Vraag Visibility Sprint aan": "Request Visibility Sprint",
 	"Starter Website": "Starter Website",
 	"€299 setup + €29/mnd": "€299 setup + €29/month",
@@ -323,19 +326,27 @@ const translations = {
 	"Vraag Starter aan": "Request Starter",
 	"Local Business Website": "Local Business Website",
 	"Aanbevolen": "Recommended",
-	"Vanaf €499 setup + €59/mnd": "From €499 setup + €59/month",
+	"€499 setup + €59/mnd": "€499 setup + €59/month",
 	"Voor lokale bedrijven die een duidelijke bedrijfswebsite nodig hebben.": "For local businesses that need a clear company website.",
 	"3 tot 4 pagina's": "3 to 4 pages",
 	"Contactformulier en Google Maps": "Contact form and Google Maps",
 	"1 uur onderhoud per maand": "1 hour of maintenance per month",
 	"Vraag Local Business aan": "Request Local Business",
-	"Vanaf €699 setup + €129/mnd": "From €699 setup + €129/month",
+	"€699 setup + €129/mnd": "€699 setup + €129/month",
 	"Voor bedrijven die naast een website ook sterker zichtbaar willen zijn op sociale media.": "For businesses that want stronger social media visibility alongside their website.",
 	"4 tot 5 pagina's": "4 to 5 pages",
 	"2 korte social media edits per maand": "2 short social media edits per month",
 	"2 uur onderhoud per maand": "2 hours of maintenance per month",
 	"Vraag Content pakket aan": "Request Content package",
 	"Vanaf het tweede jaar gelden verlengingskosten, die vooraf worden gecommuniceerd.": "From the second year onwards, renewal costs apply and will be communicated in advance.",
+	"Onderhoud": "Maintenance",
+	"Wat houdt onderhoud in?": "What does maintenance include?",
+	"Starter (30 min/mnd)": "Starter (30 min/month)",
+	"Tekstaanpassingen, contactgegevens wijzigen, foto's vervangen.": "Text changes, updating contact details, replacing photos.",
+	"Local Business (1u/mnd)": "Local Business (1 hr/month)",
+	"+ nieuwe diensten toevoegen, kleine layoutwijzigingen, technische checks.": "+ adding new services, small layout changes, technical checks.",
+	"Website + Content (2u/mnd)": "Website + Content (2 hrs/month)",
+	"+ uitgebreidere updates, seizoenscontent, prioriteit bij spoed.": "+ more extensive updates, seasonal content, priority for urgent requests.",
 	"Twijfel je?": "Not sure?",
 	"Stuur je vraag door, dan kiezen we samen.": "Send your question and we will choose together.",
 	"Een korte omschrijving van je bedrijf is genoeg om gericht advies te geven.": "A short description of your business is enough for focused advice.",

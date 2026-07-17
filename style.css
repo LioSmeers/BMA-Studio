@@ -1986,6 +1986,44 @@ p {
   text-align: center;
 }
 
+.maintenance-card {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  margin-top: clamp(1.5rem, 4vw, 2.25rem);
+  padding: clamp(1.35rem, 3vw, 1.8rem);
+}
+
+.maintenance-card h3 {
+  margin-top: 0.45rem;
+  color: var(--color-text);
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+}
+
+.maintenance-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.maintenance-grid article {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1rem;
+}
+
+.maintenance-grid h4 {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+.maintenance-grid p {
+  margin-top: 0.55rem;
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
 .benefit-list,
 .contact-list {
   gap: 0.8rem;
@@ -2437,6 +2475,10 @@ p {
 
   .pricing-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .maintenance-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .pricing-card:hover,
