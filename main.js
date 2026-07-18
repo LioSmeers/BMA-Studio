@@ -268,7 +268,7 @@ const translations = {
 	"Ondernemingsnummer: 1040.082.401": "Enterprise number: 1040.082.401",
 	"De online basis voor lokale bedrijven.": "The online foundation for local businesses.",
 	"BMA Studio helpt lokale ondernemingen met duidelijke websites, maandelijks onderhoud en social media content die vertrouwen opbouwen en klanten sneller laten contact opnemen.": "BMA Studio helps local businesses with clear websites, monthly maintenance and social media content that builds trust and makes it easier for customers to get in touch.",
-	"Persoonlijk contact met Lio": "Personal contact with Lio",
+	"Persoonlijk contact": "Personal contact",
 	"Antwoord binnen dezelfde dag": "Reply the same day",
 	"Websites voor lokale ondernemers": "Websites for local business owners",
 	"Basis": "Foundation",
