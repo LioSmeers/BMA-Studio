@@ -18,7 +18,7 @@ const packageDetails = {
 	},
 	starter: {
 		title: "Starter Website",
-		price: "€299 setup + €29/mnd",
+		price: "€299 setup + €25/mnd",
 		description:
 			"Voor kleine zelfstandigen die snel professioneel online willen staan, met hulp bij opbouw, teksten en maandelijks onderhoud.",
 		benefits: [
@@ -85,7 +85,7 @@ const englishPackageDetails = {
 	},
 	starter: {
 		title: "Starter Website",
-		price: "€299 setup + €29/month",
+		price: "€299 setup + €25/month",
 		description:
 			"For small independent businesses that want to look professional online quickly, with help on structure, copy and monthly maintenance.",
 		benefits: [
@@ -330,7 +330,7 @@ const translations = {
 	"Later uitbreiden? Stap gemakkelijk over naar Starter Website.": "Want to expand later? Easily move to Starter Website.",
 	"Vraag Visibility Sprint aan": "Request Visibility Sprint",
 	"Starter Website": "Starter Website",
-	"€299 setup + €29/mnd": "€299 setup + €29/month",
+	"€299 setup + €25/mnd": "€299 setup + €25/month",
 	"Voor kleine zelfstandigen die snel professioneel online willen staan, met hulp bij opbouw, teksten en maandelijks onderhoud.": "For small independent businesses that want to look professional online quickly, with help on structure, copy and monthly maintenance.",
 	"Persoonlijk one-page ontwerp": "Personal one-page design",
 	"Hulp bij structuur en teksten": "Help with structure and copy",
