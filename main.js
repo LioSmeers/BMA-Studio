@@ -263,7 +263,7 @@ const translations = {
 	"Bespreek je project": "Discuss your project",
 	"Vergelijk pakketten": "Compare packages",
 	"Meer info": "More info",
-	"Websites · Maintain · Content": "Websites · Maintain · Content",
+	"Build • Maintain • Attract": "Build • Maintain • Attract",
 	"BMA Studio · Lio Smeers. Alle rechten voorbehouden.": "BMA Studio · Lio Smeers. All rights reserved.",
 	"Ondernemingsnummer: 1040.082.401": "Enterprise number: 1040.082.401",
 	"De online basis voor lokale bedrijven.": "The online foundation for local businesses.",
@@ -339,14 +339,19 @@ const translations = {
 	"2 uur onderhoud per maand": "2 hours of maintenance per month",
 	"Vraag Content pakket aan": "Request Content package",
 	"Vanaf het tweede jaar gelden verlengingskosten, die vooraf worden gecommuniceerd.": "From the second year onwards, renewal costs apply and will be communicated in advance.",
-	"Onderhoud": "Maintenance",
-	"Wat houdt onderhoud in?": "What does maintenance include?",
-	"Starter (30 min/mnd)": "Starter (30 min/month)",
-	"Tekstaanpassingen, contactgegevens wijzigen, foto's vervangen.": "Text changes, updating contact details, replacing photos.",
-	"Local Business (1u/mnd)": "Local Business (1 hr/month)",
-	"+ nieuwe diensten toevoegen, kleine layoutwijzigingen, technische checks.": "+ adding new services, small layout changes, technical checks.",
-	"Website + Content (2u/mnd)": "Website + Content (2 hrs/month)",
-	"+ uitgebreidere updates, seizoenscontent, prioriteit bij spoed.": "+ more extensive updates, seasonal content, priority for urgent requests.",
+	"FAQ": "FAQ",
+	"Veelgestelde vragen over de pakketten": "Frequently asked questions about the packages",
+	"Wanneer spreken we de oplevertijd af?": "When do we agree on delivery timing?",
+	"Na je aanvraag bepalen we samen de scope en timing. Meestal sturen we binnen 2 tot 3 werkdagen een eerste prototype, zodat je snel feedback kan geven. Op basis daarvan werken we verder naar de definitieve website, die meestal binnen 5 tot 7 werkdagen klaarstaat.": "After your request, we define the scope and timing together. Usually, we send a first prototype within 2 to 3 business days so you can give feedback quickly. From there, we continue toward the final website, which is usually ready within 5 to 7 business days.",
+	"Hoe zit het met betaling en prijzen?": "How do payment and pricing work?",
+	"De pakketprijzen staan bij elk pakket. Visibility Sprint is eenmalig, de andere pakketten combineren setup met een maandbedrag.": "The package prices are shown with each package. Visibility Sprint is one-time, while the other packages combine setup with a monthly amount.",
+	"Wat is inbegrepen bij revisierondes?": "What is included with revision rounds?",
+	"Bij de BMA Local Visibility Sprint is 1 revisieronde inbegrepen. Voor de andere pakketten stemmen we opvolging en aanpassingen af via het onderhoud.": "The BMA Local Visibility Sprint includes 1 revision round. For the other packages, follow-up and changes are handled through maintenance.",
+	"Is hosting en een domeinnaam inbegrepen?": "Are hosting and a domain name included?",
+	"Bij elk pakket is 1 jaar hosting + .be-domeinnaam inbegrepen.": "Each package includes 1 year of hosting + a .be domain name.",
+	"Wat gebeurt er met hosting vanaf jaar twee?": "What happens with hosting from year two?",
+	"Wat houdt onderhoud per pakket in?": "What does maintenance include per package?",
+	"Starter bevat tekstaanpassingen, contactgegevens wijzigen en foto's vervangen binnen 30 min/mnd. Local Business voegt daar nieuwe diensten, kleine layoutwijzigingen en technische checks aan toe binnen 1u/mnd. Website + Content bevat uitgebreidere updates, seizoenscontent en prioriteit bij spoed binnen 2u/mnd.": "Starter includes text changes, updating contact details and replacing photos within 30 min/month. Local Business adds new services, small layout changes and technical checks within 1 hr/month. Website + Content includes more extensive updates, seasonal content and priority for urgent requests within 2 hrs/month.",
 	"Twijfel je?": "Not sure?",
 	"Stuur je vraag door, dan kiezen we samen.": "Send your question and we will choose together.",
 	"Een korte omschrijving van je bedrijf is genoeg om gericht advies te geven.": "A short description of your business is enough for focused advice.",
@@ -1168,6 +1173,11 @@ function setupPagePressure() {
 			}
 
 			if (targetElement?.closest(".language-switcher")) {
+				resetTarget();
+				return;
+			}
+
+			if (targetElement?.closest(".package-faq-card")) {
 				resetTarget();
 				return;
 			}
