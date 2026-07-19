@@ -9,7 +9,7 @@ const packageDetails = {
 			"Compacte one-page website",
 			"Klant levert teksten en foto's aan",
 			"1 revisieronde",
-			"1 jaar hosting + .be-domeinnaam inbegrepen",
+			"Het eerste jaar hosting en een .be-domeinnaam is inbegrepen. Vanaf het tweede jaar bedraagt de verlenging momenteel ongeveer €20 per jaar. Het exacte bedrag wordt vooraf meegedeeld.",
 			"Geen maandelijkse betaling of onderhoud",
 			"Later uitbreiden? Stap gemakkelijk over naar Starter Website.",
 		],
@@ -25,7 +25,8 @@ const packageDetails = {
 			"Persoonlijk one-page ontwerp",
 			"Hulp bij structuur en teksten",
 			"Contactformulier",
-			"1 jaar hosting + .be-domeinnaam inbegrepen",
+			"2 revisierondes",
+			"Het eerste jaar hosting en een .be-domeinnaam is inbegrepen. Vanaf het tweede jaar bedraagt de verlenging momenteel ongeveer €20 per jaar. Het exacte bedrag wordt vooraf meegedeeld.",
 			"30 minuten onderhoud per maand",
 		],
 		inquiryMessage:
@@ -40,7 +41,8 @@ const packageDetails = {
 		benefits: [
 			"3 tot 4 pagina's",
 			"Contactformulier en Google Maps",
-			"1 jaar hosting + .be-domeinnaam inbegrepen",
+			"2 revisierondes",
+			"Het eerste jaar hosting en een .be-domeinnaam is inbegrepen. Vanaf het tweede jaar bedraagt de verlenging momenteel ongeveer €20 per jaar. Het exacte bedrag wordt vooraf meegedeeld.",
 			"1 uur onderhoud per maand",
 		],
 		inquiryMessage:
@@ -54,7 +56,8 @@ const packageDetails = {
 		benefits: [
 			"4 tot 5 pagina's",
 			"2 korte social media edits per maand",
-			"1 jaar hosting + .be-domeinnaam inbegrepen",
+			"2 revisierondes",
+			"Het eerste jaar hosting en een .be-domeinnaam is inbegrepen. Vanaf het tweede jaar bedraagt de verlenging momenteel ongeveer €20 per jaar. Het exacte bedrag wordt vooraf meegedeeld.",
 			"2 uur onderhoud per maand",
 		],
 		inquiryMessage:
@@ -73,7 +76,7 @@ const englishPackageDetails = {
 			"Compact one-page website",
 			"Client provides text and photos",
 			"1 revision round",
-			"1 year of hosting + .be domain name included",
+			"The first year of hosting and a .be domain name is included. From the second year onwards, renewal currently costs approximately €20 per year. The exact amount will be communicated in advance.",
 			"No monthly payment or maintenance",
 			"Want to expand later? Easily move to Starter Website.",
 		],
@@ -89,7 +92,8 @@ const englishPackageDetails = {
 			"Personal one-page design",
 			"Help with structure and copy",
 			"Contact form",
-			"1 year of hosting + .be domain name included",
+			"2 revision rounds",
+			"The first year of hosting and a .be domain name is included. From the second year onwards, renewal currently costs approximately €20 per year. The exact amount will be communicated in advance.",
 			"30 minutes of maintenance per month",
 		],
 		inquiryMessage:
@@ -104,7 +108,8 @@ const englishPackageDetails = {
 		benefits: [
 			"3 to 4 pages",
 			"Contact form and Google Maps",
-			"1 year of hosting + .be domain name included",
+			"2 revision rounds",
+			"The first year of hosting and a .be domain name is included. From the second year onwards, renewal currently costs approximately €20 per year. The exact amount will be communicated in advance.",
 			"1 hour of maintenance per month",
 		],
 		inquiryMessage:
@@ -118,7 +123,8 @@ const englishPackageDetails = {
 		benefits: [
 			"4 to 5 pages",
 			"2 short social media edits per month",
-			"1 year of hosting + .be domain name included",
+			"2 revision rounds",
+			"The first year of hosting and a .be domain name is included. From the second year onwards, renewal currently costs approximately €20 per year. The exact amount will be communicated in advance.",
 			"2 hours of maintenance per month",
 		],
 		inquiryMessage:
@@ -250,6 +256,11 @@ const translations = {
 	"Contact": "Contact",
 	"Privacy": "Privacy",
 	"LinkedIn": "LinkedIn",
+	"Ga naar de homepage": "Go to the homepage",
+	"Hoofdnavigatie": "Main navigation",
+	"Open menu": "Open menu",
+	"Voordelen": "Benefits",
+	"Taal kiezen": "Choose language",
 	"Vraag info aan": "Request info",
 	"Bekijk pakketten": "View packages",
 	"Bekijk voorbeelden": "View examples",
@@ -312,7 +323,8 @@ const translations = {
 	"Compacte one-page website": "Compact one-page website",
 	"Klant levert teksten en foto's aan": "Client provides text and photos",
 	"1 revisieronde": "1 revision round",
-	"1 jaar hosting + .be-domeinnaam inbegrepen": "1 year of hosting + .be domain name included",
+	"2 revisierondes": "2 revision rounds",
+	"Het eerste jaar hosting en een .be-domeinnaam is inbegrepen. Vanaf het tweede jaar bedraagt de verlenging momenteel ongeveer €20 per jaar. Het exacte bedrag wordt vooraf meegedeeld.": "The first year of hosting and a .be domain name is included. From the second year onwards, renewal currently costs approximately €20 per year. The exact amount will be communicated in advance.",
 	"Geen maandelijkse betaling of onderhoud": "No monthly payment or maintenance",
 	"Later uitbreiden? Stap gemakkelijk over naar Starter Website.": "Want to expand later? Easily move to Starter Website.",
 	"Vraag Visibility Sprint aan": "Request Visibility Sprint",
@@ -332,26 +344,39 @@ const translations = {
 	"Contactformulier en Google Maps": "Contact form and Google Maps",
 	"1 uur onderhoud per maand": "1 hour of maintenance per month",
 	"Vraag Local Business aan": "Request Local Business",
+	"Website + Content": "Website + Content",
 	"€699 setup + €129/mnd": "€699 setup + €129/month",
 	"Voor bedrijven die naast een website ook sterker zichtbaar willen zijn op sociale media.": "For businesses that want stronger social media visibility alongside their website.",
 	"4 tot 5 pagina's": "4 to 5 pages",
 	"2 korte social media edits per maand": "2 short social media edits per month",
 	"2 uur onderhoud per maand": "2 hours of maintenance per month",
 	"Vraag Content pakket aan": "Request Content package",
-	"Vanaf het tweede jaar gelden verlengingskosten, die vooraf worden gecommuniceerd.": "From the second year onwards, renewal costs apply and will be communicated in advance.",
 	"FAQ": "FAQ",
 	"Veelgestelde vragen over de pakketten": "Frequently asked questions about the packages",
-	"Wanneer spreken we de oplevertijd af?": "When do we agree on delivery timing?",
-	"Na je aanvraag bepalen we samen de scope en timing. Meestal sturen we binnen 2 tot 3 werkdagen een eerste prototype, zodat je snel feedback kan geven. Op basis daarvan werken we verder naar de definitieve website, die meestal binnen 5 tot 7 werkdagen klaarstaat.": "After your request, we define the scope and timing together. Usually, we send a first prototype within 2 to 3 business days so you can give feedback quickly. From there, we continue toward the final website, which is usually ready within 5 to 7 business days.",
-	"Hoe zit het met betaling en prijzen?": "How do payment and pricing work?",
-	"De pakketprijzen staan bij elk pakket. Visibility Sprint is eenmalig, de andere pakketten combineren setup met een maandbedrag.": "The package prices are shown with each package. Visibility Sprint is one-time, while the other packages combine setup with a monthly amount.",
-	"Wat is inbegrepen bij revisierondes?": "What is included with revision rounds?",
-	"Bij de BMA Local Visibility Sprint is 1 revisieronde inbegrepen. Voor de andere pakketten stemmen we opvolging en aanpassingen af via het onderhoud.": "The BMA Local Visibility Sprint includes 1 revision round. For the other packages, follow-up and changes are handled through maintenance.",
-	"Is hosting en een domeinnaam inbegrepen?": "Are hosting and a domain name included?",
-	"Bij elk pakket is 1 jaar hosting + .be-domeinnaam inbegrepen.": "Each package includes 1 year of hosting + a .be domain name.",
-	"Wat gebeurt er met hosting vanaf jaar twee?": "What happens with hosting from year two?",
+	"Wanneer krijg ik een eerste versie?": "When will I receive a first version?",
+	"Na je aanvraag bepalen we samen de scope en timing. Meestal sturen we binnen 2 tot 3 werkdagen een eerste prototype. Daarna geef je feedback en werken we verder naar de definitieve website, die meestal binnen 5 tot 7 werkdagen klaarstaat.": "After your request, we define the scope and timing together. Usually, we send a first prototype within 2 to 3 business days. You then give feedback and we continue toward the final website, which is usually ready within 5 to 7 business days.",
+	"Hoe werken betaling en pakketprijzen?": "How do payment and package prices work?",
+	"De prijs staat duidelijk bij elk pakket. Visibility Sprint is een eenmalige betaling. Starter Website, Local Business Website en Website + Content combineren een setupkost met een maandbedrag.": "The price is clearly shown with each package. Visibility Sprint is a one-time payment. Starter Website, Local Business Website and Website + Content combine a setup fee with a monthly amount.",
+	"Hoe werken revisierondes?": "How do revision rounds work?",
+	"Visibility Sprint bevat 1 revisieronde. Starter Website, Local Business Website en Website + Content bevatten elk 2 revisierondes. Eén revisieronde is één feedbackmoment waarbij je alle gewenste kleine aanpassingen tegelijk doorgeeft. Grote wijzigingen, nieuwe pagina's of een volledig nieuw ontwerp vallen hier niet onder.": "Visibility Sprint includes 1 revision round. Starter Website, Local Business Website and Website + Content each include 2 revision rounds. A revision round is one feedback moment where you send all the small changes you want in one go. Major changes, new pages or a completely new design are not included.",
+	"Wat is inbegrepen voor hosting en domeinnaam?": "What is included for hosting and the domain name?",
+	"Wie is eigenaar van de website en domeinnaam?": "Who owns the website and domain name?",
+	"Na volledige betaling is de website eigendom van de klant. De domeinnaam wordt voor de klant geregistreerd en blijft van de klant. BMA Studio beheert deze alleen zolang dat gewenst is.": "After full payment, the website belongs to the client. The domain name is registered for the client and remains their property. BMA Studio only manages it for as long as requested.",
 	"Wat houdt onderhoud per pakket in?": "What does maintenance include per package?",
-	"Starter bevat tekstaanpassingen, contactgegevens wijzigen en foto's vervangen binnen 30 min/mnd. Local Business voegt daar nieuwe diensten, kleine layoutwijzigingen en technische checks aan toe binnen 1u/mnd. Website + Content bevat uitgebreidere updates, seizoenscontent en prioriteit bij spoed binnen 2u/mnd.": "Starter includes text changes, updating contact details and replacing photos within 30 min/month. Local Business adds new services, small layout changes and technical checks within 1 hr/month. Website + Content includes more extensive updates, seasonal content and priority for urgent requests within 2 hrs/month.",
+	"Starter Website — 30 minuten per maand": "Starter Website — 30 minutes per month",
+	"Teksten aanpassen": "Adjusting text",
+	"Contactgegevens wijzigen": "Updating contact details",
+	"Foto's vervangen": "Replacing photos",
+	"Local Business Website — 1 uur per maand": "Local Business Website — 1 hour per month",
+	"Alles uit Starter": "Everything from Starter",
+	"Diensten toevoegen of aanpassen": "Adding or adjusting services",
+	"Kleine wijzigingen aan de indeling": "Small layout changes",
+	"Technische controles": "Technical checks",
+	"Website + Content — 2 uur per maand": "Website + Content — 2 hours per month",
+	"Alles uit Local Business": "Everything from Local Business",
+	"Uitgebreidere website-updates": "More extensive website updates",
+	"Seizoensgebonden content": "Seasonal content",
+	"Voorrang bij dringende aanpassingen": "Priority for urgent changes",
 	"Twijfel je?": "Not sure?",
 	"Stuur je vraag door, dan kiezen we samen.": "Send your question and we will choose together.",
 	"Een korte omschrijving van je bedrijf is genoeg om gericht advies te geven.": "A short description of your business is enough for focused advice.",
@@ -614,6 +639,7 @@ let previousPortfolioFocus = null;
 let scrollUpdateQueued = false;
 let currentLanguage = localStorage.getItem("bma-language") || "nl";
 const originalTextByNode = new WeakMap();
+const originalAttributeByElement = new WeakMap();
 const livePreviewWidth = 1280;
 const livePreviewHeight = 800;
 const untranslatedText = new Set();
@@ -655,6 +681,23 @@ function translateValue(value) {
 	return currentLanguage === "en" ? translations[value] || value : value;
 }
 
+function translateAttributes() {
+	document.querySelectorAll("[aria-label]").forEach((element) => {
+		const originalLabel =
+			originalAttributeByElement.get(element) || element.getAttribute("aria-label");
+		if (!originalLabel) return;
+		if (!originalAttributeByElement.has(element)) {
+			originalAttributeByElement.set(element, originalLabel);
+		}
+		element.setAttribute(
+			"aria-label",
+			currentLanguage === "en"
+				? translations[originalLabel] || originalLabel
+				: originalLabel,
+		);
+	});
+}
+
 function shouldSkipTranslation(node) {
 	const parent = node.parentElement;
 	if (!parent) return true;
@@ -689,6 +732,7 @@ function translateStaticText() {
 			? titleTranslations[originalTitle] || originalTitle
 			: originalTitle;
 	document.documentElement.lang = currentLanguage === "en" ? "en" : "nl";
+	translateAttributes();
 }
 
 function updateLanguageSwitcher() {
