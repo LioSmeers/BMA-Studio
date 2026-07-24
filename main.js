@@ -256,11 +256,22 @@ const translations = {
 	"Contact": "Contact",
 	"Privacy": "Privacy",
 	"LinkedIn": "LinkedIn",
+	"BMA Studio": "BMA Studio",
+	"★": "★",
+	"BMA Studio logo": "BMA Studio logo",
 	"Ga naar de homepage": "Go to the homepage",
 	"Hoofdnavigatie": "Main navigation",
 	"Open menu": "Open menu",
 	"Voordelen": "Benefits",
 	"Taal kiezen": "Choose language",
+	"Snelle zekerheden": "Quick assurances",
+	"Belangrijkste voordelen": "Key benefits",
+	"Trustpilot reviews": "Trustpilot reviews",
+	"Trustpilot review van Manu Moeskops: Perfecte samenwerking gehad met Berend.": "Trustpilot review by Manu Moeskops: Perfect collaboration with Berend.",
+	"Trustpilot review van azdin bhdz: Ils ont fait un tres bon site.": "Trustpilot review by azdin bhdz: They made a very good site.",
+	"Trustpilot review van berendluypaert: Perfect!": "Trustpilot review by berendluypaert: Perfect!",
+	"Trustpilot review van Noemi Hurkens: Mooie website gemaakt": "Trustpilot review by Noemi Hurkens: Beautiful website made",
+	"Trustpilot review van robyn atkins: professionele en vlotte service": "Trustpilot review by robyn atkins: professional and smooth service",
 	"Vraag info aan": "Request info",
 	"Bekijk pakketten": "View packages",
 	"Bekijk voorbeelden": "View examples",
@@ -288,13 +299,34 @@ const translations = {
 	"Online": "Online",
 	"100% mobile-first": "100% mobile-first",
 	"Voor klanten die zoeken, vergelijken en boeken via hun smartphone.": "For customers who search, compare and book on their smartphone.",
-	"Vanaf €25/mnd": "From €25/month",
-	"Alleen voor onderhoud: vaste pakketten zodat je website actueel blijft.": "Maintenance only: fixed packages to keep your website up to date.",
+	"Website vanaf €299 + €25/mnd onderhoud": "Website from €299 + €25/month maintenance",
+	"€299 is de eenmalige opstartkost. Het maandbedrag dient voor onderhoud en opvolging.": "€299 is the one-time setup fee. The monthly amount is for maintenance and follow-up.",
 	"Voor lokale zaken": "For local businesses",
 	"Vakmannen, horeca, salons, handelszaken, trainers en creatieve ondernemers.": "Tradespeople, hospitality, salons, shops, trainers and creative entrepreneurs.",
 	"Werkwijze": "Approach",
 	"Strak, persoonlijk en zonder gedoe.": "Clean, personal and hassle-free.",
 	"We denken mee over je aanbod, houden je website netjes bij en reageren dezelfde dag op je aanvraag.": "We think along with your offer, keep your website tidy and reply to your request the same day.",
+	"Recent werk in één oogopslag.": "Recent work at a glance.",
+	"Portfolio previews": "Portfolio previews",
+	"Live preview van Moeskops Gevelwerken": "Live preview of Moeskops Gevelwerken",
+	"Moeskops Gevelwerken": "Moeskops Gevelwerken",
+	"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Website for an experienced craftsman in pointing and facade renovation, focused on trust and quote requests.",
+	"Bekijk details": "View details",
+	"Live preview van de Vergoot conceptwebsite": "Live preview of the Vergoot concept website",
+	"Concept": "Concept",
+	"Conceptwebsite": "Concept website",
+	"Vergoot - Local Business": "Vergoot - Local Business",
+	"Conceptwebsite voor een lokale dakwerker met duidelijke diensten, vertrouwen en offertefocus.": "Concept website for a local roofer with clear services, trust and quote focus.",
+	"Conceptwebsite voor een lokale dakwerker, bedoeld om vertrouwen, diensten en offerte-aanvragen duidelijk te tonen.": "Concept website for a local roofer, designed to clearly show trust, services and quote requests.",
+	"Bekijk project": "View project",
+	"Live preview van de Fleur conceptwebsite": "Live preview of the Fleur concept website",
+	"Fleur - Website + Content": "Fleur - Website + Content",
+	"Conceptwebsite voor een beautyzaak met een warme stijl, diensten en contentmogelijkheden.": "Concept website for a beauty business with a warm style, services and content possibilities.",
+	"Conceptwebsite voor een beautyzaak, bedoeld om een warme stijl, diensten en contentmogelijkheden te tonen.": "Concept website for a beauty business, designed to show a warm style, services and content possibilities.",
+	"Live preview van de Nova conceptwebsite": "Live preview of the Nova concept website",
+	"Nova - Starter Website": "Nova - Starter Website",
+	"Compacte conceptwebsite voor een starter, bedoeld om te tonen hoe een eenvoudige eerste online basis eruit kan zien.": "Compact concept website for a starter, designed to show what a simple first online foundation can look like.",
+	"Bekijk alle projecten": "View all projects",
 	"Kies je route": "Choose your route",
 	"Ga meteen naar wat je zoekt.": "Go straight to what you need.",
 	"Pakketten vergelijken": "Compare packages",
@@ -325,7 +357,7 @@ const translations = {
 	"1 revisieronde": "1 revision round",
 	"2 revisierondes": "2 revision rounds",
 	"1 jaar hosting + .be-domeinnaam inbegrepen": "1 year of hosting + .be domain name included",
-	"Het eerste jaar hosting en een .be-domeinnaam is inbegrepen. Vanaf het tweede jaar bedraagt de verlenging momenteel ongeveer €20 per jaar. Het exacte bedrag wordt vooraf meegedeeld.": "The first year of hosting and a .be domain name is included. From the second year onwards, renewal currently costs approximately €20 per year. The exact amount will be communicated in advance.",
+	"Het eerste jaar hosting en een .be-domeinnaam zijn inbegrepen. Vanaf het tweede jaar bedraagt de verlenging momenteel ongeveer €20 per jaar. Het exacte bedrag wordt vooraf meegedeeld.": "The first year of hosting and a .be domain name are included. From the second year onwards, renewal currently costs approximately €20 per year. The exact amount will be communicated in advance.",
 	"Geen maandelijkse betaling of onderhoud": "No monthly payment or maintenance",
 	"Later uitbreiden? Stap gemakkelijk over naar Starter Website.": "Want to expand later? Easily move to Starter Website.",
 	"Vraag Visibility Sprint aan": "Request Visibility Sprint",
@@ -355,14 +387,14 @@ const translations = {
 	"FAQ": "FAQ",
 	"Veelgestelde vragen over de pakketten": "Frequently asked questions about the packages",
 	"Wanneer krijg ik een eerste versie?": "When will I receive a first version?",
-	"Na je aanvraag bepalen we samen de scope en timing. Meestal sturen we binnen 2 tot 3 werkdagen een eerste prototype. Daarna geef je feedback en werken we verder naar de definitieve website, die meestal binnen 5 tot 7 werkdagen klaarstaat.": "After your request, we define the scope and timing together. Usually, we send a first prototype within 2 to 3 business days. You then give feedback and we continue toward the final website, which is usually ready within 5 to 7 business days.",
+	"Na je aanvraag bepalen we samen de scope en timing. De termijn start zodra alle nodige teksten, foto's en informatie ontvangen zijn. Meestal sturen we binnen 2 tot 3 werkdagen een eerste prototype. Daarna hangt de oplevertijd af van de omvang van het project en hoe snel feedback wordt gegeven. De definitieve website staat meestal binnen 5 tot 7 werkdagen klaar.": "After your request, we define the scope and timing together. The timeline starts once all required text, photos and information have been received. Usually, we send a first prototype within 2 to 3 business days. After that, delivery depends on the size of the project and how quickly feedback is provided. The final website is usually ready within 5 to 7 business days.",
 	"Hoe werken betaling en pakketprijzen?": "How do payment and package prices work?",
 	"De prijs staat duidelijk bij elk pakket. Visibility Sprint is een eenmalige betaling. Starter Website, Local Business Website en Website + Content combineren een setupkost met een maandbedrag.": "The price is clearly shown with each package. Visibility Sprint is a one-time payment. Starter Website, Local Business Website and Website + Content combine a setup fee with a monthly amount.",
 	"Hoe werken revisierondes?": "How do revision rounds work?",
 	"Visibility Sprint bevat 1 revisieronde. Starter Website, Local Business Website en Website + Content bevatten elk 2 revisierondes. Eén revisieronde is één feedbackmoment waarbij je alle gewenste kleine aanpassingen tegelijk doorgeeft. Grote wijzigingen, nieuwe pagina's of een volledig nieuw ontwerp vallen hier niet onder.": "Visibility Sprint includes 1 revision round. Starter Website, Local Business Website and Website + Content each include 2 revision rounds. A revision round is one feedback moment where you send all the small changes you want in one go. Major changes, new pages or a completely new design are not included.",
 	"Wat is inbegrepen voor hosting en domeinnaam?": "What is included for hosting and the domain name?",
 	"Wie is eigenaar van de website en domeinnaam?": "Who owns the website and domain name?",
-	"Na volledige betaling is de website eigendom van de klant. De domeinnaam wordt voor de klant geregistreerd en blijft van de klant. BMA Studio beheert deze alleen zolang dat gewenst is.": "After full payment, the website belongs to the client. The domain name is registered for the client and remains their property. BMA Studio only manages it for as long as requested.",
+	"Na volledige betaling van de eenmalige opstartkost wordt de website eigendom van de klant. De maandelijkse betaling dient voor onderhoud en opvolging. De domeinnaam wordt voor de klant geregistreerd en blijft van de klant. BMA Studio beheert deze alleen zolang dat gewenst is.": "After full payment of the one-time setup fee, the website becomes the client's property. The monthly payment is for maintenance and follow-up. The domain name is registered for the client and remains their property. BMA Studio only manages it for as long as requested.",
 	"Wat houdt onderhoud per pakket in?": "What does maintenance include per package?",
 	"Starter Website — 30 minuten per maand": "Starter Website — 30 minutes per month",
 	"Teksten aanpassen": "Adjusting text",
@@ -641,6 +673,7 @@ let scrollUpdateQueued = false;
 let currentLanguage = localStorage.getItem("bma-language") || "nl";
 const originalTextByNode = new WeakMap();
 const originalAttributeByElement = new WeakMap();
+const translatableAttributes = ["aria-label", "alt", "title"];
 const livePreviewWidth = 1280;
 const livePreviewHeight = 800;
 const untranslatedText = new Set();
@@ -683,19 +716,26 @@ function translateValue(value) {
 }
 
 function translateAttributes() {
-	document.querySelectorAll("[aria-label]").forEach((element) => {
-		const originalLabel =
-			originalAttributeByElement.get(element) || element.getAttribute("aria-label");
-		if (!originalLabel) return;
-		if (!originalAttributeByElement.has(element)) {
-			originalAttributeByElement.set(element, originalLabel);
+	document.querySelectorAll("[aria-label], img[alt], iframe[title]").forEach((element) => {
+		let originalAttributes = originalAttributeByElement.get(element);
+		if (!originalAttributes) {
+			originalAttributes = {};
+			originalAttributeByElement.set(element, originalAttributes);
 		}
-		element.setAttribute(
-			"aria-label",
-			currentLanguage === "en"
-				? translations[originalLabel] || originalLabel
-				: originalLabel,
-		);
+
+		translatableAttributes.forEach((attribute) => {
+			const currentValue = element.getAttribute(attribute);
+			if (!currentValue) return;
+			if (!originalAttributes[attribute]) originalAttributes[attribute] = currentValue;
+
+			const originalValue = originalAttributes[attribute];
+			element.setAttribute(
+				attribute,
+				currentLanguage === "en"
+					? translations[originalValue] || originalValue
+					: originalValue,
+			);
+		});
 	});
 }
 

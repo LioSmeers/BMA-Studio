@@ -653,6 +653,7 @@ a.is-pressure-active {
   width: min(62rem, 100%);
   overflow: hidden;
   padding-block: 0.2rem;
+  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
 }
 
 .hero-ticker-track {
@@ -664,7 +665,7 @@ a.is-pressure-active {
   font-size: 0.84rem;
   font-weight: 850;
   white-space: nowrap;
-  animation: hero-ticker 24s linear infinite;
+  animation: hero-ticker 32s linear infinite;
 }
 
 .hero-ticker-track span {
@@ -1454,6 +1455,92 @@ p {
 .founder-button {
   width: max-content;
   margin-top: 1.6rem;
+}
+
+.home-portfolio-section {
+  background: var(--color-bg);
+}
+
+.home-portfolio-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-top: clamp(1rem, 3vw, 1.5rem);
+  padding: 0.15rem 0.05rem 0.85rem;
+  scroll-padding-inline: 0.05rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: rgba(49, 95, 154, 0.42) rgba(49, 95, 154, 0.08);
+}
+
+.home-portfolio-card {
+  display: flex;
+  flex: 0 0 min(22rem, 88vw);
+  min-height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  scroll-snap-align: start;
+}
+
+.home-portfolio-media {
+  overflow: hidden;
+  margin: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border), transparent 18%);
+  background: var(--color-accent-soft);
+}
+
+.home-portfolio-media img,
+.home-portfolio-live .live-site-preview {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+}
+
+.home-portfolio-media img {
+  object-fit: cover;
+}
+
+.home-portfolio-live .live-site-preview {
+  overflow: hidden;
+  --preview-scale: 0.28;
+  transform: none;
+}
+
+.home-portfolio-live iframe {
+  pointer-events: none;
+}
+
+.home-portfolio-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(1.1rem, 2.5vw, 1.35rem);
+}
+
+.home-portfolio-copy h3 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+}
+
+.home-portfolio-copy p {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.home-portfolio-link {
+  width: max-content;
+  margin-top: auto;
+}
+
+.home-portfolio-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.15rem, 3vw, 1.7rem);
 }
 
 .portfolio-section {
@@ -2412,11 +2499,10 @@ p {
 }
 
 @keyframes hero-ticker {
-  0%,
-  8% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(calc(-50% - 0.675rem));
   }
 }
@@ -2466,6 +2552,14 @@ p {
     grid-template-columns: minmax(0, 1fr) auto;
   }
 
+  .faq-maintenance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-portfolio-card {
+    flex-basis: min(24rem, calc((100% - 1rem) / 2));
+  }
+
   .portfolio-card {
     grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.78fr);
   }
@@ -2504,10 +2598,6 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .faq-maintenance-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .pricing-card:hover,
   .pricing-card:focus-within {
     transform: translateY(-1rem) scale(1.018);
@@ -2519,6 +2609,16 @@ p {
 
   .footer-inner {
     flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1024px) {
+  .faq-maintenance-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-portfolio-card {
+    flex-basis: min(24rem, calc((100% - 2rem) / 3));
   }
 }
 
@@ -2643,8 +2743,8 @@ p {
   }
 
   .hero-ticker-track {
-    animation: hero-ticker 24s linear infinite !important;
-    animation-duration: 24s !important;
+    animation: hero-ticker 32s linear infinite !important;
+    animation-duration: 32s !important;
     animation-iteration-count: infinite !important;
   }
 }
