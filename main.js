@@ -18,7 +18,7 @@ const packageDetails = {
 	},
 	starter: {
 		title: "Starter Website",
-		price: "€549 setup + €25/mnd",
+		price: "€549 setup + €60/mnd",
 		description:
 			"Voor kleine zelfstandigen die snel professioneel online willen staan, met hulp bij opbouw, teksten en maandelijks onderhoud.",
 		benefits: [
@@ -30,12 +30,12 @@ const packageDetails = {
 			"30 minuten onderhoud per maand",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor het Starter Website pakket van €549 setup + €25 per maand. Ik wil graag meer informatie over de opstart, de maandelijkse opvolging en wat jullie nodig hebben om te beginnen.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor het Starter Website pakket van €549 setup + €60 per maand. Ik wil graag meer informatie over de opstart, hosting, onderhoud en wat jullie nodig hebben om te beginnen.\n\nAlvast bedankt!",
 	},
 	local: {
 		title: "Local Business Website",
 		badge: "Aanbevolen",
-		price: "€699 setup + €59/mnd",
+		price: "€699 setup + €60/mnd",
 		description:
 			"Voor lokale bedrijven die een duidelijke bedrijfswebsite nodig hebben.",
 		benefits: [
@@ -46,11 +46,11 @@ const packageDetails = {
 			"1 uur onderhoud per maand",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor het Local Business Website pakket van €699 setup + €59 per maand. Ik wil graag bespreken hoe jullie mijn bedrijf online kunnen zetten met meerdere pagina's, een contactformulier en Google Maps.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor het Local Business Website pakket van €699 setup + €60 per maand. Ik wil graag bespreken hoe jullie mijn bedrijf online kunnen zetten met meerdere pagina's, een contactformulier, Google Maps, hosting en onderhoud.\n\nAlvast bedankt!",
 	},
 	content: {
 		title: "Website + Content",
-		price: "€899 setup + €129/mnd",
+		price: "€899 setup + €60/mnd",
 		description:
 			"Voor bedrijven die naast een website ook sterker zichtbaar willen zijn op sociale media.",
 		benefits: [
@@ -61,7 +61,7 @@ const packageDetails = {
 			"2 uur onderhoud per maand",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor het Website + Content pakket van €899 setup + €129 per maand. Ik wil graag meer informatie over een website in combinatie met social media content en maandelijks onderhoud.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor het Website + Content pakket van €899 setup + €60 per maand. Ik wil graag meer informatie over een website in combinatie met social media content, hosting en maandelijks onderhoud.\n\nAlvast bedankt!",
 	},
 };
 
@@ -85,7 +85,7 @@ const englishPackageDetails = {
 	},
 	starter: {
 		title: "Starter Website",
-		price: "€549 setup + €25/month",
+		price: "€549 setup + €60/month",
 		description:
 			"For small independent businesses that want to look professional online quickly, with help on structure, copy and monthly maintenance.",
 		benefits: [
@@ -97,12 +97,12 @@ const englishPackageDetails = {
 			"30 minutes of maintenance per month",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for the Starter Website package at €549 setup + €25 per month. I would like more information about the setup, monthly follow-up and what you need to get started.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for the Starter Website package at €549 setup + €60 per month. I would like more information about the setup, hosting, maintenance and what you need to get started.\n\nThank you!",
 	},
 	local: {
 		title: "Local Business Website",
 		badge: "Recommended",
-		price: "€699 setup + €59/month",
+		price: "€699 setup + €60/month",
 		description:
 			"For local businesses that need a clear company website.",
 		benefits: [
@@ -113,11 +113,11 @@ const englishPackageDetails = {
 			"1 hour of maintenance per month",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for the Local Business Website package at €699 setup + €59 per month. I would like to discuss how you can put my business online with multiple pages, a contact form and Google Maps.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for the Local Business Website package at €699 setup + €60 per month. I would like to discuss how you can put my business online with multiple pages, a contact form, Google Maps, hosting and maintenance.\n\nThank you!",
 	},
 	content: {
 		title: "Website + Content",
-		price: "€899 setup + €129/month",
+		price: "€899 setup + €60/month",
 		description:
 			"For businesses that want stronger social media visibility alongside their website.",
 		benefits: [
@@ -128,7 +128,7 @@ const englishPackageDetails = {
 			"2 hours of maintenance per month",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for the Website + Content package at €899 setup + €129 per month. I would like more information about a website combined with social media content and monthly maintenance.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for the Website + Content package at €899 setup + €60 per month. I would like more information about a website combined with social media content, hosting and monthly maintenance.\n\nThank you!",
 	},
 };
 
@@ -299,8 +299,8 @@ const translations = {
 	"Online": "Online",
 	"100% mobile-first": "100% mobile-first",
 	"Voor klanten die zoeken, vergelijken en boeken via hun smartphone.": "For customers who search, compare and book on their smartphone.",
-	"Website vanaf €549 + €25/mnd onderhoud": "Website from €549 + €25/month maintenance",
-	"€549 is de eenmalige opstartkost. Het maandbedrag dient voor onderhoud en opvolging.": "€549 is the one-time setup fee. The monthly amount is for maintenance and follow-up.",
+	"Website vanaf €549 + €60/mnd": "Website from €549 + €60/month",
+	"€549 is de eenmalige opstartkost. Het maandbedrag dient voor hosting en onderhoud.": "€549 is the one-time setup fee. The monthly amount is for hosting and maintenance.",
 	"Voor lokale zaken": "For local businesses",
 	"Vakmannen, horeca, salons, handelszaken, trainers en creatieve ondernemers.": "Tradespeople, hospitality, salons, shops, trainers and creative entrepreneurs.",
 	"Werkwijze": "Approach",
@@ -357,12 +357,12 @@ const translations = {
 	"1 revisieronde": "1 revision round",
 	"2 revisierondes": "2 revision rounds",
 	"1 jaar hosting + .be-domeinnaam inbegrepen": "1 year of hosting + .be domain name included",
-	"Het eerste jaar hosting en een .be-domeinnaam zijn inbegrepen. Vanaf het tweede jaar bedraagt de verlenging momenteel ongeveer €20 per jaar. Het exacte bedrag wordt vooraf meegedeeld.": "The first year of hosting and a .be domain name are included. From the second year onwards, renewal currently costs approximately €20 per year. The exact amount will be communicated in advance.",
+	"Bij pakketten met maandbedrag zit hosting in de maandelijkse kost voor hosting en onderhoud. Bij Visibility Sprint is het eerste jaar hosting en een .be-domeinnaam inbegrepen. Vanaf het tweede jaar wordt de verlenging vooraf besproken.": "For packages with a monthly fee, hosting is included in the monthly cost for hosting and maintenance. With Visibility Sprint, the first year of hosting and a .be domain name are included. From the second year onwards, renewal is discussed in advance.",
 	"Geen maandelijkse betaling of onderhoud": "No monthly payment or maintenance",
 	"Later uitbreiden? Stap gemakkelijk over naar Starter Website.": "Want to expand later? Easily move to Starter Website.",
 	"Vraag Visibility Sprint aan": "Request Visibility Sprint",
 	"Starter Website": "Starter Website",
-	"€549 setup + €25/mnd": "€549 setup + €25/month",
+	"€549 setup + €60/mnd": "€549 setup + €60/month",
 	"Voor kleine zelfstandigen die snel professioneel online willen staan, met hulp bij opbouw, teksten en maandelijks onderhoud.": "For small independent businesses that want to look professional online quickly, with help on structure, copy and monthly maintenance.",
 	"Persoonlijk one-page ontwerp": "Personal one-page design",
 	"Hulp bij structuur en teksten": "Help with structure and copy",
@@ -371,14 +371,14 @@ const translations = {
 	"Vraag Starter aan": "Request Starter",
 	"Local Business Website": "Local Business Website",
 	"Aanbevolen": "Recommended",
-	"€699 setup + €59/mnd": "€699 setup + €59/month",
+	"€699 setup + €60/mnd": "€699 setup + €60/month",
 	"Voor lokale bedrijven die een duidelijke bedrijfswebsite nodig hebben.": "For local businesses that need a clear company website.",
 	"3 tot 4 pagina's": "3 to 4 pages",
 	"Contactformulier en Google Maps": "Contact form and Google Maps",
 	"1 uur onderhoud per maand": "1 hour of maintenance per month",
 	"Vraag Local Business aan": "Request Local Business",
 	"Website + Content": "Website + Content",
-	"€899 setup + €129/mnd": "€899 setup + €129/month",
+	"€899 setup + €60/mnd": "€899 setup + €60/month",
 	"Voor bedrijven die naast een website ook sterker zichtbaar willen zijn op sociale media.": "For businesses that want stronger social media visibility alongside their website.",
 	"4 tot 5 pagina's": "4 to 5 pages",
 	"2 korte social media edits per maand": "2 short social media edits per month",
@@ -389,12 +389,12 @@ const translations = {
 	"Wanneer krijg ik een eerste versie?": "When will I receive a first version?",
 	"Na je aanvraag bepalen we samen de scope en timing. De termijn start zodra alle nodige teksten, foto's en informatie ontvangen zijn. Meestal sturen we binnen 2 tot 3 werkdagen een eerste prototype. Daarna hangt de oplevertijd af van de omvang van het project en hoe snel feedback wordt gegeven. De definitieve website staat meestal binnen 5 tot 7 werkdagen klaar.": "After your request, we define the scope and timing together. The timeline starts once all required text, photos and information have been received. Usually, we send a first prototype within 2 to 3 business days. After that, delivery depends on the size of the project and how quickly feedback is provided. The final website is usually ready within 5 to 7 business days.",
 	"Hoe werken betaling en pakketprijzen?": "How do payment and package prices work?",
-	"De prijs staat duidelijk bij elk pakket. Visibility Sprint is een eenmalige betaling. Starter Website, Local Business Website en Website + Content combineren een setupkost met een maandbedrag.": "The price is clearly shown with each package. Visibility Sprint is a one-time payment. Starter Website, Local Business Website and Website + Content combine a setup fee with a monthly amount.",
+	"De prijs staat duidelijk bij elk pakket. Visibility Sprint is een eenmalige betaling. Starter Website, Local Business Website en Website + Content combineren een setupkost met €60 per maand voor hosting en onderhoud.": "The price is clearly shown with each package. Visibility Sprint is a one-time payment. Starter Website, Local Business Website and Website + Content combine a setup fee with €60 per month for hosting and maintenance.",
 	"Hoe werken revisierondes?": "How do revision rounds work?",
 	"Visibility Sprint bevat 1 revisieronde. Starter Website, Local Business Website en Website + Content bevatten elk 2 revisierondes. Eén revisieronde is één feedbackmoment waarbij je alle gewenste kleine aanpassingen tegelijk doorgeeft. Grote wijzigingen, nieuwe pagina's of een volledig nieuw ontwerp vallen hier niet onder.": "Visibility Sprint includes 1 revision round. Starter Website, Local Business Website and Website + Content each include 2 revision rounds. A revision round is one feedback moment where you send all the small changes you want in one go. Major changes, new pages or a completely new design are not included.",
 	"Wat is inbegrepen voor hosting en domeinnaam?": "What is included for hosting and the domain name?",
 	"Wie is eigenaar van de website en domeinnaam?": "Who owns the website and domain name?",
-	"Na volledige betaling van de eenmalige opstartkost wordt de website eigendom van de klant. De maandelijkse betaling dient voor onderhoud en opvolging. De domeinnaam wordt voor de klant geregistreerd en blijft van de klant. BMA Studio beheert deze alleen zolang dat gewenst is.": "After full payment of the one-time setup fee, the website becomes the client's property. The monthly payment is for maintenance and follow-up. The domain name is registered for the client and remains their property. BMA Studio only manages it for as long as requested.",
+	"Na volledige betaling van de eenmalige opstartkost wordt de website eigendom van de klant. De maandelijkse betaling dient voor hosting en onderhoud. De domeinnaam wordt voor de klant geregistreerd en blijft van de klant. BMA Studio beheert deze alleen zolang dat gewenst is.": "After full payment of the one-time setup fee, the website becomes the client's property. The monthly payment is for hosting and maintenance. The domain name is registered for the client and remains their property. BMA Studio only manages it for as long as requested.",
 	"Wat houdt onderhoud per pakket in?": "What does maintenance include per package?",
 	"Starter Website — 30 minuten per maand": "Starter Website — 30 minutes per month",
 	"Teksten aanpassen": "Adjusting text",
