@@ -2072,6 +2072,10 @@ p {
   margin-top: auto;
 }
 
+.pricing-scroll-hint {
+  display: none;
+}
+
 .pricing-note {
   max-width: 48rem;
   margin: clamp(1.25rem, 3vw, 1.75rem) auto 0;
@@ -2724,6 +2728,70 @@ p {
 
   .portfolio-modal-card {
     max-height: none;
+  }
+
+  .pricing-grid {
+    display: flex;
+    gap: 0.85rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: 4vw;
+    scroll-snap-type: x mandatory;
+    padding: 0.15rem 4vw 0.8rem;
+    margin-inline: -4vw;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pricing-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pricing-scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 0.1rem 0 1.15rem;
+    color: var(--color-muted);
+    font-size: 0.86rem;
+    font-weight: 800;
+  }
+
+  .pricing-scroll-hint > span {
+    flex: 1 1 auto;
+  }
+
+  .pricing-scroll-hint::before {
+    content: "";
+    display: block;
+    width: min(7rem, 34vw);
+    height: 0.25rem;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(90deg, var(--color-accent), color-mix(in srgb, var(--color-accent), transparent 76%));
+  }
+
+  .pricing-scroll-hint button {
+    display: inline-grid;
+    flex: 0 0 auto;
+    width: 1.65rem;
+    height: 1.65rem;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-accent);
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .pricing-card {
+    flex: 0 0 min(84vw, 21rem);
+    min-height: 31rem;
+    scroll-snap-align: start;
+    padding: 1.2rem;
+  }
+
+  .pricing-card .package-button {
+    width: 100%;
   }
 
 }
