@@ -2,7 +2,7 @@ const packageDetails = {
 	visibility: {
 		title: "BMA Local Visibility Sprint",
 		badge: "Instappakket",
-		price: "€249 eenmalig",
+		price: "€399 eenmalig",
 		description:
 			"Voor ondernemers die eerst lokaal zichtbaar willen worden met een compacte online basis, zonder maandelijkse betaling of onderhoud.",
 		benefits: [
@@ -14,11 +14,11 @@ const packageDetails = {
 			"Later uitbreiden? Stap gemakkelijk over naar Starter Website.",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in de BMA Local Visibility Sprint van €249. Ik wil graag lokaal zichtbaarder worden met een kleine HTML-basiswebsite met de belangrijkste info, zonder maandelijkse betaling of onderhoudskost.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor de BMA Local Visibility Sprint van €399 eenmalig. Ik wil lokaal zichtbaarder worden met een compacte online basis, zonder maandelijkse betaling of onderhoudskost.\n\nAlvast bedankt!",
 	},
 	starter: {
 		title: "Starter Website",
-		price: "€299 setup + €25/mnd",
+		price: "€549 setup + €25/mnd",
 		description:
 			"Voor kleine zelfstandigen die snel professioneel online willen staan, met hulp bij opbouw, teksten en maandelijks onderhoud.",
 		benefits: [
@@ -30,12 +30,12 @@ const packageDetails = {
 			"30 minuten onderhoud per maand",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in het Starter Website pakket. Ik wil graag meer informatie over de opstart, de maandelijkse kost en wat jullie nodig hebben om te beginnen.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor het Starter Website pakket van €549 setup + €25 per maand. Ik wil graag meer informatie over de opstart, de maandelijkse opvolging en wat jullie nodig hebben om te beginnen.\n\nAlvast bedankt!",
 	},
 	local: {
 		title: "Local Business Website",
 		badge: "Aanbevolen",
-		price: "€499 setup + €59/mnd",
+		price: "€699 setup + €59/mnd",
 		description:
 			"Voor lokale bedrijven die een duidelijke bedrijfswebsite nodig hebben.",
 		benefits: [
@@ -46,11 +46,11 @@ const packageDetails = {
 			"1 uur onderhoud per maand",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in het Local Business Website pakket. Ik wil graag bespreken hoe jullie mijn bedrijf online kunnen zetten met meerdere pagina's, een contactformulier en Google Maps.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor het Local Business Website pakket van €699 setup + €59 per maand. Ik wil graag bespreken hoe jullie mijn bedrijf online kunnen zetten met meerdere pagina's, een contactformulier en Google Maps.\n\nAlvast bedankt!",
 	},
 	content: {
 		title: "Website + Content",
-		price: "€699 setup + €129/mnd",
+		price: "€899 setup + €129/mnd",
 		description:
 			"Voor bedrijven die naast een website ook sterker zichtbaar willen zijn op sociale media.",
 		benefits: [
@@ -61,7 +61,7 @@ const packageDetails = {
 			"2 uur onderhoud per maand",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk ben geïnteresseerd in het Website + Content pakket. Ik wil graag meer informatie over een website in combinatie met social media content en maandelijks onderhoud.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor het Website + Content pakket van €899 setup + €129 per maand. Ik wil graag meer informatie over een website in combinatie met social media content en maandelijks onderhoud.\n\nAlvast bedankt!",
 	},
 };
 
@@ -69,7 +69,7 @@ const englishPackageDetails = {
 	visibility: {
 		title: "BMA Local Visibility Sprint",
 		badge: "Starter package",
-		price: "€249 one-time",
+		price: "€399 one-time",
 		description:
 			"For business owners who first want to become locally visible with a compact online foundation, without a monthly payment or maintenance.",
 		benefits: [
@@ -81,11 +81,11 @@ const englishPackageDetails = {
 			"Want to expand later? Easily move to Starter Website.",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI am interested in the BMA Local Visibility Sprint for €249. I would like to become more visible locally with a small HTML starter website with the most important info, without a monthly payment or maintenance fee.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for the BMA Local Visibility Sprint at €399 one-time. I want to become more visible locally with a compact online foundation, without a monthly payment or maintenance fee.\n\nThank you!",
 	},
 	starter: {
 		title: "Starter Website",
-		price: "€299 setup + €25/month",
+		price: "€549 setup + €25/month",
 		description:
 			"For small independent businesses that want to look professional online quickly, with help on structure, copy and monthly maintenance.",
 		benefits: [
@@ -97,12 +97,12 @@ const englishPackageDetails = {
 			"30 minutes of maintenance per month",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI am interested in the Starter Website package. I would like more information about the setup, monthly cost and what you need to get started.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for the Starter Website package at €549 setup + €25 per month. I would like more information about the setup, monthly follow-up and what you need to get started.\n\nThank you!",
 	},
 	local: {
 		title: "Local Business Website",
 		badge: "Recommended",
-		price: "€499 setup + €59/month",
+		price: "€699 setup + €59/month",
 		description:
 			"For local businesses that need a clear company website.",
 		benefits: [
@@ -113,11 +113,11 @@ const englishPackageDetails = {
 			"1 hour of maintenance per month",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI am interested in the Local Business Website package. I would like to discuss how you can put my business online with multiple pages, a contact form and Google Maps.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for the Local Business Website package at €699 setup + €59 per month. I would like to discuss how you can put my business online with multiple pages, a contact form and Google Maps.\n\nThank you!",
 	},
 	content: {
 		title: "Website + Content",
-		price: "€699 setup + €129/month",
+		price: "€899 setup + €129/month",
 		description:
 			"For businesses that want stronger social media visibility alongside their website.",
 		benefits: [
@@ -128,7 +128,7 @@ const englishPackageDetails = {
 			"2 hours of maintenance per month",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI am interested in the Website + Content package. I would like more information about a website combined with social media content and monthly maintenance.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for the Website + Content package at €899 setup + €129 per month. I would like more information about a website combined with social media content and monthly maintenance.\n\nThank you!",
 	},
 };
 
@@ -299,8 +299,8 @@ const translations = {
 	"Online": "Online",
 	"100% mobile-first": "100% mobile-first",
 	"Voor klanten die zoeken, vergelijken en boeken via hun smartphone.": "For customers who search, compare and book on their smartphone.",
-	"Website vanaf €299 + €25/mnd onderhoud": "Website from €299 + €25/month maintenance",
-	"€299 is de eenmalige opstartkost. Het maandbedrag dient voor onderhoud en opvolging.": "€299 is the one-time setup fee. The monthly amount is for maintenance and follow-up.",
+	"Website vanaf €549 + €25/mnd onderhoud": "Website from €549 + €25/month maintenance",
+	"€549 is de eenmalige opstartkost. Het maandbedrag dient voor onderhoud en opvolging.": "€549 is the one-time setup fee. The monthly amount is for maintenance and follow-up.",
 	"Voor lokale zaken": "For local businesses",
 	"Vakmannen, horeca, salons, handelszaken, trainers en creatieve ondernemers.": "Tradespeople, hospitality, salons, shops, trainers and creative entrepreneurs.",
 	"Werkwijze": "Approach",
@@ -350,7 +350,7 @@ const translations = {
 	"Vier duidelijke routes.": "Four clear routes.",
 	"BMA Local Visibility Sprint": "BMA Local Visibility Sprint",
 	"Instappakket": "Starter package",
-	"€249 eenmalig": "€249 one-time",
+	"€399 eenmalig": "€399 one-time",
 	"Voor starters die eerst lokaal zichtbaar willen worden met een compacte online basis, zonder maandelijkse betaling of onderhoud.": "For starters who first want to become locally visible with a compact online foundation, without a monthly payment or maintenance.",
 	"Compacte one-page website": "Compact one-page website",
 	"Klant levert teksten en foto's aan": "Client provides text and photos",
@@ -362,7 +362,7 @@ const translations = {
 	"Later uitbreiden? Stap gemakkelijk over naar Starter Website.": "Want to expand later? Easily move to Starter Website.",
 	"Vraag Visibility Sprint aan": "Request Visibility Sprint",
 	"Starter Website": "Starter Website",
-	"€299 setup + €25/mnd": "€299 setup + €25/month",
+	"€549 setup + €25/mnd": "€549 setup + €25/month",
 	"Voor kleine zelfstandigen die snel professioneel online willen staan, met hulp bij opbouw, teksten en maandelijks onderhoud.": "For small independent businesses that want to look professional online quickly, with help on structure, copy and monthly maintenance.",
 	"Persoonlijk one-page ontwerp": "Personal one-page design",
 	"Hulp bij structuur en teksten": "Help with structure and copy",
@@ -371,14 +371,14 @@ const translations = {
 	"Vraag Starter aan": "Request Starter",
 	"Local Business Website": "Local Business Website",
 	"Aanbevolen": "Recommended",
-	"€499 setup + €59/mnd": "€499 setup + €59/month",
+	"€699 setup + €59/mnd": "€699 setup + €59/month",
 	"Voor lokale bedrijven die een duidelijke bedrijfswebsite nodig hebben.": "For local businesses that need a clear company website.",
 	"3 tot 4 pagina's": "3 to 4 pages",
 	"Contactformulier en Google Maps": "Contact form and Google Maps",
 	"1 uur onderhoud per maand": "1 hour of maintenance per month",
 	"Vraag Local Business aan": "Request Local Business",
 	"Website + Content": "Website + Content",
-	"€699 setup + €129/mnd": "€699 setup + €129/month",
+	"€899 setup + €129/mnd": "€899 setup + €129/month",
 	"Voor bedrijven die naast een website ook sterker zichtbaar willen zijn op sociale media.": "For businesses that want stronger social media visibility alongside their website.",
 	"4 tot 5 pagina's": "4 to 5 pages",
 	"2 korte social media edits per maand": "2 short social media edits per month",
