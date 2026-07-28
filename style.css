@@ -67,7 +67,8 @@ body.has-cursor-glow .cursor-glow {
 
 button,
 input,
-textarea {
+textarea,
+select {
   font: inherit;
 }
 
@@ -77,6 +78,7 @@ button {
 
 a,
 summary,
+select,
 [role="button"],
 .primary-button,
 .secondary-button,
@@ -95,7 +97,8 @@ textarea,
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
-textarea:focus-visible {
+textarea:focus-visible,
+select:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--color-accent), transparent 55%);
   outline-offset: 3px;
 }
@@ -1294,6 +1297,10 @@ p {
   grid-template-columns: 1fr;
 }
 
+.pricing-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
 .stat-card {
   display: flex;
   min-height: 11rem;
@@ -2264,7 +2271,8 @@ p {
 }
 
 .form-row input,
-.form-row textarea {
+.form-row textarea,
+.form-row select {
   width: 100%;
   border: 1px solid var(--color-border);
   border-radius: 1rem;
@@ -2281,15 +2289,18 @@ p {
 
 .form-row input:hover,
 .form-row textarea:hover,
+.form-row select:hover,
 .form-row input:focus,
-.form-row textarea:focus {
+.form-row textarea:focus,
+.form-row select:focus {
   border-color: color-mix(in srgb, var(--color-accent), var(--color-border) 45%);
   background: var(--color-surface);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent), transparent 88%);
 }
 
 .form-row input[aria-invalid="true"],
-.form-row textarea[aria-invalid="true"] {
+.form-row textarea[aria-invalid="true"],
+.form-row select[aria-invalid="true"] {
   border-color: var(--color-error);
 }
 
@@ -2592,10 +2603,6 @@ p {
 
   .portfolio-detail-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .pricing-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .pricing-card:hover,
