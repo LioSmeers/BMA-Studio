@@ -342,6 +342,8 @@ const translations = {
 	"Uitgebreider onderhoud": "More extensive maintenance",
 	"Voorrang bij aanpassingen": "Priority for updates",
 	"Vraag Website + Content aan": "Request Website + Content",
+	"Swipe om alle pakketten te bekijken": "Swipe to view all packages",
+	"Volgend pakket": "Next package",
 	"FAQ": "FAQ",
 	"Veelgestelde vragen over de pakketten": "Frequently asked questions about the packages",
 	"Wanneer krijg ik een eerste versie?": "When will I receive a first version?",
@@ -612,6 +614,8 @@ const mobileMenu = document.querySelector(".mobile-menu");
 const navButtons = document.querySelectorAll(
 	"header [data-target], .hero-section [data-target], .founder-section [data-target]",
 );
+const pricingGrid = document.querySelector(".pricing-grid");
+const pricingNextButton = document.querySelector("[data-pricing-next]");
 const packageCards = document.querySelectorAll("[data-package]");
 const spotlight = document.querySelector(".package-spotlight");
 const spotlightCard = document.querySelector(".spotlight-card");
@@ -802,6 +806,21 @@ function scrollToSection(id) {
 	}
 
 	runScroll();
+}
+
+function scrollPricingCardsNext() {
+	if (!pricingGrid) return;
+
+	const firstCard = pricingGrid.querySelector(".pricing-card");
+	const gap = parseFloat(getComputedStyle(pricingGrid).columnGap) || 16;
+	const cardWidth = firstCard?.getBoundingClientRect().width || pricingGrid.clientWidth * 0.84;
+	const maxScrollLeft = pricingGrid.scrollWidth - pricingGrid.clientWidth;
+	const isAtEnd = pricingGrid.scrollLeft >= maxScrollLeft - 8;
+
+	pricingGrid.scrollTo({
+		left: isAtEnd ? 0 : Math.min(pricingGrid.scrollLeft + cardWidth + gap, maxScrollLeft),
+		behavior: "smooth",
+	});
 }
 
 function updateScrollState() {
@@ -1354,6 +1373,8 @@ navButtons.forEach((button) => {
 		scrollToSection(button.dataset.target),
 	);
 });
+
+pricingNextButton?.addEventListener("click", scrollPricingCardsNext);
 
 if (spotlight) {
 	packageCards.forEach((card) => {
