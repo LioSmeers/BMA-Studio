@@ -1301,6 +1301,11 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
 }
 
+.pricing-layout {
+  display: grid;
+  gap: 1rem;
+}
+
 .stat-card {
   display: flex;
   min-height: 11rem;
@@ -1924,16 +1929,119 @@ p {
   transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 200ms ease, border-color 200ms ease, background 200ms ease;
 }
 
-.pricing-card:hover {
+.pricing-card-wide {
+  min-height: 0;
+}
+
+.one-page-card {
+  gap: clamp(1.1rem, 3vw, 1.55rem);
+}
+
+.one-page-options {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.included-row {
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-card) - 0.45rem);
+  background: color-mix(in srgb, var(--color-accent-soft), transparent 62%);
+  padding: clamp(1rem, 2.4vw, 1.2rem);
+}
+
+.included-row h4 {
+  color: var(--color-text);
+  font-size: 0.92rem;
+}
+
+.included-row .benefit-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 1rem;
+}
+
+.payment-option {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-card) - 0.45rem);
+  background: color-mix(in srgb, var(--color-bg), transparent 42%);
+  padding: clamp(1rem, 2.4vw, 1.25rem);
+}
+
+.payment-option .price {
+  margin-top: 0;
+}
+
+.choice-text {
+  margin-top: -0.25rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.pricing-card > div > .choice-text {
+  margin-top: 0.85rem;
+}
+
+.payment-option .package-button {
+  margin-top: auto;
+}
+
+.price-context {
+  margin-top: 0.8rem;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  font-weight: 850;
+  line-height: 1.45;
+}
+
+.pricing-facts {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+}
+
+.pricing-facts div {
+  display: grid;
+  grid-template-columns: minmax(5.4rem, 0.58fr) 1fr;
+  gap: 0.65rem;
+  align-items: baseline;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.55rem;
+}
+
+.pricing-facts dt {
+  color: var(--color-muted);
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.pricing-facts dd {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.pricing-card:hover,
+.pricing-card:focus-within,
+.pricing-card.is-pressure-active {
   z-index: 8;
   cursor: pointer;
-  border-color: var(--color-accent);
+  border-color: color-mix(in srgb, var(--color-accent), var(--color-border) 62%);
   background: var(--color-surface);
-  box-shadow: 0 18px 48px rgba(11, 17, 28, 0.09);
+  box-shadow: 0 10px 28px rgba(11, 17, 28, 0.06);
+  transform: none;
 }
 
 .pricing-card:active {
-  transform: translateY(-0.35rem) scale(1.006);
+  transform: none;
 }
 
 .reviews-section {
@@ -2068,6 +2176,12 @@ p {
   align-content: start;
 }
 
+.pricing-card .benefit-list li,
+.payment-option .benefit-list li,
+.included-row .benefit-list li {
+  font-weight: 600;
+}
+
 .pricing-card .package-button {
   margin-top: auto;
 }
@@ -2082,6 +2196,71 @@ p {
   color: var(--color-muted);
   font-weight: 700;
   text-align: center;
+}
+
+.pricing-note-card {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(1.2rem, 3vw, 1.65rem);
+}
+
+.pricing-note-card h3 {
+  color: var(--color-text);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+}
+
+.pricing-note-card p {
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.58;
+}
+
+.terms-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  counter-reset: terms;
+  list-style: none;
+}
+
+.terms-list li {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(9.5rem, 0.34fr) 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  border-top: 1px solid var(--color-border);
+  padding: 0.78rem 0;
+  color: var(--color-text);
+  font-size: 0.93rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.terms-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.terms-list li:last-child {
+  padding-bottom: 0;
+}
+
+.terms-list li::before {
+  counter-increment: terms;
+  content: counter(terms, decimal-leading-zero);
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1.5rem;
+}
+
+.terms-list strong {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1.5;
 }
 
 .package-faq-card {
@@ -2118,7 +2297,7 @@ p {
 .package-faq-list p {
   margin-top: 0.65rem;
   color: var(--color-text);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.55;
 }
 
@@ -2145,7 +2324,7 @@ p {
   margin: 0.55rem 0 0;
   padding-left: 1.1rem;
   color: var(--color-text);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.5;
 }
 
@@ -2611,7 +2790,7 @@ p {
 
   .pricing-card:hover,
   .pricing-card:focus-within {
-    transform: translateY(-1rem) scale(1.018);
+    transform: none;
   }
 
   .contact-grid {
@@ -2731,15 +2910,50 @@ p {
   }
 
   .pricing-grid {
-    display: flex;
+    display: grid;
     gap: 0.85rem;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-padding-inline: 4vw;
-    scroll-snap-type: x mandatory;
-    padding: 0.15rem 4vw 0.8rem;
-    margin-inline: -4vw;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: visible;
+    padding: 0;
+    margin-inline: 0;
+  }
+
+  .pricing-layout {
+    gap: 0.85rem;
+  }
+
+  .one-page-options {
+    grid-template-columns: 1fr;
+  }
+
+  .included-row .benefit-list {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-option {
+    padding: 1rem;
+  }
+
+  .pricing-facts div {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .terms-list {
+    gap: 0;
+  }
+
+  .terms-list li {
+    grid-template-columns: 1.9rem 1fr;
+    gap: 0.35rem 0.65rem;
+    padding-block: 0.82rem;
+  }
+
+  .terms-list strong {
+    grid-column: 2;
+  }
+
+  .terms-list li::before {
+    grid-row: span 2;
   }
 
   .pricing-grid::-webkit-scrollbar {
@@ -2747,13 +2961,7 @@ p {
   }
 
   .pricing-scroll-hint {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-    margin: 0.1rem 0 1.15rem;
-    color: var(--color-muted);
-    font-size: 0.86rem;
-    font-weight: 800;
+    display: none;
   }
 
   .pricing-scroll-hint > span {
@@ -2784,9 +2992,7 @@ p {
   }
 
   .pricing-card {
-    flex: 0 0 min(84vw, 21rem);
     min-height: 31rem;
-    scroll-snap-align: start;
     padding: 1.2rem;
   }
 

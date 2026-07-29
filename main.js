@@ -1,100 +1,148 @@
 const packageDetails = {
-	basis: {
-		title: "BMA Visibility Sprint",
+	"onepage-onetime": {
+		title: "BMA Visibility Sprint - One-page Website (eenmalig)",
 		price: "€399 eenmalig",
 		description:
-			"Voor ondernemers die een compacte one-page willen met een professionele online basis, zonder maandelijkse kosten.",
+			"Een professionele one-page website met contactformulier en Google Maps. Kies voor een eenmalige aankoop of start zonder opstartkost met een abonnement.",
 		benefits: [
-			"Compacte one-page website",
-			"Klant levert teksten en foto's aan",
-			"1 revisieronde",
-			"1 jaar hosting + .be-domeinnaam inbegrepen",
-			"Geen maandelijkse kosten",
+			"1 jaar hosting en .be-domeinnaam inbegrepen",
+			"Geen onderhoud",
+			"Eigendom vanaf oplevering",
+			"Vanaf jaar 2: €59/jaar",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor de BMA Visibility Sprint van €399 eenmalig. Ik zoek een compacte one-page website en lever zelf teksten en foto's aan.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor BMA Visibility Sprint - One-page Website van €399 eenmalig. Ik lever zelf teksten en foto's aan en wil graag een contactformulier en Google Maps.\n\nAlvast bedankt!",
+	},
+	"onepage-subscription": {
+		title: "BMA Visibility Sprint - One-page Website (abonnement)",
+		price: "€0 opstart + €59/mnd",
+		description:
+			"Professionele one-page met hosting, domeinnaam en klein onderhoud via 1 aanvraag per maand.",
+		benefits: [
+			"Minimum 12 maanden",
+			"Hosting en .be-domeinnaam zolang abonnement actief is",
+			"Eigendom na betaling van 12 maanden",
+			"Klein · 1 aanvraag/mnd",
+			"Minimum 12 maanden · totale minimumprijs €708",
+			"Na de eerste 12 maanden maandelijks opzegbaar met één maand opzegtermijn",
+		],
+		inquiryMessage:
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor BMA Visibility Sprint - One-page Website met abonnement: €0 opstart + €59 per maand, minimum 12 maanden.\n\nAlvast bedankt!",
 	},
 	business: {
 		title: "Business Website",
-		badge: "Meest gekozen",
-		price: "€699 setup + €59/mnd",
+		badge: "Aanbevolen voor lokale bedrijven",
+		price: "€699 opstartkost + €59/mnd",
 		description:
-			"Voor ondernemers die meerdere pagina's, hulp met structuur en maandelijkse opvolging willen.",
+			"Voor lokale bedrijven die meerdere pagina's, structuurhulp en gemiddeld maandelijks onderhoud willen.",
 		benefits: [
+			"Totale kost bij 12 maanden: €1.407",
 			"3 tot 4 pagina's",
 			"Hulp met teksten en structuur",
 			"Contactformulier en Google Maps",
 			"2 revisierondes",
-			"Hosting en maandelijks onderhoud",
+			"Hosting en .be-domeinnaam zolang het abonnement actief is",
+			"Gemiddeld · 2 aanvragen/mnd",
+			"Eigendom vanaf oplevering",
+			"Geen minimumlooptijd",
+			"Maandelijks opzegbaar met één maand opzegtermijn",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor de Business Website van €699 setup + €59 per maand. Ik wil graag een website met 3 tot 4 pagina's, hulp met teksten en structuur, een contactformulier, Google Maps, hosting en maandelijks onderhoud.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor de Business Website van €699 opstartkost + €59 per maand. Ik wil graag 3 tot 4 pagina's, hulp met teksten en structuur, een contactformulier, Google Maps, hosting, domeinnaam en gemiddeld onderhoud met 2 aanvragen per maand.\n\nAlvast bedankt!",
 	},
 	content: {
 		title: "Website + Content",
-		price: "€899 setup + €129/mnd",
+		price: "€899 opstartkost + €149/mnd",
 		description:
-			"Voor ondernemers die naast een website ook maandelijks content en ruimere opvolging willen.",
+			"Voor ondernemers die naast hun website ook maandelijks korte socialmediavideo's willen publiceren.",
 		benefits: [
+			"Totale kost bij 12 maanden: €2.687",
 			"4 tot 5 pagina's",
 			"Alles uit Business",
-			"2 korte social media edits per maand",
-			"2 revisierondes",
-			"Uitgebreider onderhoud",
-			"Voorrang bij aanpassingen",
+			"Groot · 4 aanvragen/mnd",
+			"2 korte socialmediavideo's per maand",
+			"BMA verzorgt montage; klant levert beeldmateriaal",
+			"1 correctieronde per video",
+			"Eigendom vanaf oplevering",
+			"Geen minimumlooptijd",
+			"Maandelijks opzegbaar met één maand opzegtermijn",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor Website + Content van €899 setup + €129 per maand. Ik wil graag een website met 4 tot 5 pagina's, 2 socialmedia-edits per maand, uitgebreider onderhoud en voorrang bij aanpassingen.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor Website + Content van €899 opstartkost + €149 per maand. Ik wil graag 4 tot 5 pagina's, groot onderhoud met 4 aanvragen per maand en 2 korte socialmediavideo's per maand waarbij ik het beeldmateriaal aanlever.\n\nAlvast bedankt!",
 	},
 };
 
 const englishPackageDetails = {
-	basis: {
-		title: "BMA Visibility Sprint",
+	"onepage-onetime": {
+		title: "BMA Visibility Sprint - One-page Website (one-time)",
 		price: "€399 one-time",
 		description:
-			"For business owners who want a compact one-page website with a professional online foundation and no monthly costs.",
+			"A professional one-page website with a contact form and Google Maps. Choose a one-time purchase or start without a setup fee with a subscription.",
 		benefits: [
-			"Compact one-page website",
-			"Client provides text and photos",
-			"1 revision round",
-			"1 year of hosting + .be domain name included",
-			"No monthly costs",
+			"1 year of hosting and .be domain name included",
+			"No maintenance",
+			"Ownership from delivery",
+			"From year 2: €59/year",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for the BMA Visibility Sprint at €399 one-time. I am looking for a compact one-page website and will provide the text and photos myself.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for BMA Visibility Sprint - One-page Website at €399 one-time. I will provide the text and photos myself and would like a contact form and Google Maps.\n\nThank you!",
+	},
+	"onepage-subscription": {
+		title: "BMA Visibility Sprint - One-page Website (subscription)",
+		price: "€0 setup + €59/month",
+		description:
+			"A professional one-page website with hosting, domain name and small maintenance through 1 request per month.",
+		benefits: [
+			"Minimum 12 months",
+			"Hosting and .be domain name while the subscription is active",
+			"Ownership after 12 months have been paid",
+			"Small · 1 request/month",
+			"Minimum 12 months · total minimum price €708",
+			"After the first 12 months, cancellable monthly with one month's notice",
+		],
+		inquiryMessage:
+			"Hello BMA Studio,\n\nI would like to request a quote for BMA Visibility Sprint - One-page Website subscription: €0 setup + €59 per month, minimum 12 months.\n\nThank you!",
 	},
 	business: {
 		title: "Business Website",
-		badge: "Most chosen",
-		price: "€699 setup + €59/month",
+		badge: "Recommended for local businesses",
+		price: "€699 setup fee + €59/month",
 		description:
-			"For business owners who want multiple pages, help with structure and monthly follow-up.",
+			"For local businesses that want multiple pages, help with structure and medium monthly maintenance.",
 		benefits: [
+			"Total cost over 12 months: €1,407",
 			"3 to 4 pages",
 			"Help with text and structure",
 			"Contact form and Google Maps",
 			"2 revision rounds",
-			"Hosting and monthly maintenance",
+			"Hosting and .be domain name while the subscription is active",
+			"Medium · 2 requests/month",
+			"Ownership from delivery",
+			"No minimum term",
+			"Cancellable monthly with one month's notice",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for the Business Website at €699 setup + €59 per month. I would like a website with 3 to 4 pages, help with text and structure, a contact form, Google Maps, hosting and monthly maintenance.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for the Business Website at €699 setup fee + €59 per month. I would like 3 to 4 pages, help with text and structure, a contact form, Google Maps, hosting, domain name and medium maintenance with 2 requests per month.\n\nThank you!",
 	},
 	content: {
 		title: "Website + Content",
-		price: "€899 setup + €129/month",
+		price: "€899 setup fee + €149/month",
 		description:
-			"For business owners who want monthly content and more extensive follow-up alongside their website.",
+			"For business owners who want to publish short monthly social media videos alongside their website.",
 		benefits: [
+			"Total cost over 12 months: €2,687",
 			"4 to 5 pages",
 			"Everything from Business",
-			"2 short social media edits per month",
-			"2 revision rounds",
-			"More extensive maintenance",
-			"Priority for updates",
+			"Large · 4 requests/month",
+			"2 short social media videos per month",
+			"BMA handles editing; client provides footage",
+			"1 correction round per video",
+			"Ownership from delivery",
+			"No minimum term",
+			"Cancellable monthly with one month's notice",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for Website + Content at €899 setup + €129 per month. I would like a website with 4 to 5 pages, 2 social media edits per month, more extensive maintenance and priority for updates.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for Website + Content at €899 setup fee + €149 per month. I would like 4 to 5 pages, large maintenance with 4 requests per month and 2 short social media videos per month, with footage provided by me.\n\nThank you!",
 	},
 };
 
@@ -160,13 +208,13 @@ const portfolioProjectDetails = {
 			["Sector", "Beauty en verzorging"],
 			["Dienst", "Website + Content"],
 			["Uitdaging", "Een visuele stijl tonen die zacht, professioneel en overzichtelijk blijft."],
-			["Oplossing", "Een uitgebreidere conceptsite met diensten, sfeer, navigatie en duidelijke contactmomenten."],
+			["Oplossing", "Een meerlagige conceptsite met diensten, sfeer, navigatie en duidelijke contactmomenten."],
 			["Belangrijkste functies", "Meerdere pagina's, dienstpresentatie, visuele sfeer en call-to-action."],
 		],
 	},
 	nova: {
 		number: "04",
-		title: "Nova - BMA Visibility Sprint",
+		title: "Nova - BMA Visibility Sprint - One-page Website",
 		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
 		summary:
 			"Compacte conceptwebsite, bedoeld om te tonen hoe een eenvoudige eerste online basis eruit kan zien.",
@@ -180,7 +228,7 @@ const portfolioProjectDetails = {
 		details: [
 			["Projecttype", "Conceptwebsite"],
 			["Sector", "Kleine zelfstandige"],
-			["Dienst", "BMA Visibility Sprint"],
+			["Dienst", "BMA Visibility Sprint - One-page Website"],
 			["Uitdaging", "Met weinig pagina's toch snel duidelijk maken wat het bedrijf doet."],
 			["Oplossing", "Een compacte pagina met een sterke eerste indruk, kerninformatie en directe call-to-action."],
 			["Belangrijkste functies", "Hero, korte uitleg, duidelijke CTA en mobiele basisstructuur."],
@@ -266,7 +314,7 @@ const translations = {
 	"100% mobile-first": "100% mobile-first",
 	"Voor klanten die zoeken, vergelijken en boeken via hun smartphone.": "For customers who search, compare and book on their smartphone.",
 	"Website vanaf €399 eenmalig": "Website from €399 one-time",
-	"BMA Visibility Sprint is een compacte one-page. Business Website start vanaf €699 + €59/mnd voor hosting en onderhoud.": "BMA Visibility Sprint is a compact one-page. Business Website starts at €699 + €59/month for hosting and maintenance.",
+	"BMA Visibility Sprint - One-page Website kan eenmalig of als abonnement. Business Website start vanaf €699 opstartkost + €59/mnd.": "BMA Visibility Sprint - One-page Website is available as a one-time payment or subscription. Business Website starts at €699 setup fee + €59/month.",
 	"Voor lokale zaken": "For local businesses",
 	"Vakmannen, horeca, salons, handelszaken, trainers en creatieve ondernemers.": "Tradespeople, hospitality, salons, shops, trainers and creative entrepreneurs.",
 	"Werkwijze": "Approach",
@@ -290,7 +338,7 @@ const translations = {
 	"Conceptwebsite voor een beautyzaak met een warme stijl, diensten en contentmogelijkheden.": "Concept website for a beauty business with a warm style, services and content possibilities.",
 	"Conceptwebsite voor een beautyzaak, bedoeld om een warme stijl, diensten en contentmogelijkheden te tonen.": "Concept website for a beauty business, designed to show a warm style, services and content possibilities.",
 	"Live preview van de Nova conceptwebsite": "Live preview of the Nova concept website",
-	"Nova - BMA Visibility Sprint": "Nova - BMA Visibility Sprint",
+	"Nova - BMA Visibility Sprint - One-page Website": "Nova - BMA Visibility Sprint - One-page Website",
 	"Compacte conceptwebsite, bedoeld om te tonen hoe een eenvoudige eerste online basis eruit kan zien.": "Compact concept website, designed to show what a simple first online foundation can look like.",
 	"Bekijk alle projecten": "View all projects",
 	"Kies je route": "Choose your route",
@@ -308,66 +356,113 @@ const translations = {
 	"Kies sneller wat bij je bedrijf past.": "Choose what fits your business faster.",
 	"Drie duidelijke keuzes, van een compacte one-page tot een website met maandelijkse content.": "Three clear choices, from a compact one-page website to a website with monthly content.",
 	"Keuzehulp": "Decision guide",
-	"BMA Visibility Sprint als je een compacte one-page zonder maandelijkse kosten wil.": "BMA Visibility Sprint if you want a compact one-page website without monthly costs.",
-	"Business Website als je meerdere pagina's, hosting en onderhoud nodig hebt.": "Business Website if you need multiple pages, hosting and maintenance.",
-	"Website + Content als je ook maandelijks zichtbaar wil blijven met content.": "Website + Content if you also want to stay visible every month with content.",
+	"BMA Visibility Sprint - One-page Website als je snel professioneel online wil met één duidelijke pagina.": "BMA Visibility Sprint - One-page Website if you want to get online professionally with one clear page.",
+	"Business Website als je meerdere pagina's, structuurhulp en klein onderhoud nodig hebt.": "Business Website if you need multiple pages, help with structure and small maintenance.",
+	"Website + Content als je ook maandelijks zichtbaar wil blijven met korte video's.": "Website + Content if you also want to stay visible every month with short videos.",
 	"Vergelijk": "Compare",
 	"Drie duidelijke keuzes.": "Three clear choices.",
-	"BMA Visibility Sprint": "BMA Visibility Sprint",
+	"Een professionele one-page website met contactformulier en Google Maps. Kies voor een eenmalige aankoop of start zonder opstartkost met een abonnement.": "A professional one-page website with a contact form and Google Maps. Choose a one-time purchase or start without a setup fee with a subscription.",
+	"In beide formules inbegrepen:": "Included in both formulas:",
+	"EENMALIG": "ONE-TIME",
+	"BMA Visibility Sprint - One-page Website": "BMA Visibility Sprint - One-page Website",
+	"ABONNEMENT": "SUBSCRIPTION",
+	"Beste als je website weinig verandert en je liever één keer betaalt.": "Best if your website rarely changes and you prefer to pay once.",
+	"Beste als je zonder opstartkost wilt beginnen en kleine wijzigingen door BMA wilt laten uitvoeren.": "Best if you want to start without a setup fee and have BMA handle small changes.",
+	"Voor lokale bedrijven met meerdere diensten, projecten of belangrijke informatie.": "For local businesses with multiple services, projects or important information.",
+	"Voor bedrijven die hun website én sociale media maandelijks actief willen houden.": "For businesses that want to keep both their website and social media active every month.",
+	"€0 opstart + €59/mnd": "€0 setup + €59/month",
+	"Professionele one-page website": "Professional one-page website",
+	"1 jaar hosting en .be-domeinnaam inbegrepen": "1 year of hosting and .be domain name included",
+	"Geen onderhoud": "No maintenance",
+	"Vanaf jaar 2: €59/jaar": "From year 2: €59/year",
+	"Extra aanpassingen: €50/uur na akkoord": "Extra changes: €50/hour after approval",
+	"Minimum 12 maanden": "Minimum 12 months",
+	"Minimum 12 maanden · totale minimumprijs €708": "Minimum 12 months · total minimum price €708",
+	"Klein · 1 aanvraag/mnd": "Small · 1 request/month",
+	"Gemiddeld · 2 aanvragen/mnd": "Medium · 2 requests/month",
+	"Groot · 4 aanvragen/mnd": "Large · 4 requests/month",
+	"Hosting en .be-domeinnaam zolang abonnement actief is": "Hosting and .be domain name while the subscription is active",
+	"Na betaling van 12 maanden": "After 12 months have been paid",
+	"Na de eerste 12 maanden maandelijks opzegbaar met één maand opzegtermijn": "After the first 12 months, cancellable monthly with one month's notice",
+	"Maandelijks opzegbaar met één maand opzegtermijn": "Cancellable monthly with one month's notice",
+	"Vraag One-page eenmalig aan": "Request One-page one-time",
+	"Vraag One-page abonnement aan": "Request One-page subscription",
 	"€399 eenmalig": "€399 one-time",
-	"Compacte one-page voor ondernemers die snel duidelijk online willen staan, zonder maandelijkse kosten.": "A compact one-page website for business owners who want to be clearly online quickly, without monthly costs.",
-	"Compacte one-page website": "Compact one-page website",
 	"Klant levert teksten en foto's aan": "Client provides text and photos",
 	"1 revisieronde": "1 revision round",
 	"2 revisierondes": "2 revision rounds",
-	"1 jaar hosting + .be-domeinnaam inbegrepen": "1 year of hosting + .be domain name included",
-	"Geen maandelijkse kosten": "No monthly costs",
-	"Vraag BMA Visibility Sprint aan": "Request BMA Visibility Sprint",
 	"Business Website": "Business Website",
-	"Meest gekozen": "Most chosen",
-	"€699 setup + €59/mnd": "€699 setup + €59/month",
-	"Voor ondernemers die meerdere pagina's, hulp met structuur en maandelijkse opvolging willen.": "For business owners who want multiple pages, help with structure and monthly follow-up.",
+	"Aanbevolen voor lokale bedrijven": "Recommended for local businesses",
+	"€699 opstartkost + €59/mnd": "€699 setup fee + €59/month",
+	"Totale kost bij 12 maanden: €1.407": "Total cost over 12 months: €1,407",
+	"Looptijd": "Term",
+	"Onderhoud": "Maintenance",
+	"Eigendom": "Ownership",
+	"Geen abonnement": "No subscription",
+	"Geen minimumlooptijd": "No minimum term",
+	"Vanaf oplevering": "From delivery",
 	"Hulp met teksten en structuur": "Help with text and structure",
 	"Contactformulier": "Contact form",
 	"3 tot 4 pagina's": "3 to 4 pages",
 	"Contactformulier en Google Maps": "Contact form and Google Maps",
-	"Hosting en maandelijks onderhoud": "Hosting and monthly maintenance",
+	"Hosting en .be-domeinnaam zolang het abonnement actief is": "Hosting and .be domain name while the subscription is active",
 	"Vraag Business Website aan": "Request Business Website",
 	"Website + Content": "Website + Content",
-	"€899 setup + €129/mnd": "€899 setup + €129/month",
-	"Voor ondernemers die naast een website ook content, ruimer onderhoud en snellere opvolging willen.": "For business owners who want content, broader maintenance and faster follow-up alongside their website.",
+	"€899 opstartkost + €149/mnd": "€899 setup fee + €149/month",
+	"Totale kost bij 12 maanden: €2.687": "Total cost over 12 months: €2,687",
 	"4 tot 5 pagina's": "4 to 5 pages",
 	"Alles uit Business": "Everything from Business",
-	"2 korte social media edits per maand": "2 short social media edits per month",
-	"Uitgebreider onderhoud": "More extensive maintenance",
-	"Voorrang bij aanpassingen": "Priority for updates",
+	"2 korte socialmediavideo's per maand": "2 short social media videos per month",
+	"BMA verzorgt montage; klant levert beeldmateriaal": "BMA handles editing; client provides footage",
+	"1 correctieronde per video": "1 correction round per video",
 	"Vraag Website + Content aan": "Request Website + Content",
-	"Swipe om alle pakketten te bekijken": "Swipe to view all packages",
-	"Volgend pakket": "Next package",
 	"FAQ": "FAQ",
 	"Veelgestelde vragen over de pakketten": "Frequently asked questions about the packages",
 	"Wanneer krijg ik een eerste versie?": "When will I receive a first version?",
 	"Na je aanvraag bepalen we samen de scope en timing. De termijn start zodra alle nodige teksten, foto's en informatie ontvangen zijn. Meestal sturen we binnen 2 tot 3 werkdagen een eerste prototype. Daarna hangt de oplevertijd af van de omvang van het project en hoe snel feedback wordt gegeven. De definitieve website staat meestal binnen 5 tot 7 werkdagen klaar.": "After your request, we define the scope and timing together. The timeline starts once all required text, photos and information have been received. Usually, we send a first prototype within 2 to 3 business days. After that, delivery depends on the size of the project and how quickly feedback is provided. The final website is usually ready within 5 to 7 business days.",
 	"Hoe werken betaling en pakketprijzen?": "How do payment and package prices work?",
-	"De prijs staat duidelijk bij elk pakket. BMA Visibility Sprint is een eenmalige betaling. Business Website combineert een setupkost met €59 per maand voor hosting en onderhoud. Website + Content combineert een setupkost met €129 per maand voor content, hosting en uitgebreider onderhoud.": "The price is clearly shown with each package. BMA Visibility Sprint is a one-time payment. Business Website combines a setup fee with €59 per month for hosting and maintenance. Website + Content combines a setup fee with €129 per month for content, hosting and more extensive maintenance.",
+	"De prijs staat duidelijk bij elk pakket. BMA Visibility Sprint - One-page Website kan eenmalig aan €399 of als abonnement aan €0 opstart + €59 per maand met minimum 12 maanden. Business Website kost €699 opstartkost + €59 per maand. Website + Content kost €899 opstartkost + €149 per maand.": "The price is clearly shown with each package. BMA Visibility Sprint - One-page Website is available at €399 one-time or as a subscription at €0 setup + €59 per month with a 12-month minimum. Business Website costs a €699 setup fee + €59 per month. Website + Content costs a €899 setup fee + €149 per month.",
 	"Hoe werken revisierondes?": "How do revision rounds work?",
-	"BMA Visibility Sprint bevat 1 revisieronde. Business Website en Website + Content bevatten elk 2 revisierondes. Eén revisieronde is één feedbackmoment waarbij je alle gewenste kleine aanpassingen tegelijk doorgeeft. Grote wijzigingen, nieuwe pagina's of een volledig nieuw ontwerp vallen hier niet onder.": "BMA Visibility Sprint includes 1 revision round. Business Website and Website + Content each include 2 revision rounds. A revision round is one feedback moment where you send all the small changes you want in one go. Major changes, new pages or a completely new design are not included.",
+	"De BMA Visibility Sprint bevat 1 revisieronde. Business Website en Website + Content bevatten elk 2 revisierondes voor de website. Voor de maandelijkse video’s is 1 correctieronde per video inbegrepen. Een revisieronde is één feedbackmoment waarin je alle kleine aanpassingen samen doorgeeft. Nieuwe pagina’s, grote wijzigingen en een volledig nieuw ontwerp vallen hier niet onder.": "The BMA Visibility Sprint includes 1 revision round. Business Website and Website + Content each include 2 revision rounds for the website. For the monthly videos, 1 correction round per video is included. A revision round is one feedback moment where you send all small changes together. New pages, major changes and a completely new design are not included.",
 	"Wat is inbegrepen voor hosting en domeinnaam?": "What is included for hosting and the domain name?",
-	"Bij Business Website en Website + Content zit hosting in de maandelijkse kost. Bij BMA Visibility Sprint is het eerste jaar hosting en een .be-domeinnaam inbegrepen. Vanaf het tweede jaar wordt de verlenging vooraf besproken.": "With Business Website and Website + Content, hosting is included in the monthly cost. With BMA Visibility Sprint, the first year of hosting and a .be domain name are included. From the second year onwards, renewal is discussed in advance.",
+	"Bij het One-page Abonnement, Business Website en Website + Content blijven hosting en één .be-domeinnaam inbegrepen zolang het abonnement actief is. Bij de eenmalige BMA Visibility Sprint is het eerste jaar inbegrepen en betaal je vanaf jaar 2 €59 per jaar. Professionele e-mailadressen zijn niet standaard inbegrepen.": "With the One-page Subscription, Business Website and Website + Content, hosting and one .be domain name remain included while the subscription is active. With the one-time BMA Visibility Sprint, the first year is included and from year 2 you pay €59 per year. Professional email addresses are not included by default.",
 	"Wie is eigenaar van de website en domeinnaam?": "Who owns the website and domain name?",
-	"Na volledige betaling van de eenmalige opstartkost wordt de website eigendom van de klant. De maandelijkse betaling dient voor hosting en onderhoud. De domeinnaam wordt voor de klant geregistreerd en blijft van de klant. BMA Studio beheert deze alleen zolang dat gewenst is.": "After full payment of the one-time setup fee, the website becomes the client's property. The monthly payment is for hosting and maintenance. The domain name is registered for the client and remains their property. BMA Studio only manages it for as long as requested.",
+	"De eenmalige BMA Visibility Sprint, Business Website en Website + Content zijn vanaf oplevering eigendom van de klant. Het One-page Abonnement wordt eigendom van de klant na betaling van de eerste 12 maanden. De domeinnaam wordt op naam van de klant geregistreerd en blijft eigendom van de klant.": "The one-time BMA Visibility Sprint, Business Website and Website + Content belong to the client from delivery. The One-page Subscription becomes the client's property after the first 12 months have been paid. The domain name is registered in the client's name and remains the client's property.",
 	"Wat houdt onderhoud per pakket in?": "What does maintenance include per package?",
-	"BMA Visibility Sprint — geen maandelijks onderhoud": "BMA Visibility Sprint — no monthly maintenance",
-	"1 revisieronde tijdens de opbouw": "1 revision round during the build",
-	"Geen maandelijkse kosten": "No monthly costs",
-	"Business Website — hosting en onderhoud": "Business Website — hosting and maintenance",
-	"Kleine tekst- en fotowijzigingen": "Small text and photo changes",
-	"Contactgegevens of diensten aanpassen": "Updating contact details or services",
-	"Technische controles": "Technical checks",
-	"Website + Content — uitgebreider onderhoud": "Website + Content — more extensive maintenance",
-	"Uitgebreidere website-updates": "More extensive website updates",
-	"2 socialmedia-edits per maand": "2 social media edits per month",
-	"Voorrang bij dringende aanpassingen": "Priority for urgent changes",
+	"Klein onderhoud — One-page Abonnement: 1 aanvraag/mnd": "Small maintenance — One-page Subscription: 1 request/month",
+	"Kleine wijzigingen aan bestaande teksten, foto's, openingsuren, contactgegevens of links.": "Small changes to existing text, photos, opening hours, contact details or links.",
+	"Gemiddeld onderhoud — Business Website: 2 aanvragen/mnd": "Medium maintenance — Business Website: 2 requests/month",
+	"Meerdere kleine wijzigingen, een uitgebreidere wijziging aan een bestaande pagina of een nieuwe sectie.": "Several small changes, a more extensive change to an existing page or a new section.",
+	"Groot onderhoud — Website + Content: 4 aanvragen/mnd": "Large maintenance — Website + Content: 4 requests/month",
+	"Grotere aanpassingen, nieuwe secties of maximaal één nieuwe standaardpagina per maand binnen de bestaande stijl.": "Larger changes, new sections or up to one new standard page per month within the existing style.",
+	"Een nieuwe pagina gebruikt de 4 maandelijkse aanvragen. De klant levert teksten en foto's aan.": "A new page uses the 4 monthly requests. The client provides text and photos.",
+	"Wat telt als één onderhoudsaanvraag?": "What counts as one maintenance request?",
+	"Eén onderhoudsaanvraag is één duidelijk afgebakende wijziging. Kleine en gemiddelde aanvragen gebeuren binnen bestaande pagina’s of onderdelen. Bij Website + Content kan één nieuwe standaardpagina binnen de bestaande stijl worden toegevoegd; deze gebruikt de 4 maandelijkse aanvragen. BMA laat vooraf weten hoeveel aanvragen een wijziging gebruikt. Nieuwe functies, een redesign en maatwerk gebeuren alleen na akkoord aan €50 per uur.": "One maintenance request is one clearly defined change. Small and medium requests happen within existing pages or elements. With Website + Content, one new standard page can be added within the existing style; this uses the 4 monthly requests. BMA will let you know in advance how many requests a change uses. New features, a redesign and custom work are only carried out after approval at €50 per hour.",
+	"Hoe kan ik mijn abonnement stopzetten?": "How can I cancel my subscription?",
+	"Het One-page Abonnement heeft een minimumlooptijd van 12 maanden. Bij vroegtijdige stopzetting blijven de resterende maandbedragen verschuldigd. Business Website en Website + Content zijn maandelijks opzegbaar met één maand opzegtermijn. Na afloop van de contract- of opzegtermijn kan de klant hosting bij BMA behouden voor €59 per jaar zonder onderhoud, de website en domeinnaam laten overdragen naar eigen beheer, of alles kosteloos laten stopzetten. Bij volledige stopzetting gaat de website offline en wordt de domeinnaam niet meer verlengd.": "The One-page Subscription has a minimum term of 12 months. If cancelled early, the remaining monthly amounts remain due. Business Website and Website + Content can be cancelled monthly with one month's notice. After the contract or notice period ends, the client can keep hosting with BMA for €59 per year without maintenance, have the website and domain name transferred to their own management, or stop everything free of charge. With full cancellation, the website goes offline and the domain name is no longer renewed.",
+	"Pakketvoorwaarden": "Package terms",
+	"Onderhoudsaanvragen:": "Maintenance requests:",
+	"Iedere aanvraag is één duidelijk afgebakende wijziging. BMA laat vooraf weten hoeveel aanvragen een wijziging gebruikt.": "Each request is one clearly defined change. BMA will let you know in advance how many requests a change uses.",
+	"Niet-overdraagbaar:": "Not transferable:",
+	"Ongebruikte aanvragen en video-edits vervallen aan het einde van de maand.": "Unused requests and video edits expire at the end of the month.",
+	"Uitvoering:": "Turnaround:",
+	"Kleine en gemiddelde aanvragen worden normaal binnen 5 werkdagen uitgevoerd nadat alle informatie ontvangen is. Voor grote wijzigingen en nieuwe pagina’s wordt de timing vooraf afgesproken.": "Small and medium requests are normally completed within 5 business days after all information has been received. For large changes and new pages, timing is agreed in advance.",
+	"One-page Abonnement:": "One-page Subscription:",
+	"Minimumlooptijd van 12 maanden. Bij vroegtijdige stopzetting blijven de resterende maandbedragen verschuldigd.": "Minimum term of 12 months. If cancelled early, the remaining monthly amounts remain due.",
+	"Business Website en Website + Content:": "Business Website and Website + Content:",
+	"Geen minimumlooptijd en maandelijks opzegbaar met 1 maand opzegtermijn.": "No minimum term and cancellable monthly with 1 month's notice.",
+	"Eigendom:": "Ownership:",
+	"De eenmalige BMA Visibility Sprint, Business en Website + Content zijn vanaf oplevering eigendom van de klant. Het One-page Abonnement wordt eigendom van de klant na betaling van de eerste 12 maanden.": "The one-time BMA Visibility Sprint, Business and Website + Content belong to the client from delivery. The One-page Subscription becomes the client's property after the first 12 months have been paid.",
+	"Extra werk:": "Extra work:",
+	"Nieuwe functies, maatwerk en werk buiten het pakket worden alleen na akkoord uitgevoerd aan €50/uur.": "New features, custom work and work outside the package are only carried out after approval at €50/hour.",
+	"Na stopzetting:": "After cancellation:",
+	"Hosting en domeinnaam kunnen bij BMA blijven voor €59/jaar zonder onderhoud, worden overgedragen naar eigen beheer, of kosteloos worden stopgezet. Bij volledige stopzetting gaat de website offline en wordt de domeinnaam niet meer verlengd.": "Hosting and the domain name can stay with BMA for €59/year without maintenance, be transferred to your own management, or be stopped free of charge. With full cancellation, the website goes offline and the domain name is no longer renewed.",
+	"Overdracht:": "Transfer:",
+	"Een standaardoverdracht van de domeinnaam en websitebestanden is inbegrepen. Extra migratiewerk of ondersteuning bij een externe hostingprovider gebeurt alleen na akkoord aan €50 per uur.": "A standard transfer of the domain name and website files is included. Extra migration work or support with an external hosting provider is only carried out after approval at €50 per hour.",
+	"Niet inbegrepen:": "Not included:",
+	"Professionele mailboxen, betaalde software, premiumlicenties, fotografie en video-opnames, tenzij anders afgesproken.": "Professional mailboxes, paid software, premium licences, photography and video recordings, unless agreed otherwise.",
+	"Btw:": "VAT:",
+	"Alle prijzen zijn eindprijzen. BMA Studio rekent geen btw aan wegens de bijzondere vrijstellingsregeling kleine ondernemingen.": "All prices are final prices. BMA Studio does not charge VAT under the special exemption scheme for small businesses.",
 	"Twijfel je?": "Not sure?",
 	"Stuur je vraag door, dan kiezen we samen.": "Send your question and we will choose together.",
 	"Een korte omschrijving van je bedrijf is genoeg om gericht advies te geven.": "A short description of your business is enough for focused advice.",
@@ -409,7 +504,7 @@ const translations = {
 	"Bekijk eerst de pakketten of stuur meteen kort door wat je bedrijf nodig heeft.": "First view the packages or immediately send a short note about what your business needs.",
 	"Voorbeelden van websites voor lokale ondernemers.": "Examples of websites for local business owners.",
 	"Een selectie van klantprojecten, conceptwebsites en digitale ontwerpen.": "A selection of client projects, concept websites and digital designs.",
-	"Bekijk hoe een BMA Visibility Sprint, Business Website of Website + Content eruit kan zien.": "See what a BMA Visibility Sprint, Business Website or Website + Content can look like.",
+	"Bekijk hoe BMA Visibility Sprint - One-page Website, Business Website of Website + Content eruit kan zien.": "See what BMA Visibility Sprint - One-page Website, Business Website or Website + Content can look like.",
 	"Kijkrichting": "What to look for",
 	"Bekijk welk voorbeeld het dichtst bij jouw zaak ligt.": "See which example is closest to your business.",
 	"Kies daarna een pakket dat past bij je nodige pagina's.": "Then choose a package that fits the pages you need.",
@@ -442,12 +537,12 @@ const translations = {
 	"Stappenstructuur": "Step structure",
 	"Bekijk Walk Brussels": "View Walk Brussels",
 	"Mobiele stappenflow in bestaande huisstijl.": "Mobile step flow in the existing brand style.",
-	"Nova - BMA Visibility Sprint": "Nova - BMA Visibility Sprint",
+	"Nova - BMA Visibility Sprint - One-page Website": "Nova - BMA Visibility Sprint - One-page Website",
 	"Een compacte voorbeeldsite met een duidelijke eerste indruk en snelle call-to-action.": "A compact example site with a clear first impression and quick call to action.",
-	"BMA Visibility Sprint pakket": "BMA Visibility Sprint package",
+	"BMA Visibility Sprint - One-page Website pakket": "BMA Visibility Sprint - One-page Website package",
 	"Compacte website": "Compact website",
 	"Bekijk Nova": "View Nova",
-	"Voorbeeld van BMA Visibility Sprint.": "Example of BMA Visibility Sprint.",
+	"Voorbeeld van BMA Visibility Sprint - One-page Website.": "Example of BMA Visibility Sprint - One-page Website.",
 	"Vergoot - Business Website": "Vergoot - Business Website",
 	"Een lokale bedrijfswebsite met focus op vertrouwen, diensten en offerte-aanvragen.": "A local business website focused on trust, services and quote requests.",
 	"Offertegericht": "Quote-focused",
@@ -460,7 +555,7 @@ const translations = {
 	"Dienstenoverzicht, vertrouwen, offertefocus en mobiele contactknoppen.": "Service overview, trust, quote focus and mobile contact buttons.",
 	"Live preview van Moeskops Gevelwerken": "Live preview of Moeskops Gevelwerken",
 	"Fleur - Website + Content": "Fleur - Website + Content",
-	"Een uitgebreider voorbeeld voor een zaak die warm, professioneel en herkenbaar wil overkomen.": "A more extensive example for a business that wants to feel warm, professional and recognizable.",
+	"Een rijker voorbeeld voor een zaak die warm, professioneel en herkenbaar wil overkomen.": "A richer example for a business that wants to feel warm, professional and recognizable.",
 	"5 pagina's": "5 pages",
 	"Bekijk Fleur": "View Fleur",
 	"Voorbeeld van Website + Content.": "Example of Website + Content.",
@@ -477,7 +572,7 @@ const translations = {
 	"Dienstenoverzicht, offertefocus, mobiele opbouw en contactknoppen.": "Service overview, quote focus, mobile structure and contact buttons.",
 	"Beauty en verzorging": "Beauty and care",
 	"Een visuele stijl tonen die zacht, professioneel en overzichtelijk blijft.": "Show a visual style that stays soft, professional and clear.",
-	"Een uitgebreidere conceptsite met diensten, sfeer, navigatie en duidelijke contactmomenten.": "A more extensive concept site with services, atmosphere, navigation and clear contact moments.",
+	"Een meerlagige conceptsite met diensten, sfeer, navigatie en duidelijke contactmomenten.": "A layered concept site with services, atmosphere, navigation and clear contact moments.",
 	"Meerdere pagina's, dienstpresentatie, visuele sfeer en call-to-action.": "Multiple pages, service presentation, visual atmosphere and call to action.",
 	"Kleine zelfstandige": "Small independent business",
 	"Met weinig pagina's toch snel duidelijk maken wat het bedrijf doet.": "Quickly make clear what the business does with only a few pages.",
@@ -551,9 +646,10 @@ const translations = {
 	"E-mail": "Email",
 	"Pakket": "Package",
 	"Nog niet zeker": "Not sure yet",
-	"BMA Visibility Sprint - €399 eenmalig": "BMA Visibility Sprint - €399 one-time",
-	"Business Website - €699 setup + €59/mnd": "Business Website - €699 setup + €59/month",
-	"Website + Content - €899 setup + €129/mnd": "Website + Content - €899 setup + €129/month",
+	"BMA Visibility Sprint - One-page Website - €399 eenmalig": "BMA Visibility Sprint - One-page Website - €399 one-time",
+	"BMA Visibility Sprint - One-page Website abonnement - €0 opstart + €59/mnd": "BMA Visibility Sprint - One-page Website subscription - €0 setup + €59/month",
+	"Business Website - €699 opstartkost + €59/mnd": "Business Website - €699 setup fee + €59/month",
+	"Website + Content - €899 opstartkost + €149/mnd": "Website + Content - €899 setup fee + €149/month",
 	"Bericht": "Message",
 	"Verstuur aanvraag": "Send request",
 	"Bedankt. Je aanvraag is verzonden.": "Thank you. Your request has been sent.",
@@ -614,8 +710,6 @@ const mobileMenu = document.querySelector(".mobile-menu");
 const navButtons = document.querySelectorAll(
 	"header [data-target], .hero-section [data-target], .founder-section [data-target]",
 );
-const pricingGrid = document.querySelector(".pricing-grid");
-const pricingNextButton = document.querySelector("[data-pricing-next]");
 const packageCards = document.querySelectorAll("[data-package]");
 const spotlight = document.querySelector(".package-spotlight");
 const spotlightCard = document.querySelector(".spotlight-card");
@@ -806,21 +900,6 @@ function scrollToSection(id) {
 	}
 
 	runScroll();
-}
-
-function scrollPricingCardsNext() {
-	if (!pricingGrid) return;
-
-	const firstCard = pricingGrid.querySelector(".pricing-card");
-	const gap = parseFloat(getComputedStyle(pricingGrid).columnGap) || 16;
-	const cardWidth = firstCard?.getBoundingClientRect().width || pricingGrid.clientWidth * 0.84;
-	const maxScrollLeft = pricingGrid.scrollWidth - pricingGrid.clientWidth;
-	const isAtEnd = pricingGrid.scrollLeft >= maxScrollLeft - 8;
-
-	pricingGrid.scrollTo({
-		left: isAtEnd ? 0 : Math.min(pricingGrid.scrollLeft + cardWidth + gap, maxScrollLeft),
-		behavior: "smooth",
-	});
 }
 
 function updateScrollState() {
@@ -1235,7 +1314,7 @@ function setupPagePressure() {
 			const targetElement =
 				event.target instanceof Element ? event.target : null;
 
-			if (targetElement?.closest(".contact-section, .portfolio-section")) {
+			if (targetElement?.closest(".contact-section, .portfolio-section, .pricing-layout, .pricing-note-card")) {
 				resetTarget();
 				return;
 			}
@@ -1373,8 +1452,6 @@ navButtons.forEach((button) => {
 		scrollToSection(button.dataset.target),
 	);
 });
-
-pricingNextButton?.addEventListener("click", scrollPricingCardsNext);
 
 if (spotlight) {
 	packageCards.forEach((card) => {
