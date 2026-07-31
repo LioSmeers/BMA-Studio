@@ -168,8 +168,29 @@ const portfolioProjectDetails = {
 			["Belangrijkste functies", "Dienstenoverzicht, vertrouwen, offertefocus en mobiele contactknoppen."],
 		],
 	},
-	vergoot: {
+	gate26: {
 		number: "02",
+		title: "Gate26 - Garage & Detailing",
+		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
+		summary:
+			"One-page klantwebsite voor een garage en detailingzaak, met focus op diensten, realisaties en afspraken.",
+		caption: "Live preview van de klantwebsite.",
+		previewUrl: "https://gate26.be/",
+		previewTitle: "Live preview van Gate26",
+		link: "https://gate26.be/",
+		linkLabel: "Bekijk Gate26",
+		tags: ["Klantwebsite", "Live website", "One-page website"],
+		details: [
+			["Projecttype", "Klantproject"],
+			["Sector", "Garage, detailing en kleine herstellingen"],
+			["Dienst", "One-page website"],
+			["Uitdaging", "Een garage duidelijk voorstellen met onderhoud, herstellingen, poetsbeurten en realisaties op een compacte pagina."],
+			["Oplossing", "Een one-page website met sterke eerste indruk, duidelijke dienstenblokken, realisaties, aanpak en afspraakmomenten."],
+			["Belangrijkste functies", "Live one-page structuur, dienstenoverzicht, realisaties, filterbare werkbeelden en afspraakformulier."],
+		],
+	},
+	vergoot: {
+		number: "03",
 		title: "Vergoot - Business Website",
 		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
 		summary:
@@ -191,7 +212,7 @@ const portfolioProjectDetails = {
 		],
 	},
 	fleur: {
-		number: "03",
+		number: "04",
 		title: "Fleur - Website + Content",
 		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
 		summary:
@@ -213,7 +234,7 @@ const portfolioProjectDetails = {
 		],
 	},
 	nova: {
-		number: "04",
+		number: "05",
 		title: "Nova - BMA Visibility Sprint - One-page Website",
 		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
 		summary:
@@ -235,7 +256,7 @@ const portfolioProjectDetails = {
 		],
 	},
 	walk: {
-		number: "05",
+		number: "06",
 		title: "Walk Brussels",
 		badges: [
 			{ label: "UX-project", className: "portfolio-badge-ux" },
@@ -518,7 +539,10 @@ const translations = {
 	"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Website for an experienced craftsman in jointing and facade renovation, focused on trust and quote requests.",
 	"Klantwebsite": "Client website",
 	"Live website": "Live website",
+	"One-page website": "One-page website",
 	"Live preview van de klantwebsite.": "Live preview of the client website.",
+	"Gate26 - Garage & Detailing": "Gate26 - Garage & Detailing",
+	"One-page klantwebsite voor een garage en detailingzaak, met focus op diensten, realisaties en afspraken.": "One-page client website for a garage and detailing business, focused on services, work examples and appointments.",
 	"Conceptwebsite": "Concept website",
 	"Conceptwebsite voor een lokale dakwerker, bedoeld om vertrouwen, diensten en offerte-aanvragen duidelijk te tonen.": "Concept website for a local roofer, designed to clearly show trust, services and quote requests.",
 	"Conceptwebsite voor een beautyzaak, bedoeld om een warme stijl, diensten en contentmogelijkheden te tonen.": "Concept website for a beauty business, designed to show a warm style, services and content possibilities.",
@@ -554,6 +578,12 @@ const translations = {
 	"Een duidelijke bedrijfswebsite met diensten, bewijs van vakmanschap en contactmomenten op logische plaatsen.": "A clear business website with services, proof of craftsmanship and contact moments in logical places.",
 	"Dienstenoverzicht, vertrouwen, offertefocus en mobiele contactknoppen.": "Service overview, trust, quote focus and mobile contact buttons.",
 	"Live preview van Moeskops Gevelwerken": "Live preview of Moeskops Gevelwerken",
+	"Bekijk Gate26": "View Gate26",
+	"Garage, detailing en kleine herstellingen": "Garage, detailing and small repairs",
+	"Een garage duidelijk voorstellen met onderhoud, herstellingen, poetsbeurten en realisaties op een compacte pagina.": "Clearly present a garage with maintenance, repairs, detailing and work examples on one compact page.",
+	"Een one-page website met sterke eerste indruk, duidelijke dienstenblokken, realisaties, aanpak en afspraakmomenten.": "A one-page website with a strong first impression, clear service sections, work examples, process and appointment moments.",
+	"Live one-page structuur, dienstenoverzicht, realisaties, filterbare werkbeelden en afspraakformulier.": "Live one-page structure, service overview, work examples, filterable project images and appointment form.",
+	"Live preview van Gate26": "Live preview of Gate26",
 	"Fleur - Website + Content": "Fleur - Website + Content",
 	"Een rijker voorbeeld voor een zaak die warm, professioneel en herkenbaar wil overkomen.": "A richer example for a business that wants to feel warm, professional and recognizable.",
 	"5 pagina's": "5 pages",
