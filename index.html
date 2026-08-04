@@ -3,66 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="BMA Studio helpt starters en lokale ondernemers met webdesign, branding en marketing om professioneel online te staan en te groeien."
-    />
-    <meta
-      name="keywords"
-      content="BMA Studio, website laten maken, webdesign, website onderhoud, social media content, lokale ondernemers, kleine bedrijven"
-    />
+    <meta name="description" content="BMA Studio bouwt snelle, professionele websites voor starters en lokale ondernemers in Limburg en België. Bekijk onze pakketten of vraag een voorstel aan." />
     <meta name="author" content="BMA Studio" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#315f9a" />
     <link rel="canonical" href="https://bmastudio.be/" />
+    <link rel="alternate" hreflang="nl-BE" href="https://bmastudio.be/" />
+    <link rel="alternate" hreflang="en-BE" href="https://bmastudio.be/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://bmastudio.be/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="nl_BE" />
     <meta property="og:site_name" content="BMA Studio" />
-    <meta property="og:title" content="BMA Studio | Webdesign voor starters en ondernemers" />
-    <meta
-      property="og:description"
-      content="BMA Studio helpt starters en lokale ondernemers met webdesign, branding en marketing om professioneel online te staan en te groeien."
-    />
+    <meta property="og:title" content="Webdesign voor lokale ondernemers | BMA Studio" />
+    <meta property="og:description" content="BMA Studio bouwt snelle, professionele websites voor starters en lokale ondernemers in Limburg en België. Bekijk onze pakketten of vraag een voorstel aan." />
     <meta property="og:url" content="https://bmastudio.be/" />
     <meta property="og:image" content="https://bmastudio.be/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="BMA Studio | Webdesign voor starters en ondernemers" />
-    <meta
-      name="twitter:description"
-      content="BMA Studio helpt starters en lokale ondernemers met webdesign, branding en marketing om professioneel online te staan en te groeien."
-    />
+    <meta name="twitter:title" content="Webdesign voor lokale ondernemers | BMA Studio" />
+    <meta name="twitter:description" content="BMA Studio bouwt snelle, professionele websites voor starters en lokale ondernemers in Limburg en België. Bekijk onze pakketten of vraag een voorstel aan." />
     <meta name="twitter:image" content="https://bmastudio.be/assets/og-image.png" />
 
-    <title>BMA Studio | Webdesign voor starters en ondernemers</title>
-    <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
-    <link rel="shortcut icon" href="./public/favicon.svg" />
+    <title>Webdesign voor lokale ondernemers | BMA Studio</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="shortcut icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css?v=20260709-lang" />
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "@id": "https://bmastudio.be/#business",
-        "name": "BMA Studio",
-        "url": "https://bmastudio.be/",
-        "email": "info@bmastudio.be",
-        "description": "BMA Studio helpt starters, zelfstandigen en lokale ondernemers met webdesign, branding, marketing en onderhoud voor een sterke online basis.",
-        "areaServed": {
-          "@type": "Place",
-          "name": "Brussel, België"
-        },
-        "priceRange": "€€",
-        "sameAs": ["https://www.linkedin.com/company/bmastudio-be/"]
-      }
+{
+      "@context": "https://schema.org",
+      "@graph": [
+            {
+                  "@type": "WebSite",
+                  "@id": "https://bmastudio.be/#website",
+                  "url": "https://bmastudio.be/",
+                  "name": "BMA Studio",
+                  "inLanguage": [
+                        "nl-BE",
+                        "en-BE"
+                  ],
+                  "publisher": {
+                        "@id": "https://bmastudio.be/#organization"
+                  }
+            },
+            {
+                  "@type": "Organization",
+                  "@id": "https://bmastudio.be/#organization",
+                  "name": "BMA Studio",
+                  "url": "https://bmastudio.be/",
+                  "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://bmastudio.be/public/logo-bma.svg"
+                  },
+                  "email": "info@bmastudio.be",
+                  "telephone": "+32 460 97 37 36",
+                  "sameAs": [
+                        "https://www.linkedin.com/company/bmastudio-be/"
+                  ]
+            },
+            {
+                  "@type": [
+                        "LocalBusiness",
+                        "ProfessionalService"
+                  ],
+                  "@id": "https://bmastudio.be/#localbusiness",
+                  "name": "BMA Studio",
+                  "url": "https://bmastudio.be/",
+                  "image": "https://bmastudio.be/assets/og-image.png",
+                  "logo": "https://bmastudio.be/public/logo-bma.svg",
+                  "email": "info@bmastudio.be",
+                  "telephone": "+32 460 97 37 36",
+                  "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Sieberg 13 bus 3",
+                        "postalCode": "3770",
+                        "addressLocality": "Riemst",
+                        "addressCountry": "BE"
+                  },
+                  "areaServed": [
+                        {
+                              "@type": "Place",
+                              "name": "Limburg"
+                        },
+                        {
+                              "@type": "Country",
+                              "name": "België"
+                        }
+                  ],
+                  "priceRange": "€€",
+                  "sameAs": [
+                        "https://www.linkedin.com/company/bmastudio-be/"
+                  ]
+            }
+      ]
+}
     </script>
   </head>
   <body>
@@ -72,7 +112,7 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand-lockup" href="./index.html" aria-label="Ga naar de homepage">
-          <img src="./public/logo-bma.svg" alt="BMA Studio logo" class="brand-logo brand-logo-header" />
+          <img src="./public/logo-bma.svg" alt="BMA Studio logo" class="brand-logo brand-logo-header" width="833" height="318" />
         </a>
 
         <nav class="desktop-nav" aria-label="Hoofdnavigatie">
@@ -397,56 +437,86 @@
                 src="./public/trustpilot-review-manu-moeskops.png"
                 alt="Trustpilot review van Manu Moeskops: Perfecte samenwerking gehad met Berend."
                 class="review-shot"
+                width="687"
+                height="262"
+                loading="lazy"
               />
               <img
                 src="./public/trustpilot-review-azdin.png"
                 alt="Trustpilot review van azdin bhdz: Ils ont fait un tres bon site."
                 class="review-shot"
+                width="692"
+                height="261"
+                loading="lazy"
               />
               <img
                 src="./public/trustpilot-review-berend.png"
                 alt="Trustpilot review van berendluypaert: Perfect!"
                 class="review-shot"
+                width="707"
+                height="237"
+                loading="lazy"
               />
               <img
                 src="./public/trustpilot-review-noemi.png"
                 alt="Trustpilot review van Noemi Hurkens: Mooie website gemaakt"
                 class="review-shot"
+                width="682"
+                height="252"
+                loading="lazy"
               />
               <img
                 src="./public/trustpilot-review-robyn.png"
                 alt="Trustpilot review van robyn atkins: professionele en vlotte service"
                 class="review-shot"
+                width="687"
+                height="346"
+                loading="lazy"
               />
               <img
                 src="./public/trustpilot-review-manu-moeskops.png"
                 alt=""
                 class="review-shot"
                 aria-hidden="true"
+                width="687"
+                height="262"
+                loading="lazy"
               />
               <img
                 src="./public/trustpilot-review-azdin.png"
                 alt=""
                 class="review-shot"
                 aria-hidden="true"
+                width="692"
+                height="261"
+                loading="lazy"
               />
               <img
                 src="./public/trustpilot-review-berend.png"
                 alt=""
                 class="review-shot"
                 aria-hidden="true"
+                width="707"
+                height="237"
+                loading="lazy"
               />
               <img
                 src="./public/trustpilot-review-noemi.png"
                 alt=""
                 class="review-shot"
                 aria-hidden="true"
+                width="682"
+                height="252"
+                loading="lazy"
               />
               <img
                 src="./public/trustpilot-review-robyn.png"
                 alt=""
                 class="review-shot"
                 aria-hidden="true"
+                width="687"
+                height="346"
+                loading="lazy"
               />
             </div>
           </div>
@@ -457,7 +527,7 @@
     <footer class="footer">
       <div class="container footer-inner">
         <div class="brand-lockup">
-          <img src="./public/logo-bma.svg" alt="BMA Studio logo" class="brand-logo brand-logo-footer" />
+          <img src="./public/logo-bma.svg" alt="BMA Studio logo" class="brand-logo brand-logo-footer" width="833" height="318" loading="lazy" />
         </div>
         <p>Build • Maintain • Attract</p>
         <a class="footer-text-link" href="./privacy.html">Privacy</a>

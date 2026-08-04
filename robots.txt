@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /favicon.svg
+Allow: /favicon-48x48.png
+Allow: /favicon-512x512.png
+Allow: /apple-touch-icon.png
 
 Sitemap: https://bmastudio.be/sitemap.xml
