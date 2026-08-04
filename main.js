@@ -197,6 +197,8 @@ const portfolioProjectDetails = {
 			"Conceptwebsite voor een lokale dakwerker, bedoeld om vertrouwen, diensten en offerte-aanvragen duidelijk te tonen.",
 		image: "./public/portfolio-vergoot-result.png",
 		imageAlt: "Hero screenshot van Vergoot dakwerken conceptwebsite",
+		imageWidth: 1896,
+		imageHeight: 990,
 		caption: "Screenshot van de tijdelijke demonstratieomgeving.",
 		hideModalMedia: true,
 		link: "https://liosmeers.github.io/dakwerken-vergoot/",
@@ -219,6 +221,8 @@ const portfolioProjectDetails = {
 			"Conceptwebsite voor een beautyzaak, bedoeld om een warme stijl, diensten en contentmogelijkheden te tonen.",
 		image: "./public/portfolio-fleura-result.png",
 		imageAlt: "Hero screenshot van Fleur beauty clinic conceptwebsite",
+		imageWidth: 1901,
+		imageHeight: 987,
 		caption: "Conceptwebsite in een tijdelijke demonstratieomgeving.",
 		hideModalMedia: true,
 		link: "https://liosmeers.github.io/Beauty-clinic-fleura/",
@@ -241,6 +245,8 @@ const portfolioProjectDetails = {
 			"Compacte conceptwebsite, bedoeld om te tonen hoe een eenvoudige eerste online basis eruit kan zien.",
 		image: "./public/portfolio-nova-result.png",
 		imageAlt: "Hero screenshot van de Nova basis conceptwebsite",
+		imageWidth: 1917,
+		imageHeight: 982,
 		caption: "Conceptwebsite in een tijdelijke demonstratieomgeving.",
 		hideModalMedia: true,
 		link: "https://liosmeers.github.io/Nova-website/",
@@ -266,6 +272,8 @@ const portfolioProjectDetails = {
 			"UX- en schoolproject waarin een bestaande rapportageflow mobieler, korter en duidelijker werd uitgewerkt.",
 		image: "./public/portfolio-walk-brussels-result.png",
 		imageAlt: "Mobiele Walk Brussels registratieflow",
+		imageWidth: 486,
+		imageHeight: 987,
 		caption: "UX- en schoolproject in een tijdelijke demonstratieomgeving.",
 		hideModalMedia: true,
 		link: "https://ehb-mct.github.io/fullprojects2-walk-walk4/",
@@ -317,6 +325,7 @@ const translations = {
 	"Bekijk werk": "View work",
 	"Naar pakketten": "Go to packages",
 	"Terug naar home": "Back to home",
+	"Contacteer BMA Studio": "Contact BMA Studio",
 	"Bespreek je project": "Discuss your project",
 	"Vergelijk pakketten": "Compare packages",
 	"Meer info": "More info",
@@ -476,7 +485,7 @@ const translations = {
 	"Business Website en Website + Content:": "Business Website and Website + Content:",
 	"Geen minimumlooptijd en maandelijks opzegbaar met 1 maand opzegtermijn.": "No minimum term and cancellable monthly with 1 month's notice.",
 	"Eigendom:": "Ownership:",
-	"De eenmalige BMA Visibility Sprint, Business en Website + Content zijn vanaf oplevering eigendom van de klant. Het One-page Abonnement wordt eigendom van de klant na betaling van de eerste 12 maanden.": "The one-time BMA Visibility Sprint, Business and Website + Content belong to the client from delivery. The One-page Subscription becomes the client's property after the first 12 months have been paid.",
+	"De eenmalige BMA Visibility Sprint, Business Website en Website + Content zijn vanaf oplevering eigendom van de klant. Het One-page Abonnement wordt eigendom van de klant na betaling van de eerste 12 maanden.": "The one-time BMA Visibility Sprint, Business Website and Website + Content belong to the client from delivery. The One-page Subscription becomes the client's property after the first 12 months have been paid.",
 	"Extra werk:": "Extra work:",
 	"Nieuwe functies, maatwerk en werk buiten het pakket worden alleen na akkoord uitgevoerd aan €50/uur.": "New features, custom work and work outside the package are only carried out after approval at €50/hour.",
 	"Na stopzetting:": "After cancellation:",
@@ -686,6 +695,13 @@ const translations = {
 	"Bericht": "Message",
 	"Verstuur aanvraag": "Send request",
 	"Bedankt. Je aanvraag is verzonden.": "Thank you. Your request has been sent.",
+	"404": "404",
+	"Pagina niet gevonden.": "Page not found.",
+	"Deze pagina bestaat niet of is verplaatst. Ga terug naar een bestaande pagina of stuur ons je vraag.": "This page does not exist or has moved. Go back to an existing page or send us your question.",
+	"Verder zoeken": "Keep looking",
+	"Bekijk de websitepakketten.": "View the website packages.",
+	"Bekijk webdesignprojecten.": "View web design projects.",
+	"Vraag advies aan.": "Ask for advice.",
 	"Aanvraag ontvangen": "Request received",
 	"Bedankt, je bericht is onderweg.": "Thank you, your message is on its way.",
 	"We bekijken je aanvraag en reageren zo snel mogelijk. Meestal doen we dat dezelfde dag.": "We will review your request and reply as soon as possible. Usually we do that the same day.",
@@ -720,19 +736,36 @@ const translations = {
 const titleTranslations = {
 	"BMA Studio - Websites voor lokale ondernemers": "BMA Studio - Websites for local business owners",
 	"BMA Studio | Webdesign voor starters en ondernemers": "BMA Studio | Web design for starters and business owners",
+	"Webdesign voor lokale ondernemers | BMA Studio": "Web design for local business owners | BMA Studio",
+	"BMA Studio bouwt snelle, professionele websites voor starters en lokale ondernemers in Limburg en België. Bekijk onze pakketten of vraag een voorstel aan.": "BMA Studio builds fast, professional websites for starters and local business owners in Limburg and Belgium. View our packages or request a proposal.",
 	"Pakketten - BMA Studio": "Packages - BMA Studio",
 	"Website pakketten voor ondernemers | BMA Studio": "Website packages for business owners | BMA Studio",
+	"Pakketten en prijzen voor websites | BMA Studio": "Website packages and prices | BMA Studio",
 	"Bekijk drie duidelijke website pakketten voor zelfstandigen en lokale ondernemers die snel een professionele online basis willen.": "View three clear website packages for independent professionals and local business owners who want a professional online foundation quickly.",
+	"Vergelijk de websitepakketten van BMA Studio: BMA Visibility Sprint, Business Website en Website + Content voor lokale ondernemers in Limburg en België.": "Compare BMA Studio's website packages: BMA Visibility Sprint, Business Website and Website + Content for local business owners in Limburg and Belgium.",
 	"Diensten - BMA Studio": "Services - BMA Studio",
 	"Webdesign, branding en marketing | BMA Studio": "Web design, branding and marketing | BMA Studio",
+	"Webdesign en websiteonderhoud | BMA Studio": "Web design and website maintenance | BMA Studio",
+	"Lees hoe BMA Studio webdesign, websiteonderhoud en content combineert voor starters, zelfstandigen en lokale ondernemers in Limburg en België.": "See how BMA Studio combines web design, website maintenance and content for starters, independent professionals and local business owners in Limburg and Belgium.",
 	"Portfolio - BMA Studio": "Portfolio - BMA Studio",
 	"Website voorbeelden voor ondernemers | BMA Studio": "Website examples for business owners | BMA Studio",
+	"Webdesignprojecten en realisaties | BMA Studio": "Web design projects and work | BMA Studio",
+	"Bekijk webdesignprojecten en voorbeeldwebsites van BMA Studio voor lokale ondernemers, zelfstandigen en starters.": "View BMA Studio web design projects and example websites for local business owners, independent professionals and starters.",
 	"Over ons - BMA Studio": "About us - BMA Studio",
 	"Over BMA Studio | Webdesign en marketing": "About BMA Studio | Web design and marketing",
+	"Over BMA Studio | Webdesign voor ondernemers": "About BMA Studio | Web design for business owners",
+	"Maak kennis met BMA Studio, de webdesignstudio van Lio Smeers voor starters en lokale ondernemers in Limburg en België.": "Get to know BMA Studio, Lio Smeers' web design studio for starters and local business owners in Limburg and Belgium.",
 	"Contact - BMA Studio": "Contact - BMA Studio",
 	"Contacteer BMA Studio | Website laten maken": "Contact BMA Studio | Have a website made",
+	"Wil je een website laten maken of je website laten onderhouden? Contacteer BMA Studio voor een duidelijk voorstel voor je bedrijf.": "Want to have a website made or maintained? Contact BMA Studio for a clear proposal for your business.",
 	"Bedankt - BMA Studio": "Thank you - BMA Studio",
+	"Bedankt voor je aanvraag | BMA Studio": "Thank you for your request | BMA Studio",
+	"Bedankpagina van BMA Studio na het versturen van een contactaanvraag.": "BMA Studio thank-you page after submitting a contact request.",
 	"Privacyverklaring - BMA Studio": "Privacy statement - BMA Studio",
+	"Privacyverklaring | BMA Studio": "Privacy statement | BMA Studio",
+	"Lees hoe BMA Studio persoonsgegevens verwerkt bij contactaanvragen, offertes en samenwerking via bmastudio.be.": "Read how BMA Studio processes personal data for contact requests, proposals and collaboration via bmastudio.be.",
+	"Pagina niet gevonden | BMA Studio": "Page not found | BMA Studio",
+	"Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage, pakketten of contactpagina van BMA Studio.": "This page does not exist or has moved. Go back to the BMA Studio homepage, packages or contact page.",
 };
 
 const header = document.querySelector(".site-header");
@@ -763,9 +796,13 @@ let activePackageKey = "";
 let activePortfolioProjectKey = "";
 let previousPortfolioFocus = null;
 let scrollUpdateQueued = false;
-let currentLanguage = localStorage.getItem("bma-language") || "nl";
+const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+let currentLanguage = ["nl", "en"].includes(requestedLanguage)
+	? requestedLanguage
+	: localStorage.getItem("bma-language") || "nl";
 const originalTextByNode = new WeakMap();
 const originalAttributeByElement = new WeakMap();
+const originalMetadataByElement = new WeakMap();
 const translatableAttributes = ["aria-label", "alt", "title"];
 const livePreviewWidth = 1280;
 const livePreviewHeight = 800;
@@ -832,6 +869,39 @@ function translateAttributes() {
 	});
 }
 
+function translateMetadataContent(selector) {
+	const element = document.querySelector(selector);
+	if (!element) return;
+
+	const originalValue = originalMetadataByElement.get(element) || element.getAttribute("content");
+	if (!originalValue) return;
+	originalMetadataByElement.set(element, originalValue);
+
+	element.setAttribute(
+		"content",
+		currentLanguage === "en"
+			? titleTranslations[originalValue] || originalValue
+			: originalValue,
+	);
+}
+
+function updateLanguageMetadataLinks() {
+	const canonical = document.querySelector("link[rel='canonical']");
+	const ogLocale = document.querySelector("meta[property='og:locale']");
+	const ogUrl = document.querySelector("meta[property='og:url']");
+	if (!canonical) return;
+
+	const originalCanonical =
+		document.documentElement.dataset.originalCanonical || canonical.href;
+	document.documentElement.dataset.originalCanonical = originalCanonical;
+	const languageCanonical =
+		currentLanguage === "en" ? `${originalCanonical}?lang=en` : originalCanonical;
+
+	canonical.href = languageCanonical;
+	if (ogUrl) ogUrl.setAttribute("content", languageCanonical);
+	if (ogLocale) ogLocale.setAttribute("content", currentLanguage === "en" ? "en_BE" : "nl_BE");
+}
+
 function shouldSkipTranslation(node) {
 	const parent = node.parentElement;
 	if (!parent) return true;
@@ -866,6 +936,12 @@ function translateStaticText() {
 			? titleTranslations[originalTitle] || originalTitle
 			: originalTitle;
 	document.documentElement.lang = currentLanguage === "en" ? "en" : "nl";
+	translateMetadataContent("meta[name='description']");
+	translateMetadataContent("meta[property='og:title']");
+	translateMetadataContent("meta[property='og:description']");
+	translateMetadataContent("meta[name='twitter:title']");
+	translateMetadataContent("meta[name='twitter:description']");
+	updateLanguageMetadataLinks();
 	translateAttributes();
 }
 
@@ -1080,6 +1156,9 @@ function renderPortfolioModal(projectKey, options = {}) {
 		image.hidden = false;
 		image.src = item.image;
 		image.alt = translateValue(item.imageAlt);
+		image.width = item.imageWidth || 1200;
+		image.height = item.imageHeight || 630;
+		image.loading = "lazy";
 	}
 
 	portfolioModal.querySelector(".portfolio-modal-media figcaption").textContent =
