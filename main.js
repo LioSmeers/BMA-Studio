@@ -326,6 +326,7 @@ const translations = {
 	"Snelle zekerheden": "Quick assurances",
 	"Belangrijkste voordelen": "Key benefits",
 	"Trustpilot reviews": "Trustpilot reviews",
+	"Trustpilot review van Manu Moeskops: Perfecte samenwerking gehad met Berend.": "Trustpilot review by Manu Moeskops: Perfect collaboration with Berend.",
 	"Trustpilot review van azdin bhdz: Ils ont fait un tres bon site.": "Trustpilot review by azdin bhdz: They made a very good site.",
 	"Trustpilot review van Noemi Hurkens: Mooie website gemaakt": "Trustpilot review by Noemi Hurkens: Beautiful website made",
 	"Trustpilot review van robyn atkins: professionele en vlotte service": "Trustpilot review by robyn atkins: professional and smooth service",
