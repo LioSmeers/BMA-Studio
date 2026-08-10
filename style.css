@@ -223,6 +223,7 @@ a.is-pressure-active {
 
 .brand-logo {
   width: auto;
+  aspect-ratio: 833.07 / 317.76;
   object-fit: contain;
   object-position: left center;
 }
@@ -2562,6 +2563,11 @@ p {
   font-weight: 700;
 }
 
+.footer-inner > p:first-of-type {
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
 .footer-legal {
   display: grid;
   gap: 0.25rem;
@@ -2842,22 +2848,36 @@ p {
   }
 
   .brand-logo-header {
-    height: 3.1rem;
-    max-width: 9.2rem;
+    width: 9.2rem;
+    height: auto;
+    max-width: 48vw;
+    flex: 0 0 auto;
   }
 
   .footer-inner {
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .footer-inner > * {
     flex: 1 1 100%;
   }
 
+  .footer .brand-lockup {
+    justify-content: center;
+  }
+
   .brand-logo-footer {
-    height: 3.8rem;
-    max-width: 11.5rem;
+    width: 11.5rem;
+    height: auto;
+    max-width: 68vw;
+    margin-inline: auto;
+  }
+
+  .footer-inner > p:first-of-type {
+    font-size: 0.86rem;
+    line-height: 1.25;
   }
 
   .hero-card,
