@@ -2193,8 +2193,19 @@ p {
   font-weight: 600;
 }
 
-.pricing-card .package-button {
+.package-actions {
+  display: grid;
+  gap: 0.7rem;
   margin-top: auto;
+}
+
+.package-actions .package-button {
+  width: 100%;
+}
+
+.package-prototype-button {
+  border-color: color-mix(in srgb, var(--color-accent), var(--color-border) 42%);
+  color: var(--color-accent);
 }
 
 .pricing-scroll-hint {
