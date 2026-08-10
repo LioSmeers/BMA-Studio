@@ -28,7 +28,7 @@
       }
 
       .st3, .st7, .st8, .st9 {
-        font-family: LucidaGrande-Bold, 'Lucida Grande';
+        font-family: Arial-BoldMT, Arial, Helvetica, sans-serif;
         font-weight: 700;
       }
 
