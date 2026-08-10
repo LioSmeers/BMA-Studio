@@ -70,6 +70,14 @@ const packageDetails = {
 		inquiryMessage:
 			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor Website + Content van €899 opstartkost + €149 per maand. Ik wil graag 4 tot 5 pagina's, groot onderhoud met 4 aanvragen per maand en 2 korte socialmediavideo's per maand waarbij ik het beeldmateriaal aanlever.\n\nAlvast bedankt!",
 	},
+	prototype: {
+		title: "Gratis websiteprototype",
+		description:
+			"Vrijblijvend eerste prototype voor een nieuwe website.",
+		benefits: ["Gratis aanvraag", "Eerste visuele richting", "Vrijblijvend vervolg"],
+		inquiryMessage:
+			"Hallo BMA Studio,\n\nIk wil graag een gratis prototype aanvragen voor mijn website. Ik vertel graag kort wat mijn bedrijf doet en welke richting ik online uit wil.\n\nAlvast bedankt!",
+	},
 };
 
 const englishPackageDetails = {
@@ -143,6 +151,14 @@ const englishPackageDetails = {
 		],
 		inquiryMessage:
 			"Hello BMA Studio,\n\nI would like to request a quote for Website + Content at €899 setup fee + €149 per month. I would like 4 to 5 pages, large maintenance with 4 requests per month and 2 short social media videos per month, with footage provided by me.\n\nThank you!",
+	},
+	prototype: {
+		title: "Free website prototype",
+		description:
+			"No-obligation first prototype for a new website.",
+		benefits: ["Free request", "First visual direction", "No-obligation next step"],
+		inquiryMessage:
+			"Hello BMA Studio,\n\nI would like to request a free prototype for my website. I can briefly explain what my business does and which online direction I have in mind.\n\nThank you!",
 	},
 };
 
@@ -428,6 +444,8 @@ const translations = {
 	"Vraag One-page eenmalig aan": "Request One-page one-time",
 	"Vraag One-page abonnement aan": "Request One-page subscription",
 	"€399 eenmalig": "€399 one-time",
+	"Vraag een gratis prototype aan": "Request a free prototype",
+	"Gratis websiteprototype": "Free website prototype",
 	"Klant levert teksten en foto's aan": "Client provides text and photos",
 	"1 revisieronde": "1 revision round",
 	"2 revisierondes": "2 revision rounds",
