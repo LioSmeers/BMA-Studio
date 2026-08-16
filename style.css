@@ -98,7 +98,8 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
-select:focus-visible {
+select:focus-visible,
+summary:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--color-accent), transparent 55%);
   outline-offset: 3px;
 }
@@ -110,6 +111,18 @@ img {
 
 [hidden] {
   display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
 }
 
 .is-pressure-active {
@@ -756,6 +769,12 @@ a.is-pressure-active {
   display: grid;
   gap: clamp(1.5rem, 4vw, 3rem);
   align-items: end;
+}
+
+.page-hero-grid.page-hero-simple {
+  max-width: 56rem;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
 }
 
 .page-hero-copy {
@@ -1925,64 +1944,62 @@ p {
   margin-top: 1.25rem;
 }
 
+.package-intro {
+  max-width: 46rem;
+  margin-top: 0.75rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.package-card-grid {
+  align-items: start;
+  margin-top: clamp(1.25rem, 3vw, 1.8rem);
+}
+
 .pricing-card {
   display: flex;
   height: 100%;
-  min-height: 34rem;
+  min-height: 0;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: flex-start;
-  padding: clamp(1.35rem, 3vw, 1.8rem);
+  padding: clamp(1.2rem, 2.6vw, 1.55rem);
   transform-origin: center bottom;
   transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 200ms ease, border-color 200ms ease, background 200ms ease;
 }
 
-.pricing-card-wide {
-  min-height: 0;
-}
-
-.one-page-card {
-  gap: clamp(1.1rem, 3vw, 1.55rem);
-}
-
-.one-page-options {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.included-row {
-  display: grid;
-  gap: 0.75rem;
-  border: 1px solid var(--color-border);
-  border-radius: calc(var(--radius-card) - 0.45rem);
-  background: color-mix(in srgb, var(--color-accent-soft), transparent 62%);
-  padding: clamp(1rem, 2.4vw, 1.2rem);
-}
-
-.included-row h4 {
-  color: var(--color-text);
-  font-size: 0.92rem;
-}
-
-.included-row .benefit-list {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.55rem 1rem;
-}
-
-.payment-option {
-  display: flex;
+.package-plan-card {
+  height: auto;
+  align-self: start;
+  min-height: 41.75rem;
   min-width: 0;
-  flex-direction: column;
-  gap: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: calc(var(--radius-card) - 0.45rem);
-  background: color-mix(in srgb, var(--color-bg), transparent 42%);
-  padding: clamp(1rem, 2.4vw, 1.25rem);
 }
 
-.payment-option .price {
-  margin-top: 0;
+.package-card-main {
+  display: grid;
+  min-width: 0;
+  gap: 1rem;
+}
+
+.package-plan-card .pricing-title-row {
+  display: grid;
+  justify-content: stretch;
+  gap: 0.65rem;
+}
+
+.package-plan-card .badge {
+  width: max-content;
+  max-width: 100%;
+}
+
+.visibility-plan-card {
+  isolation: isolate;
+}
+
+.visibility-plan-card [data-visibility-description] {
+  min-height: 4.25rem;
 }
 
 .pricing-description,
@@ -1994,23 +2011,143 @@ p {
 }
 
 .choice-text {
-  margin-top: -0.25rem;
+  margin: 0;
 }
 
-.pricing-card > div > .choice-text {
-  margin-top: 0.85rem;
+.pricing-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-accent-soft), transparent 42%);
+  padding: 0.25rem;
+  margin: 0;
 }
 
-.payment-option .package-button {
+.pricing-switch label {
+  position: relative;
+  min-width: 0;
+}
+
+.pricing-switch input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pricing-switch span {
+  display: grid;
+  min-height: 2.45rem;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+  transition: background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.pricing-switch input:checked + span {
+  background: var(--color-accent);
+  color: var(--color-surface);
+  box-shadow: 0 8px 20px rgba(49, 95, 154, 0.18);
+}
+
+.pricing-switch input:focus-visible + span {
+  outline: 3px solid color-mix(in srgb, var(--color-accent), transparent 55%);
+  outline-offset: 3px;
+}
+
+.price {
+  min-height: 2.35em;
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(1.25rem, 2.2vw, 1.72rem);
+  font-weight: 900;
+  line-height: 1.22;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.package-benefits {
+  min-height: 8.8rem;
+  align-content: start;
+}
+
+.pricing-card .benefit-list li,
+.payment-option .benefit-list li,
+.included-row .benefit-list li {
+  font-weight: 600;
+}
+
+.package-actions {
+  display: grid;
+  gap: 0.7rem;
   margin-top: auto;
 }
 
-.price-context {
-  margin-top: 0.8rem;
-  color: var(--color-muted);
-  font-size: 0.88rem;
-  font-weight: 850;
-  line-height: 1.45;
+.package-actions .package-button {
+  width: 100%;
+}
+
+.package-details {
+  margin-top: 0.1rem;
+}
+
+.package-details summary,
+.package-terms-details summary {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent), var(--color-border) 48%);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-accent);
+  font-weight: 900;
+  line-height: 1.15;
+  list-style: none;
+  text-align: center;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.package-details summary::-webkit-details-marker,
+.package-terms-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.package-details summary::after,
+.package-terms-details summary::after {
+  content: "+";
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.package-details[open] summary::after,
+.package-terms-details[open] summary::after {
+  content: "-";
+}
+
+.package-details summary:hover,
+.package-terms-details summary:hover {
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent-soft), transparent 38%);
+}
+
+.package-details-body {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-card) - 0.35rem);
+  background: color-mix(in srgb, var(--color-bg), transparent 38%);
+  padding: 1rem;
 }
 
 .pricing-facts {
@@ -2028,6 +2165,11 @@ p {
   padding-top: 0.55rem;
 }
 
+.pricing-facts div:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
 .pricing-facts dt {
   color: var(--color-muted);
   font-size: 0.76rem;
@@ -2041,11 +2183,41 @@ p {
   font-weight: 850;
 }
 
+.detail-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.prototype-cta-card {
+  display: grid;
+  gap: 1rem;
+  max-width: 42rem;
+  margin: clamp(1rem, 3vw, 1.5rem) auto 0;
+  padding: clamp(1.2rem, 3vw, 1.65rem);
+  text-align: center;
+}
+
+.prototype-cta-card h3 {
+  color: var(--color-text);
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+}
+
+.prototype-cta-card .secondary-button {
+  width: min(100%, 20rem);
+  justify-self: center;
+}
+
 .pricing-card:hover,
 .pricing-card:focus-within,
 .pricing-card.is-pressure-active {
   z-index: 8;
-  cursor: pointer;
+  cursor: default;
   border-color: color-mix(in srgb, var(--color-accent), var(--color-border) 62%);
   background: var(--color-surface);
   box-shadow: 0 10px 28px rgba(11, 17, 28, 0.06);
@@ -2239,6 +2411,15 @@ p {
   color: var(--color-text);
   font-weight: 700;
   line-height: 1.58;
+}
+
+.package-terms-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.package-terms-details .terms-list {
+  margin-top: 1rem;
 }
 
 .terms-list {
@@ -2757,9 +2938,17 @@ p {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .package-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .page-hero-grid,
   .split-section {
     grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.78fr);
+  }
+
+  .page-hero-grid.page-hero-simple {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .flow-grid,
@@ -2834,6 +3023,10 @@ p {
 
 @media (min-width: 1024px) {
   .faq-maintenance-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .package-card-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -2961,6 +3154,10 @@ p {
     margin-inline: 0;
   }
 
+  .package-card-grid {
+    grid-template-columns: 1fr;
+  }
+
   .pricing-layout {
     gap: 0.85rem;
   }
@@ -3036,11 +3233,20 @@ p {
   }
 
   .pricing-card {
-    min-height: 31rem;
+    min-height: 0;
     padding: 1.2rem;
   }
 
-  .pricing-card .package-button {
+  .package-plan-card {
+    min-height: 0;
+  }
+
+  .package-benefits {
+    min-height: 0;
+  }
+
+  .pricing-card .package-button,
+  .prototype-cta-card .secondary-button {
     width: 100%;
   }
 

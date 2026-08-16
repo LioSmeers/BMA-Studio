@@ -23,7 +23,6 @@ const packageDetails = {
 			"Hosting en .be-domeinnaam zolang abonnement actief is",
 			"Eigendom na betaling van 12 maanden",
 			"Klein · 1 aanvraag/mnd",
-			"Minimum 12 maanden · totale minimumprijs €708",
 			"Na de eerste 12 maanden maandelijks opzegbaar met één maand opzegtermijn",
 		],
 		inquiryMessage:
@@ -36,7 +35,6 @@ const packageDetails = {
 		description:
 			"Voor lokale bedrijven die meerdere pagina's, structuurhulp en gemiddeld maandelijks onderhoud willen.",
 		benefits: [
-			"Totale kost bij 12 maanden: €1.407",
 			"3 tot 4 pagina's",
 			"Hulp met teksten en structuur",
 			"Contactformulier en Google Maps",
@@ -56,7 +54,6 @@ const packageDetails = {
 		description:
 			"Voor ondernemers die naast hun website ook maandelijks korte socialmediavideo's willen publiceren.",
 		benefits: [
-			"Totale kost bij 12 maanden: €2.687",
 			"4 tot 5 pagina's",
 			"Alles uit Business",
 			"Groot · 4 aanvragen/mnd",
@@ -105,7 +102,6 @@ const englishPackageDetails = {
 			"Hosting and .be domain name while the subscription is active",
 			"Ownership after 12 months have been paid",
 			"Small · 1 request/month",
-			"Minimum 12 months · total minimum price €708",
 			"After the first 12 months, cancellable monthly with one month's notice",
 		],
 		inquiryMessage:
@@ -118,7 +114,6 @@ const englishPackageDetails = {
 		description:
 			"For local businesses that want multiple pages, help with structure and medium monthly maintenance.",
 		benefits: [
-			"Total cost over 12 months: €1,407",
 			"3 to 4 pages",
 			"Help with text and structure",
 			"Contact form and Google Maps",
@@ -138,7 +133,6 @@ const englishPackageDetails = {
 		description:
 			"For business owners who want to publish short monthly social media videos alongside their website.",
 		benefits: [
-			"Total cost over 12 months: €2,687",
 			"4 to 5 pages",
 			"Everything from Business",
 			"Large · 4 requests/month",
@@ -159,6 +153,111 @@ const englishPackageDetails = {
 		benefits: ["Free request", "First visual direction", "No-obligation next step"],
 		inquiryMessage:
 			"Hello BMA Studio,\n\nI would like to request a free prototype for my website. I can briefly explain what my business does and which online direction I have in mind.\n\nThank you!",
+	},
+};
+
+const visibilitySprintOptions = {
+	nl: {
+		onetime: {
+			description:
+				"Voor ondernemers die snel professioneel online willen met één duidelijke pagina.",
+			price: "€399 eenmalig",
+			ctaLabel: "Vraag One-page eenmalig aan",
+			ctaHref: "./contact.html?pakket=onepage-onetime",
+			benefits: [
+				"Professionele one-page website",
+				"Contactformulier en Google Maps",
+				"1 revisieronde",
+				"1 jaar hosting en .be-domeinnaam inbegrepen",
+			],
+			facts: {
+				term: "Geen abonnement",
+				maintenance: "Geen onderhoud",
+				ownership: "Vanaf oplevering",
+				hosting: "1 jaar hosting en .be-domeinnaam inbegrepen. Vanaf jaar 2: €59/jaar.",
+				revisions: "1 revisieronde voor de website.",
+			},
+			details: [
+				"Klant levert teksten en foto's aan.",
+				"Contactformulier en Google Maps inbegrepen.",
+			],
+		},
+		subscription: {
+			description:
+				"Voor ondernemers die zonder opstartkost willen beginnen en kleine wijzigingen willen laten uitvoeren.",
+			price: "€0 opstart + €59/mnd",
+			ctaLabel: "Vraag One-page abonnement aan",
+			ctaHref: "./contact.html?pakket=onepage-subscription",
+			benefits: [
+				"Professionele one-page website",
+				"Geen opstartkost",
+				"Hosting en .be-domeinnaam zolang abonnement actief is",
+				"Klein onderhoud inbegrepen",
+			],
+			facts: {
+				term: "Minimumlooptijd van 12 maanden",
+				maintenance: "Klein · 1 aanvraag/mnd",
+				ownership: "Na betaling van 12 maanden",
+				hosting: "Hosting en één .be-domeinnaam inbegrepen zolang het abonnement actief is.",
+				revisions: "1 revisieronde voor de website.",
+			},
+			details: [
+				"Klant levert teksten en foto's aan.",
+				"Contactformulier en Google Maps inbegrepen.",
+				"Na de eerste 12 maanden maandelijks opzegbaar met één maand opzegtermijn.",
+			],
+		},
+	},
+	en: {
+		onetime: {
+			description:
+				"For business owners who want to get online quickly with one clear page.",
+			price: "€399 one-time",
+			ctaLabel: "Request One-page one-time",
+			ctaHref: "./contact.html?pakket=onepage-onetime",
+			benefits: [
+				"Professional one-page website",
+				"Contact form and Google Maps",
+				"1 revision round",
+				"1 year of hosting and .be domain name included",
+			],
+			facts: {
+				term: "No subscription",
+				maintenance: "No maintenance",
+				ownership: "From delivery",
+				hosting: "1 year of hosting and .be domain name included. From year 2: €59/year.",
+				revisions: "1 revision round for the website.",
+			},
+			details: [
+				"Client provides text and photos.",
+				"Contact form and Google Maps included.",
+			],
+		},
+		subscription: {
+			description:
+				"For business owners who want to start without a setup fee and have small changes handled.",
+			price: "€0 setup + €59/month",
+			ctaLabel: "Request One-page subscription",
+			ctaHref: "./contact.html?pakket=onepage-subscription",
+			benefits: [
+				"Professional one-page website",
+				"No setup fee",
+				"Hosting and .be domain name while the subscription is active",
+				"Small maintenance included",
+			],
+			facts: {
+				term: "Minimum term of 12 months",
+				maintenance: "Small · 1 request/month",
+				ownership: "After 12 months have been paid",
+				hosting: "Hosting and one .be domain name included while the subscription is active.",
+				revisions: "1 revision round for the website.",
+			},
+			details: [
+				"Client provides text and photos.",
+				"Contact form and Google Maps included.",
+				"After the first 12 months, cancellable monthly with one month's notice.",
+			],
+		},
 	},
 };
 
@@ -416,8 +515,14 @@ const translations = {
 	"Website + Content als je ook maandelijks zichtbaar wil blijven met korte video's.": "Website + Content if you also want to stay visible every month with short videos.",
 	"Vergelijk": "Compare",
 	"Drie duidelijke keuzes.": "Three clear choices.",
+	"Kies uit drie pakketten: een snelle one-page, een complete businesswebsite of een website met maandelijkse content.": "Choose from three packages: a fast one-page website, a complete business website or a website with monthly content.",
 	"Een professionele one-page website met contactformulier en Google Maps. Kies voor een eenmalige aankoop of start zonder opstartkost met een abonnement.": "A professional one-page website with a contact form and Google Maps. Choose a one-time purchase or start without a setup fee with a subscription.",
 	"In beide formules inbegrepen:": "Included in both formulas:",
+	"Kies betaalformule voor BMA Visibility Sprint": "Choose payment option for BMA Visibility Sprint",
+	"Eenmalig": "One-time",
+	"Abonnement": "Subscription",
+	"Voor ondernemers die snel professioneel online willen met één duidelijke pagina.": "For business owners who want to get online quickly with one clear page.",
+	"Voor ondernemers die zonder opstartkost willen beginnen en kleine wijzigingen willen laten uitvoeren.": "For business owners who want to start without a setup fee and have small changes handled.",
 	"EENMALIG": "ONE-TIME",
 	"BMA Visibility Sprint - One-page Website": "BMA Visibility Sprint - One-page Website",
 	"ABONNEMENT": "SUBSCRIPTION",
@@ -427,12 +532,12 @@ const translations = {
 	"Voor bedrijven die hun website én sociale media maandelijks actief willen houden.": "For businesses that want to keep both their website and social media active every month.",
 	"€0 opstart + €59/mnd": "€0 setup + €59/month",
 	"Professionele one-page website": "Professional one-page website",
+	"Geen opstartkost": "No setup fee",
+	"Klein onderhoud inbegrepen": "Small maintenance included",
 	"1 jaar hosting en .be-domeinnaam inbegrepen": "1 year of hosting and .be domain name included",
 	"Geen onderhoud": "No maintenance",
 	"Vanaf jaar 2: €59/jaar": "From year 2: €59/year",
-	"Extra aanpassingen: €50/uur na akkoord": "Extra changes: €50/hour after approval",
 	"Minimum 12 maanden": "Minimum 12 months",
-	"Minimum 12 maanden · totale minimumprijs €708": "Minimum 12 months · total minimum price €708",
 	"Klein · 1 aanvraag/mnd": "Small · 1 request/month",
 	"Gemiddeld · 2 aanvragen/mnd": "Medium · 2 requests/month",
 	"Groot · 4 aanvragen/mnd": "Large · 4 requests/month",
@@ -443,6 +548,7 @@ const translations = {
 	"Vraag One-page eenmalig aan": "Request One-page one-time",
 	"Vraag One-page abonnement aan": "Request One-page subscription",
 	"€399 eenmalig": "€399 one-time",
+	"Bekijk alle details": "View all details",
 	"Vraag een gratis prototype aan": "Request a free prototype",
 	"Gratis websiteprototype": "Free website prototype",
 	"Klant levert teksten en foto's aan": "Client provides text and photos",
@@ -451,13 +557,21 @@ const translations = {
 	"Business Website": "Business Website",
 	"Aanbevolen voor lokale bedrijven": "Recommended for local businesses",
 	"€699 opstartkost + €59/mnd": "€699 setup fee + €59/month",
-	"Totale kost bij 12 maanden: €1.407": "Total cost over 12 months: €1,407",
 	"Looptijd": "Term",
 	"Onderhoud": "Maintenance",
 	"Eigendom": "Ownership",
+	"Hosting": "Hosting",
+	"Revisies": "Revisions",
 	"Geen abonnement": "No subscription",
 	"Geen minimumlooptijd": "No minimum term",
+	"Minimumlooptijd van 12 maanden": "Minimum term of 12 months",
 	"Vanaf oplevering": "From delivery",
+	"1 jaar hosting en .be-domeinnaam inbegrepen. Vanaf jaar 2: €59/jaar.": "1 year of hosting and .be domain name included. From year 2: €59/year.",
+	"1 revisieronde voor de website.": "1 revision round for the website.",
+	"2 revisierondes voor de website.": "2 revision rounds for the website.",
+	"2 revisierondes voor de website en 1 correctieronde per video.": "2 revision rounds for the website and 1 correction round per video.",
+	"Contactformulier en Google Maps inbegrepen.": "Contact form and Google Maps included.",
+	"Hosting en één .be-domeinnaam inbegrepen zolang het abonnement actief is.": "Hosting and one .be domain name included while the subscription is active.",
 	"Hulp met teksten en structuur": "Help with text and structure",
 	"Contactformulier": "Contact form",
 	"3 tot 4 pagina's": "3 to 4 pages",
@@ -466,12 +580,15 @@ const translations = {
 	"Vraag Business Website aan": "Request Business Website",
 	"Website + Content": "Website + Content",
 	"€899 opstartkost + €149/mnd": "€899 setup fee + €149/month",
-	"Totale kost bij 12 maanden: €2.687": "Total cost over 12 months: €2,687",
 	"4 tot 5 pagina's": "4 to 5 pages",
 	"Alles uit Business": "Everything from Business",
 	"2 korte socialmediavideo's per maand": "2 short social media videos per month",
 	"BMA verzorgt montage; klant levert beeldmateriaal": "BMA handles editing; client provides footage",
+	"BMA verzorgt de montage; de klant levert beeldmateriaal aan.": "BMA handles editing; the client provides footage.",
 	"1 correctieronde per video": "1 correction round per video",
+	"Eerst zien wat we voor je kunnen maken?": "Want to see what we can make for you first?",
+	"De belangrijkste details staan bij elk pakket; hieronder vind je de contractuele afspraken gebundeld.": "The most important details are shown with each package; below you will find the contractual agreements bundled.",
+	"Bekijk pakketvoorwaarden": "View package terms",
 	"Vraag Website + Content aan": "Request Website + Content",
 	"FAQ": "FAQ",
 	"Veelgestelde vragen over de pakketten": "Frequently asked questions about the packages",
@@ -993,6 +1110,7 @@ function setLanguage(language) {
 	localStorage.setItem("bma-language", language);
 	translateStaticText();
 	updateLanguageSwitcher();
+	updateVisibilitySprintCard();
 
 	if (activePortfolioProjectKey && portfolioModal && !portfolioModal.hidden) {
 		renderPortfolioModal(activePortfolioProjectKey, { keepFocus: true });
@@ -1461,7 +1579,7 @@ function setupPagePressure() {
 			const targetElement =
 				event.target instanceof Element ? event.target : null;
 
-			if (targetElement?.closest(".contact-section, .portfolio-section, .pricing-layout, .pricing-note-card")) {
+			if (targetElement?.closest(".contact-section, .portfolio-section, .pricing-layout, .package-card-grid, .pricing-note-card")) {
 				resetTarget();
 				return;
 			}
@@ -1571,6 +1689,57 @@ function setupPortfolioToggle() {
 			});
 		}
 	});
+}
+
+function renderBenefitItems(benefits) {
+	return benefits
+		.map(
+			(benefit) =>
+				`<li><span class="checkmark">✓</span><span>${benefit}</span></li>`,
+		)
+		.join("");
+}
+
+function updateVisibilitySprintCard() {
+	const card = document.querySelector("[data-visibility-card]");
+	if (!card) return;
+
+	const selectedOption =
+		card.querySelector("input[name='visibility-plan']:checked")?.value || "onetime";
+	const option =
+		visibilitySprintOptions[currentLanguage]?.[selectedOption] ||
+		visibilitySprintOptions.nl[selectedOption];
+
+	card.querySelector("[data-visibility-description]").textContent =
+		option.description;
+	card.querySelector("[data-visibility-price]").textContent = option.price;
+	card.querySelector("[data-visibility-cta]").textContent = option.ctaLabel;
+	card.querySelector("[data-visibility-cta]").href = option.ctaHref;
+	card.querySelector("[data-visibility-benefits]").innerHTML = renderBenefitItems(
+		option.benefits,
+	);
+	card.querySelector("[data-visibility-term]").textContent = option.facts.term;
+	card.querySelector("[data-visibility-maintenance]").textContent =
+		option.facts.maintenance;
+	card.querySelector("[data-visibility-ownership]").textContent =
+		option.facts.ownership;
+	card.querySelector("[data-visibility-hosting]").textContent = option.facts.hosting;
+	card.querySelector("[data-visibility-revisions]").textContent =
+		option.facts.revisions;
+	card.querySelector("[data-visibility-detail-list]").innerHTML = option.details
+		.map((detail) => `<li>${detail}</li>`)
+		.join("");
+}
+
+function setupVisibilitySprintToggle() {
+	const card = document.querySelector("[data-visibility-card]");
+	if (!card) return;
+
+	card.querySelectorAll("input[name='visibility-plan']").forEach((input) => {
+		input.addEventListener("change", updateVisibilitySprintCard);
+	});
+
+	updateVisibilitySprintCard();
 }
 
 function setupPackageQueryPrefill() {
@@ -1716,5 +1885,6 @@ setupPhonePointerEffect();
 setupPagePressure();
 setupCursorGlow();
 setupPortfolioToggle();
+setupVisibilitySprintToggle();
 setupPackageQueryPrefill();
 updateScrollState();
