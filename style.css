@@ -39,6 +39,24 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+body.thank-you-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+body.thank-you-page main {
+  display: flex;
+  flex: 1;
+}
+
+body.thank-you-page .page-hero {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  width: 100%;
+}
+
 body.menu-open {
   overflow: hidden;
 }
