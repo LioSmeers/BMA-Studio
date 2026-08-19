@@ -2931,15 +2931,6 @@ p {
 }
 
 @media (min-width: 768px) {
-  .desktop-nav {
-    display: flex;
-  }
-
-  .menu-toggle,
-  .mobile-menu {
-    display: none;
-  }
-
   .phone-stage {
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   }
@@ -3036,6 +3027,17 @@ p {
 
   .footer-inner {
     flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1100px) {
+  .desktop-nav {
+    display: flex;
+  }
+
+  .menu-toggle,
+  .mobile-menu {
+    display: none;
   }
 }
 
