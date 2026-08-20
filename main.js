@@ -882,6 +882,7 @@ let activePackageKey = "";
 let activePortfolioProjectKey = "";
 let previousPortfolioFocus = null;
 let scrollUpdateQueued = false;
+let isContactSubmitting = false;
 const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
 let currentLanguage = ["nl", "en"].includes(requestedLanguage)
 	? requestedLanguage
@@ -1774,9 +1775,11 @@ contactForm?.elements.package?.addEventListener("change", (event) => {
 contactForm?.addEventListener("submit", async (event) => {
 	event.preventDefault();
 
+	if (isContactSubmitting) return;
 	if (!validateForm()) return;
 
 	hideContactStatus();
+	isContactSubmitting = true;
 	contactSubmit.disabled = true;
 	contactSubmit.textContent = currentLanguage === "en" ? "Sending..." : "Versturen...";
 
@@ -1788,8 +1791,11 @@ contactForm?.addEventListener("submit", async (event) => {
 				Accept: "application/json",
 			},
 		});
+		const formSubmitResult = await response.json();
+		const wasSubmitted =
+			formSubmitResult?.success === true || formSubmitResult?.success === "true";
 
-		if (!response.ok) {
+		if (!response.ok || !wasSubmitted) {
 			throw new Error("Contact form submission failed");
 		}
 
@@ -1804,7 +1810,7 @@ contactForm?.addEventListener("submit", async (event) => {
 				: "Versturen lukt niet. Mail ons rechtstreeks via info@bmastudio.be.",
 			"error",
 		);
-	} finally {
+		isContactSubmitting = false;
 		contactSubmit.disabled = false;
 		contactSubmit.textContent =
 			currentLanguage === "en" ? "Send request" : "Verstuur aanvraag";
