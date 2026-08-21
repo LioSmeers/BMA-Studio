@@ -267,7 +267,7 @@ const portfolioProjectDetails = {
 		title: "Moeskops Gevelwerken — Business Website",
 		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
 		summary:
-			"Business Website voor een vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.",
+			"Moeskops Gevelwerken is een vakman in voegwerken en gevelrenovatie. BMA Studio bouwde een Business Website met diensten, bewijs van vakmanschap en contactmomenten op logische plaatsen. De website helpt bezoekers snel begrijpen waarvoor ze terechtkunnen en vlot een offerteaanvraag starten.",
 		caption: "Live preview van de klantwebsite.",
 		previewUrl: "https://moeskopsgevelwerken.be/",
 		previewTitle: "Live preview van Moeskops Gevelwerken",
@@ -288,7 +288,7 @@ const portfolioProjectDetails = {
 		title: "AGV Smeers — Business Website",
 		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
 		summary:
-			"Business Website voor een specialist in voegwerken en gevelrenovatie, met focus op vakmanschap, vertrouwen en offerteaanvragen.",
+			"AGV Smeers is gespecialiseerd in voegwerken, gevelrenovatie en verbouwingswerken. BMA Studio bouwde een zakelijke Business Website met diensten, realisaties, werkwijze en offerteflow. De website presenteert de vakervaring helder en stuurt bezoekers naar een gerichte offerteaanvraag.",
 		caption: "Live preview van de klantwebsite.",
 		previewUrl: "https://agvsmeers.be/",
 		previewTitle: "Live preview van AGV Smeers",
@@ -403,10 +403,12 @@ const translations = {
 	"Live preview van Moeskops Gevelwerken": "Live preview of Moeskops Gevelwerken",
 	"Moeskops Gevelwerken": "Moeskops Gevelwerken",
 	"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Website for an experienced craftsman in pointing and facade renovation, focused on trust and quote requests.",
+	"Moeskops Gevelwerken is een vakman in voegwerken en gevelrenovatie. BMA Studio bouwde een Business Website met diensten, bewijs van vakmanschap en contactmomenten op logische plaatsen. De website helpt bezoekers snel begrijpen waarvoor ze terechtkunnen en vlot een offerteaanvraag starten.": "Moeskops Gevelwerken is a tradesperson in jointing and facade renovation. BMA Studio built a Business Website with services, proof of craftsmanship and contact moments in logical places. The website helps visitors quickly understand what they can request and smoothly start a quote request.",
 	"Live preview van AGV Smeers": "Live preview of AGV Smeers",
 	"AGV Smeers": "AGV Smeers",
 	"AGV Smeers — Business Website": "AGV Smeers — Business Website",
 	"Klantwebsite voor een specialist in voegwerken en gevelrenovatie, met focus op vakmanschap, vertrouwen en offerteaanvragen.": "Client website for a specialist in jointing and facade renovation, focused on craftsmanship, trust and quote requests.",
+	"AGV Smeers is gespecialiseerd in voegwerken, gevelrenovatie en verbouwingswerken. BMA Studio bouwde een zakelijke Business Website met diensten, realisaties, werkwijze en offerteflow. De website presenteert de vakervaring helder en stuurt bezoekers naar een gerichte offerteaanvraag.": "AGV Smeers specializes in jointing, facade renovation and renovation works. BMA Studio built a business-focused Business Website with services, work examples, process and quote flow. The website presents the professional experience clearly and guides visitors toward a focused quote request.",
 	"Bekijk details": "View details",
 	"Concept": "Concept",
 	"Conceptwebsite": "Concept website",
@@ -637,9 +639,11 @@ const translations = {
 	"Moeskops Gevelwerken — Business Website": "Moeskops Gevelwerken — Business Website",
 	"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Website for an experienced craftsman in jointing and facade renovation, focused on trust and quote requests.",
 	"Business Website voor een vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Business Website for a tradesperson in jointing and facade renovation, focused on trust and quote requests.",
+	"Moeskops Gevelwerken is een vakman in voegwerken en gevelrenovatie. BMA Studio bouwde een Business Website met diensten, bewijs van vakmanschap en contactmomenten op logische plaatsen. De website helpt bezoekers snel begrijpen waarvoor ze terechtkunnen en vlot een offerteaanvraag starten.": "Moeskops Gevelwerken is a tradesperson in jointing and facade renovation. BMA Studio built a Business Website with services, proof of craftsmanship and contact moments in logical places. The website helps visitors quickly understand what they can request and smoothly start a quote request.",
 	"AGV Smeers — Business Website": "AGV Smeers — Business Website",
 	"Klantwebsite voor een specialist in voegwerken en gevelrenovatie, met focus op vakmanschap, vertrouwen en offerteaanvragen.": "Client website for a specialist in jointing and facade renovation, focused on craftsmanship, trust and quote requests.",
 	"Business Website voor een specialist in voegwerken en gevelrenovatie, met focus op vakmanschap, vertrouwen en offerteaanvragen.": "Business Website for a specialist in jointing and facade renovation, focused on craftsmanship, trust and quote requests.",
+	"AGV Smeers is gespecialiseerd in voegwerken, gevelrenovatie en verbouwingswerken. BMA Studio bouwde een zakelijke Business Website met diensten, realisaties, werkwijze en offerteflow. De website presenteert de vakervaring helder en stuurt bezoekers naar een gerichte offerteaanvraag.": "AGV Smeers specializes in jointing, facade renovation and renovation works. BMA Studio built a business-focused Business Website with services, work examples, process and quote flow. The website presents the professional experience clearly and guides visitors toward a focused quote request.",
 	"Klantwebsite": "Client website",
 	"Live website": "Live website",
 	"Gevelwerken": "Facade work",
@@ -878,6 +882,15 @@ const contactForm = document.querySelector(".contact-form");
 const contactSubmit = contactForm?.querySelector("[type='submit']");
 const contactStatus = contactForm?.querySelector(".success-message");
 const year = document.querySelector("#year");
+const campaignParameterNames = [
+	"utm_source",
+	"utm_medium",
+	"utm_campaign",
+	"utm_content",
+	"utm_term",
+	"gclid",
+];
+const campaignStorageKey = "bma-campaign-params";
 let activePackageKey = "";
 let activePortfolioProjectKey = "";
 let previousPortfolioFocus = null;
@@ -896,6 +909,7 @@ const livePreviewHeight = 800;
 const untranslatedText = new Set();
 
 if (year) year.textContent = new Date().getFullYear();
+storeCampaignParameters();
 
 function normalizeText(value) {
 	return value.replace(/\s+/g, " ").trim();
@@ -905,6 +919,47 @@ function preserveSpacing(original, replacement) {
 	const leading = original.match(/^\s*/)?.[0] || "";
 	const trailing = original.match(/\s*$/)?.[0] || "";
 	return `${leading}${replacement}${trailing}`;
+}
+
+function readStoredCampaignParameters() {
+	try {
+		const storedParameters = JSON.parse(sessionStorage.getItem(campaignStorageKey) || "{}");
+		const parameters = new URLSearchParams();
+
+		campaignParameterNames.forEach((name) => {
+			const value = storedParameters[name];
+			if (typeof value === "string" && value.trim()) parameters.set(name, value);
+		});
+
+		return parameters;
+	} catch (error) {
+		return new URLSearchParams();
+	}
+}
+
+function storeCampaignParameters() {
+	const currentParameters = new URLSearchParams(window.location.search);
+	const campaignParameters = {};
+
+	campaignParameterNames.forEach((name) => {
+		const value = currentParameters.get(name);
+		if (value) campaignParameters[name] = value;
+	});
+
+	if (!Object.keys(campaignParameters).length) return;
+
+	try {
+		sessionStorage.setItem(campaignStorageKey, JSON.stringify(campaignParameters));
+	} catch (error) {
+		// Form submission still works when sessionStorage is unavailable.
+	}
+}
+
+function addCampaignParametersToUrl(url) {
+	readStoredCampaignParameters().forEach((value, name) => {
+		url.searchParams.set(name, value);
+	});
+	return url;
 }
 
 function getPackageDetails(packageKey) {
@@ -1802,6 +1857,7 @@ contactForm?.addEventListener("submit", async (event) => {
 		contactForm.reset();
 		const thankYouUrl = new URL("bedankt.html", window.location.href);
 		if (currentLanguage === "en") thankYouUrl.searchParams.set("lang", "en");
+		addCampaignParametersToUrl(thankYouUrl);
 		window.location.assign(thankYouUrl.href);
 	} catch (error) {
 		showContactStatus(
