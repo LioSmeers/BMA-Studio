@@ -1036,11 +1036,9 @@ function updateLanguageMetadataLinks() {
 	const originalCanonical =
 		document.documentElement.dataset.originalCanonical || canonical.href;
 	document.documentElement.dataset.originalCanonical = originalCanonical;
-	const languageCanonical =
-		currentLanguage === "en" ? `${originalCanonical}?lang=en` : originalCanonical;
 
-	canonical.href = languageCanonical;
-	if (ogUrl) ogUrl.setAttribute("content", languageCanonical);
+	canonical.href = originalCanonical;
+	if (ogUrl) ogUrl.setAttribute("content", originalCanonical);
 	if (ogLocale) ogLocale.setAttribute("content", currentLanguage === "en" ? "en_BE" : "nl_BE");
 }
 
