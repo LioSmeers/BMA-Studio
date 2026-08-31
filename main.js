@@ -262,6 +262,27 @@ const visibilitySprintOptions = {
 };
 
 const portfolioProjectDetails = {
+	thor: {
+		number: "01",
+		title: "Thor Smeers — Business Website",
+		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
+		summary:
+			"Website voor vastgoedfotografie, videografie en socialmediacontent, met focus op een sterke visuele portfolio, duidelijke diensten en eenvoudige contactflow.",
+		caption: "Live preview van de klantwebsite.",
+		previewUrl: "https://thorsmeers.be",
+		previewTitle: "Live preview van Thor Smeers",
+		link: "https://thorsmeers.be",
+		linkLabel: "Bekijk Thor Smeers",
+		tags: ["Klantwebsite", "Live website", "Business Website"],
+		details: [
+			["Projecttype", "Klantproject"],
+			["Sector", "Vastgoedfotografie, videografie en socialmediacontent"],
+			["Dienst", "Business Website"],
+			["Uitdaging", "Een sterke visuele portfolio combineren met duidelijke diensten en een eenvoudige contactflow."],
+			["Oplossing", "Een visuele bedrijfswebsite die het aanbod helder presenteert en bezoekers vlot naar contact leidt."],
+			["Belangrijkste functies", "Visuele portfolio, dienstenoverzicht, socialmediacontent en eenvoudige contactflow."],
+		],
+	},
 	moeskops: {
 		number: "01",
 		title: "Moeskops Gevelwerken — Business Website",
@@ -636,6 +657,8 @@ const translations = {
 	"Relevante voorbeelden voor lokale bedrijven.": "Relevant examples for local businesses.",
 	"Deze websites en conceptwebsites tonen stijl, structuur en mogelijkheden voor verschillende soorten ondernemers. Links naar GitHub Pages zijn tijdelijke demonstratieomgevingen.": "These websites and concept websites show style, structure and possibilities for different types of business owners. GitHub Pages links are temporary demo environments.",
 	"Klantproject": "Client project",
+	"Thor Smeers — Business Website": "Thor Smeers — Business Website",
+	"Website voor vastgoedfotografie, videografie en socialmediacontent, met focus op een sterke visuele portfolio, duidelijke diensten en eenvoudige contactflow.": "Website for real estate photography, videography and social media content, focused on a strong visual portfolio, clear services and a simple contact flow.",
 	"Moeskops Gevelwerken — Business Website": "Moeskops Gevelwerken — Business Website",
 	"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Website for an experienced craftsman in jointing and facade renovation, focused on trust and quote requests.",
 	"Business Website voor een vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Business Website for a tradesperson in jointing and facade renovation, focused on trust and quote requests.",
@@ -650,6 +673,14 @@ const translations = {
 	"Gevelrenovatie": "Facade renovation",
 	"One-page website": "One-page website",
 	"Live preview van de klantwebsite.": "Live preview of the client website.",
+	"Live preview van Thor Smeers": "Live preview of Thor Smeers",
+	"Live mini-preview van de Thor Smeers website": "Live mini-preview of the Thor Smeers website",
+	"Live mini-preview van Thor Smeers": "Live mini-preview of Thor Smeers",
+	"Bekijk Thor Smeers": "View Thor Smeers",
+	"Vastgoedfotografie, videografie en socialmediacontent": "Real estate photography, videography and social media content",
+	"Een sterke visuele portfolio combineren met duidelijke diensten en een eenvoudige contactflow.": "Combine a strong visual portfolio with clear services and a simple contact flow.",
+	"Een visuele bedrijfswebsite die het aanbod helder presenteert en bezoekers vlot naar contact leidt.": "A visual business website that presents the offer clearly and guides visitors smoothly toward contact.",
+	"Visuele portfolio, dienstenoverzicht, socialmediacontent en eenvoudige contactflow.": "Visual portfolio, service overview, social media content and simple contact flow.",
 	"Conceptwebsite": "Concept website",
 	"Beautyzaak": "Beauty business",
 	"Conceptwebsite voor een lokale dakwerker, bedoeld om vertrouwen, diensten en offerte-aanvragen duidelijk te tonen.": "Concept website for a local roofer, designed to clearly show trust, services and quote requests.",
@@ -908,8 +939,18 @@ const livePreviewWidth = 1280;
 const livePreviewHeight = 800;
 const untranslatedText = new Set();
 
+function syncPortfolioNumbers() {
+	portfolioCards.forEach((card, index) => {
+		const number = String(index + 1).padStart(2, "0");
+		card.querySelector(".service-number")?.replaceChildren(number);
+		const project = portfolioProjectDetails[card.dataset.portfolioProject];
+		if (project) project.number = number;
+	});
+}
+
 if (year) year.textContent = new Date().getFullYear();
 storeCampaignParameters();
+syncPortfolioNumbers();
 
 function normalizeText(value) {
 	return value.replace(/\s+/g, " ").trim();
