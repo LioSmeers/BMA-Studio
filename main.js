@@ -806,7 +806,6 @@ const titleTranslations = {
 const header = document.querySelector(".site-header");
 const progressBar = document.querySelector(".scroll-progress");
 const heroSection = document.querySelector(".hero-section");
-const backgroundVideo = document.querySelector(".site-background video");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 const navButtons = document.querySelectorAll(
@@ -830,16 +829,6 @@ const contactStatus = contactForm?.querySelector(".success-message");
 const year = document.querySelector("#year");
 let activePackageKey = "";
 
-function keepBackgroundVideoPlaying() {
-	if (!backgroundVideo) return;
-
-	backgroundVideo.muted = true;
-	backgroundVideo.defaultMuted = true;
-	backgroundVideo.playsInline = true;
-	backgroundVideo.controls = false;
-	const playRequest = backgroundVideo.play();
-	playRequest?.catch(() => {});
-}
 let activePortfolioProjectKey = "";
 let previousPortfolioFocus = null;
 let scrollUpdateQueued = false;
@@ -1666,10 +1655,6 @@ window.addEventListener("resize", () => {
 window.addEventListener("load", updateLiveSitePreviews);
 window.requestAnimationFrame(updateLiveSitePreviews);
 
-backgroundVideo?.addEventListener("loadeddata", keepBackgroundVideoPlaying);
-window.addEventListener("pageshow", keepBackgroundVideoPlaying);
-document.addEventListener("visibilitychange", keepBackgroundVideoPlaying);
-keepBackgroundVideoPlaying();
 
 contactForm?.addEventListener("input", (event) => {
 	if (event.target.name) setError(event.target.name, "");

@@ -54,7 +54,7 @@ body.menu-open {
   background: var(--color-bg);
 }
 
-.site-background video {
+.site-background img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -105,11 +105,6 @@ body:has(.site-background) .page-hero {
 body:has(.site-background) .card,
 body:has(.site-background) .page-hero-panel {
   background: var(--color-surface);
-}
-
-body:has(.site-background) .site-background video {
-  opacity: 1;
-  filter: none;
 }
 
 body:has(.site-background) .site-background::after {
