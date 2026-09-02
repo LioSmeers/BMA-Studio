@@ -806,6 +806,8 @@ const titleTranslations = {
 const header = document.querySelector(".site-header");
 const progressBar = document.querySelector(".scroll-progress");
 const heroSection = document.querySelector(".hero-section");
+const backgroundVideo = document.querySelector(".site-background video");
+const mobileBackgroundQuery = window.matchMedia("(max-width: 767px)");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 const navButtons = document.querySelectorAll(
@@ -828,6 +830,21 @@ const contactSubmit = contactForm?.querySelector("[type='submit']");
 const contactStatus = contactForm?.querySelector(".success-message");
 const year = document.querySelector("#year");
 let activePackageKey = "";
+
+function updateBackgroundPlayback() {
+	if (!backgroundVideo) return;
+
+	if (mobileBackgroundQuery.matches) {
+		backgroundVideo.pause();
+		return;
+	}
+
+	backgroundVideo.muted = true;
+	backgroundVideo.defaultMuted = true;
+	backgroundVideo.playsInline = true;
+	backgroundVideo.controls = false;
+	backgroundVideo.play()?.catch(() => {});
+}
 
 
 let activePortfolioProjectKey = "";
@@ -1655,6 +1672,12 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("load", updateLiveSitePreviews);
 window.requestAnimationFrame(updateLiveSitePreviews);
+
+backgroundVideo?.addEventListener("loadeddata", updateBackgroundPlayback);
+window.addEventListener("pageshow", updateBackgroundPlayback);
+document.addEventListener("visibilitychange", updateBackgroundPlayback);
+mobileBackgroundQuery.addEventListener("change", updateBackgroundPlayback);
+updateBackgroundPlayback();
 
 
 
