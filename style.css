@@ -54,12 +54,17 @@ body.menu-open {
   background: var(--color-bg);
 }
 
+.site-background video,
 .site-background img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0.9;
   filter: saturate(0.82) contrast(0.96);
+}
+
+.site-background img {
+  display: none;
 }
 
 .site-background::after {
@@ -166,6 +171,18 @@ body:has(.site-background) .phone-info {
 
 body:has(.site-background) .phone-section {
   background: transparent;
+}
+
+@media (max-width: 767px) {
+  .site-background video {
+    display: none;
+  }
+
+  .site-background img {
+    display: block;
+    opacity: 1;
+    filter: none;
+  }
 }
 
 .cursor-glow {
