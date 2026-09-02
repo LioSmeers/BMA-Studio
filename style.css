@@ -102,6 +102,11 @@ body:has(.site-background) .page-hero {
     radial-gradient(circle at 18% 18%, rgba(49, 95, 154, 0.16), transparent 28rem);
 }
 
+body:has(.site-background) .card,
+body:has(.site-background) .page-hero-panel {
+  background: rgba(255, 255, 255, 0.68);
+}
+
 .cursor-glow {
   display: none;
   position: fixed;
