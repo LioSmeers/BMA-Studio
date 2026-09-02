@@ -104,7 +104,7 @@ body:has(.site-background) .page-hero {
 
 body:has(.site-background) .card,
 body:has(.site-background) .page-hero-panel {
-  background: rgba(255, 255, 255, 0.68);
+  background: var(--color-surface);
 }
 
 body:has(.site-background) .site-background video {
@@ -133,7 +133,17 @@ body:has(.site-background) .hero-card {
 }
 
 body:has(.site-background) .cta-band {
-  background: rgba(255, 255, 255, 0.58);
+  background: var(--color-surface);
+}
+
+body:has(.site-background) .portfolio-card,
+body:has(.site-background) .service-card,
+body:has(.site-background) .pricing-card,
+body:has(.site-background) .home-portfolio-card,
+body:has(.site-background) .about-copy-card,
+body:has(.site-background) .about-founder-card,
+body:has(.site-background) .about-area-card {
+  background: var(--color-surface);
 }
 
 body:has(.site-background) #diensten::before {
