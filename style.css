@@ -128,7 +128,8 @@ body:has(.site-background) .hero-section::after {
 }
 
 body:has(.site-background) .hero-card {
-  background: rgba(255, 255, 255, 0.56);
+  background: var(--color-surface);
+  backdrop-filter: none;
 }
 
 body:has(.site-background) .cta-band {
@@ -146,6 +147,7 @@ body:has(.site-background) #diensten::after {
 
 body:has(.site-background) .hero-grid {
   z-index: 2;
+  filter: none !important;
   transition: opacity 80ms linear, filter 80ms linear, transform 80ms linear;
 }
 
