@@ -145,10 +145,7 @@ body:has(.site-background) #diensten::after {
 }
 
 body:has(.site-background) .hero-grid {
-  opacity: 1;
-  filter: none;
-  transform: none;
-  transition: none;
+  transition: opacity 80ms linear, filter 80ms linear, transform 80ms linear;
 }
 
 body:has(.site-background) .hero-card,
