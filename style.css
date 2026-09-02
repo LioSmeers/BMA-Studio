@@ -145,6 +145,7 @@ body:has(.site-background) #diensten::after {
 }
 
 body:has(.site-background) .hero-grid {
+  z-index: 2;
   transition: opacity 80ms linear, filter 80ms linear, transform 80ms linear;
 }
 
