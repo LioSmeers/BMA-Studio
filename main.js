@@ -1086,8 +1086,8 @@ function scheduleScrollStateUpdate() {
 function updateHeroTransition() {
 	if (!heroSection) return;
 
-	const fadeDistance = clampNumber(heroSection.offsetHeight * 0.82, 360, 680);
-	const fadeProgress = clampNumber((window.scrollY - 45) / fadeDistance, 0, 1);
+	const fadeDistance = clampNumber(heroSection.offsetHeight * 0.58, 260, 420);
+	const fadeProgress = clampNumber((window.scrollY - 30) / fadeDistance, 0, 1);
 	const opacity = 1 - fadeProgress;
 
 	heroSection.style.setProperty("--hero-fade-opacity", opacity.toFixed(3));
