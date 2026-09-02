@@ -107,6 +107,43 @@ body:has(.site-background) .page-hero-panel {
   background: rgba(255, 255, 255, 0.68);
 }
 
+body:has(.site-background) .site-background video {
+  opacity: 1;
+  filter: none;
+}
+
+body:has(.site-background) .site-background::after {
+  background: transparent;
+}
+
+body:has(.site-background) .hero-section {
+  background: transparent;
+}
+
+body:has(.site-background) .hero-section::before,
+body:has(.site-background) .hero-section::after {
+  background: transparent;
+  filter: none;
+  opacity: 1;
+}
+
+body:has(.site-background) .hero-card {
+  background: rgba(255, 255, 255, 0.56);
+}
+
+body:has(.site-background) .cta-band {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+body:has(.site-background) #diensten::before {
+  background-image: none;
+  opacity: 0;
+}
+
+body:has(.site-background) #diensten::after {
+  background: transparent;
+}
+
 .cursor-glow {
   display: none;
   position: fixed;
