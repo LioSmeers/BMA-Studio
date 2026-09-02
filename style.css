@@ -144,6 +144,25 @@ body:has(.site-background) #diensten::after {
   background: transparent;
 }
 
+body:has(.site-background) .hero-grid {
+  opacity: 1;
+  filter: none;
+  transform: none;
+  transition: none;
+}
+
+body:has(.site-background) .hero-card,
+body:has(.site-background) .hero-copy,
+body:has(.site-background) .hero-phone-wrap,
+body:has(.site-background) .phone-info {
+  position: relative;
+  z-index: 2;
+}
+
+body:has(.site-background) .phone-section {
+  background: transparent;
+}
+
 .cursor-glow {
   display: none;
   position: fixed;
