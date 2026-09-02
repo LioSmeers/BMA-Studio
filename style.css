@@ -717,9 +717,8 @@ a.is-pressure-active {
 }
 
 .hero-section {
-  position: sticky;
+  position: relative;
   z-index: 1;
-  top: 0;
   isolation: isolate;
   overflow: hidden;
   --hero-fade-blur: 0px;
