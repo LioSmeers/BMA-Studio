@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css?v=20260810-logo-mobile" />
+    <link rel="stylesheet" href="./style.css?v=20260905-navfix" />
     <script type="application/ld+json">
 {
       "@context": "https://schema.org",
@@ -245,6 +245,7 @@
   </head>
   <body>
     <div class="cursor-glow" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">Naar inhoud</a>
     <div class="scroll-progress" aria-hidden="true"></div>
 
     <header class="site-header">
@@ -285,11 +286,11 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero-section" aria-labelledby="hero-title">
         <div class="container hero-grid">
           <div class="hero-ticker" aria-label="Snelle zekerheden">
-            <div class="hero-ticker-track">
+            <div class="hero-ticker-track" aria-hidden="true">
               <span>Persoonlijk contact</span>
               <span>Antwoord binnen dezelfde dag</span>
               <span>Websites voor lokale ondernemers</span>
@@ -316,7 +317,7 @@
               </p>
 
               <div class="button-row">
-                <a class="primary-button" href="./diensten.html#gratis-analyse">Gratis analyse aanvragen</a>
+                <a class="primary-button" href="./contact.html?pakket=prototype">Gratis analyse aanvragen</a>
                 <a class="secondary-button" href="./portfolio.html">Bekijk voorbeelden</a>
               </div>
             </div>
@@ -395,7 +396,7 @@
                 We bekijken je huidige online basis of maken een eerste richting voor een nieuwe website, zodat je meteen ziet wat beter kan.
               </p>
             </div>
-            <a class="primary-button" href="./diensten.html#gratis-analyse">Bekijk gratis opties</a>
+            <a class="primary-button" href="./contact.html?pakket=prototype">Bekijk gratis opties</a>
           </div>
         </div>
       </section>
@@ -671,7 +672,7 @@
       </div>
     </footer>
 
-    <script src="./main.js?v=20260831-thor-portfolio"></script>
+    <script src="./main.js?v=20260905-navfix"></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8b7e230825e444a49804b8d6e17e1b79"}'></script><!-- End Cloudflare Web Analytics -->
   </body>
 </html>
