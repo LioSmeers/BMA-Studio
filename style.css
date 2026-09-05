@@ -10,6 +10,11 @@
   --color-dark: #0b111c;
   --color-error: #dc2626;
   --color-success: #15803d;
+  --color-badge-client-bg: #e8f7f2;
+  --color-badge-client-text: #0f766e;
+  --color-badge-school-bg: #f1ecff;
+  --color-badge-school-text: #5b21b6;
+  --color-trustpilot: #00b67a;
   --radius-card: 0.95rem;
   --radius-pill: 999px;
   --shadow-soft: 0 12px 32px rgba(11, 17, 28, 0.06);
@@ -141,6 +146,24 @@ img {
   border: 0;
   padding: 0;
   margin: -1px;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 100;
+  top: -100%;
+  left: 1rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  padding: 0.75rem 1.25rem;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 180ms ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
 }
 
 .is-pressure-active {
@@ -1698,18 +1721,18 @@ p {
 }
 
 .portfolio-badge-client {
-  background: #e8f7f2;
-  color: #0f766e;
+  background: var(--color-badge-client-bg);
+  color: var(--color-badge-client-text);
 }
 
 .portfolio-badge-ux {
-  background: #e8f7f2;
-  color: #0f766e;
+  background: var(--color-badge-client-bg);
+  color: var(--color-badge-client-text);
 }
 
 .portfolio-badge-school {
-  background: #f1ecff;
-  color: #5b21b6;
+  background: var(--color-badge-school-bg);
+  color: var(--color-badge-school-text);
 }
 
 .portfolio-copy p {
@@ -2331,7 +2354,7 @@ p {
   left: 1rem;
   height: 3px;
   border-radius: var(--radius-pill);
-  background: #00b67a;
+  background: var(--color-trustpilot);
   content: "";
   transform: scaleX(0.72);
   transform-origin: center;
@@ -2347,7 +2370,7 @@ p {
 }
 
 .trustpilot-star {
-  color: #00b67a;
+  color: var(--color-trustpilot);
   font-size: 1.8rem;
   line-height: 1;
 }
@@ -3081,7 +3104,7 @@ p {
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1024px) {
   .desktop-nav {
     display: flex;
   }
