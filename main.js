@@ -411,7 +411,6 @@ const translations = {
 	"Wij bouwen websites die werken. Maandelijks onderhoud en social content, zodat jij je kunt focussen op wat je het beste doet: ondernemen.": "We build websites that work. Monthly maintenance and social content, so you can focus on what you do best: running your business.",
 	"Scroll naar meer informatie": "Scroll for more information",
 	"Tevreden klanten": "Happy clients",
-	"Jaar ervaring": "Years of experience",
 	"Focus op lokale ondernemers": "Focus on local business owners",
 	"Persoonlijk contact": "Personal contact",
 	"Antwoord binnen dezelfde dag": "Reply the same day",
