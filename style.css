@@ -2431,25 +2431,26 @@ body.has-page-video .founder-section {
 .home-cta-band {
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--color-border);
   border-radius: calc(var(--radius-card) * 1.4);
-  background: linear-gradient(155deg, #0e1e3d 0%, #1c3866 52%, #2a4d85 100%);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
   padding: clamp(2.4rem, 6vw, 4.4rem) clamp(1.5rem, 5vw, 3.5rem);
   text-align: center;
 }
 
 .home-cta-glow {
   position: absolute;
-  inset: -30% -10% auto;
+  inset: 0;
   z-index: 0;
-  height: 22rem;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 65%);
+  background: radial-gradient(ellipse 65% 55% at 50% 0%, color-mix(in srgb, var(--color-accent), transparent 82%), transparent 75%);
   pointer-events: none;
 }
 
 .home-cta-eyebrow {
   position: relative;
   z-index: 1;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-muted);
 }
 
 .home-cta-band h2 {
@@ -2457,7 +2458,7 @@ body.has-page-video .founder-section {
   z-index: 1;
   max-width: 22ch;
   margin-inline: auto;
-  color: #fff;
+  color: var(--color-text);
   font-size: clamp(1.9rem, 3.8vw, 3rem);
 }
 
@@ -2466,7 +2467,7 @@ body.has-page-video .founder-section {
   z-index: 1;
   max-width: 38rem;
   margin: 0.9rem auto 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-muted);
 }
 
 .home-cta-actions {
@@ -2474,18 +2475,6 @@ body.has-page-video .founder-section {
   z-index: 1;
   justify-content: center;
   margin-top: 2rem;
-}
-
-.home-cta-secondary {
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
-}
-
-.home-cta-secondary:hover,
-.home-cta-secondary:focus-visible {
-  border-color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.14);
 }
 
 .reviews-section {
