@@ -371,6 +371,10 @@ const translations = {
 	"Snelle zekerheden": "Quick assurances",
 	"Belangrijkste voordelen": "Key benefits",
 	"Trustpilot reviews": "Trustpilot reviews",
+	"Goed werk. Blije klanten.": "Good work. Happy clients.",
+	"Alle reviews": "All reviews",
+	"Reviews pauzeren": "Pause reviews",
+	"Reviews hervatten": "Resume reviews",
 	"Trustpilot review van Manu Moeskops: Perfecte samenwerking gehad met Berend.": "Trustpilot review by Manu Moeskops: Perfect collaboration with Berend.",
 	"Trustpilot review van azdin bhdz: Ils ont fait un tres bon site.": "Trustpilot review by azdin bhdz: They made a very good site.",
 	"Trustpilot review van Noemi Hurkens: Mooie website gemaakt": "Trustpilot review by Noemi Hurkens: Beautiful website made",
@@ -399,6 +403,16 @@ const translations = {
 	"BMA Studio helpt lokale ondernemingen met duidelijke websites, maandelijks onderhoud en social media content die vertrouwen opbouwen en klanten sneller laten contact opnemen. Je kan ook gratis een websiteanalyse of eerste websiteprototype aanvragen.": "BMA Studio helps local businesses with clear websites, monthly maintenance and social media content that builds trust and makes it easier for customers to get in touch. You can also request a free website analysis or first website prototype.",
 	"Je kan ook gratis een websiteanalyse of eerste websiteprototype aanvragen.": "You can also request a free website analysis or first website prototype.",
 	"Gratis analyse aanvragen": "Request a free analysis",
+	"Gratis prototype aanvragen": "Request a free prototype",
+	"Vertrouwd door lokale ondernemers in België": "Trusted by local business owners in Belgium",
+	"Sterke websites voor": "Strong websites for",
+	"lokale": "local",
+	"ondernemers.": "business owners.",
+	"Wij bouwen websites die werken. Maandelijks onderhoud en social content, zodat jij je kunt focussen op wat je het beste doet: ondernemen.": "We build websites that work. Monthly maintenance and social content, so you can focus on what you do best: running your business.",
+	"Scroll naar meer informatie": "Scroll for more information",
+	"Tevreden klanten": "Happy clients",
+	"Jaar ervaring": "Years of experience",
+	"Focus op lokale ondernemers": "Focus on local business owners",
 	"Persoonlijk contact": "Personal contact",
 	"Antwoord binnen dezelfde dag": "Reply the same day",
 	"Websites voor lokale ondernemers": "Websites for local business owners",
@@ -416,9 +430,17 @@ const translations = {
 	"Strak, persoonlijk en zonder gedoe.": "Clean, personal and hassle-free.",
 	"We denken mee over je aanbod, houden je website netjes bij en reageren dezelfde dag op je aanvraag.": "We think along with your offer, keep your website tidy and reply to your request the same day.",
 	"Recent werk in één oogopslag.": "Recent work at a glance.",
-	"Gratis start": "Free start",
-	"Vraag een gratis websiteanalyse of prototype aan.": "Request a free website analysis or prototype.",
-	"We bekijken je huidige online basis of maken een eerste richting voor een nieuwe website, zodat je meteen ziet wat beter kan.": "We review your current online foundation or create a first direction for a new website, so you immediately see what can improve.",
+	"Waarom BMA Studio": "Why BMA Studio",
+	"Een online basis waar je op kan bouwen.": "An online foundation you can build on.",
+	"Geen sjabloonpraat: we bouwen websites die duidelijk zijn, snel laden en gemaakt worden om klanten sneller contact te laten opnemen.": "No template talk: we build websites that are clear, fast and made to help customers get in touch faster.",
+	"Snel online": "Online fast",
+	"Eerste prototype meestal binnen 2 tot 3 werkdagen, definitieve website vaak al binnen een week.": "First prototype usually within 2 to 3 business days, final website often ready within a week.",
+	"Voor klanten die zoeken, vergelijken en boeken via hun smartphone.": "For customers who search, compare and book on their smartphone.",
+	"Onderhoud inbegrepen": "Maintenance included",
+	"Hosting, .be-domeinnaam en maandelijkse updates zonder dat je er zelf naar moet omkijken.": "Hosting, a .be domain name and monthly updates without you having to worry about it.",
+	"Rechtstreeks contact met wie je website bouwt, met reactie dezelfde dag.": "Direct contact with the person building your website, with a reply the same day.",
+	"Nog niet zeker wat je nodig hebt?": "Not sure yet what you need?",
+	"Vraag een gratis analyse of prototype aan": "Request a free analysis or prototype",
 	"Bekijk gratis opties": "View free options",
 	"Portfolio previews": "Portfolio previews",
 	"Live preview van Moeskops Gevelwerken": "Live preview of Moeskops Gevelwerken",
@@ -449,8 +471,10 @@ const translations = {
 	"Bekijk concrete projecten en voorbeeldsites op de aparte portfoliopagina.": "View concrete projects and example sites on the separate portfolio page.",
 	"Website laten maken Limburg": "Have a website made in Limburg",
 	"Volgende stap": "Next step",
-	"Begin bij pakketten, eindig met een gerichte aanvraag.": "Start with the packages, end with a focused request.",
-	"Vergelijk eerst de formules en stuur daarna gericht door wat je bedrijf nodig heeft.": "Compare the formulas first, then send a focused request with what your business needs.",
+	"Klaar voor een website die voor je werkt?": "Ready for a website that works for you?",
+	"Vergelijk eerst de pakketten of stuur meteen door wat je bedrijf nodig heeft — we reageren dezelfde dag.": "Compare the packages first or send straight away what your business needs — we reply the same day.",
+	"Klanten aan het woord": "Customers speak up",
+	"Wat lokale ondernemers over ons zeggen.": "What local business owners say about us.",
 	"Review us on Trustpilot": "Review us on Trustpilot",
 	"Kies sneller wat bij je bedrijf past.": "Choose what fits your business faster.",
 	"Website laten maken met duidelijke pakketten en prijzen": "Have a website made with clear packages and prices",
@@ -1198,12 +1222,13 @@ function updateScrollState() {
 		document.documentElement.scrollHeight - document.documentElement.clientHeight;
 	const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
 
-	header?.classList.toggle("is-scrolled", window.scrollY > 14);
+	const isScrolled = window.scrollY > 14;
+	header?.classList.toggle("is-scrolled", isScrolled);
+	header?.classList.toggle("is-on-dark", document.body.dataset.pageTheme === "dark");
 	document.documentElement.style.setProperty(
 		"--scroll-progress",
 		String(clampNumber(progress, 0, 1)),
 	);
-	updateHeroTransition();
 
 	const activeId = ["diensten", "over-ons", "portfolio", "pakketten", "contact", "reviews"].reduce(
 		(current, id) => {
@@ -1228,24 +1253,6 @@ function scheduleScrollStateUpdate() {
 		scrollUpdateQueued = false;
 		updateScrollState();
 	});
-}
-
-function updateHeroTransition() {
-	if (!heroSection) return;
-
-	const fadeDistance = clampNumber(heroSection.offsetHeight * 0.82, 360, 680);
-	const fadeProgress = clampNumber((window.scrollY - 45) / fadeDistance, 0, 1);
-	const opacity = 1 - fadeProgress;
-
-	heroSection.style.setProperty("--hero-fade-opacity", opacity.toFixed(3));
-	heroSection.style.setProperty(
-		"--hero-fade-blur",
-		`${(fadeProgress * 10).toFixed(2)}px`,
-	);
-	heroSection.style.setProperty(
-		"--hero-fade-y",
-		`${(-fadeProgress * 1.4).toFixed(2)}rem`,
-	);
 }
 
 function closeMenu() {
@@ -1506,11 +1513,6 @@ function setupReveal() {
 	const observer = new IntersectionObserver(
 		(entries) => {
 			entries.forEach((entry) => {
-				if (entry.target.classList.contains("phone-reveal")) {
-					entry.target.classList.toggle("is-visible", entry.isIntersecting);
-					return;
-				}
-
 				if (entry.isIntersecting) {
 					entry.target.classList.add("is-visible");
 					observer.unobserve(entry.target);
@@ -1523,55 +1525,105 @@ function setupReveal() {
 	revealItems.forEach((item) => observer.observe(item));
 }
 
-function setupPhonePointerEffect() {
-	const phone = document.querySelector(".iphone-shell");
-	const phoneSection = document.querySelector(".phone-section");
+function setupThemeToggle() {
+	const switcher = document.querySelector(".theme-switcher");
+	const heroSection = document.querySelector(".hero-section");
+	const heroVideo = document.querySelector(".page-bg-video source");
+	if (!switcher || !heroVideo) return;
+
+	const lightSrc = heroVideo.getAttribute("src");
+	const darkSrc = lightSrc.replace("BMA Achtergrond Animatie Nieuw.mp4", "BMA Achtergrond Animatie Donker.mp4");
+
+	const setTheme = (theme) => {
+		if (heroSection) heroSection.dataset.heroTheme = theme;
+		document.body.dataset.pageTheme = theme === "dark" ? "dark" : "";
+
+		switcher.querySelectorAll("[data-theme-option]").forEach((button) => {
+			const isActive = button.dataset.themeOption === theme;
+			button.classList.toggle("is-active", isActive);
+			button.setAttribute("aria-pressed", String(isActive));
+		});
+
+		const nextSrc = theme === "dark" ? darkSrc : lightSrc;
+		if (heroVideo.getAttribute("src") !== nextSrc) {
+			heroVideo.setAttribute("src", nextSrc);
+			heroVideo.parentElement.load();
+			heroVideo.parentElement.play().catch(() => {});
+		}
+
+		updateScrollState();
+	};
+
+	switcher.addEventListener("click", (event) => {
+		const button = event.target.closest("[data-theme-option]");
+		if (!button) return;
+		setTheme(button.dataset.themeOption);
+	});
+}
+
+function setupHeroCounters() {
+	const counters = document.querySelectorAll(".hero-quick-count");
+	if (!counters.length) return;
+
+	const prefersReducedMotion = window.matchMedia(
+		"(prefers-reduced-motion: reduce)",
+	).matches;
+
+	counters.forEach((counter) => {
+		const target = Number(counter.dataset.countTo) || 0;
+		const suffix = counter.dataset.countSuffix || "";
+
+		if (prefersReducedMotion) {
+			counter.textContent = `${target}${suffix}`;
+			return;
+		}
+
+		const duration = 1200;
+		const startTime = performance.now();
+
+		const tick = (now) => {
+			const progress = clampNumber((now - startTime) / duration, 0, 1);
+			const eased = 1 - (1 - progress) ** 3;
+			counter.textContent = `${Math.round(target * eased)}${suffix}`;
+
+			if (progress < 1) window.requestAnimationFrame(tick);
+		};
+
+		window.requestAnimationFrame(tick);
+	});
+}
+
+function setupHeroParallax() {
+	const pageBg = document.querySelector(".page-bg");
+	if (!pageBg) return;
+
 	const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 	const prefersReducedMotion = window.matchMedia(
 		"(prefers-reduced-motion: reduce)",
 	).matches;
 
-	if (!phone || !phoneSection || !canHover || prefersReducedMotion) return;
+	if (!canHover || prefersReducedMotion) return;
 
-	const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+	const maxShift = 14;
 
-	const resetPhone = () => {
-		phone.classList.remove("is-pointer-active");
-		phone.style.setProperty("--phone-press", "0px");
-		phone.style.setProperty("--phone-tilt-x", "0deg");
-		phone.style.setProperty("--phone-tilt-y", "0deg");
-		phone.style.setProperty("--phone-glow", "0");
+	const resetPageBg = () => {
+		pageBg.style.setProperty("--hero-bg-shift-x", "0px");
+		pageBg.style.setProperty("--hero-bg-shift-y", "0px");
 	};
 
-	const movePhone = (event) => {
-		const sectionRect = phoneSection.getBoundingClientRect();
-		const isSectionVisible =
-			sectionRect.top < window.innerHeight && sectionRect.bottom > 0;
+	const movePageBg = (event) => {
+		const x = clampNumber(event.clientX / window.innerWidth, 0, 1);
+		const y = clampNumber(event.clientY / window.innerHeight, 0, 1);
+		const shiftX = (x - 0.5) * 2 * maxShift;
+		const shiftY = (y - 0.5) * 2 * maxShift;
 
-		if (!isSectionVisible) {
-			resetPhone();
-			return;
-		}
-
-		const rect = phone.getBoundingClientRect();
-		const x = clamp((event.clientX - rect.left) / rect.width, 0, 1);
-		const y = clamp((event.clientY - rect.top) / rect.height, 0, 1);
-		const tiltY = (x - 0.5) * 5;
-		const tiltX = (0.5 - y) * 4;
-
-		phone.classList.add("is-pointer-active");
-		phone.style.setProperty("--phone-press", "4px");
-		phone.style.setProperty("--phone-tilt-x", `${tiltX.toFixed(2)}deg`);
-		phone.style.setProperty("--phone-tilt-y", `${tiltY.toFixed(2)}deg`);
-		phone.style.setProperty("--phone-light-x", `${Math.round(x * 100)}%`);
-		phone.style.setProperty("--phone-light-y", `${Math.round(y * 100)}%`);
-		phone.style.setProperty("--phone-glow", "1");
+		pageBg.style.setProperty("--hero-bg-shift-x", `${shiftX.toFixed(2)}px`);
+		pageBg.style.setProperty("--hero-bg-shift-y", `${shiftY.toFixed(2)}px`);
 	};
 
-	window.addEventListener("pointermove", movePhone, { passive: true });
-	window.addEventListener("mousemove", movePhone, { passive: true });
-	window.addEventListener("pointerleave", resetPhone);
-	window.addEventListener("blur", resetPhone);
+	window.addEventListener("pointermove", movePageBg, { passive: true });
+	window.addEventListener("pointerleave", resetPageBg);
+	window.addEventListener("blur", resetPageBg);
 }
 
 function setupPagePressure() {
@@ -1587,7 +1639,6 @@ function setupPagePressure() {
 		".card",
 		".contact-info-card",
 		".trustpilot-strip",
-		".phone-info",
 		"button",
 		"a",
 	].join(", ");
@@ -1914,7 +1965,9 @@ contactForm?.addEventListener("submit", async (event) => {
 
 setupLanguageSwitcher();
 setupReveal();
-setupPhonePointerEffect();
+setupThemeToggle();
+window.setTimeout(setupHeroCounters, 380);
+setupHeroParallax();
 setupPagePressure();
 setupCursorGlow();
 setupPortfolioToggle();
