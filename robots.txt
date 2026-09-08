@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /dist/
 Allow: /favicon.svg
 Allow: /favicon-48x48.png
 Allow: /favicon-512x512.png
