@@ -956,8 +956,12 @@ function keepPageBackgroundPlaying() {
 	pageBackgroundVideo.muted = true;
 	pageBackgroundVideo.defaultMuted = true;
 	pageBackgroundVideo.playsInline = true;
+	pageBackgroundVideo.autoplay = true;
+	pageBackgroundVideo.loop = true;
 	pageBackgroundVideo.controls = false;
-	pageBackgroundVideo.play()?.catch(() => {});
+	pageBackgroundVideo.removeAttribute("controls");
+	const playback = pageBackgroundVideo.play();
+	playback?.catch(() => {});
 }
 
 let activePortfolioProjectKey = "";
@@ -1916,6 +1920,8 @@ window.addEventListener("resize", () => {
 window.addEventListener("load", updateLiveSitePreviews);
 window.requestAnimationFrame(updateLiveSitePreviews);
 pageBackgroundVideo?.addEventListener("loadeddata", keepPageBackgroundPlaying);
+pageBackgroundVideo?.addEventListener("canplay", keepPageBackgroundPlaying);
+pageBackgroundVideo?.addEventListener("pause", keepPageBackgroundPlaying);
 window.addEventListener("pageshow", keepPageBackgroundPlaying);
 document.addEventListener("visibilitychange", keepPageBackgroundPlaying);
 keepPageBackgroundPlaying();
