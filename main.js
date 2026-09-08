@@ -950,13 +950,8 @@ const campaignParameterNames = [
 const campaignStorageKey = "bma-campaign-params";
 let activePackageKey = "";
 
-function syncPageBackgroundPlayback() {
+function keepPageBackgroundPlaying() {
 	if (!pageBackgroundVideo) return;
-
-	if (mobileViewport.matches) {
-		pageBackgroundVideo.pause();
-		return;
-	}
 
 	pageBackgroundVideo.muted = true;
 	pageBackgroundVideo.defaultMuted = true;
@@ -964,6 +959,7 @@ function syncPageBackgroundPlayback() {
 	pageBackgroundVideo.controls = false;
 	pageBackgroundVideo.play()?.catch(() => {});
 }
+
 let activePortfolioProjectKey = "";
 let previousPortfolioFocus = null;
 let scrollUpdateQueued = false;
@@ -1919,10 +1915,10 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("load", updateLiveSitePreviews);
 window.requestAnimationFrame(updateLiveSitePreviews);
-pageBackgroundVideo?.addEventListener("loadeddata", syncPageBackgroundPlayback);
-window.addEventListener("pageshow", syncPageBackgroundPlayback);
-mobileViewport.addEventListener("change", syncPageBackgroundPlayback);
-syncPageBackgroundPlayback();
+pageBackgroundVideo?.addEventListener("loadeddata", keepPageBackgroundPlaying);
+window.addEventListener("pageshow", keepPageBackgroundPlaying);
+document.addEventListener("visibilitychange", keepPageBackgroundPlaying);
+keepPageBackgroundPlaying();
 
 contactForm?.addEventListener("input", (event) => {
 	if (event.target.name) setError(event.target.name, "");
