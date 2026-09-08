@@ -28,13 +28,13 @@
     <meta name="twitter:image" content="https://bmastudio.be/assets/og-image.png" />
 
     <title>Website laten maken voor lokale bedrijven | BMA Studio</title>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="/favicon-48x48.png" sizes="48x48" type="image/png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon-48x48.png?v=20260905-transparent" sizes="48x48" type="image/png">
+    <link rel="icon" href="/favicon.svg?v=20260905-transparent" sizes="any" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260905-transparent">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css?v=20260905-navfix" />
+    <link rel="stylesheet" href="./style.css?v=20260905-desktop-reviews" />
     <script type="application/ld+json">
 {
       "@context": "https://schema.org",
@@ -243,7 +243,20 @@
 }
     </script>
   </head>
-  <body>
+  <body class="has-page-video">
+    <div class="page-bg" aria-hidden="true">
+      <video
+        class="page-bg-video"
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+      >
+        <source src="./public/BMA Achtergrond Animatie Nieuw.mp4" type="video/mp4" />
+      </video>
+    </div>
+
     <div class="cursor-glow" aria-hidden="true"></div>
     <a class="skip-link" href="#main-content">Naar inhoud</a>
     <div class="scroll-progress" aria-hidden="true"></div>
@@ -287,116 +300,86 @@
     </header>
 
     <main id="main-content">
-      <section class="hero-section" aria-labelledby="hero-title">
+      <section class="hero-section hero-section--video" aria-labelledby="hero-title">
         <div class="container hero-grid">
-          <div class="hero-ticker" aria-label="Snelle zekerheden">
-            <div class="hero-ticker-track" aria-hidden="true">
-              <span>Persoonlijk contact</span>
-              <span>Antwoord binnen dezelfde dag</span>
-              <span>Websites voor lokale ondernemers</span>
-              <span>Persoonlijk contact</span>
-              <span>Antwoord binnen dezelfde dag</span>
-              <span>Websites voor lokale ondernemers</span>
-              <span>Persoonlijk contact</span>
-              <span>Antwoord binnen dezelfde dag</span>
-              <span>Websites voor lokale ondernemers</span>
-              <span>Persoonlijk contact</span>
-              <span>Antwoord binnen dezelfde dag</span>
-              <span>Websites voor lokale ondernemers</span>
-            </div>
+          <p class="hero-badge hero-in" style="--hero-in-delay: 0ms">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            Vertrouwd door lokale ondernemers in België
+          </p>
+
+          <h1 id="hero-title" class="hero-headline hero-in" style="--hero-in-delay: 90ms">
+            Sterke websites voor <span class="hero-headline-accent">lokale</span> ondernemers.
+          </h1>
+
+          <p class="hero-text hero-in" style="--hero-in-delay: 180ms">
+            Wij bouwen websites die werken. Maandelijks onderhoud en social content, zodat jij je kunt focussen op wat je het beste doet: ondernemen.
+          </p>
+
+          <div class="button-row hero-actions hero-in" style="--hero-in-delay: 270ms">
+            <a class="primary-button hero-primary" href="./contact.html?pakket=prototype">
+              Gratis prototype aanvragen
+              <span class="hero-primary-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="secondary-button hero-secondary" href="./portfolio.html">Bekijk voorbeelden</a>
           </div>
 
-          <article class="card hero-card reveal">
-            <div class="hero-copy">
-              <p class="eyebrow">Build • Maintain • Attract</p>
-              <h1 id="hero-title">Professionele websites voor lokale bedrijven in België</h1>
-              <p class="hero-text">
-                De online basis voor lokale bedrijven. BMA Studio helpt lokale ondernemingen met duidelijke websites, maandelijks onderhoud
-                en social media content die vertrouwen opbouwen en klanten sneller laten contact opnemen.
-                Je kan ook gratis een websiteanalyse of eerste websiteprototype aanvragen.
-              </p>
-
-              <div class="button-row">
-                <a class="primary-button" href="./contact.html?pakket=prototype">Gratis analyse aanvragen</a>
-                <a class="secondary-button" href="./portfolio.html">Bekijk voorbeelden</a>
-              </div>
+          <dl class="hero-quicks hero-in" style="--hero-in-delay: 360ms">
+            <div class="hero-quick">
+              <dt><span class="hero-quick-count" data-count-to="10" data-count-suffix="+" data-no-translate>0</span></dt>
+              <dd>Tevreden klanten</dd>
             </div>
-
-          </article>
-
+            <div class="hero-quick">
+              <dt><span class="hero-quick-count" data-count-to="3" data-count-suffix="+" data-no-translate>0</span></dt>
+              <dd>Jaar ervaring</dd>
+            </div>
+            <div class="hero-quick">
+              <dt><span class="hero-quick-count" data-count-to="100" data-count-suffix="%" data-no-translate>0</span></dt>
+              <dd>Focus op lokale ondernemers</dd>
+            </div>
+          </dl>
         </div>
+
+        <a class="hero-scroll-cue" href="#free-start-title" aria-label="Scroll naar meer informatie">
+          <span></span>
+        </a>
       </section>
 
-      <section class="phone-section" aria-label="Belangrijkste voordelen">
+      <section class="section why-section" id="free-start-title" aria-labelledby="why-title">
         <div class="container">
-          <div class="phone-stage">
-            <div class="phone-info phone-info-left reveal">
-              <span class="eyebrow">Basis</span>
-              <h2>Gebouwd voor ondernemers die vooruit willen.</h2>
-              <p>
-                We maken websites die duidelijk zijn, snel laden en meteen tonen waarom klanten voor jou moeten kiezen.
-              </p>
-            </div>
-
-            <aside class="hero-phone-wrap reveal phone-reveal">
-              <div class="iphone-shell">
-                <div class="iphone-side-button iphone-side-button-top" aria-hidden="true"></div>
-                <div class="iphone-side-button iphone-side-button-bottom" aria-hidden="true"></div>
-                <div class="iphone-screen">
-                  <div class="iphone-notch" aria-hidden="true"></div>
-                  <div class="iphone-status">
-                    <span>BMA Studio</span>
-                    <span>Online</span>
-                  </div>
-                  <div class="iphone-points">
-                    <article class="iphone-point">
-                      <span class="iphone-point-number">01</span>
-                      <div>
-                        <h3>100% mobile-first</h3>
-                        <p>Voor klanten die zoeken, vergelijken en boeken via hun smartphone.</p>
-                      </div>
-                    </article>
-                    <article class="iphone-point">
-                      <span class="iphone-point-number">02</span>
-                      <div>
-                        <h3>Website vanaf €399</h3>
-                        <p>Betaal eenmalig of start zonder opstartkost voor €59/mnd, inclusief hosting, .be-domeinnaam en onderhoud.</p>
-                      </div>
-                    </article>
-                    <article class="iphone-point">
-                      <span class="iphone-point-number">03</span>
-                      <div>
-                        <h3>Voor lokale zaken</h3>
-                        <p>Vakmannen, horeca, salons, handelszaken, trainers en creatieve ondernemers.</p>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>
-            </aside>
-
-            <div class="phone-info phone-info-right reveal">
-              <span class="eyebrow">Werkwijze</span>
-              <h2>Strak, persoonlijk en zonder gedoe.</h2>
-              <p>
-                We denken mee over je aanbod, houden je website netjes bij en reageren dezelfde dag op je aanvraag.
-              </p>
-            </div>
+          <div class="section-heading why-heading reveal">
+            <span class="eyebrow">Waarom BMA Studio</span>
+            <h2 id="why-title">Een online basis waar je op kan bouwen.</h2>
+            <p>
+              Geen sjabloonpraat: we bouwen websites die duidelijk zijn, snel laden en gemaakt worden om klanten sneller contact te laten opnemen.
+            </p>
           </div>
-        </div>
-      </section>
 
-      <section class="section section-soft" aria-labelledby="free-start-title">
-        <div class="container">
-          <div class="cta-band reveal">
-            <div>
-              <span class="eyebrow">Gratis start</span>
-              <h2 id="free-start-title">Vraag een gratis websiteanalyse of prototype aan.</h2>
-              <p>
-                We bekijken je huidige online basis of maken een eerste richting voor een nieuwe website, zodat je meteen ziet wat beter kan.
-              </p>
-            </div>
-            <a class="primary-button" href="./contact.html?pakket=prototype">Bekijk gratis opties</a>
+          <div class="why-grid">
+            <article class="why-card card hover-lift reveal">
+              <span class="why-icon" aria-hidden="true">⚡</span>
+              <h3>Snel online</h3>
+              <p>Eerste prototype meestal binnen 2 tot 3 werkdagen, definitieve website vaak al binnen een week.</p>
+            </article>
+            <article class="why-card card hover-lift reveal">
+              <span class="why-icon" aria-hidden="true">📱</span>
+              <h3>100% mobile-first</h3>
+              <p>Gebouwd voor klanten die zoeken, vergelijken en boeken via hun smartphone.</p>
+            </article>
+            <article class="why-card card hover-lift reveal">
+              <span class="why-icon" aria-hidden="true">🛠️</span>
+              <h3>Onderhoud inbegrepen</h3>
+              <p>Hosting, .be-domeinnaam en maandelijkse updates zonder dat je er zelf naar moet omkijken.</p>
+            </article>
+            <article class="why-card card hover-lift reveal">
+              <span class="why-icon" aria-hidden="true">💬</span>
+              <h3>Persoonlijk contact</h3>
+              <p>Rechtstreeks contact met wie je website bouwt, met reactie dezelfde dag.</p>
+            </article>
+          </div>
+
+          <div class="why-cta reveal">
+            <p>Nog niet zeker wat je nodig hebt?</p>
+            <a class="secondary-button" href="./contact.html?pakket=prototype">Vraag een gratis analyse of prototype aan</a>
           </div>
         </div>
       </section>
@@ -535,112 +518,74 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="home-next-title">
+      <section class="section home-cta-section" aria-labelledby="home-next-title">
         <div class="container">
-          <div class="cta-band reveal">
-            <div>
-              <span class="eyebrow">Volgende stap</span>
-              <h2 id="home-next-title">Begin bij pakketten, eindig met een gerichte aanvraag.</h2>
-              <p>
-                Vergelijk eerst de formules en stuur daarna gericht door wat je bedrijf nodig heeft.
-              </p>
+          <div class="home-cta-band reveal">
+            <div class="home-cta-glow" aria-hidden="true"></div>
+            <span class="eyebrow home-cta-eyebrow">Volgende stap</span>
+            <h2 id="home-next-title">Klaar voor een website die voor je werkt?</h2>
+            <p>
+              Vergelijk eerst de pakketten of stuur meteen door wat je bedrijf nodig heeft — we reageren dezelfde dag.
+            </p>
+            <div class="button-row home-cta-actions">
+              <a class="primary-button" href="./contact.html?pakket=prototype">Gratis analyse aanvragen</a>
+              <a class="secondary-button home-cta-secondary" href="./pakketten.html">Bekijk pakketten</a>
             </div>
-            <a class="primary-button" href="./pakketten.html">Naar pakketten</a>
           </div>
         </div>
       </section>
 
       <section class="section reviews-section" id="reviews" aria-labelledby="reviews-title">
         <div class="container">
-          <a
-            class="trustpilot-strip reveal"
-            id="reviews-title"
-            href="https://nl.trustpilot.com/evaluate/bmastudio.be"
-            target="_blank"
-            rel="noopener"
-          >
-            <span class="trustpilot-star" aria-hidden="true">★</span>
-            <span>Review us on Trustpilot</span>
-          </a>
-
-          <div class="review-marquee reveal" aria-label="Trustpilot reviews">
+          <div class="review-heading">
+            <div><span class="eyebrow">Klanten aan het woord</span><h2 id="reviews-title">Wat lokale ondernemers over ons zeggen.</h2></div>
+          </div>
+          <div class="review-marquee" aria-label="Trustpilot reviews">
             <div class="review-track">
-              <img
-                src="./public/trustpilot-review-manu-moeskops.png"
-                alt="Trustpilot review van Manu Moeskops: Perfecte samenwerking gehad met Berend."
-                class="review-shot"
-                width="687"
-                height="262"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                src="./public/trustpilot-review-azdin.png"
-                alt="Trustpilot review van azdin bhdz: Ils ont fait un tres bon site."
-                class="review-shot"
-                width="692"
-                height="261"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                src="./public/trustpilot-review-noemi.png"
-                alt="Trustpilot review van Noemi Hurkens: Mooie website gemaakt"
-                class="review-shot"
-                width="682"
-                height="252"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                src="./public/trustpilot-review-robyn.png"
-                alt="Trustpilot review van robyn atkins: professionele en vlotte service"
-                class="review-shot"
-                width="687"
-                height="346"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                src="./public/trustpilot-review-manu-moeskops.png"
-                alt=""
-                class="review-shot"
-                aria-hidden="true"
-                width="687"
-                height="262"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                src="./public/trustpilot-review-azdin.png"
-                alt=""
-                class="review-shot"
-                aria-hidden="true"
-                width="692"
-                height="261"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                src="./public/trustpilot-review-noemi.png"
-                alt=""
-                class="review-shot"
-                aria-hidden="true"
-                width="682"
-                height="252"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                src="./public/trustpilot-review-robyn.png"
-                alt=""
-                class="review-shot"
-                aria-hidden="true"
-                width="687"
-                height="346"
-                loading="lazy"
-                decoding="async"
-              />
+            <div class="review-group">
+              <article class="review-card">
+                <div class="review-card-top"><span class="review-stars" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></span><span class="review-platform">Trustpilot</span></div>
+                <blockquote lang="nl">“Duidelijke afspraken nagekomen en prachtig resultaat!”</blockquote>
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">MM</span><span>Manu Moeskops</span><span class="review-quote-mark" aria-hidden="true">”</span></div>
+              </article>
+              <article class="review-card">
+                <div class="review-card-top"><span class="review-stars" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></span><span class="review-platform">Trustpilot</span></div>
+                <blockquote lang="fr">“Je suis très satisfait et je vous le recommande.”</blockquote>
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">ab</span><span>azdin bhdz</span><span class="review-quote-mark" aria-hidden="true">”</span></div>
+              </article>
+              <article class="review-card">
+                <div class="review-card-top"><span class="review-stars" role="img" aria-label="4 / 5"><span aria-hidden="true">★★★★<span class="review-star-empty">★</span></span></span><span class="review-platform">Trustpilot</span></div>
+                <blockquote lang="nl">“Er was een goed contact, maar de oplevering duurde ietsjes langer dan verwacht, maar was geen probleem.”</blockquote>
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">NH</span><span>Noémi Hurkens</span><span class="review-quote-mark" aria-hidden="true">”</span></div>
+              </article>
+              <article class="review-card">
+                <div class="review-card-top"><span class="review-stars" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></span><span class="review-platform">Trustpilot</span></div>
+                <blockquote lang="nl">“De communicatie was duidelijk en professioneel.”</blockquote>
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">ra</span><span>robyn atkins</span><span class="review-quote-mark" aria-hidden="true">”</span></div>
+              </article>
+            </div>
+            <div class="review-group" aria-hidden="true" inert>
+              <article class="review-card">
+                <div class="review-card-top"><span class="review-stars" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></span><span class="review-platform">Trustpilot</span></div>
+                <blockquote lang="nl">“Duidelijke afspraken nagekomen en prachtig resultaat!”</blockquote>
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">MM</span><span>Manu Moeskops</span><span class="review-quote-mark" aria-hidden="true">”</span></div>
+              </article>
+              <article class="review-card">
+                <div class="review-card-top"><span class="review-stars" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></span><span class="review-platform">Trustpilot</span></div>
+                <blockquote lang="fr">“Je suis très satisfait et je vous le recommande.”</blockquote>
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">ab</span><span>azdin bhdz</span><span class="review-quote-mark" aria-hidden="true">”</span></div>
+              </article>
+              <article class="review-card">
+                <div class="review-card-top"><span class="review-stars" role="img" aria-label="4 / 5"><span aria-hidden="true">★★★★<span class="review-star-empty">★</span></span></span><span class="review-platform">Trustpilot</span></div>
+                <blockquote lang="nl">“Er was een goed contact, maar de oplevering duurde ietsjes langer dan verwacht, maar was geen probleem.”</blockquote>
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">NH</span><span>Noémi Hurkens</span><span class="review-quote-mark" aria-hidden="true">”</span></div>
+              </article>
+              <article class="review-card">
+                <div class="review-card-top"><span class="review-stars" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></span><span class="review-platform">Trustpilot</span></div>
+                <blockquote lang="nl">“De communicatie was duidelijk en professioneel.”</blockquote>
+                <div class="review-author"><span class="review-avatar" aria-hidden="true">ra</span><span>robyn atkins</span><span class="review-quote-mark" aria-hidden="true">”</span></div>
+              </article>
+            </div>
             </div>
           </div>
         </div>
@@ -672,7 +617,7 @@
       </div>
     </footer>
 
-    <script src="./main.js?v=20260905-navfix"></script>
+    <script src="./main.js?v=20260905-fixedbg4"></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8b7e230825e444a49804b8d6e17e1b79"}'></script><!-- End Cloudflare Web Analytics -->
   </body>
 </html>
