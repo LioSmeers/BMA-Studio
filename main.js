@@ -915,6 +915,8 @@ const titleTranslations = {
 
 const header = document.querySelector(".site-header");
 const progressBar = document.querySelector(".scroll-progress");
+const pageBackgroundVideo = document.querySelector(".page-bg-video");
+const mobileViewport = window.matchMedia("(max-width: 767px)");
 const heroSection = document.querySelector(".hero-section");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -947,6 +949,21 @@ const campaignParameterNames = [
 ];
 const campaignStorageKey = "bma-campaign-params";
 let activePackageKey = "";
+
+function syncPageBackgroundPlayback() {
+	if (!pageBackgroundVideo) return;
+
+	if (mobileViewport.matches) {
+		pageBackgroundVideo.pause();
+		return;
+	}
+
+	pageBackgroundVideo.muted = true;
+	pageBackgroundVideo.defaultMuted = true;
+	pageBackgroundVideo.playsInline = true;
+	pageBackgroundVideo.controls = false;
+	pageBackgroundVideo.play()?.catch(() => {});
+}
 let activePortfolioProjectKey = "";
 let previousPortfolioFocus = null;
 let scrollUpdateQueued = false;
@@ -1902,6 +1919,10 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("load", updateLiveSitePreviews);
 window.requestAnimationFrame(updateLiveSitePreviews);
+pageBackgroundVideo?.addEventListener("loadeddata", syncPageBackgroundPlayback);
+window.addEventListener("pageshow", syncPageBackgroundPlayback);
+mobileViewport.addEventListener("change", syncPageBackgroundPlayback);
+syncPageBackgroundPlayback();
 
 contactForm?.addEventListener("input", (event) => {
 	if (event.target.name) setError(event.target.name, "");
