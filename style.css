@@ -772,7 +772,8 @@ body[data-page-theme="dark"] .page-bg {
   background: #04060e;
 }
 
-.page-bg-video {
+.page-bg-video,
+.page-bg-image {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -781,6 +782,20 @@ body[data-page-theme="dark"] .page-bg {
   object-fit: cover;
   transform: translate(calc(-50% + var(--hero-bg-shift-x)), calc(-50% + var(--hero-bg-shift-y))) scale(1.03);
   transition: transform 320ms ease-out;
+}
+
+.page-bg-image {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .page-bg-video {
+    display: none;
+  }
+
+  .page-bg-image {
+    display: block;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
