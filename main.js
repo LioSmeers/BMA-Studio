@@ -1,7 +1,7 @@
 const packageDetails = {
 	"onepage-onetime": {
 		title: "BMA Visibility Sprint - One-page Website (eenmalig)",
-		price: "€399 eenmalig",
+		price: "€499 eenmalig",
 		description:
 			"Een professionele one-page website met contactformulier en Google Maps. Kies voor een eenmalige aankoop of start zonder opstartkost met een abonnement.",
 		benefits: [
@@ -11,7 +11,7 @@ const packageDetails = {
 			"Vanaf jaar 2: €59/jaar",
 		],
 		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor BMA Visibility Sprint - One-page Website van €399 eenmalig. Ik lever zelf teksten en foto's aan en wil graag een contactformulier en Google Maps.\n\nAlvast bedankt!",
+			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor BMA Visibility Sprint - One-page Website van €499 eenmalig. Ik lever zelf teksten en foto's aan en wil graag een contactformulier en Google Maps.\n\nAlvast bedankt!",
 	},
 	"onepage-subscription": {
 		title: "BMA Visibility Sprint - One-page Website (abonnement)",
@@ -80,7 +80,7 @@ const packageDetails = {
 const englishPackageDetails = {
 	"onepage-onetime": {
 		title: "BMA Visibility Sprint - One-page Website (one-time)",
-		price: "€399 one-time",
+		price: "€499 one-time",
 		description:
 			"A professional one-page website with a contact form and Google Maps. Choose a one-time purchase or start without a setup fee with a subscription.",
 		benefits: [
@@ -90,7 +90,7 @@ const englishPackageDetails = {
 			"From year 2: €59/year",
 		],
 		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for BMA Visibility Sprint - One-page Website at €399 one-time. I will provide the text and photos myself and would like a contact form and Google Maps.\n\nThank you!",
+			"Hello BMA Studio,\n\nI would like to request a quote for BMA Visibility Sprint - One-page Website at €499 one-time. I will provide the text and photos myself and would like a contact form and Google Maps.\n\nThank you!",
 	},
 	"onepage-subscription": {
 		title: "BMA Visibility Sprint - One-page Website (subscription)",
@@ -161,7 +161,7 @@ const visibilitySprintOptions = {
 		onetime: {
 			description:
 				"Voor ondernemers die snel professioneel online willen met één duidelijke pagina.",
-			price: "€399 eenmalig",
+			price: "€499 eenmalig",
 			ctaLabel: "Vraag One-page eenmalig aan",
 			ctaHref: "./contact.html?pakket=onepage-onetime",
 			benefits: [
@@ -212,7 +212,7 @@ const visibilitySprintOptions = {
 		onetime: {
 			description:
 				"For business owners who want to get online quickly with one clear page.",
-			price: "€399 one-time",
+			price: "€499 one-time",
 			ctaLabel: "Request One-page one-time",
 			ctaHref: "./contact.html?pakket=onepage-onetime",
 			benefits: [
@@ -421,7 +421,7 @@ const translations = {
 	"Online": "Online",
 	"100% mobile-first": "100% mobile-first",
 	"Voor klanten die zoeken, vergelijken en boeken via hun smartphone.": "For customers who search, compare and book on their smartphone.",
-	"Website vanaf €399": "Website from €399",
+	"Website vanaf €499": "Website from €499",
 	"Betaal eenmalig of start zonder opstartkost voor €59/mnd, inclusief hosting, .be-domeinnaam en onderhoud.": "Pay once or start without a setup fee for €59/month, including hosting, a .be domain name and maintenance.",
 	"Voor lokale zaken": "For local businesses",
 	"Vakmannen, horeca, salons, handelszaken, trainers en creatieve ondernemers.": "Tradespeople, hospitality, salons, shops, trainers and creative entrepreneurs.",
@@ -519,7 +519,7 @@ const translations = {
 	"Maandelijks opzegbaar met één maand opzegtermijn": "Cancellable monthly with one month's notice",
 	"Vraag One-page eenmalig aan": "Request One-page one-time",
 	"Vraag One-page abonnement aan": "Request One-page subscription",
-	"€399 eenmalig": "€399 one-time",
+	"€499 eenmalig": "€499 one-time",
 	"Bekijk alle details": "View all details",
 	"Vraag een gratis prototype aan": "Request a free prototype",
 	"Gratis websiteprototype": "Free website prototype",
@@ -567,7 +567,7 @@ const translations = {
 	"Wanneer krijg ik een eerste versie?": "When will I receive a first version?",
 	"Na je aanvraag bepalen we samen de scope en timing. De termijn start zodra alle nodige teksten, foto's en informatie ontvangen zijn. Meestal sturen we binnen 2 tot 3 werkdagen een eerste prototype. Daarna hangt de oplevertijd af van de omvang van het project en hoe snel feedback wordt gegeven. De definitieve website staat meestal binnen 5 tot 7 werkdagen klaar.": "After your request, we define the scope and timing together. The timeline starts once all required text, photos and information have been received. Usually, we send a first prototype within 2 to 3 business days. After that, delivery depends on the size of the project and how quickly feedback is provided. The final website is usually ready within 5 to 7 business days.",
 	"Hoe werken betaling en pakketprijzen?": "How do payment and package prices work?",
-	"De prijs staat duidelijk bij elk pakket. BMA Visibility Sprint - One-page Website kan eenmalig aan €399 of als abonnement aan €0 opstart + €59 per maand met minimum 12 maanden. Business Website kost €699 opstartkost + €59 per maand. Website + Content kost €899 opstartkost + €149 per maand.": "The price is clearly shown with each package. BMA Visibility Sprint - One-page Website is available at €399 one-time or as a subscription at €0 setup + €59 per month with a 12-month minimum. Business Website costs a €699 setup fee + €59 per month. Website + Content costs a €899 setup fee + €149 per month.",
+	"De prijs staat duidelijk bij elk pakket. BMA Visibility Sprint - One-page Website kan eenmalig aan €499 of als abonnement aan €0 opstart + €59 per maand met minimum 12 maanden. Business Website kost €699 opstartkost + €59 per maand. Website + Content kost €899 opstartkost + €149 per maand.": "The price is clearly shown with each package. BMA Visibility Sprint - One-page Website is available at €499 one-time or as a subscription at €0 setup + €59 per month with a 12-month minimum. Business Website costs a €699 setup fee + €59 per month. Website + Content costs a €899 setup fee + €149 per month.",
 	"Hoe werken revisierondes?": "How do revision rounds work?",
 	"De BMA Visibility Sprint bevat 1 revisieronde. Business Website en Website + Content bevatten elk 2 revisierondes voor de website. Voor de maandelijkse video’s is 1 correctieronde per video inbegrepen. Een revisieronde is één feedbackmoment waarin je alle kleine aanpassingen samen doorgeeft. Nieuwe pagina’s, grote wijzigingen en een volledig nieuw ontwerp vallen hier niet onder.": "The BMA Visibility Sprint includes 1 revision round. Business Website and Website + Content each include 2 revision rounds for the website. For the monthly videos, 1 correction round per video is included. A revision round is one feedback moment where you send all small changes together. New pages, major changes and a completely new design are not included.",
 	"Wat is inbegrepen voor hosting en domeinnaam?": "What is included for hosting and the domain name?",
@@ -824,7 +824,7 @@ const translations = {
 	"E-mail": "Email",
 	"Pakket": "Package",
 	"Nog niet zeker": "Not sure yet",
-	"BMA Visibility Sprint - One-page Website - €399 eenmalig": "BMA Visibility Sprint - One-page Website - €399 one-time",
+	"BMA Visibility Sprint - One-page Website - €499 eenmalig": "BMA Visibility Sprint - One-page Website - €499 one-time",
 	"BMA Visibility Sprint - One-page Website abonnement - €0 opstart + €59/mnd": "BMA Visibility Sprint - One-page Website subscription - €0 setup + €59/month",
 	"Business Website - €699 opstartkost + €59/mnd": "Business Website - €699 setup fee + €59/month",
 	"Website + Content - €899 opstartkost + €149/mnd": "Website + Content - €899 setup fee + €149/month",
