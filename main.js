@@ -920,6 +920,7 @@ const header = document.querySelector(".site-header");
 const progressBar = document.querySelector(".scroll-progress");
 const pageBackgroundVideo = document.querySelector(".page-bg-video");
 const mobileViewport = window.matchMedia("(max-width: 767px)");
+const backgroundReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const heroSection = document.querySelector(".hero-section");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -952,21 +953,51 @@ const campaignParameterNames = [
 ];
 const campaignStorageKey = "bma-campaign-params";
 let activePackageKey = "";
+let backgroundFrameReady = false;
 
-function keepPageBackgroundPlaying() {
+function updatePageBackground() {
 	if (!pageBackgroundVideo) return;
 
+	// Keep the video paused: scrolling selects a frame instead of starting playback.
+	pageBackgroundVideo.pause();
+	const duration = pageBackgroundVideo.duration;
+	if (pageBackgroundVideo.readyState >= 2) backgroundFrameReady = true;
+	const isReady = backgroundFrameReady && !pageBackgroundVideo.error && Number.isFinite(duration) && duration > 0;
+	document.body.classList.toggle("has-scroll-background", isReady && !backgroundReducedMotion.matches);
+	if (!isReady || backgroundReducedMotion.matches || document.hidden || pageBackgroundVideo.seeking) return;
+
+	const maxScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	const progress = maxScroll > 0 ? clampNumber(window.scrollY / maxScroll, 0, 1) : 0;
+	// Stay just before the end to avoid a blank end frame.
+	const targetTime = progress * Math.max(0, duration - 0.05);
+	if (Math.abs(pageBackgroundVideo.currentTime - targetTime) >= 1 / 60) {
+		pageBackgroundVideo.currentTime = targetTime;
+	}
+}
+
+function setupScrollBackground() {
+	if (!pageBackgroundVideo) return;
+
+	pageBackgroundVideo.autoplay = false;
+	pageBackgroundVideo.loop = false;
 	pageBackgroundVideo.muted = true;
-	pageBackgroundVideo.defaultMuted = true;
 	pageBackgroundVideo.playsInline = true;
-	pageBackgroundVideo.autoplay = true;
-	pageBackgroundVideo.loop = true;
-	pageBackgroundVideo.defaultPlaybackRate = 1.5;
-	pageBackgroundVideo.playbackRate = 1.5;
-	pageBackgroundVideo.controls = false;
+	pageBackgroundVideo.removeAttribute("autoplay");
+	pageBackgroundVideo.removeAttribute("loop");
 	pageBackgroundVideo.removeAttribute("controls");
-	const playback = pageBackgroundVideo.play();
-	playback?.catch(() => {});
+	pageBackgroundVideo.addEventListener("play", () => pageBackgroundVideo.pause());
+	// After decoding a frame, catch up to the latest scroll position if needed.
+	["loadeddata", "durationchange", "seeked", "error"].forEach((event) => {
+		pageBackgroundVideo.addEventListener(event, updatePageBackground);
+	});
+	pageBackgroundVideo.addEventListener("emptied", () => {
+		backgroundFrameReady = false;
+		updatePageBackground();
+	});
+	window.addEventListener("pageshow", updatePageBackground);
+	document.addEventListener("visibilitychange", updatePageBackground);
+	backgroundReducedMotion.addEventListener("change", updatePageBackground);
+	updatePageBackground();
 }
 
 let activePortfolioProjectKey = "";
@@ -1240,6 +1271,7 @@ function scrollToSection(id) {
 }
 
 function updateScrollState() {
+	updatePageBackground();
 	const maxScroll =
 		document.documentElement.scrollHeight - document.documentElement.clientHeight;
 	const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
@@ -1548,42 +1580,6 @@ function setupReveal() {
 	revealItems.forEach((item) => observer.observe(item));
 }
 
-function setupThemeToggle() {
-	const switcher = document.querySelector(".theme-switcher");
-	const heroSection = document.querySelector(".hero-section");
-	const heroVideo = document.querySelector(".page-bg-video source");
-	if (!switcher || !heroVideo) return;
-
-	const lightSrc = heroVideo.getAttribute("src");
-	const darkSrc = lightSrc.replace("BMA Achtergrond Animatie Nieuw.mp4", "BMA Achtergrond Animatie Donker.mp4");
-
-	const setTheme = (theme) => {
-		if (heroSection) heroSection.dataset.heroTheme = theme;
-		document.body.dataset.pageTheme = theme === "dark" ? "dark" : "";
-
-		switcher.querySelectorAll("[data-theme-option]").forEach((button) => {
-			const isActive = button.dataset.themeOption === theme;
-			button.classList.toggle("is-active", isActive);
-			button.setAttribute("aria-pressed", String(isActive));
-		});
-
-		const nextSrc = theme === "dark" ? darkSrc : lightSrc;
-		if (heroVideo.getAttribute("src") !== nextSrc) {
-			heroVideo.setAttribute("src", nextSrc);
-			heroVideo.parentElement.load();
-			heroVideo.parentElement.play().catch(() => {});
-		}
-
-		updateScrollState();
-	};
-
-	switcher.addEventListener("click", (event) => {
-		const button = event.target.closest("[data-theme-option]");
-		if (!button) return;
-		setTheme(button.dataset.themeOption);
-	});
-}
-
 function setupHeroCounters() {
 	const counters = document.querySelectorAll(".hero-quick-count");
 	if (!counters.length) return;
@@ -1614,39 +1610,6 @@ function setupHeroCounters() {
 
 		window.requestAnimationFrame(tick);
 	});
-}
-
-function setupHeroParallax() {
-	const pageBg = document.querySelector(".page-bg");
-	if (!pageBg) return;
-
-	const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-	const prefersReducedMotion = window.matchMedia(
-		"(prefers-reduced-motion: reduce)",
-	).matches;
-
-	if (!canHover || prefersReducedMotion) return;
-
-	const maxShift = 14;
-
-	const resetPageBg = () => {
-		pageBg.style.setProperty("--hero-bg-shift-x", "0px");
-		pageBg.style.setProperty("--hero-bg-shift-y", "0px");
-	};
-
-	const movePageBg = (event) => {
-		const x = clampNumber(event.clientX / window.innerWidth, 0, 1);
-		const y = clampNumber(event.clientY / window.innerHeight, 0, 1);
-		const shiftX = (x - 0.5) * 2 * maxShift;
-		const shiftY = (y - 0.5) * 2 * maxShift;
-
-		pageBg.style.setProperty("--hero-bg-shift-x", `${shiftX.toFixed(2)}px`);
-		pageBg.style.setProperty("--hero-bg-shift-y", `${shiftY.toFixed(2)}px`);
-	};
-
-	window.addEventListener("pointermove", movePageBg, { passive: true });
-	window.addEventListener("pointerleave", resetPageBg);
-	window.addEventListener("blur", resetPageBg);
 }
 
 function setupPagePressure() {
@@ -1925,12 +1888,7 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("load", updateLiveSitePreviews);
 window.requestAnimationFrame(updateLiveSitePreviews);
-pageBackgroundVideo?.addEventListener("loadeddata", keepPageBackgroundPlaying);
-pageBackgroundVideo?.addEventListener("canplay", keepPageBackgroundPlaying);
-pageBackgroundVideo?.addEventListener("pause", keepPageBackgroundPlaying);
-window.addEventListener("pageshow", keepPageBackgroundPlaying);
-document.addEventListener("visibilitychange", keepPageBackgroundPlaying);
-keepPageBackgroundPlaying();
+setupScrollBackground();
 
 contactForm?.addEventListener("input", (event) => {
 	if (event.target.name) setError(event.target.name, "");
@@ -1994,9 +1952,7 @@ contactForm?.addEventListener("submit", async (event) => {
 
 setupLanguageSwitcher();
 setupReveal();
-setupThemeToggle();
 window.setTimeout(setupHeroCounters, 380);
-setupHeroParallax();
 setupPagePressure();
 setupCursorGlow();
 setupPortfolioToggle();
