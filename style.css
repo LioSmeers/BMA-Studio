@@ -764,8 +764,6 @@ a.is-pressure-active {
   overflow: hidden;
   background: #eef2f8;
   transition: background 420ms ease;
-  --hero-bg-shift-x: 0px;
-  --hero-bg-shift-y: 0px;
 }
 
 body[data-page-theme="dark"] .page-bg {
@@ -780,27 +778,32 @@ body[data-page-theme="dark"] .page-bg {
   width: calc(100% + 3rem);
   height: calc(100% + 3rem);
   object-fit: cover;
-  transform: translate(calc(-50% + var(--hero-bg-shift-x)), calc(-50% + var(--hero-bg-shift-y))) scale(1.03);
-  transition: transform 320ms ease-out;
+  transform: translate(-50%, -50%) scale(1.03);
+}
+
+.page-bg-video {
+  visibility: hidden;
 }
 
 .page-bg-image {
+  display: block;
+}
+
+body.has-scroll-background .page-bg-video {
+  visibility: visible;
+}
+
+body.has-scroll-background .page-bg-image {
   display: none;
 }
 
-@media (max-width: 767px) {
-  .page-bg-video {
-    display: none;
-  }
-
-  .page-bg-image {
-    display: block;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .page-bg-video {
-    transition: none;
+  body.has-scroll-background .page-bg-video {
+    visibility: hidden;
+  }
+
+  body.has-scroll-background .page-bg-image {
+    display: block;
   }
 }
 
