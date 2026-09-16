@@ -284,7 +284,7 @@ const portfolioProjectDetails = {
 		],
 	},
 	moeskops: {
-		number: "01",
+		number: "02",
 		title: "Moeskops Gevelwerken — Business Website",
 		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
 		summary:
@@ -305,7 +305,7 @@ const portfolioProjectDetails = {
 		],
 	},
 	agv: {
-		number: "02",
+		number: "04",
 		title: "AGV Smeers — Business Website",
 		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
 		summary:
@@ -325,33 +325,35 @@ const portfolioProjectDetails = {
 			["Belangrijkste functies", "Live website, dienstenoverzicht, realisaties, lokale positionering en offerte-aanvraag."],
 		],
 	},
-	fleur: {
+	sunplanet: {
 		number: "03",
-		title: "Fleur - Website + Content",
-		badges: [{ label: "Conceptwebsite", className: "portfolio-badge-concept" }],
+		title: "Sunplanet Heusden",
+		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
 		summary:
-			"Conceptwebsite voor een beautyzaak, bedoeld om een warme stijl, diensten en contentmogelijkheden te tonen.",
-		image: "./public/portfolio-fleura-result.png",
-		imageAlt: "Hero screenshot van Fleur beauty clinic conceptwebsite",
-		imageWidth: 1901,
-		imageHeight: 987,
-		caption: "Conceptwebsite in een tijdelijke demonstratieomgeving.",
-		hideModalMedia: true,
-		link: "https://liosmeers.github.io/Beauty-clinic-fleura/",
-		linkLabel: "Bekijk Fleur",
-		tags: ["Concept", "Beautyzaak", "Website + Content", "Tijdelijke demo via GitHub Pages"],
+			"Website voor zonnestudio Sunplanet in Heusden-Zolder, met een overzicht van de zonnebanken, openingsuren en duidelijke contact- en routemogelijkheden.",
+		caption: "Live preview van de klantwebsite.",
+		previewUrl: "https://sunplanet-heusden.be/",
+		previewTitle: "Live preview van Sunplanet Heusden",
+		link: "https://sunplanet-heusden.be/",
+		linkLabel: "Bekijk Sunplanet Heusden",
+		tags: ["Klantwebsite", "Live website", "Zonnestudio"],
 		details: [
-			["Projecttype", "Conceptwebsite"],
-			["Sector", "Beauty en verzorging"],
-			["Dienst", "Website + Content"],
-			["Uitdaging", "Een visuele stijl tonen die zacht, professioneel en overzichtelijk blijft."],
-			["Oplossing", "Een meerlagige conceptsite met diensten, sfeer, navigatie en duidelijke contactmomenten."],
-			["Belangrijkste functies", "Meerdere pagina's, dienstpresentatie, visuele sfeer en call-to-action."],
+			["Projecttype", "Klantproject"],
+			["Sector", "Zonnestudio"],
+			["Belangrijkste functies", "Overzicht van zonnebanken, openingsuren, contactknoppen en route naar de studio."],
 		],
 	},
 };
 
 const translations = {
+	"Website voor zonnestudio Sunplanet in Heusden-Zolder, met een overzicht van de zonnebanken, openingsuren en duidelijke contact- en routemogelijkheden.": "Website for Sunplanet tanning studio in Heusden-Zolder, featuring an overview of tanning beds, opening hours and clear contact options and directions.",
+	"Zonnestudio": "Tanning studio",
+	"Overzicht van zonnebanken, openingsuren, contactknoppen en route naar de studio.": "Overview of tanning beds, opening hours, contact buttons and directions to the studio.",
+	"Live preview van Sunplanet Heusden": "Live preview of Sunplanet Heusden",
+	"Live mini-preview van de Sunplanet Heusden website": "Live mini-preview of the Sunplanet Heusden website",
+	"Live mini-preview van Sunplanet Heusden": "Live mini-preview of Sunplanet Heusden",
+	"Bekijk Sunplanet Heusden": "View Sunplanet Heusden",
+
 	"Home": "Home",
 	"Pakketten": "Packages",
 	"Diensten": "Services",
@@ -455,8 +457,6 @@ const translations = {
 	"Concept": "Concept",
 	"Conceptwebsite": "Concept website",
 	"Bekijk project": "View project",
-	"Live preview van de Fleur conceptwebsite": "Live preview of the Fleur concept website",
-	"Fleur - Website + Content": "Fleur - Website + Content",
 	"Conceptwebsite voor een beautyzaak met een warme stijl, diensten en contentmogelijkheden.": "Concept website for a beauty business with a warm style, services and content possibilities.",
 	"Conceptwebsite voor een beautyzaak, bedoeld om een warme stijl, diensten en contentmogelijkheden te tonen.": "Concept website for a beauty business, designed to show a warm style, services and content possibilities.",
 	"Bekijk alle projecten": "View all projects",
@@ -730,10 +730,8 @@ const translations = {
 	"Meer dan 30 jaar vakervaring online helder en betrouwbaar presenteren.": "Present more than 30 years of professional experience clearly and reliably online.",
 	"Een zakelijke website met sterke eerste indruk, diensten, realisaties, werkwijze en offerteflow.": "A business website with a strong first impression, services, work examples, process and quote flow.",
 	"Live website, dienstenoverzicht, realisaties, lokale positionering en offerte-aanvraag.": "Live website, service overview, work examples, local positioning and quote request.",
-	"Fleur - Website + Content": "Fleur - Website + Content",
 	"Een rijker voorbeeld voor een zaak die warm, professioneel en herkenbaar wil overkomen.": "A richer example for a business that wants to feel warm, professional and recognizable.",
 	"5 pagina's": "5 pages",
-	"Bekijk Fleur": "View Fleur",
 	"Voorbeeld van Website + Content.": "Example of Website + Content.",
 	"Projecttype": "Project type",
 	"Sector": "Sector",
@@ -957,6 +955,8 @@ function keepPageBackgroundPlaying() {
 	pageBackgroundVideo.playsInline = true;
 	pageBackgroundVideo.autoplay = true;
 	pageBackgroundVideo.loop = true;
+	pageBackgroundVideo.defaultPlaybackRate = 1.5;
+	pageBackgroundVideo.playbackRate = 1.5;
 	pageBackgroundVideo.controls = false;
 	pageBackgroundVideo.removeAttribute("controls");
 	const playback = pageBackgroundVideo.play();
@@ -1418,13 +1418,14 @@ function updateLiveSitePreviews() {
 		const frame = preview.querySelector("iframe");
 		const frameWidth = Number(frame?.getAttribute("width")) || livePreviewWidth;
 		const frameHeight = Number(frame?.getAttribute("height")) || livePreviewHeight;
-		const width = preview.getBoundingClientRect().width;
+		// Use the layout width so opening/reveal transforms do not shrink the iframe.
+		const width = preview.clientWidth;
 		if (!width) return;
 
 		const scale = width / frameWidth;
 		preview.style.setProperty("--iframe-width", `${frameWidth}px`);
 		preview.style.setProperty("--iframe-height", `${frameHeight}px`);
-		preview.style.setProperty("--preview-scale", scale.toFixed(4));
+		preview.style.setProperty("--preview-scale", String(scale));
 		preview.style.setProperty("--preview-height", `${frameHeight * scale}px`);
 	});
 }
