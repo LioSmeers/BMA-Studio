@@ -939,6 +939,9 @@ const portfolioTriggers = document.querySelectorAll("[data-portfolio-trigger]");
 const portfolioModal = document.querySelector(".portfolio-modal");
 const portfolioModalCard = document.querySelector(".portfolio-modal-card");
 const portfolioModalClose = document.querySelector(".portfolio-modal-close");
+const reviewModal = document.querySelector("[data-review-modal]");
+const reviewModalClose = reviewModal?.querySelector("[data-review-close]");
+const reviewTriggers = document.querySelectorAll("[data-review-trigger]");
 const contactForm = document.querySelector(".contact-form");
 const contactSubmit = contactForm?.querySelector("[type='submit']");
 const contactStatus = contactForm?.querySelector(".success-message");
@@ -1449,6 +1452,24 @@ function closePortfolioModal() {
 	activePortfolioProjectKey = "";
 }
 
+function closeReviewModal() {
+	if (!reviewModal || reviewModal.hidden) return;
+	reviewModal.hidden = true;
+	document.body.style.overflow = "";
+}
+
+if (reviewModal) {
+	reviewTriggers.forEach((trigger) => trigger.addEventListener("click", () => {
+		reviewModal.hidden = false;
+		document.body.style.overflow = "hidden";
+		reviewModalClose?.focus({ preventScroll: true });
+	}));
+	reviewModal.addEventListener("click", (event) => {
+		if (event.target === reviewModal) closeReviewModal();
+	});
+	reviewModalClose?.addEventListener("click", closeReviewModal);
+}
+
 function updateLiveSitePreviews() {
 	document.querySelectorAll(".live-site-preview").forEach((preview) => {
 		if (preview.hidden) return;
@@ -1877,6 +1898,9 @@ window.addEventListener("keydown", (event) => {
 	if (event.key === "Escape" && spotlight && !spotlight.hidden) closeSpotlight();
 	if (event.key === "Escape" && portfolioModal && !portfolioModal.hidden) {
 		closePortfolioModal();
+	}
+	if (event.key === "Escape" && reviewModal && !reviewModal.hidden) {
+		closeReviewModal();
 	}
 });
 
