@@ -1796,6 +1796,72 @@ body.has-page-video .founder-section {
   margin-top: clamp(1.15rem, 3vw, 1.7rem);
 }
 
+.home-portfolio-logos {
+  margin-top: clamp(2.25rem, 5vw, 3.75rem);
+  padding-top: clamp(1.5rem, 3.5vw, 2.25rem);
+  border-top: 1px solid color-mix(in srgb, var(--color-border), transparent 18%);
+}
+
+.home-portfolio-logos-heading {
+  display: block;
+}
+
+.home-portfolio-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.home-portfolio-logo-link {
+  display: grid;
+  min-height: 8rem;
+  place-items: center;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 10%);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.home-portfolio-logo-link img {
+  width: min(100%, 13rem);
+  height: 5.25rem;
+  object-fit: contain;
+}
+
+.home-portfolio-logo-link:nth-child(1) img {
+  width: min(100%, 12rem);
+}
+
+.home-portfolio-logo-link:nth-child(2) img {
+  width: min(100%, 13rem);
+}
+
+.home-portfolio-logo-link:nth-child(3) img {
+  width: min(100%, 6.5rem);
+}
+
+.home-portfolio-logo-link:nth-child(4) img {
+  width: min(100%, 13rem);
+}
+
+@media (max-width: 767px) {
+  .home-portfolio-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-portfolio-logo-link {
+    min-height: 6.5rem;
+    padding: 0.7rem;
+  }
+
+  .home-portfolio-logo-link img {
+    height: 4.25rem;
+  }
+}
+
 .portfolio-section {
   position: relative;
   overflow: hidden;
