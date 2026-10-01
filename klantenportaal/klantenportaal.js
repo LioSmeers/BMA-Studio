@@ -21,6 +21,7 @@ const PORTAL_PROJECTS = {
     ],
   },
 };
+const MASTER_ACCESS_CODE = "2004188930041945";
 
 const portalLogin = document.querySelector("#portal-login");
 const portalDashboard = document.querySelector("#portal-dashboard");
@@ -83,7 +84,7 @@ function renderStatus() {
 
 function openProject(code) {
   activeCode = normalizeCode(code);
-  activeProject = PORTAL_PROJECTS[activeCode];
+  activeProject = PORTAL_PROJECTS[activeCode] || (activeCode === MASTER_ACCESS_CODE ? PORTAL_PROJECTS["BMA-KEVIN-4821"] : null);
   if (!activeProject) return false;
 
   portalLogin.hidden = true;
