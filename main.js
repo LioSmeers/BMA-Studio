@@ -350,6 +350,7 @@ const portfolioProjectDetails = {
 };
 
 const translations = {
+	"Klantenportaal": "Client Portal",
 	"Business Website voor vastgoedfotografie, videografie en socialmediacontent, met een sterke visuele portfolio, duidelijke diensten en eenvoudige contactmogelijkheden.": "Business Website for real estate photography, videography and social media content, with a strong visual portfolio, clear services and easy contact options.",
 	"Thor Smeers — Business Website": "Thor Smeers — Business Website",
 	"Een one-page website met diensten, bewijs van vakmanschap en duidelijke contactmogelijkheden op één pagina.": "A one-page website bringing services, proof of craftsmanship and clear contact options together on a single page.",
@@ -1228,6 +1229,8 @@ function setLanguage(language) {
 	if (contactForm?.dataset.prefilledPackage) {
 		fillPackageMessage(contactForm.dataset.prefilledPackage);
 	}
+
+	window.dispatchEvent(new CustomEvent("bma-language-change", { detail: { language } }));
 }
 
 function setupLanguageSwitcher() {
