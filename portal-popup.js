@@ -9,18 +9,39 @@
     projectName: "Website voor Dakwerken Kevin Claes",
     previewUrl: "https://liosmeers.github.io/Dakwerken-Kevin-Claes/",
     status: "Wachten op feedback",
+    statusStep: "Ontwerp",
     feedback: [],
     files: 0,
+    filesDetail: "Nog geen foto's ontvangen",
     invoice: "€399 · nog niet betaald",
     domain: "Nog niet zeker",
+    domainDetail: "Nog niet vastgelegd",
+  };
+  const projects = {
+    [project.code]: project,
+    "BMA-THORSMEERS-6767": {
+      code: "BMA-THORSMEERS-6767",
+      clientName: "Thor Smeers",
+      projectName: "Website voor Thor Smeers",
+      previewUrl: "https://thorsmeers.be",
+      status: "Klaar voor feedback",
+      statusStep: "Feedback",
+      feedback: [],
+      files: 12,
+      filesDetail: "12 foto's ontvangen",
+      invoice: "€5 per maand · nog niet betaald",
+      domain: "Nog niet zeker",
+      domainDetail: "Nog niet vastgelegd",
+    },
   };
 
-  const storagePrefix = `bma-portal-popup-${project.code}`;
+  let activeProject = project;
+  let storagePrefix = `bma-portal-popup-${activeProject.code}`;
   const getFeedback = () => {
     try {
-      return JSON.parse(localStorage.getItem(`${storagePrefix}-feedback`)) || project.feedback;
+      return JSON.parse(localStorage.getItem(`${storagePrefix}-feedback`)) || activeProject.feedback;
     } catch {
-      return project.feedback;
+      return activeProject.feedback;
     }
   };
 
@@ -45,17 +66,17 @@
       </div>
       <div class="portal-popup-project" data-portal-project hidden>
         <div class="portal-popup-project-heading">
-          <div><span class="eyebrow">BMA Klantenportaal</span><h2>Welkom, ${project.clientName}</h2><p>${project.projectName}</p></div>
-          <span class="portal-popup-status">${project.status}</span>
+          <div><span class="eyebrow">BMA Klantenportaal</span><h2 data-project-client>Welkom, ${project.clientName}</h2><p data-project-name>${project.projectName}</p></div>
+          <span class="portal-popup-status" data-project-status>${project.status}</span>
         </div>
         <div class="portal-popup-facts">
-          <div><span>Website</span><strong>Preview bekijken</strong><a href="${project.previewUrl}" target="_blank" rel="noopener">Open preview ↗</a></div>
+          <div><span>Website</span><strong>Preview bekijken</strong><a data-project-preview href="${project.previewUrl}" target="_blank" rel="noopener">Open preview ↗</a></div>
           <div><span>Feedback</span><strong data-popup-feedback-count>0 opmerkingen open</strong><small>Rechtstreeks in dit portaal</small></div>
-          <div><span>Bestanden</span><strong>${project.files} foto's ontvangen</strong><small>Nog geen foto's ontvangen</small></div>
-          <div><span>Factuur</span><strong>${project.invoice}</strong><small>Projectfactuur</small></div>
-          <div><span>Domein</span><strong>${project.domain}</strong><small>Nog niet vastgelegd</small></div>
+          <div><span>Bestanden</span><strong data-project-files>${project.files} foto's ontvangen</strong><small data-project-files-detail>${project.filesDetail}</small></div>
+          <div><span>Factuur</span><strong data-project-invoice>${project.invoice}</strong><small>Projectfactuur</small></div>
+          <div><span>Domein</span><strong data-project-domain>${project.domain}</strong><small data-project-domain-detail>${project.domainDetail}</small></div>
         </div>
-        <div class="portal-popup-statusline"><span class="is-current">Ontwerp</span><span>Feedback</span><span>Aanpassingen</span><span>Klaar</span></div>
+        <div class="portal-popup-statusline"><span data-project-step="Ontwerp">Ontwerp</span><span data-project-step="Feedback">Feedback</span><span data-project-step="Aanpassingen">Aanpassingen</span><span data-project-step="Klaar">Klaar</span></div>
         <div class="portal-popup-feedback"><div class="portal-popup-section-heading"><h3>Feedback</h3><span data-popup-feedback-count>0 opmerkingen open</span></div><div data-popup-feedback-list><p class="portal-popup-feedback-empty">Nog geen feedback ontvangen.</p></div><form data-popup-feedback-form><label for="portal-popup-feedback-input">Nieuwe opmerking</label><textarea id="portal-popup-feedback-input" rows="3" placeholder="Schrijf je opmerking..." required></textarea><button class="secondary-button" type="submit">Feedback versturen</button><p class="portal-popup-success" data-portal-feedback-success hidden></p></form></div>
         <div class="portal-popup-approve"><div><span class="eyebrow">Project goedkeuren</span><h3>Is het ontwerp klaar?</h3></div><button class="primary-button" type="button" data-portal-approve>Ontwerp goedkeuren</button><p class="portal-popup-success" data-portal-approve-success hidden>Bedankt, je akkoord is opgeslagen.</p></div>
       </div>
@@ -71,6 +92,28 @@
   const feedbackSuccess = modal.querySelector("[data-portal-feedback-success]");
   const approveButton = modal.querySelector("[data-portal-approve]");
   const approveSuccess = modal.querySelector("[data-portal-approve-success]");
+
+  function renderProject(nextProject) {
+    activeProject = nextProject;
+    storagePrefix = `bma-portal-popup-${activeProject.code}`;
+    modal.querySelector("[data-project-client]").textContent = `Welkom, ${activeProject.clientName}`;
+    modal.querySelector("[data-project-name]").textContent = activeProject.projectName;
+    modal.querySelector("[data-project-status]").textContent = activeProject.status;
+    modal.querySelector("[data-project-preview]").href = activeProject.previewUrl;
+    modal.querySelector("[data-project-files]").textContent = `${activeProject.files} foto's ontvangen`;
+    modal.querySelector("[data-project-files-detail]").textContent = activeProject.filesDetail;
+    modal.querySelector("[data-project-invoice]").textContent = activeProject.invoice;
+    modal.querySelector("[data-project-domain]").textContent = activeProject.domain;
+    modal.querySelector("[data-project-domain-detail]").textContent = activeProject.domainDetail;
+    modal.querySelectorAll("[data-project-step]").forEach((step) => {
+      step.classList.toggle("is-current", step.dataset.projectStep === activeProject.statusStep);
+    });
+    const approved = localStorage.getItem(`${storagePrefix}-approved`) === "true";
+    approveButton.disabled = approved;
+    approveButton.textContent = approved ? "Ontwerp goedgekeurd" : "Ontwerp goedkeuren";
+    approveSuccess.hidden = !approved;
+    renderFeedback();
+  }
 
   function renderFeedback() {
     const feedback = getFeedback();
@@ -103,15 +146,16 @@
   modal.querySelector("[data-portal-form]").addEventListener("submit", (event) => {
     event.preventDefault();
     const enteredCode = codeInput.value.trim().toUpperCase();
-    if (enteredCode !== project.code && enteredCode !== MASTER_ACCESS_CODE) {
+    const selectedProject = projects[enteredCode] || (enteredCode === MASTER_ACCESS_CODE ? project : null);
+    if (!selectedProject) {
       error.hidden = false;
       error.textContent = "Deze code klopt niet. Controleer je code of contacteer BMA Studio.";
       return;
     }
     error.hidden = true;
+    renderProject(selectedProject);
     loginView.hidden = true;
     projectView.hidden = false;
-    renderFeedback();
   });
 
   modal.querySelector("[data-popup-feedback-form]").addEventListener("submit", (event) => {
