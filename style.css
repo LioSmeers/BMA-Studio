@@ -453,6 +453,16 @@ a.is-pressure-active {
   transition: color 180ms ease;
 }
 
+.portal-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.portal-nav-link span {
+  font-size: 0.8em;
+}
+
 .nav-link {
   padding: 0.45rem 0;
 }
