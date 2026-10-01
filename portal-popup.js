@@ -37,7 +37,7 @@
         <p>Vul de unieke code in die je van BMA Studio kreeg. Daarna zie je alleen jouw eigen project.</p>
         <form class="portal-popup-form" data-portal-form>
           <label for="portal-popup-code">Unieke projectcode</label>
-          <input id="portal-popup-code" type="text" placeholder="BMA-KEVINCLAES-1786" autocomplete="off" required />
+          <input id="portal-popup-code" type="text" placeholder="bv: BMA-JOUWBEDRIJF-0000" autocomplete="off" required />
           <button class="primary-button full-width" type="submit">Project openen</button>
           <p class="portal-popup-error" data-portal-error hidden></p>
         </form>
