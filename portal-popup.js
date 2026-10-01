@@ -220,7 +220,7 @@
     const text = feedbackInput.value.trim();
     if (!text) return;
     feedbackSubmit.disabled = true;
-    feedbackSubmit.textContent = "Versturen...";
+    feedbackSubmit.textContent = portalText("Versturen...", "Sending...");
     feedbackSuccess.hidden = true;
     feedbackSuccess.classList.remove("is-error");
 
@@ -252,14 +252,43 @@
       feedbackSuccess.textContent = portalText("Versturen lukt niet. Mail je opmerking rechtstreeks naar info@bmastudio.be.", "Sending failed. Email your comment directly to info@bmastudio.be.");
     } finally {
       feedbackSubmit.disabled = false;
-      feedbackSubmit.textContent = "Feedback versturen";
+      feedbackSubmit.textContent = portalText("Feedback versturen", "Send feedback");
     }
   });
 
-  approveButton.addEventListener("click", () => {
-    localStorage.setItem(`${storagePrefix}-approved`, "true");
+  approveButton.addEventListener("click", async () => {
+    if (approveButton.disabled) return;
     approveButton.disabled = true;
-    approveButton.textContent = "Ontwerp goedgekeurd";
-    approveSuccess.hidden = false;
+    approveButton.textContent = portalText("Versturen...", "Sending...");
+    approveSuccess.hidden = true;
+    approveSuccess.classList.remove("is-error");
+
+    const formData = new FormData();
+    formData.append("_subject", `Ontwerp goedgekeurd: ${activeProject.clientName}`);
+    formData.append("project", activeProject.projectName);
+    formData.append("project_code", activeProject.code);
+    formData.append("message", `${activeProject.clientName} heeft het ontwerp goedgekeurd via het BMA Klantenportaal.`);
+    formData.append("_captcha", "false");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@bmastudio.be", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.success === "false") throw new Error("Goedkeuring kon niet worden verzonden.");
+
+      localStorage.setItem(`${storagePrefix}-approved`, "true");
+      approveButton.textContent = portalText("Ontwerp goedgekeurd", "Design approved");
+      approveSuccess.hidden = false;
+      approveSuccess.textContent = portalText("Bedankt, je goedkeuring is doorgestuurd naar BMA Studio.", "Thank you, your approval was sent to BMA Studio.");
+    } catch {
+      approveButton.disabled = false;
+      approveButton.textContent = portalText("Ontwerp goedkeuren", "Approve design");
+      approveSuccess.hidden = false;
+      approveSuccess.classList.add("is-error");
+      approveSuccess.textContent = portalText("Versturen lukt niet. Mail je goedkeuring rechtstreeks naar info@bmastudio.be.", "Sending failed. Email your approval directly to info@bmastudio.be.");
+    }
   });
 })();
