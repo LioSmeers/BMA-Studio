@@ -89,6 +89,8 @@
   const error = modal.querySelector("[data-portal-error]");
   const feedbackList = modal.querySelector("[data-popup-feedback-list]");
   const feedbackInput = modal.querySelector("#portal-popup-feedback-input");
+  const feedbackForm = modal.querySelector("[data-popup-feedback-form]");
+  const feedbackSubmit = feedbackForm.querySelector("button[type='submit']");
   const feedbackSuccess = modal.querySelector("[data-portal-feedback-success]");
   const approveButton = modal.querySelector("[data-portal-approve]");
   const approveSuccess = modal.querySelector("[data-portal-approve-success]");
@@ -158,16 +160,45 @@
     projectView.hidden = false;
   });
 
-  modal.querySelector("[data-popup-feedback-form]").addEventListener("submit", (event) => {
+  feedbackForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const text = feedbackInput.value.trim();
     if (!text) return;
-    const feedback = [...getFeedback(), text];
-    localStorage.setItem(`${storagePrefix}-feedback`, JSON.stringify(feedback));
-    feedbackInput.value = "";
-    feedbackSuccess.hidden = false;
-    feedbackSuccess.textContent = "Je feedback is toegevoegd.";
-    renderFeedback();
+    feedbackSubmit.disabled = true;
+    feedbackSubmit.textContent = "Versturen...";
+    feedbackSuccess.hidden = true;
+    feedbackSuccess.classList.remove("is-error");
+
+    const formData = new FormData();
+    formData.append("_subject", `Feedback ${activeProject.clientName} via BMA Klantenportaal`);
+    formData.append("project", activeProject.projectName);
+    formData.append("project_code", activeProject.code);
+    formData.append("message", `${activeProject.clientName} heeft feedback achtergelaten: ${text}`);
+    formData.append("_captcha", "false");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@bmastudio.be", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.success === "false") throw new Error("Feedback kon niet worden verzonden.");
+
+      const feedback = [...getFeedback(), text];
+      localStorage.setItem(`${storagePrefix}-feedback`, JSON.stringify(feedback));
+      feedbackInput.value = "";
+      feedbackSuccess.hidden = false;
+      feedbackSuccess.textContent = "Je feedback is toegevoegd en doorgestuurd naar BMA Studio.";
+      renderFeedback();
+    } catch {
+      feedbackSuccess.hidden = false;
+      feedbackSuccess.classList.add("is-error");
+      feedbackSuccess.textContent = "Versturen lukt niet. Mail je opmerking rechtstreeks naar info@bmastudio.be.";
+    } finally {
+      feedbackSubmit.disabled = false;
+      feedbackSubmit.textContent = "Feedback versturen";
+    }
   });
 
   approveButton.addEventListener("click", () => {

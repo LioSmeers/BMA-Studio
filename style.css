@@ -600,6 +600,7 @@ body.portal-popup-open {
 .portal-popup-help a { color: var(--color-accent); font-weight: 800; }
 .portal-popup-error { color: #a13b30; }
 .portal-popup-success { color: #276b4a; }
+.portal-popup-success.is-error { color: #a13b30; }
 
 .portal-popup-project-heading {
   display: flex;
