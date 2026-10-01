@@ -29,7 +29,7 @@
       feedback: [],
       files: 12,
       filesDetail: "12 foto's ontvangen",
-      invoice: "€5 per maand · nog niet betaald",
+      invoice: "€5 per maand · maandelijkse betaling",
       domain: "Nog niet zeker",
       domainDetail: "Nog niet vastgelegd",
     },
