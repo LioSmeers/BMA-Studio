@@ -178,6 +178,7 @@
   function openModal() {
     modal.hidden = false;
     document.body.classList.add("portal-popup-open");
+    applyPortalLanguage();
     codeInput.focus();
   }
 
