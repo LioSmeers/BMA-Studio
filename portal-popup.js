@@ -4,17 +4,15 @@
   const MASTER_ACCESS_CODE = "2004188930041945";
 
   const project = {
-    code: "BMA-KEVIN-4821",
+    code: "BMA-KEVINCLAES-1786",
     clientName: "Dakwerken Kevin Claes",
     projectName: "Website voor Dakwerken Kevin Claes",
-    status: "Aanpassingen bezig",
-    feedback: [
-      "De foto van de gevel mag groter in het eerste scherm.",
-      "De knop naar contact mag ook naar WhatsApp linken.",
-    ],
-    files: 14,
-    invoice: "€399 · betaald",
-    domain: "dakwerkenkevinclaes.be",
+    previewUrl: "https://liosmeers.github.io/Dakwerken-Kevin-Claes/",
+    status: "Wachten op feedback",
+    feedback: [],
+    files: 0,
+    invoice: "€399 · nog niet betaald",
+    domain: "Nog niet zeker",
   };
 
   const storagePrefix = `bma-portal-popup-${project.code}`;
@@ -39,7 +37,7 @@
         <p>Vul de unieke code in die je van BMA Studio kreeg. Daarna zie je alleen jouw eigen project.</p>
         <form class="portal-popup-form" data-portal-form>
           <label for="portal-popup-code">Unieke projectcode</label>
-          <input id="portal-popup-code" type="text" placeholder="BMA-KEVIN-4821" autocomplete="off" required />
+          <input id="portal-popup-code" type="text" placeholder="BMA-KEVINCLAES-1786" autocomplete="off" required />
           <button class="primary-button full-width" type="submit">Project openen</button>
           <p class="portal-popup-error" data-portal-error hidden></p>
         </form>
@@ -51,14 +49,14 @@
           <span class="portal-popup-status">${project.status}</span>
         </div>
         <div class="portal-popup-facts">
-          <div><span>Website</span><strong>Preview bekijken</strong><a href="./portfolio.html" target="_blank" rel="noopener">Open preview ↗</a></div>
-          <div><span>Feedback</span><strong data-popup-feedback-count>2 opmerkingen open</strong><small>Rechtstreeks in dit portaal</small></div>
-          <div><span>Bestanden</span><strong>${project.files} foto's ontvangen</strong><small>Laatste upload ontvangen</small></div>
+          <div><span>Website</span><strong>Preview bekijken</strong><a href="${project.previewUrl}" target="_blank" rel="noopener">Open preview ↗</a></div>
+          <div><span>Feedback</span><strong data-popup-feedback-count>0 opmerkingen open</strong><small>Rechtstreeks in dit portaal</small></div>
+          <div><span>Bestanden</span><strong>${project.files} foto's ontvangen</strong><small>Nog geen foto's ontvangen</small></div>
           <div><span>Factuur</span><strong>${project.invoice}</strong><small>Projectfactuur</small></div>
-          <div><span>Domein</span><strong>${project.domain}</strong><small>Domein gereserveerd</small></div>
+          <div><span>Domein</span><strong>${project.domain}</strong><small>Nog niet vastgelegd</small></div>
         </div>
-        <div class="portal-popup-statusline"><span>Ontwerp</span><span>Feedback</span><span class="is-current">Aanpassingen</span><span>Klaar</span></div>
-        <div class="portal-popup-feedback"><div class="portal-popup-section-heading"><h3>Feedback</h3><span data-popup-feedback-count>2 opmerkingen open</span></div><div data-popup-feedback-list></div><form data-popup-feedback-form><label for="portal-popup-feedback-input">Nieuwe opmerking</label><textarea id="portal-popup-feedback-input" rows="3" placeholder="Schrijf je opmerking..." required></textarea><button class="secondary-button" type="submit">Feedback versturen</button><p class="portal-popup-success" data-portal-feedback-success hidden></p></form></div>
+        <div class="portal-popup-statusline"><span class="is-current">Ontwerp</span><span>Feedback</span><span>Aanpassingen</span><span>Klaar</span></div>
+        <div class="portal-popup-feedback"><div class="portal-popup-section-heading"><h3>Feedback</h3><span data-popup-feedback-count>0 opmerkingen open</span></div><div data-popup-feedback-list><p class="portal-popup-feedback-empty">Nog geen feedback ontvangen.</p></div><form data-popup-feedback-form><label for="portal-popup-feedback-input">Nieuwe opmerking</label><textarea id="portal-popup-feedback-input" rows="3" placeholder="Schrijf je opmerking..." required></textarea><button class="secondary-button" type="submit">Feedback versturen</button><p class="portal-popup-success" data-portal-feedback-success hidden></p></form></div>
         <div class="portal-popup-approve"><div><span class="eyebrow">Project goedkeuren</span><h3>Is het ontwerp klaar?</h3></div><button class="primary-button" type="button" data-portal-approve>Ontwerp goedkeuren</button><p class="portal-popup-success" data-portal-approve-success hidden>Bedankt, je akkoord is opgeslagen.</p></div>
       </div>
     </section>`;
@@ -79,7 +77,7 @@
     modal.querySelectorAll("[data-popup-feedback-count]").forEach((element) => {
       element.textContent = `${feedback.length} opmerkingen open`;
     });
-    feedbackList.innerHTML = feedback.map((item) => `<p class="portal-popup-feedback-item">${item}</p>`).join("");
+    feedbackList.innerHTML = feedback.length ? feedback.map((item) => `<p class="portal-popup-feedback-item">${item}</p>`).join("") : '<p class="portal-popup-feedback-empty">Nog geen feedback ontvangen.</p>';
   }
 
   function openModal() {
