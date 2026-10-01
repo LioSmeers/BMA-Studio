@@ -459,8 +459,34 @@ a.is-pressure-active {
   gap: 0.35rem;
 }
 
-.portal-nav-link span {
-  font-size: 0.8em;
+.portal-lock-icon {
+  position: relative;
+  display: inline-block;
+  width: 0.86rem;
+  height: 0.68rem;
+  flex: 0 0 auto;
+  border: 2px solid currentColor;
+  border-radius: 0.18rem;
+  color: var(--color-accent);
+}
+
+.portal-lock-icon::before {
+  position: absolute;
+  top: -0.48rem;
+  left: 50%;
+  width: 0.48rem;
+  height: 0.5rem;
+  border: 2px solid currentColor;
+  border-bottom: 0;
+  border-radius: 0.45rem 0.45rem 0 0;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.portal-nav-link:hover .portal-lock-icon,
+.portal-nav-link.is-active .portal-lock-icon,
+.eyebrow .portal-lock-icon {
+  color: currentColor;
 }
 
 body.portal-popup-open {

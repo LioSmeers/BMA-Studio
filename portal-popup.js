@@ -32,7 +32,7 @@
     <section class="portal-popup-card" role="dialog" aria-modal="true" aria-labelledby="portal-popup-title">
       <button class="portal-popup-close" type="button" aria-label="Sluit klantenportaal" data-portal-close>×</button>
       <div class="portal-popup-login" data-portal-login>
-        <span class="eyebrow">🔒 BMA Klantenportaal</span>
+        <span class="eyebrow"><span class="portal-lock-icon" aria-hidden="true"></span> BMA Klantenportaal</span>
         <h2 id="portal-popup-title">Open je project.</h2>
         <p>Vul de unieke code in die je van BMA Studio kreeg. Daarna zie je alleen jouw eigen project.</p>
         <form class="portal-popup-form" data-portal-form>
