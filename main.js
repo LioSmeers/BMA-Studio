@@ -1635,38 +1635,6 @@ function setupReveal() {
 	revealItems.forEach((item) => observer.observe(item));
 }
 
-function setupHeroCounters() {
-	const counters = document.querySelectorAll(".hero-quick-count");
-	if (!counters.length) return;
-
-	const prefersReducedMotion = window.matchMedia(
-		"(prefers-reduced-motion: reduce)",
-	).matches;
-
-	counters.forEach((counter) => {
-		const target = Number(counter.dataset.countTo) || 0;
-		const suffix = counter.dataset.countSuffix || "";
-
-		if (prefersReducedMotion) {
-			counter.textContent = `${target}${suffix}`;
-			return;
-		}
-
-		const duration = 1200;
-		const startTime = performance.now();
-
-		const tick = (now) => {
-			const progress = clampNumber((now - startTime) / duration, 0, 1);
-			const eased = 1 - (1 - progress) ** 3;
-			counter.textContent = `${Math.round(target * eased)}${suffix}`;
-
-			if (progress < 1) window.requestAnimationFrame(tick);
-		};
-
-		window.requestAnimationFrame(tick);
-	});
-}
-
 function setupPagePressure() {
 	const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 	const prefersReducedMotion = window.matchMedia(
@@ -1705,7 +1673,7 @@ function setupPagePressure() {
 				return;
 			}
 
-			if (targetElement?.closest(".language-switcher")) {
+			if (targetElement?.closest(".language-switcher, [data-magnetic], [data-spotlight], .mi-faq")) {
 				resetTarget();
 				return;
 			}
@@ -1821,10 +1789,15 @@ function renderBenefitItems(benefits) {
 		.join("");
 }
 
-function updateVisibilitySprintCard() {
+let planAnimations = [];
+
+function updateVisibilitySprintCard(event) {
 	const card = document.querySelector("[data-visibility-card]");
 	if (!card) return;
 
+	planAnimations.forEach(animation => animation.cancel());
+	planAnimations = [];
+	const previousHeight = card.getBoundingClientRect().height;
 	const selectedOption =
 		card.querySelector("input[name='visibility-plan']:checked")?.value || "onetime";
 	const option =
@@ -1850,6 +1823,22 @@ function updateVisibilitySprintCard() {
 	card.querySelector("[data-visibility-detail-list]").innerHTML = option.details
 		.map((detail) => `<li>${detail}</li>`)
 		.join("");
+	if (event?.type === "change" && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+		const motion = getComputedStyle(document.documentElement);
+		const easing = motion.getPropertyValue("--mi-ease").trim() || "ease-out";
+		const duration = parseFloat(motion.getPropertyValue("--mi-duration")) || 520;
+		const nextHeight = card.getBoundingClientRect().height;
+		if (Math.abs(nextHeight - previousHeight) > 1) {
+			planAnimations.push(card.animate([{height: `${previousHeight}px`}, {height: `${nextHeight}px`}], {duration, easing}));
+		}
+		card.querySelectorAll("[data-visibility-description], [data-visibility-price], [data-visibility-benefits] li, [data-visibility-cta], .package-details-body").forEach((element, index) => {
+			planAnimations.push(element.animate([
+				{opacity: 0, transform: "translateY(9px)"},
+				{opacity: 1, transform: "translateY(0)"}
+			], {duration: 340, delay: Math.min(index * 25, 125), easing, fill: "backwards"}));
+		});
+	}
+
 }
 
 function setupVisibilitySprintToggle() {
@@ -2010,9 +1999,7 @@ contactForm?.addEventListener("submit", async (event) => {
 
 setupLanguageSwitcher();
 setupReveal();
-window.setTimeout(setupHeroCounters, 380);
-setupPagePressure();
-setupCursorGlow();
+// Shared component motion replaces the older global tilt and cursor effects.
 setupPortfolioToggle();
 setupVisibilitySprintToggle();
 setupPackageQueryPrefill();
