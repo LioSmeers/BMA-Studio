@@ -37,211 +37,86 @@
     <link rel="stylesheet" href="./style.css?v=20261001-portal-language" />
     <script type="application/ld+json">
 {
-      "@context": "https://schema.org",
-      "@graph": [
-            {
-                  "@type": "WebSite",
-                  "@id": "https://bmastudio.be/#website",
-                  "url": "https://bmastudio.be/",
-                  "name": "BMA Studio",
-                  "inLanguage": [
-                        "nl-BE",
-                        "en-BE"
-                  ],
-                  "publisher": {
-                        "@id": "https://bmastudio.be/#organization"
-                  }
-            },
-            {
-                  "@type": "Organization",
-                  "@id": "https://bmastudio.be/#organization",
-                  "name": "BMA Studio",
-                  "url": "https://bmastudio.be/",
-                  "logo": {
-                        "@type": "ImageObject",
-                        "url": "https://bmastudio.be/public/logo-bma.svg?v=20260831-logo-black-transparent"
-                  },
-                  "email": "info@bmastudio.be",
-                  "telephone": "+32 460 97 37 36",
-                  "sameAs": [
-                        "https://www.linkedin.com/company/bmastudio-be/"
-                  ]
-            },
-            {
-                  "@type": [
-                        "LocalBusiness",
-                        "ProfessionalService"
-                  ],
-                  "@id": "https://bmastudio.be/#localbusiness",
-                  "name": "BMA Studio",
-                  "url": "https://bmastudio.be/",
-                  "image": "https://bmastudio.be/assets/og-image.png",
-                  "logo": "https://bmastudio.be/public/logo-bma.svg?v=20260831-logo-black-transparent",
-                  "email": "info@bmastudio.be",
-                  "telephone": "+32 460 97 37 36",
-                  "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "Sieberg 13 bus 3",
-                        "postalCode": "3770",
-                        "addressLocality": "Riemst",
-                        "addressCountry": "BE"
-                  },
-                  "areaServed": [
-                        {
-                              "@type": "Place",
-                              "name": "Limburg"
-                        },
-                        {
-                              "@type": "Country",
-                              "name": "België"
-                        }
-                  ],
-                  "priceRange": "€€",
-                  "sameAs": [
-                        "https://www.linkedin.com/company/bmastudio-be/"
-                  ],
-                  "hasOfferCatalog": {
-                        "@type": "OfferCatalog",
-                        "@id": "https://bmastudio.be/#website-packages",
-                        "name": "Websitepakketten BMA Studio",
-                        "itemListElement": [
-                              {
-                                    "@type": "Offer",
-                                    "@id": "https://bmastudio.be/#offer-onepage-onetime",
-                                    "name": "One-page website — €499 eenmalig",
-                                    "description": "BMA Visibility Sprint - One-page Website voor ondernemers die snel professioneel online willen met één duidelijke pagina.",
-                                    "url": "https://bmastudio.be/pakketten.html",
-                                    "price": 499,
-                                    "priceCurrency": "EUR",
-                                    "seller": {
-                                          "@id": "https://bmastudio.be/#localbusiness"
-                                    },
-                                    "itemOffered": {
-                                          "@type": "Service",
-                                          "@id": "https://bmastudio.be/#service-onepage-onetime",
-                                          "name": "BMA Visibility Sprint - One-page Website",
-                                          "description": "Een professionele one-page website met contactformulier en Google Maps. Kies voor een eenmalige aankoop.",
-                                          "provider": {
-                                                "@id": "https://bmastudio.be/#localbusiness"
-                                          }
-                                    }
-                              },
-                              {
-                                    "@type": "Offer",
-                                    "@id": "https://bmastudio.be/#offer-onepage-monthly",
-                                    "name": "One-page maandformule — €59 per maand",
-                                    "description": "BMA Visibility Sprint - One-page Website als abonnement aan €0 opstart + €59 per maand, minimum 12 maanden.",
-                                    "url": "https://bmastudio.be/pakketten.html",
-                                    "priceCurrency": "EUR",
-                                    "seller": {
-                                          "@id": "https://bmastudio.be/#localbusiness"
-                                    },
-                                    "priceSpecification": [
-                                          {
-                                                "@type": "PriceSpecification",
-                                                "name": "Opstartkost",
-                                                "price": 0,
-                                                "priceCurrency": "EUR"
-                                          },
-                                          {
-                                                "@type": "UnitPriceSpecification",
-                                                "name": "Maandprijs",
-                                                "price": 59,
-                                                "priceCurrency": "EUR",
-                                                "unitText": "MONTH"
-                                          }
-                                    ],
-                                    "eligibleDuration": {
-                                          "@type": "QuantitativeValue",
-                                          "value": 12,
-                                          "unitText": "MONTH"
-                                    },
-                                    "itemOffered": {
-                                          "@type": "Service",
-                                          "@id": "https://bmastudio.be/#service-onepage-monthly",
-                                          "name": "BMA Visibility Sprint - One-page Website abonnement",
-                                          "description": "Professionele one-page met hosting, domeinnaam en klein onderhoud via 1 aanvraag per maand.",
-                                          "provider": {
-                                                "@id": "https://bmastudio.be/#localbusiness"
-                                          }
-                                    }
-                              },
-                              {
-                                    "@type": "Offer",
-                                    "@id": "https://bmastudio.be/#offer-business-website",
-                                    "name": "Business Website — vanaf €699",
-                                    "description": "Business Website voor lokale bedrijven met meerdere diensten, projecten of belangrijke informatie. €699 opstartkost + €59 per maand.",
-                                    "url": "https://bmastudio.be/pakketten.html",
-                                    "priceCurrency": "EUR",
-                                    "seller": {
-                                          "@id": "https://bmastudio.be/#localbusiness"
-                                    },
-                                    "priceSpecification": [
-                                          {
-                                                "@type": "PriceSpecification",
-                                                "name": "Opstartkost",
-                                                "price": 699,
-                                                "priceCurrency": "EUR"
-                                          },
-                                          {
-                                                "@type": "UnitPriceSpecification",
-                                                "name": "Maandprijs",
-                                                "price": 59,
-                                                "priceCurrency": "EUR",
-                                                "unitText": "MONTH"
-                                          }
-                                    ],
-                                    "itemOffered": {
-                                          "@type": "Service",
-                                          "@id": "https://bmastudio.be/#service-business-website",
-                                          "name": "Business Website",
-                                          "description": "Voor lokale bedrijven die meerdere pagina's, structuurhulp en gemiddeld maandelijks onderhoud willen.",
-                                          "provider": {
-                                                "@id": "https://bmastudio.be/#localbusiness"
-                                          }
-                                    }
-                              },
-                              {
-                                    "@type": "Offer",
-                                    "@id": "https://bmastudio.be/#offer-website-content",
-                                    "name": "Website + Content — vanaf €899",
-                                    "description": "Website + Content voor bedrijven die hun website en sociale media maandelijks actief willen houden. €899 opstartkost + €149 per maand.",
-                                    "url": "https://bmastudio.be/pakketten.html",
-                                    "priceCurrency": "EUR",
-                                    "seller": {
-                                          "@id": "https://bmastudio.be/#localbusiness"
-                                    },
-                                    "priceSpecification": [
-                                          {
-                                                "@type": "PriceSpecification",
-                                                "name": "Opstartkost",
-                                                "price": 899,
-                                                "priceCurrency": "EUR"
-                                          },
-                                          {
-                                                "@type": "UnitPriceSpecification",
-                                                "name": "Maandprijs",
-                                                "price": 149,
-                                                "priceCurrency": "EUR",
-                                                "unitText": "MONTH"
-                                          }
-                                    ],
-                                    "itemOffered": {
-                                          "@type": "Service",
-                                          "@id": "https://bmastudio.be/#service-website-content",
-                                          "name": "Website + Content",
-                                          "description": "Voor ondernemers die naast hun website ook maandelijks korte socialmediavideo's willen publiceren.",
-                                          "provider": {
-                                                "@id": "https://bmastudio.be/#localbusiness"
-                                          }
-                                    }
-                              }
-                        ]
-                  }
-            }
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://bmastudio.be/#website",
+      "url": "https://bmastudio.be/",
+      "name": "BMA Studio",
+      "inLanguage": [
+        "nl-BE",
+        "en-BE"
+      ],
+      "publisher": {
+        "@id": "https://bmastudio.be/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://bmastudio.be/#organization",
+      "name": "BMA Studio",
+      "url": "https://bmastudio.be/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bmastudio.be/public/logo-bma.svg?v=20260831-logo-black-transparent"
+      },
+      "email": "info@bmastudio.be",
+      "telephone": "+32 460 97 37 36",
+      "sameAs": [
+        "https://www.linkedin.com/company/bmastudio-be/"
       ]
+    },
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://bmastudio.be/#localbusiness",
+      "name": "BMA Studio",
+      "url": "https://bmastudio.be/",
+      "image": "https://bmastudio.be/assets/og-image.png",
+      "logo": "https://bmastudio.be/public/logo-bma.svg?v=20260831-logo-black-transparent",
+      "email": "info@bmastudio.be",
+      "telephone": "+32 460 97 37 36",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sieberg 13 bus 3",
+        "postalCode": "3770",
+        "addressLocality": "Riemst",
+        "addressCountry": "BE"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Limburg"
+        },
+        {
+          "@type": "Country",
+          "name": "België"
+        }
+      ],
+      "priceRange": "€€",
+      "sameAs": [
+        "https://www.linkedin.com/company/bmastudio-be/"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://bmastudio.be/#webpage",
+      "url": "https://bmastudio.be/",
+      "name": "Website laten maken voor lokale bedrijven | BMA Studio",
+      "inLanguage": "nl-BE",
+      "isPartOf": {
+        "@id": "https://bmastudio.be/#website"
+      },
+      "about": {
+        "@id": "https://bmastudio.be/#organization"
+      }
+    }
+  ]
 }
-    </script>
+</script>
   </head>
   <body class="has-page-video">
     <div class="page-bg" aria-hidden="true">
@@ -251,10 +126,10 @@
         playsinline
         disablepictureinpicture
         controlslist="nodownload noplaybackrate noremoteplayback"
-        preload="auto"
+        preload="none"
       >
-        <source media="(max-width: 767px)" src="./public/bma-background-scroll-mobile.mp4?v=20260918" type="video/mp4" />
-        <source src="./public/bma-background-scroll.mp4?v=20260918" type="video/mp4" />
+        <source media="(max-width: 767px)" data-src="./public/bma-background-scroll-mobile.mp4?v=20260918" type="video/mp4" />
+        <source data-src="./public/bma-background-scroll.mp4?v=20260918" type="video/mp4" />
       </video>
       <img class="page-bg-image" src="./public/bma-background-poster-20260918.png" alt="" />
     </div>
@@ -265,12 +140,12 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand-lockup" href="./index.html" aria-label="Ga naar de homepage">
+        <a class="brand-lockup" href="/" aria-label="Ga naar de homepage">
           <img src="./public/logo-bma.svg?v=20260831-logo-black-transparent" alt="BMA Studio logo" class="brand-logo brand-logo-header" width="833" height="318" />
         </a>
 
         <nav class="desktop-nav" aria-label="Hoofdnavigatie">
-          <a class="nav-link is-active" href="./index.html">Home</a>
+          <a class="nav-link is-active" href="/">Home</a>
           <a class="nav-link" href="./pakketten.html">Pakketten</a>
           <a class="nav-link" href="./diensten.html">Diensten</a>
           <a class="nav-link" href="./portfolio.html">Portfolio</a>
@@ -290,7 +165,7 @@
 
       <div class="mobile-menu">
         <div class="container mobile-menu-inner">
-          <a class="mobile-nav-link is-active" href="./index.html">Home</a>
+          <a class="mobile-nav-link is-active" href="/">Home</a>
           <a class="mobile-nav-link" href="./pakketten.html">Pakketten</a>
           <a class="mobile-nav-link" href="./diensten.html">Diensten</a>
           <a class="mobile-nav-link" href="./portfolio.html">Portfolio</a>
@@ -314,7 +189,7 @@
           </h1>
 
           <p class="hero-text hero-in" style="--hero-in-delay: 180ms">
-            Wij bouwen websites die werken. Maandelijks onderhoud en social content, zodat jij je kunt focussen op wat je het beste doet: ondernemen.
+            BMA Studio is de webdesignstudio van Lio Smeers in Riemst. We bouwen websites voor zelfstandigen en lokale bedrijven in Limburg en België, met onderhoud en social content na de lancering.
           </p>
 
           <div class="button-row hero-actions hero-in" style="--hero-in-delay: 270ms">
@@ -327,11 +202,11 @@
 
           <dl class="hero-quicks hero-in" style="--hero-in-delay: 360ms">
             <div class="hero-quick">
-              <dt><span class="hero-quick-count" data-count-to="10" data-count-suffix="+" data-no-translate>0</span></dt>
+              <dt><span class="hero-quick-count" data-count-to="10" data-count-suffix="+" data-no-translate>10+</span></dt>
               <dd>Tevreden klanten</dd>
             </div>
             <div class="hero-quick">
-              <dt><span class="hero-quick-count" data-count-to="100" data-count-suffix="%" data-no-translate>0</span></dt>
+              <dt><span class="hero-quick-count" data-count-to="100" data-count-suffix="%" data-no-translate>100%</span></dt>
               <dd>Focus op lokale ondernemers</dd>
             </div>
           </dl>
@@ -417,7 +292,7 @@
                 <span class="portfolio-badge portfolio-badge-client">Klantproject</span>
                 <h3>Thor Smeers</h3>
                 <p>Business Website voor vastgoedfotografie, videografie en socialmediacontent, met een sterke visuele portfolio, duidelijke diensten en eenvoudige contactmogelijkheden.</p>
-                <a class="secondary-button home-portfolio-link" href="https://thorsmeers.be" target="_blank" rel="noopener">Bekijk project</a>
+                <a class="secondary-button home-portfolio-link" href="./project-thor-smeers.html">Bekijk project</a>
               </div>
             </article>
 
@@ -440,7 +315,7 @@
                 <span class="portfolio-badge portfolio-badge-client">Klantproject</span>
                 <h3>Moeskops Gevelwerken</h3>
                 <p>One-page website binnen de BMA Visibility Sprint voor een vakman in voegwerken en gevelrenovatie. Diensten, vakmanschap en contactmogelijkheden komen samen op één overzichtelijke pagina, gericht op offerteaanvragen.</p>
-                <a class="secondary-button home-portfolio-link" href="https://moeskopsgevelwerken.be/" target="_blank" rel="noopener">Bekijk project</a>
+                <a class="secondary-button home-portfolio-link" href="./project-moeskops-gevelwerken.html">Bekijk project</a>
               </div>
             </article>
 
@@ -463,7 +338,7 @@
                 <span class="portfolio-badge portfolio-badge-client">Klantproject</span>
                 <h3>Sunplanet Heusden</h3>
                 <p>One-page website binnen de BMA Visibility Sprint voor zonnestudio Sunplanet in Heusden-Zolder. Zonnebanken, openingsuren en contact- en routemogelijkheden staan samen op één overzichtelijke pagina.</p>
-                <a class="secondary-button home-portfolio-link" href="https://sunplanet-heusden.be/" target="_blank" rel="noopener">Bekijk project</a>
+                <a class="secondary-button home-portfolio-link" href="./project-sunplanet-heusden.html">Bekijk project</a>
               </div>
             </article>
 
@@ -486,7 +361,7 @@
                 <span class="portfolio-badge portfolio-badge-client">Klantproject</span>
                 <h3>AGV Smeers</h3>
                 <p>One-page website binnen de BMA Visibility Sprint voor voegwerken, gevelrenovatie en verbouwingswerken. Diensten, realisaties en werkwijze staan op één pagina, met duidelijke contactmogelijkheden voor een offerteaanvraag.</p>
-                <a class="secondary-button home-portfolio-link" href="https://agvsmeers.be/" target="_blank" rel="noopener">Bekijk project</a>
+                <a class="secondary-button home-portfolio-link" href="./project-agv-smeers.html">Bekijk project</a>
               </div>
             </article>
           </div>
@@ -676,7 +551,7 @@
       </div>
     </footer>
 
-    <script src="./main.js?v=20261001-language"></script><script src="./portal-popup.js?v=20261001-approval-email"></script>
+    <script src="./main.js?v=20261006-seo"></script><script src="./portal-popup.js?v=20261001-approval-email"></script>
     <script type="module" src="./bma-story.js?v=20260920-bma-skin-2"></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8b7e230825e444a49804b8d6e17e1b79"}'></script><!-- End Cloudflare Web Analytics -->
   </body>

@@ -44,10 +44,10 @@
         playsinline
         disablepictureinpicture
         controlslist="nodownload noplaybackrate noremoteplayback"
-        preload="auto"
+        preload="none"
       >
-        <source media="(max-width: 767px)" src="./public/bma-background-scroll-mobile.mp4?v=20260918" type="video/mp4" />
-        <source src="./public/bma-background-scroll.mp4?v=20260918" type="video/mp4" />
+        <source media="(max-width: 767px)" data-src="./public/bma-background-scroll-mobile.mp4?v=20260918" type="video/mp4" />
+        <source data-src="./public/bma-background-scroll.mp4?v=20260918" type="video/mp4" />
       </video>
       <img class="page-bg-image" src="./public/bma-background-poster-20260918.png" alt="" />
     </div>
@@ -58,12 +58,12 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand-lockup" href="./index.html" aria-label="Ga naar de homepage">
+        <a class="brand-lockup" href="/" aria-label="Ga naar de homepage">
           <img src="./public/logo-bma.svg?v=20260831-logo-black-transparent" alt="BMA Studio logo" class="brand-logo brand-logo-header" width="833" height="318" />
         </a>
 
         <nav class="desktop-nav" aria-label="Hoofdnavigatie">
-          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="/">Home</a>
           <a class="nav-link" href="./pakketten.html">Pakketten</a>
           <a class="nav-link" href="./diensten.html">Diensten</a>
           <a class="nav-link" href="./portfolio.html">Portfolio</a>
@@ -83,7 +83,7 @@
 
       <div class="mobile-menu">
         <div class="container mobile-menu-inner">
-          <a class="mobile-nav-link" href="./index.html">Home</a>
+          <a class="mobile-nav-link" href="/">Home</a>
           <a class="mobile-nav-link" href="./pakketten.html">Pakketten</a>
           <a class="mobile-nav-link" href="./diensten.html">Diensten</a>
           <a class="mobile-nav-link" href="./portfolio.html">Portfolio</a>
@@ -102,7 +102,7 @@
             <h1 id="page-title">Pagina niet gevonden.</h1>
             <p>Deze pagina bestaat niet of is verplaatst. Ga terug naar een bestaande pagina of stuur ons je vraag.</p>
             <div class="button-row">
-              <a class="primary-button" href="./index.html">Terug naar home</a>
+              <a class="primary-button" href="/">Terug naar home</a>
               <a class="secondary-button" href="./contact.html">Contacteer BMA Studio</a>
             </div>
           </div>
@@ -143,7 +143,7 @@
       </div>
     </footer>
 
-    <script src="./main.js?v=20261001-language" defer></script><script src="./portal-popup.js?v=20261001-approval-email" defer></script>
+    <script src="./main.js?v=20261006-seo" defer></script><script src="./portal-popup.js?v=20261001-approval-email" defer></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8b7e230825e444a49804b8d6e17e1b79"}'></script><!-- End Cloudflare Web Analytics -->
   </body>
 </html>
