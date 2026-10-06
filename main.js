@@ -350,6 +350,25 @@ const portfolioProjectDetails = {
 };
 
 const translations = {
+"Voor Sunplanet in Heusden-Zolder bouwden we een one-page website met zonnebanken, openingsuren en contact- en routemogelijkheden.": "For Sunplanet in Heusden-Zolder, we built a one-page website featuring tanning beds, opening hours, contact details and directions.",
+"Bekijk het project voor Sunplanet Heusden.": "View the Sunplanet Heusden project.",
+
+	"BMA Studio is de webdesignstudio van Lio Smeers in Riemst. We bouwen websites voor zelfstandigen en lokale bedrijven in Limburg en België, met onderhoud en social content na de lancering.": "BMA Studio is the web design studio of Lio Smeers in Riemst. We build websites for independent professionals and local businesses in Limburg and Belgium, with maintenance and social content after launch.",
+	"Bekijk het project": "View the project",
+	"Bekijk de klantwebsite": "Visit the client website",
+	"Bespreek een vergelijkbaar project": "Discuss a similar project",
+	"Een website die past bij je aanbod": "A website that fits your services",
+	"Dit project laat zien hoe BMA Studio diensten en contactmogelijkheden samenbrengt in een website voor een lokale onderneming.": "This project shows how BMA Studio brings services and contact options together in a website for a local business.",
+	"Bekijk onze diensten": "Explore our services",
+	"Andere klantprojecten": "Other client projects",
+	"Wanneer is een one-page website voldoende?": "When is a one-page website enough?",
+	"Een one-page website past bij een helder aanbod dat je op één pagina kunt uitleggen, met je diensten, voorbeelden en contactgegevens. Heb je meerdere diensten die elk uitgebreide uitleg vragen, dan biedt een Business Website meer ruimte.": "A one-page website suits a clear offering that can be explained on a single page, including services, examples and contact details. If multiple services each need detailed explanations, a Business Website offers more room.",
+	"Bekijk klantprojecten met beide websitevormen.": "Explore client projects using both website formats.",
+	"Wat valt buiten het maandelijkse onderhoud?": "What falls outside monthly maintenance?",
+	"Nieuwe functies, maatwerk en werk buiten je pakket vallen niet onder de inbegrepen onderhoudsaanvragen. We bespreken dit vooraf en voeren extra werk alleen na akkoord uit aan €50 per uur. Ongebruikte aanvragen vervallen aan het einde van de maand.": "New features, custom development and work outside your package are not included in maintenance requests. We discuss these in advance and only carry out additional work with your approval at €50 per hour. Unused requests expire at the end of the month.",
+	"Wat gebeurt er met mijn website bij opzegging?": "What happens to my website when I cancel?",
+	"Je kunt hosting en domeinnaam bij BMA Studio houden voor €59 per jaar zonder onderhoud, overdragen naar eigen beheer of volledig stopzetten. Bij volledige stopzetting gaat je website offline en wordt de domeinnaam niet verlengd. Een standaardoverdracht van domeinnaam en websitebestanden is inbegrepen. Voor het One-page Abonnement gaat het eigendom over na betaling van de eerste 12 maanden. De volledige afspraken staan bij de pakketvoorwaarden hieronder.": "You can keep hosting and your domain with BMA Studio for €59 per year without maintenance, transfer them to your own provider, or discontinue them entirely. If discontinued, your website goes offline and the domain is not renewed. A standard transfer of the domain and website files is included. Ownership of the One-page Subscription transfers after the first 12 months have been paid. See the package terms below for the full conditions.",
+
 	"Klantenportaal": "Client Portal",
 	"Business Website voor vastgoedfotografie, videografie en socialmediacontent, met een sterke visuele portfolio, duidelijke diensten en eenvoudige contactmogelijkheden.": "Business Website for real estate photography, videography and social media content, with a strong visual portfolio, clear services and easy contact options.",
 	"Thor Smeers — Business Website": "Thor Smeers — Business Website",
@@ -981,6 +1000,18 @@ function updatePageBackground() {
 
 function setupScrollBackground() {
 	if (!pageBackgroundVideo) return;
+
+	let backgroundLoaded = false;
+	const loadBackground = () => {
+		if (backgroundLoaded || backgroundReducedMotion.matches || navigator.connection?.saveData) return;
+		backgroundLoaded = true;
+		pageBackgroundVideo.preload = "auto";
+		pageBackgroundVideo.querySelectorAll("source[data-src]").forEach(source => { source.src = source.dataset.src; });
+		pageBackgroundVideo.load();
+	};
+	window.addEventListener("scroll", loadBackground, { passive: true });
+	backgroundReducedMotion.addEventListener("change", () => { if (window.scrollY > 0) loadBackground(); });
+	if (window.scrollY > 0) loadBackground();
 
 	pageBackgroundVideo.autoplay = false;
 	pageBackgroundVideo.loop = false;
