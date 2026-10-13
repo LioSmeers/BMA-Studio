@@ -1,40 +1,35 @@
 const packageDetails = {
 	"onepage-onetime": {
-		title: "BMA Visibility Sprint - One-page Website (eenmalig)",
-		price: "€499 eenmalig",
-		description:
-			"Een professionele one-page website met contactformulier en Google Maps. Kies voor een eenmalige aankoop of start zonder opstartkost met een abonnement.",
-		benefits: [
+		"title": "BMA Visibility Sprint - One-page Website (eenmalig)",
+		"price": "€499 eenmalig",
+		"description": "Een website met je aanbod en contactgegevens op één pagina. Je betaalt eenmalig.",
+		"benefits": [
 			"1 jaar hosting en .be-domeinnaam inbegrepen",
 			"Geen onderhoud",
 			"Eigendom vanaf oplevering",
-			"Vanaf jaar 2: €59/jaar",
+			"Vanaf jaar 2: €59/jaar"
 		],
-		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor BMA Visibility Sprint - One-page Website van €499 eenmalig. Ik lever zelf teksten en foto's aan en wil graag een contactformulier en Google Maps.\n\nAlvast bedankt!",
+		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een offerte voor de One-page Website (€499 eenmalig). Ik lever de teksten en foto’s aan.\n\nAlvast bedankt."
 	},
 	"onepage-subscription": {
-		title: "BMA Visibility Sprint - One-page Website (abonnement)",
-		price: "€0 opstart + €59/mnd",
-		description:
-			"Professionele one-page met hosting, domeinnaam en klein onderhoud via 1 aanvraag per maand.",
-		benefits: [
+		"title": "BMA Visibility Sprint - One-page Website (abonnement)",
+		"price": "€0 opstart + €59/mnd",
+		"description": "Een one-page met hosting, domeinnaam en klein onderhoud via 1 aanvraag per maand.",
+		"benefits": [
 			"Minimum 12 maanden",
 			"Hosting en .be-domeinnaam zolang abonnement actief is",
 			"Eigendom na betaling van 12 maanden",
 			"Klein · 1 aanvraag/mnd",
-			"Na de eerste 12 maanden maandelijks opzegbaar met één maand opzegtermijn",
+			"Na de eerste 12 maanden maandelijks opzegbaar met één maand opzegtermijn"
 		],
-		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor BMA Visibility Sprint - One-page Website met abonnement: €0 opstart + €59 per maand, minimum 12 maanden.\n\nAlvast bedankt!",
+		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een offerte voor de One-page Website met abonnement: €0 opstart + €59 per maand, met een minimumlooptijd van 12 maanden.\n\nAlvast bedankt."
 	},
-	business: {
-		title: "Business Website",
-		badge: "Aanbevolen voor lokale bedrijven",
-		price: "€699 opstartkost + €59/mnd",
-		description:
-			"Voor lokale bedrijven die meerdere pagina's, structuurhulp en gemiddeld maandelijks onderhoud willen.",
-		benefits: [
+	"business": {
+		"title": "Business Website",
+		"badge": "Aanbevolen voor lokale bedrijven",
+		"price": "€699 opstartkost + €59/mnd",
+		"description": "Een website van 3 tot 4 pagina’s, met hulp bij de inhoud en 2 onderhoudsaanvragen per maand.",
+		"benefits": [
 			"3 tot 4 pagina's",
 			"Hulp met teksten en structuur",
 			"Contactformulier en Google Maps",
@@ -43,17 +38,15 @@ const packageDetails = {
 			"Gemiddeld · 2 aanvragen/mnd",
 			"Eigendom vanaf oplevering",
 			"Geen minimumlooptijd",
-			"Maandelijks opzegbaar met één maand opzegtermijn",
+			"Maandelijks opzegbaar met één maand opzegtermijn"
 		],
-		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor de Business Website van €699 opstartkost + €59 per maand. Ik wil graag 3 tot 4 pagina's, hulp met teksten en structuur, een contactformulier, Google Maps, hosting, domeinnaam en gemiddeld onderhoud met 2 aanvragen per maand.\n\nAlvast bedankt!",
+		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een offerte voor de Business Website: €699 opstartkost + €59 per maand, voor 3 tot 4 pagina’s en 2 onderhoudsaanvragen per maand.\n\nAlvast bedankt."
 	},
-	content: {
-		title: "Website + Content",
-		price: "€899 opstartkost + €149/mnd",
-		description:
-			"Voor ondernemers die naast hun website ook maandelijks korte socialmediavideo's willen publiceren.",
-		benefits: [
+	"content": {
+		"title": "Website + Content",
+		"price": "€899 opstartkost + €149/mnd",
+		"description": "Een website van 4 tot 5 pagina’s, met 2 korte socialmediavideo’s en 4 onderhoudsaanvragen per maand.",
+		"benefits": [
 			"4 tot 5 pagina's",
 			"Alles uit Business",
 			"Groot · 4 aanvragen/mnd",
@@ -62,58 +55,54 @@ const packageDetails = {
 			"1 correctieronde per video",
 			"Eigendom vanaf oplevering",
 			"Geen minimumlooptijd",
-			"Maandelijks opzegbaar met één maand opzegtermijn",
+			"Maandelijks opzegbaar met één maand opzegtermijn"
 		],
-		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een offerte aanvragen voor Website + Content van €899 opstartkost + €149 per maand. Ik wil graag 4 tot 5 pagina's, groot onderhoud met 4 aanvragen per maand en 2 korte socialmediavideo's per maand waarbij ik het beeldmateriaal aanlever.\n\nAlvast bedankt!",
+		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een offerte voor Website + Content: €899 opstartkost + €149 per maand. Ik lever het beeldmateriaal voor de 2 maandelijkse video’s aan.\n\nAlvast bedankt."
 	},
-	prototype: {
-		title: "Gratis websiteprototype",
-		description:
-			"Vrijblijvend eerste prototype voor een nieuwe website.",
-		benefits: ["Gratis aanvraag", "Eerste visuele richting", "Vrijblijvend vervolg"],
-		inquiryMessage:
-			"Hallo BMA Studio,\n\nIk wil graag een gratis prototype aanvragen voor mijn website. Ik vertel graag kort wat mijn bedrijf doet en welke richting ik online uit wil.\n\nAlvast bedankt!",
-	},
+	"prototype": {
+		"title": "Gratis websiteprototype",
+		"description": "Een eerste ontwerpvoorstel voor je website, gratis en vrijblijvend.",
+		"benefits": [
+			"Gratis aanvraag",
+			"Eerste visuele richting",
+			"Vrijblijvend vervolg"
+		],
+		"inquiryMessage": "Hallo Lio,\n\nIk wil een gratis websiteprototype aanvragen voor mijn bedrijf.\n\nAlvast bedankt."
+	}
 };
 
 const englishPackageDetails = {
 	"onepage-onetime": {
-		title: "BMA Visibility Sprint - One-page Website (one-time)",
-		price: "€499 one-time",
-		description:
-			"A professional one-page website with a contact form and Google Maps. Choose a one-time purchase or start without a setup fee with a subscription.",
-		benefits: [
+		"title": "BMA Visibility Sprint - One-page Website (one-time)",
+		"price": "€499 one-time",
+		"description": "A website with your services and contact details on one page. You pay once.",
+		"benefits": [
 			"1 year of hosting and .be domain name included",
 			"No maintenance",
 			"Ownership from delivery",
-			"From year 2: €59/year",
+			"From year 2: €59/year"
 		],
-		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for BMA Visibility Sprint - One-page Website at €499 one-time. I will provide the text and photos myself and would like a contact form and Google Maps.\n\nThank you!",
+		"inquiryMessage": "Hello Lio,\n\nI would like a quote for the One-page Website (€499 one-time). I will provide the text and photos.\n\nThank you."
 	},
 	"onepage-subscription": {
-		title: "BMA Visibility Sprint - One-page Website (subscription)",
-		price: "€0 setup + €59/month",
-		description:
-			"A professional one-page website with hosting, domain name and small maintenance through 1 request per month.",
-		benefits: [
+		"title": "BMA Visibility Sprint - One-page Website (subscription)",
+		"price": "€0 setup + €59/month",
+		"description": "A one-page site with hosting, a domain name and small maintenance through 1 request per month.",
+		"benefits": [
 			"Minimum 12 months",
 			"Hosting and .be domain name while the subscription is active",
 			"Ownership after 12 months have been paid",
 			"Small · 1 request/month",
-			"After the first 12 months, cancellable monthly with one month's notice",
+			"After the first 12 months, cancellable monthly with one month's notice"
 		],
-		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for BMA Visibility Sprint - One-page Website subscription: €0 setup + €59 per month, minimum 12 months.\n\nThank you!",
+		"inquiryMessage": "Hello Lio,\n\nI would like a quote for the One-page Website subscription: €0 setup + €59 per month, with a minimum term of 12 months.\n\nThank you."
 	},
-	business: {
-		title: "Business Website",
-		badge: "Recommended for local businesses",
-		price: "€699 setup fee + €59/month",
-		description:
-			"For local businesses that want multiple pages, help with structure and medium monthly maintenance.",
-		benefits: [
+	"business": {
+		"title": "Business Website",
+		"badge": "Recommended for local businesses",
+		"price": "€699 setup fee + €59/month",
+		"description": "A website with 3 to 4 pages, help with content and 2 maintenance requests per month.",
+		"benefits": [
 			"3 to 4 pages",
 			"Help with text and structure",
 			"Contact form and Google Maps",
@@ -122,17 +111,15 @@ const englishPackageDetails = {
 			"Medium · 2 requests/month",
 			"Ownership from delivery",
 			"No minimum term",
-			"Cancellable monthly with one month's notice",
+			"Cancellable monthly with one month's notice"
 		],
-		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for the Business Website at €699 setup fee + €59 per month. I would like 3 to 4 pages, help with text and structure, a contact form, Google Maps, hosting, domain name and medium maintenance with 2 requests per month.\n\nThank you!",
+		"inquiryMessage": "Hello Lio,\n\nI would like a quote for the Business Website: €699 setup fee + €59 per month, for 3 to 4 pages and 2 maintenance requests per month.\n\nThank you."
 	},
-	content: {
-		title: "Website + Content",
-		price: "€899 setup fee + €149/month",
-		description:
-			"For business owners who want to publish short monthly social media videos alongside their website.",
-		benefits: [
+	"content": {
+		"title": "Website + Content",
+		"price": "€899 setup fee + €149/month",
+		"description": "A website with 4 to 5 pages, 2 short social media videos and 4 maintenance requests per month.",
+		"benefits": [
 			"4 to 5 pages",
 			"Everything from Business",
 			"Large · 4 requests/month",
@@ -141,124 +128,121 @@ const englishPackageDetails = {
 			"1 correction round per video",
 			"Ownership from delivery",
 			"No minimum term",
-			"Cancellable monthly with one month's notice",
+			"Cancellable monthly with one month's notice"
 		],
-		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a quote for Website + Content at €899 setup fee + €149 per month. I would like 4 to 5 pages, large maintenance with 4 requests per month and 2 short social media videos per month, with footage provided by me.\n\nThank you!",
+		"inquiryMessage": "Hello Lio,\n\nI would like a quote for Website + Content: €899 setup fee + €149 per month. I will provide footage for the 2 monthly videos.\n\nThank you."
 	},
-	prototype: {
-		title: "Free website prototype",
-		description:
-			"No-obligation first prototype for a new website.",
-		benefits: ["Free request", "First visual direction", "No-obligation next step"],
-		inquiryMessage:
-			"Hello BMA Studio,\n\nI would like to request a free prototype for my website. I can briefly explain what my business does and which online direction I have in mind.\n\nThank you!",
-	},
+	"prototype": {
+		"title": "Free website prototype",
+		"description": "An initial design for your website, free and without obligation.",
+		"benefits": [
+			"Free request",
+			"First visual direction",
+			"No-obligation next step"
+		],
+		"inquiryMessage": "Hello Lio,\n\nI would like to request a free website prototype for my business.\n\nThank you."
+	}
 };
 
 const visibilitySprintOptions = {
-	nl: {
-		onetime: {
-			description:
-				"Voor ondernemers die snel professioneel online willen met één duidelijke pagina.",
-			price: "€499 eenmalig",
-			ctaLabel: "Vraag One-page eenmalig aan",
-			ctaHref: "./contact.html?pakket=onepage-onetime",
-			benefits: [
+	"nl": {
+		"onetime": {
+			"description": "Voor een bedrijf dat zijn aanbod op één pagina kan uitleggen.",
+			"price": "€499 eenmalig",
+			"ctaLabel": "Vraag een offerte",
+			"ctaHref": "./contact.html?pakket=onepage-onetime",
+			"benefits": [
 				"Professionele one-page website",
 				"Contactformulier en Google Maps",
 				"1 revisieronde",
-				"1 jaar hosting en .be-domeinnaam inbegrepen",
+				"1 jaar hosting en .be-domeinnaam inbegrepen"
 			],
-			facts: {
-				term: "Geen abonnement",
-				maintenance: "Geen onderhoud",
-				ownership: "Vanaf oplevering",
-				hosting: "1 jaar hosting en .be-domeinnaam inbegrepen. Vanaf jaar 2: €59/jaar.",
-				revisions: "1 revisieronde voor de website.",
+			"facts": {
+				"term": "Geen abonnement",
+				"maintenance": "Geen onderhoud",
+				"ownership": "Vanaf oplevering",
+				"hosting": "1 jaar hosting en .be-domeinnaam inbegrepen. Vanaf jaar 2: €59/jaar.",
+				"revisions": "1 revisieronde voor de website."
 			},
-			details: [
+			"details": [
 				"Klant levert teksten en foto's aan.",
-				"Contactformulier en Google Maps inbegrepen.",
-			],
+				"Contactformulier en Google Maps inbegrepen."
+			]
 		},
-		subscription: {
-			description:
-				"Voor ondernemers die zonder opstartkost willen beginnen en kleine wijzigingen willen laten uitvoeren.",
-			price: "€0 opstart + €59/mnd",
-			ctaLabel: "Vraag One-page abonnement aan",
-			ctaHref: "./contact.html?pakket=onepage-subscription",
-			benefits: [
+		"subscription": {
+			"description": "Dezelfde one-page website, met klein onderhoud en maandelijkse betaling.",
+			"price": "€0 opstart + €59/mnd",
+			"ctaLabel": "Vraag een offerte",
+			"ctaHref": "./contact.html?pakket=onepage-subscription",
+			"benefits": [
 				"Professionele one-page website",
 				"Geen opstartkost",
 				"Hosting en .be-domeinnaam zolang abonnement actief is",
-				"Klein onderhoud inbegrepen",
+				"Klein onderhoud inbegrepen"
 			],
-			facts: {
-				term: "Minimumlooptijd van 12 maanden",
-				maintenance: "Klein · 1 aanvraag/mnd",
-				ownership: "Na betaling van 12 maanden",
-				hosting: "Hosting en één .be-domeinnaam inbegrepen zolang het abonnement actief is.",
-				revisions: "1 revisieronde voor de website.",
+			"facts": {
+				"term": "Minimumlooptijd van 12 maanden",
+				"maintenance": "Klein · 1 aanvraag/mnd",
+				"ownership": "Na betaling van 12 maanden",
+				"hosting": "Hosting en één .be-domeinnaam inbegrepen zolang het abonnement actief is.",
+				"revisions": "1 revisieronde voor de website."
 			},
-			details: [
+			"details": [
 				"Klant levert teksten en foto's aan.",
 				"Contactformulier en Google Maps inbegrepen.",
-				"Na de eerste 12 maanden maandelijks opzegbaar met één maand opzegtermijn.",
-			],
-		},
+				"Na de eerste 12 maanden maandelijks opzegbaar met één maand opzegtermijn."
+			]
+		}
 	},
-	en: {
-		onetime: {
-			description:
-				"For business owners who want to get online quickly with one clear page.",
-			price: "€499 one-time",
-			ctaLabel: "Request One-page one-time",
-			ctaHref: "./contact.html?pakket=onepage-onetime",
-			benefits: [
+	"en": {
+		"onetime": {
+			"description": "For a business that can explain its services or products on one page.",
+			"price": "€499 one-time",
+			"ctaLabel": "Request a quote",
+			"ctaHref": "./contact.html?pakket=onepage-onetime",
+			"benefits": [
 				"Professional one-page website",
 				"Contact form and Google Maps",
 				"1 revision round",
-				"1 year of hosting and .be domain name included",
+				"1 year of hosting and .be domain name included"
 			],
-			facts: {
-				term: "No subscription",
-				maintenance: "No maintenance",
-				ownership: "From delivery",
-				hosting: "1 year of hosting and .be domain name included. From year 2: €59/year.",
-				revisions: "1 revision round for the website.",
+			"facts": {
+				"term": "No subscription",
+				"maintenance": "No maintenance",
+				"ownership": "From delivery",
+				"hosting": "1 year of hosting and .be domain name included. From year 2: €59/year.",
+				"revisions": "1 revision round for the website."
 			},
-			details: [
+			"details": [
 				"Client provides text and photos.",
-				"Contact form and Google Maps included.",
-			],
+				"Contact form and Google Maps included."
+			]
 		},
-		subscription: {
-			description:
-				"For business owners who want to start without a setup fee and have small changes handled.",
-			price: "€0 setup + €59/month",
-			ctaLabel: "Request One-page subscription",
-			ctaHref: "./contact.html?pakket=onepage-subscription",
-			benefits: [
+		"subscription": {
+			"description": "The same one-page website, with small maintenance and monthly payments.",
+			"price": "€0 setup + €59/month",
+			"ctaLabel": "Request a quote",
+			"ctaHref": "./contact.html?pakket=onepage-subscription",
+			"benefits": [
 				"Professional one-page website",
 				"No setup fee",
 				"Hosting and .be domain name while the subscription is active",
-				"Small maintenance included",
+				"Small maintenance included"
 			],
-			facts: {
-				term: "Minimum term of 12 months",
-				maintenance: "Small · 1 request/month",
-				ownership: "After 12 months have been paid",
-				hosting: "Hosting and one .be domain name included while the subscription is active.",
-				revisions: "1 revision round for the website.",
+			"facts": {
+				"term": "Minimum term of 12 months",
+				"maintenance": "Small · 1 request/month",
+				"ownership": "After 12 months have been paid",
+				"hosting": "Hosting and one .be domain name included while the subscription is active.",
+				"revisions": "1 revision round for the website."
 			},
-			details: [
+			"details": [
 				"Client provides text and photos.",
 				"Contact form and Google Maps included.",
-				"After the first 12 months, cancellable monthly with one month's notice.",
-			],
-		},
-	},
+				"After the first 12 months, cancellable monthly with one month's notice."
+			]
+		}
+	}
 };
 
 const portfolioProjectDetails = {
@@ -350,16 +334,164 @@ const portfolioProjectDetails = {
 };
 
 const translations = {
-"Voor Sunplanet in Heusden-Zolder bouwden we een one-page website met zonnebanken, openingsuren en contact- en routemogelijkheden.": "For Sunplanet in Heusden-Zolder, we built a one-page website featuring tanning beds, opening hours, contact details and directions.",
-"Bekijk het project voor Sunplanet Heusden.": "View the Sunplanet Heusden project.",
-
+	"404": "404",
+	"Website + Content": "Website + Content",
+	"Business Website": "Business Website",
+	"One-page (abonnement)": "One-page (subscription)",
+	"One-page (eenmalig)": "One-page (one-time)",
+	"Website laten maken in Limburg.": "Have a website made in Limburg.",
+	"Digitaal, creatief en persoonlijk.": "Digital, creative and personal.",
+	"Websites voor lokale bedrijven.": "Websites for local businesses.",
+	"Digitale en creatieve diensten.": "Digital and creative services.",
+	"Bekijk websiteprijzen": "View website prices",
+	"Duidelijke websiteprijzen.": "Clear website prices.",
+	"Een one-page, een businesswebsite of een website met content. Bekijk de bestaande formules en afspraken, of bespreek eerst wat je nodig hebt.": "A one-page site, a business website or a website with content. View the existing plans and terms, or discuss your needs first.",
+	"Bekijk websiteformules, prijzen en voorwaarden": "View website plans, prices and terms",
+	"Een voorstel voor jouw project.": "A proposal for your project.",
+	"Voor applicaties, content, socialmediabeheer en campagnes spreken we de scope, timing en het budget vooraf af. Eén losse dienst of een combinatie: jij kiest wat je nodig hebt.": "For applications, content, social media management and campaigns, we agree on scope, timing and budget in advance. Choose one service or a combination that fits your needs.",
+	"Vraag een voorstel aan": "Request a proposal",
+	"Ontdek onze diensten": "Explore our services",
+	"Websites, applicaties, content, campagnes en onderhoud: kies wat jouw bedrijf nodig heeft.": "Websites, applications, content, campaigns and maintenance: choose what your business needs.",
+	"Bekijk ons werk": "View our work",
+	"Bekijk bestaande projecten en ontdek welke aanpak bij jouw bedrijf past.": "Explore existing projects and find an approach that fits your business.",
+	"Bespreek je project": "Discuss your project",
+	"Vertel Lio over je plannen. We bespreken vrijblijvend de mogelijkheden.": "Tell Lio about your plans. We discuss the possibilities without obligation.",
+	"Ontdek welke diensten bij jouw plannen passen.": "Discover which services fit your plans.",
+	"Ontdek onze digitale en creatieve diensten.": "Explore our digital and creative services.",
+	"Websiteformule (optioneel)": "Website plan (optional)",
+	"Nog geen keuze nodig.": "No need to choose yet.",
+	"Bekijk prijzen en afspraken": "View prices and terms",
+	"Websiteformules voor lokale bedrijven.": "Website plans for local businesses.",
+	"Bekijk alle websiteprijzen en voorwaarden": "View all website prices and terms",
+	"Vul je naam in.": "Enter your name.",
+	"Vul je e-mailadres in.": "Enter your email address.",
+	"Vul een geldig e-mailadres in.": "Enter a valid email address.",
+	"Schrijf kort wat je nodig hebt.": "Tell us briefly what you need.",
+	"Websites": "Websites",
+	"Snelle, mobielvriendelijke websites op maat.": "Fast, mobile-friendly websites tailored to your business.",
+	"Een duidelijke website die laat zien wie je bent, wat je aanbiedt en hoe klanten je bereiken. Van een compacte one-page tot een website met meerdere pagina’s.": "A clear website showing who you are, what you offer and how customers can reach you. From a compact one-page site to a website with multiple pages.",
+	"Een one-page voor je zaak": "A one-page website for your business",
+	"Een website met diensten en realisaties": "A website with services and completed projects",
+	"Een contactformulier en vindbare contactgegevens": "A contact form and easy-to-find contact details",
+	"Applicaties": "Applications",
+	"Praktische webapps met bijvoorbeeld boekingen, betalingen en klantenportalen.": "Practical web apps with features such as bookings, payments and customer portals.",
+	"Een webapp die een praktische taak voor je bedrijf of klanten eenvoudiger maakt. We bepalen samen welke functies nodig zijn en bouwen een oplossing op maat.": "A web app that simplifies a practical task for your business or customers. Together we define the features you need and build a tailored solution.",
+	"Een boekings- of reservatiesysteem": "A booking or reservation system",
+	"Online betalingen": "Online payments",
+	"Een klantenportaal of intern dashboard": "A customer portal or internal dashboard",
+	"Content & sociale media": "Content & social media",
+	"Visuals, video’s en posts in jouw huisstijl.": "Visuals, videos and posts in your brand style.",
+	"Herkenbare content voor je website en sociale kanalen. Je kan losse visuals of video’s laten maken, of ons inschakelen voor de planning en het beheer van je sociale media.": "Recognisable content for your website and social channels. Commission individual visuals or videos, or ask us to plan and manage your social media.",
+	"Visuals en posts in je huisstijl": "Visuals and posts in your brand style",
+	"Korte video’s en montage": "Short videos and editing",
+	"Contentplanning en socialmediabeheer": "Content planning and social media management",
+	"Campagnes & advertenties": "Campaigns & advertising",
+	"Gerichte campagnes om jouw bedrijf en aanbod onder de aandacht te brengen.": "Focused campaigns to bring attention to your business and what you offer.",
+	"Breng je bedrijf, een actie of een nieuw aanbod onder de aandacht. We stemmen de boodschap, content en kanalen af op je doelgroep en bespreken vooraf de aanpak en het budget.": "Bring attention to your business, a promotion or a new offer. We tailor the message, content and channels to your audience and discuss the approach and budget in advance.",
+	"Een campagne voor een nieuw aanbod": "A campaign for a new offer",
+	"Advertenties op sociale media": "Social media advertising",
+	"Campagnemateriaal en opvolging": "Campaign materials and follow-up",
+	"Onderhoud": "Maintenance",
+	"Technische opvolging, updates en aanpassingen.": "Technical follow-up, updates and changes.",
+	"Houd je website of applicatie verzorgd en bruikbaar. We spreken af welke technische opvolging, updates en aanpassingen passen bij je project, los of binnen een websitepakket.": "Keep your website or application in good shape and easy to use. We agree on the technical follow-up, updates and changes your project needs, separately or within a website package.",
+	"Teksten, foto’s en pagina’s aanpassen": "Update text, photos and pages",
+	"Technische controles en updates": "Technical checks and updates",
+	"Bestaande functies blijven verbeteren": "Keep improving existing features",
+	"BMA Studio | Digitaal en creatief bureau voor lokale bedrijven": "BMA Studio | Digital and creative agency for local businesses",
+	"BMA Studio versterkt lokale bedrijven met websites, applicaties, content, sociale media en campagnes. Eén aanspreekpunt voor je online aanwezigheid.": "BMA Studio supports local businesses with websites, applications, content, social media and campaigns. One point of contact for your online presence.",
+	"Websites, applicaties, content en campagnes | BMA Studio": "Websites, applications, content and campaigns | BMA Studio",
+	"Ontdek de diensten van BMA Studio: websites, applicaties, content en sociale media, campagnes en advertenties, en onderhoud. Ook als losse dienst.": "Discover BMA Studio’s services: websites, applications, content and social media, campaigns and advertising, and maintenance. Also available individually.",
+	"Over BMA Studio | Digitaal en creatief bureau": "About BMA Studio | Digital and creative agency",
+	"Maak kennis met BMA Studio, het digitale en creatieve bureau van Lio Smeers voor lokale bedrijven. Persoonlijke samenwerking en rechtstreeks contact.": "Meet BMA Studio, Lio Smeers’ digital and creative agency for local businesses. Personal collaboration and direct contact.",
+	"Vertel ons over je project | BMA Studio": "Tell us about your project | BMA Studio",
+	"Bespreek je website, applicatie, content, sociale media of campagne met Lio van BMA Studio. Vertel ons vrijblijvend wat je bedrijf nodig heeft.": "Discuss your website, application, content, social media or campaign with Lio at BMA Studio. Tell us what your business needs, with no obligation.",
+	"Websitepakketten en diensten op maat | BMA Studio": "Website packages and tailored services | BMA Studio",
+	"Vergelijk de bestaande websitepakketten en prijzen van BMA Studio. Applicaties, content, socialmediabeheer en campagnes werken we op maat uit.": "Compare BMA Studio’s website packages and prices. Applications, content, social media management and campaigns are tailored to your needs.",
+	"Jouw bedrijf.": "Your business.",
+	"Digitaal sterker.": "Digitally stronger.",
+	"BMA Studio bouwt websites en applicaties, maakt content en zet campagnes op. Eén aanspreekpunt voor de online aanwezigheid van jouw bedrijf.": "BMA Studio builds websites and applications, creates content and sets up campaigns. One point of contact for your business’s online presence.",
+	"Scroll naar onze diensten": "Scroll to our services",
+	"Onze diensten": "Our services",
+	"Digitaal en creatief, op jouw maat.": "Digital and creative, tailored to you.",
+	"Build: websites en applicaties bouwen. Maintain: onderhouden en blijven verbeteren. Attract: aandacht trekken met content, sociale media en campagnes.": "Build: create websites and applications. Maintain: maintain and keep improving. Attract: draw attention with content, social media and campaigns.",
+	"Van een website of applicatie tot content en campagnes: we stemmen de aanpak af op wat jouw bedrijf nodig heeft. Eén losse dienst of een samenwerking op meerdere vlakken.": "From a website or application to content and campaigns: we tailor the approach to what your business needs. Choose a single service or work with us across several areas.",
+	"Een gerichte aanpak": "A focused approach",
+	"We bespreken je doel, kiezen de passende diensten en maken heldere afspraken over de uitvoering.": "We discuss your goal, choose the right services and agree on how to deliver them.",
+	"Praktisch in gebruik": "Practical to use",
+	"Websites en applicaties die werken op de schermen die jouw klanten gebruiken.": "Websites and applications that work on the screens your customers use.",
+	"Blijvende opvolging": "Ongoing follow-up",
+	"Updates en aanpassingen volgens de afspraken van je websitepakket of voorstel op maat.": "Updates and changes as agreed in your website package or tailored proposal.",
+	"Je werkt rechtstreeks met Lio, van je eerste vraag tot de opvolging van je project.": "You work directly with Lio, from your first question to the follow-up of your project.",
+	"Ontdek onze websites, applicaties, content, sociale media, campagnes en onderhoud.": "Explore our websites, applications, content, social media, campaigns and maintenance.",
+	"Wat heeft jouw bedrijf nodig?": "What does your business need?",
+	"Vertel ons over je plannen. We bespreken vrijblijvend welke digitale of creatieve dienst daarbij past.": "Tell us about your plans. We discuss which digital or creative service fits, with no obligation.",
+	"Plan een vrijblijvend gesprek": "Arrange a no-obligation conversation",
+	"Websites, applicaties en creatieve zichtbaarheid": "Websites, applications and creative visibility",
+	"BMA Studio is je digitale en creatieve bureau voor websites, applicaties, content, sociale media en campagnes. Kies één losse dienst of combineer wat jouw bedrijf nodig heeft.": "BMA Studio is your digital and creative agency for websites, applications, content, social media and campaigns. Choose one individual service or combine what your business needs.",
+	"Samenwerken": "Working together",
+	"Vertel wat je bedrijf nodig heeft.": "Tell us what your business needs.",
+	"We kiezen de diensten en aanpak die daarbij passen.": "We choose the services and approach that fit.",
+	"Je krijgt heldere afspraken over scope, timing en budget.": "You receive clear agreements on scope, timing and budget.",
+	"Wat we doen": "What we do",
+	"Vijf diensten. Eén aanspreekpunt.": "Five services. One point of contact.",
+	"Je hoeft geen volledig traject af te nemen. Ook voor één website, applicatie, video, campagne of onderhoudsvraag kan je bij ons terecht.": "You do not need to commit to a full project. You can also come to us for a single website, application, video, campaign or maintenance request.",
+	"Alleen voor websites: vraag vrijblijvend een": "For websites only: request a",
+	"gratis websiteprototype": "free website prototype",
+	"Bekijk websitepakketten": "View website packages",
+	"of lees meer over": "or read more about",
+	"Vrijblijvend kennismaken": "A no-obligation introduction",
+	"Nog niet zeker waar je moet beginnen?": "Not sure where to start?",
+	"Een kort gesprek helpt om je vraag helder te krijgen. Daarna kies je zelf of en hoe we samenwerken.": "A short conversation helps clarify your request. You then decide whether and how we work together.",
+	"Websitepakketten": "Website packages",
+	"Op maat": "Tailored to you",
+	"Een voorstel dat past bij jouw project.": "A proposal that fits your project.",
+	"Voor applicaties, content, socialmediabeheer en campagnes bepalen we samen de scope, timing en het budget. Je kan één losse dienst kiezen of meerdere diensten combineren.": "For applications, content, social media management and campaigns, we define the scope, timing and budget together. Choose a single service or combine several services.",
+	"Van een boekingssysteem tot een klantenportaal, afgestemd op jouw werking.": "From a booking system to a customer portal, tailored to how you work.",
+	"Losse visuals, video’s en posts, of een samenhangende reeks in jouw huisstijl.": "Individual visuals, videos and posts, or a cohesive series in your brand style.",
+	"Socialmediabeheer": "Social media management",
+	"Een passende planning en opvolging van je sociale kanalen.": "Suitable planning and management of your social channels.",
+	"Campagnes en advertenties": "Campaigns and advertising",
+	"Een gerichte aanpak voor jouw boodschap, doelgroep en beschikbare budget.": "A focused approach for your message, audience and available budget.",
+	"Jouw digitale en creatieve bureau, met direct contact": "Your digital and creative agency, with direct contact",
+	"BMA Studio is een digitaal en creatief bureau voor starters, zelfstandigen en lokale bedrijven in België. Van websites en applicaties tot content, sociale media en campagnes: je werkt rechtstreeks met Lio, zonder onnodige tussenpersonen.": "BMA Studio is a digital and creative agency for start-ups, independent professionals and local businesses in Belgium. From websites and applications to content, social media and campaigns: you work directly with Lio, without unnecessary intermediaries.",
+	"Rechtstreeks contact met Lio over je project.": "Direct contact with Lio about your project.",
+	"Een sterkere online aanwezigheid, van idee tot opvolging.": "A stronger online presence, from idea to follow-up.",
+	"BMA Studio brengt digitaal werk en creatieve communicatie samen. We bouwen websites en applicaties, maken content en zetten sociale media, campagnes en advertenties in om je bedrijf en aanbod onder de aandacht te brengen.": "BMA Studio brings digital work and creative communication together. We build websites and applications, create content and use social media, campaigns and advertising to bring attention to your business and what you offer.",
+	"diensten, inhoud en opvolging daarbij horen.": "services, content and follow-up fit.",
+	"Oprichter van BMA Studio": "Founder of BMA Studio",
+	"onnodige lagen, wel digitale en creatieve oplossingen die professioneel aanvoelen en praktisch blijven.": "unnecessary layers, just digital and creative solutions that feel professional and stay practical.",
+	"We bespreken je bedrijf, je doelgroep en wat je wil bereiken.": "We discuss your business, your audience and what you want to achieve.",
+	"Aanpak bepalen": "Define the approach",
+	"We kiezen de passende diensten, inhoud en uitvoering voor jouw situatie.": "We choose the services, content and delivery that fit your situation.",
+	"Uitwerken en opvolgen": "Create and follow up",
+	"We werken je project uit, controleren de uitvoering en spreken af hoe we het opvolgen.": "We create your project, check the delivery and agree on how to follow it up.",
+	"We houden je project overzichtelijk, van de eerste keuzes tot de uitvoering en opvolging.": "We keep your project clear, from the first decisions to delivery and follow-up.",
+	"Vertel ons over je plannen.": "Tell us about your plans.",
+	"De aanpak blijft bewust overzichtelijk: eerst begrijpen wat je bedrijf nodig heeft, daarna kiezen welke diensten, inhoud en opvolging daarbij horen.": "Our approach stays clear: first understand what your business needs, then choose the services, content and follow-up that fit.",
+	"Ik denk mee over structuur, inhoud en praktische keuzes, met focus op wat jouw zaak echt nodig heeft. Geen onnodige lagen, wel digitale en creatieve oplossingen die professioneel aanvoelen en praktisch blijven.": "I help you think through structure, content and practical choices, focusing on what your business really needs. No unnecessary layers, just digital and creative solutions that feel professional and stay practical.",
+	"Vertel ons over je project": "Tell us about your project",
+	"Daarna bepalen we de diensten, scope en timing.": "Then we define the services, scope and timing.",
+	"Je spreekt rechtstreeks met Lio. Vertel wat je bedrijf nodig heeft; we bespreken vrijblijvend welke dienst of combinatie past.": "You speak directly with Lio. Tell us what your business needs; we discuss which service or combination fits, with no obligation.",
+	"Dienst": "Service",
+	"Meerdere diensten": "Several services",
+	"Ik weet het nog niet": "I am not sure yet",
+	"Websitepakket (optioneel)": "Website package (optional)",
+	"We bekijken welke aanpak bij je project past.": "We consider which approach fits your project.",
+	"Websites en applicaties bouwen.": "Build websites and applications.",
+	"Van een heldere website tot een praktische webapp. We bouwen een digitale oplossing die past bij je bedrijf en het gebruik door je klanten.": "From a clear website to a practical web app. We build a digital solution that fits your business and how your customers use it.",
+	"Onderhouden en blijven verbeteren.": "Maintain and keep improving.",
+	"We volgen je website of applicatie technisch op, voeren updates uit en passen inhoud of functies aan volgens de afspraken van je project.": "We provide technical follow-up for your website or application, perform updates and adjust content or features as agreed for your project.",
+	"Aandacht trekken voor jouw bedrijf.": "Draw attention to your business.",
+	"Met content, sociale media, campagnes en advertenties brengen we je bedrijf en aanbod onder de aandacht van je doelgroep.": "With content, social media, campaigns and advertising, we bring your business and offer to your audience’s attention.",
+	"Voor Sunplanet in Heusden-Zolder bouwden we een one-page website met zonnebanken, openingsuren en contact- en routemogelijkheden.": "For Sunplanet in Heusden-Zolder, we built a one-page website featuring tanning beds, opening hours, contact details and directions.",
+	"Bekijk het project voor Sunplanet Heusden.": "View the Sunplanet Heusden project.",
 	"BMA Studio is de webdesignstudio van Lio Smeers in Riemst. We bouwen websites voor zelfstandigen en lokale bedrijven in Limburg en België, met onderhoud en social content na de lancering.": "BMA Studio is the web design studio of Lio Smeers in Riemst. We build websites for independent professionals and local businesses in Limburg and Belgium, with maintenance and social content after launch.",
 	"Bekijk het project": "View the project",
 	"Bekijk de klantwebsite": "Visit the client website",
 	"Bespreek een vergelijkbaar project": "Discuss a similar project",
 	"Een website die past bij je aanbod": "A website that fits your services",
 	"Dit project laat zien hoe BMA Studio diensten en contactmogelijkheden samenbrengt in een website voor een lokale onderneming.": "This project shows how BMA Studio brings services and contact options together in a website for a local business.",
-	"Bekijk onze diensten": "Explore our services",
+	"Bekijk onze diensten": "View our services",
 	"Andere klantprojecten": "Other client projects",
 	"Wanneer is een one-page website voldoende?": "When is a one-page website enough?",
 	"Een one-page website past bij een helder aanbod dat je op één pagina kunt uitleggen, met je diensten, voorbeelden en contactgegevens. Heb je meerdere diensten die elk uitgebreide uitleg vragen, dan biedt een Business Website meer ruimte.": "A one-page website suits a clear offering that can be explained on a single page, including services, examples and contact details. If multiple services each need detailed explanations, a Business Website offers more room.",
@@ -368,7 +500,6 @@ const translations = {
 	"Nieuwe functies, maatwerk en werk buiten je pakket vallen niet onder de inbegrepen onderhoudsaanvragen. We bespreken dit vooraf en voeren extra werk alleen na akkoord uit aan €50 per uur. Ongebruikte aanvragen vervallen aan het einde van de maand.": "New features, custom development and work outside your package are not included in maintenance requests. We discuss these in advance and only carry out additional work with your approval at €50 per hour. Unused requests expire at the end of the month.",
 	"Wat gebeurt er met mijn website bij opzegging?": "What happens to my website when I cancel?",
 	"Je kunt hosting en domeinnaam bij BMA Studio houden voor €59 per jaar zonder onderhoud, overdragen naar eigen beheer of volledig stopzetten. Bij volledige stopzetting gaat je website offline en wordt de domeinnaam niet verlengd. Een standaardoverdracht van domeinnaam en websitebestanden is inbegrepen. Voor het One-page Abonnement gaat het eigendom over na betaling van de eerste 12 maanden. De volledige afspraken staan bij de pakketvoorwaarden hieronder.": "You can keep hosting and your domain with BMA Studio for €59 per year without maintenance, transfer them to your own provider, or discontinue them entirely. If discontinued, your website goes offline and the domain is not renewed. A standard transfer of the domain and website files is included. Ownership of the One-page Subscription transfers after the first 12 months have been paid. See the package terms below for the full conditions.",
-
 	"Klantenportaal": "Client Portal",
 	"Business Website voor vastgoedfotografie, videografie en socialmediacontent, met een sterke visuele portfolio, duidelijke diensten en eenvoudige contactmogelijkheden.": "Business Website for real estate photography, videography and social media content, with a strong visual portfolio, clear services and easy contact options.",
 	"Thor Smeers — Business Website": "Thor Smeers — Business Website",
@@ -383,14 +514,12 @@ const translations = {
 	"Visibility Sprint": "Visibility Sprint",
 	"One-page website": "One-page website",
 	"Websitevorm": "Website format",
-
 	"Zonnestudio": "Tanning studio",
 	"Overzicht van zonnebanken, openingsuren, contactknoppen en route naar de studio.": "Overview of tanning beds, opening hours, contact buttons and directions to the studio.",
 	"Live preview van Sunplanet Heusden": "Live preview of Sunplanet Heusden",
 	"Live mini-preview van de Sunplanet Heusden website": "Live mini-preview of the Sunplanet Heusden website",
 	"Live mini-preview van Sunplanet Heusden": "Live mini-preview of Sunplanet Heusden",
 	"Bekijk Sunplanet Heusden": "View Sunplanet Heusden",
-
 	"Home": "Home",
 	"Pakketten": "Packages",
 	"Diensten": "Services",
@@ -405,6 +534,8 @@ const translations = {
 	"Ga naar de homepage": "Go to the homepage",
 	"Hoofdnavigatie": "Main navigation",
 	"Open menu": "Open menu",
+	"Sluit menu": "Close menu",
+	"Kies een dienst": "Choose a service",
 	"Voordelen": "Benefits",
 	"Taal kiezen": "Choose language",
 	"Snelle zekerheden": "Quick assurances",
@@ -429,7 +560,6 @@ const translations = {
 	"Naar pakketten": "Go to packages",
 	"Terug naar home": "Back to home",
 	"Contacteer BMA Studio": "Contact BMA Studio",
-	"Bespreek je project": "Discuss your project",
 	"Vergelijk pakketten": "Compare packages",
 	"Meer info": "More info",
 	"Build • Maintain • Attract": "Build • Maintain • Attract",
@@ -473,7 +603,6 @@ const translations = {
 	"Geen sjabloonpraat: we bouwen websites die duidelijk zijn, snel laden en gemaakt worden om klanten sneller contact te laten opnemen.": "No template talk: we build websites that are clear, fast and made to help customers get in touch faster.",
 	"Snel online": "Online fast",
 	"Eerste prototype meestal binnen 2 tot 3 werkdagen, definitieve website vaak al binnen een week.": "First prototype usually within 2 to 3 business days, final website often ready within a week.",
-	"Voor klanten die zoeken, vergelijken en boeken via hun smartphone.": "For customers who search, compare and book on their smartphone.",
 	"Onderhoud inbegrepen": "Maintenance included",
 	"Hosting, .be-domeinnaam en maandelijkse updates zonder dat je er zelf naar moet omkijken.": "Hosting, a .be domain name and monthly updates without you having to worry about it.",
 	"Rechtstreeks contact met wie je website bouwt, met reactie dezelfde dag.": "Direct contact with the person building your website, with a reply the same day.",
@@ -483,7 +612,7 @@ const translations = {
 	"Portfolio previews": "Portfolio previews",
 	"Live preview van Moeskops Gevelwerken": "Live preview of Moeskops Gevelwerken",
 	"Moeskops Gevelwerken": "Moeskops Gevelwerken",
-	"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Website for an experienced craftsman in pointing and facade renovation, focused on trust and quote requests.",
+	"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Website for an experienced craftsman in jointing and facade renovation, focused on trust and quote requests.",
 	"Live preview van AGV Smeers": "Live preview of AGV Smeers",
 	"AGV Smeers": "AGV Smeers",
 	"Klantwebsite voor een specialist in voegwerken en gevelrenovatie, met focus op vakmanschap, vertrouwen en offerteaanvragen.": "Client website for a specialist in jointing and facade renovation, focused on craftsmanship, trust and quote requests.",
@@ -560,11 +689,9 @@ const translations = {
 	"Klant levert teksten en foto's aan": "Client provides text and photos",
 	"1 revisieronde": "1 revision round",
 	"2 revisierondes": "2 revision rounds",
-	"Business Website": "Business Website",
 	"Aanbevolen voor lokale bedrijven": "Recommended for local businesses",
 	"€699 opstartkost + €59/mnd": "€699 setup fee + €59/month",
 	"Looptijd": "Term",
-	"Onderhoud": "Maintenance",
 	"Eigendom": "Ownership",
 	"Hosting": "Hosting",
 	"Revisies": "Revisions",
@@ -584,7 +711,6 @@ const translations = {
 	"Contactformulier en Google Maps": "Contact form and Google Maps",
 	"Hosting en .be-domeinnaam zolang het abonnement actief is": "Hosting and .be domain name while the subscription is active",
 	"Vraag Business Website aan": "Request Business Website",
-	"Website + Content": "Website + Content",
 	"€899 opstartkost + €149/mnd": "€899 setup fee + €149/month",
 	"4 tot 5 pagina's": "4 to 5 pages",
 	"Alles uit Business": "Everything from Business",
@@ -670,14 +796,11 @@ const translations = {
 	"webdesign in Limburg": "web design in Limburg",
 	"Stap 03": "Step 03",
 	"Vraag gratis analyse of prototype aan": "Request a free analysis or prototype",
-	"Wat we doen": "What we do",
 	"Drie onderdelen die elkaar versterken.": "Three parts that strengthen each other.",
-	"Websites": "Websites",
 	"Duidelijke, mobiele websites die tonen wie je bent, wat je aanbiedt en hoe klanten je bereiken.": "Clear mobile websites that show who you are, what you offer and how customers can reach you.",
 	"Mobile-first ontwerp": "Mobile-first design",
 	"Heldere pagina-opbouw": "Clear page structure",
 	"SEO-basis en contactflow": "SEO basics and contact flow",
-	"Onderhoud": "Maintenance",
 	"Maandelijkse updates, kleine aanpassingen en technische controle zodat je site netjes blijft werken.": "Monthly updates, small changes and technical checks so your site keeps working properly.",
 	"Content aanpassen": "Content changes",
 	"Technische controle": "Technical check",
@@ -714,15 +837,12 @@ const translations = {
 	"Relevante voorbeelden voor lokale bedrijven.": "Relevant examples for local businesses.",
 	"Deze websites en conceptwebsites tonen stijl, structuur en mogelijkheden voor verschillende soorten ondernemers. Links naar GitHub Pages zijn tijdelijke demonstratieomgevingen.": "These websites and concept websites show style, structure and possibilities for different types of business owners. GitHub Pages links are temporary demo environments.",
 	"Klantproject": "Client project",
-	"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Website for an experienced craftsman in jointing and facade renovation, focused on trust and quote requests.",
 	"Business Website voor een vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Business Website for a tradesperson in jointing and facade renovation, focused on trust and quote requests.",
-	"Klantwebsite voor een specialist in voegwerken en gevelrenovatie, met focus op vakmanschap, vertrouwen en offerteaanvragen.": "Client website for a specialist in jointing and facade renovation, focused on craftsmanship, trust and quote requests.",
 	"Business Website voor een specialist in voegwerken en gevelrenovatie, met focus op vakmanschap, vertrouwen en offerteaanvragen.": "Business Website for a specialist in jointing and facade renovation, focused on craftsmanship, trust and quote requests.",
 	"Klantwebsite": "Client website",
 	"Live website": "Live website",
 	"Gevelwerken": "Facade work",
 	"Gevelrenovatie": "Facade renovation",
-	"One-page website": "One-page website",
 	"Live preview van de klantwebsite.": "Live preview of the client website.",
 	"Live preview van Thor Smeers": "Live preview of Thor Smeers",
 	"Live mini-preview van de Thor Smeers website": "Live mini-preview of the Thor Smeers website",
@@ -732,12 +852,9 @@ const translations = {
 	"Een sterke visuele portfolio combineren met duidelijke diensten en een eenvoudige contactflow.": "Combine a strong visual portfolio with clear services and a simple contact flow.",
 	"Een visuele bedrijfswebsite die het aanbod helder presenteert en bezoekers vlot naar contact leidt.": "A visual business website that presents the offer clearly and guides visitors smoothly toward contact.",
 	"Visuele portfolio, dienstenoverzicht, socialmediacontent en eenvoudige contactflow.": "Visual portfolio, service overview, social media content and simple contact flow.",
-	"Conceptwebsite": "Concept website",
 	"Beautyzaak": "Beauty business",
 	"Conceptwebsite voor een lokale dakwerker, bedoeld om vertrouwen, diensten en offerte-aanvragen duidelijk te tonen.": "Concept website for a local roofer, designed to clearly show trust, services and quote requests.",
-	"Conceptwebsite voor een beautyzaak, bedoeld om een warme stijl, diensten en contentmogelijkheden te tonen.": "Concept website for a beauty business, designed to show a warm style, services and content possibilities.",
 	"Compacte conceptwebsite, bedoeld om te tonen hoe een eenvoudige eerste online basis eruit kan zien.": "Compact concept website, designed to show what a simple first online foundation can look like.",
-	"Concept": "Concept",
 	"Tijdelijke demo via GitHub Pages": "Temporary demo via GitHub Pages",
 	"Live preview van de tijdelijke demonstratieomgeving.": "Live preview of the temporary demo environment.",
 	"BMA Visibility Sprint - One-page Website pakket": "BMA Visibility Sprint - One-page Website package",
@@ -748,8 +865,6 @@ const translations = {
 	"Voegwerken en gevelrenovatie": "Jointing and facade renovation",
 	"Een ervaren vakman online betrouwbaar positioneren en bezoekers vlot naar een offerteaanvraag sturen.": "Position an experienced craftsman as trustworthy online and guide visitors smoothly toward a quote request.",
 	"Dienstenoverzicht, vertrouwen, offertefocus en mobiele contactknoppen.": "Service overview, trust, quote focus and mobile contact buttons.",
-	"Live preview van Moeskops Gevelwerken": "Live preview of Moeskops Gevelwerken",
-	"Live preview van AGV Smeers": "Live preview of AGV Smeers",
 	"Live mini-preview van de AGV Smeers website": "Live mini-preview of the AGV Smeers website",
 	"Live mini-preview van AGV Smeers": "Live mini-preview of AGV Smeers",
 	"Bekijk AGV Smeers": "View AGV Smeers",
@@ -761,7 +876,6 @@ const translations = {
 	"Voorbeeld van Website + Content.": "Example of Website + Content.",
 	"Projecttype": "Project type",
 	"Sector": "Sector",
-	"Dienst": "Service",
 	"Uitdaging": "Challenge",
 	"Oplossing": "Solution",
 	"Belangrijkste functies": "Key features",
@@ -828,7 +942,6 @@ const translations = {
 	"Betrouwbare afspraken en transparante prijzen.": "Reliable agreements and transparent prices.",
 	"Bereikbaar voor vragen, feedback en opvolging.": "Reachable for questions, feedback and follow-up.",
 	"Klantgericht advies dat past bij jouw zaak.": "Customer-focused advice that fits your business.",
-	"Vertel kort wat je nodig hebt.": "Tell us briefly what you need.",
 	"Contacteer BMA Studio voor je website": "Contact BMA Studio for your website",
 	"Je hoeft nog geen volledige briefing te hebben. Een korte uitleg over je bedrijf, je doel en je timing is genoeg om het gesprek goed te starten.": "You do not need a full brief yet. A short explanation of your business, your goal and your timing is enough to start the conversation well.",
 	"Je hoeft nog geen volledige briefing te hebben. Een korte uitleg over je bedrijf, je regio, je doel en je timing is genoeg om het gesprek goed te starten.": "You do not need a full brief yet. A short explanation of your business, your region, your goal and your timing is enough to start the conversation well.",
@@ -855,7 +968,6 @@ const translations = {
 	"Bericht": "Message",
 	"Verstuur aanvraag": "Send request",
 	"Bedankt. Je aanvraag is verzonden.": "Thank you. Your request has been sent.",
-	"404": "404",
 	"Pagina niet gevonden.": "Page not found.",
 	"Deze pagina bestaat niet of is verplaatst. Ga terug naar een bestaande pagina of stuur ons je vraag.": "This page does not exist or has moved. Go back to an existing page or send us your question.",
 	"Verder zoeken": "Keep looking",
@@ -891,9 +1003,160 @@ const translations = {
 	"Deze website gebruikt geen trackingcookies voor advertenties. De site bevat wel externe links, zoals LinkedIn en portfolio-links. Die websites hebben hun eigen privacybeleid.": "This website does not use advertising tracking cookies. The site does contain external links, such as LinkedIn and portfolio links. Those websites have their own privacy policies.",
 	"Wijzigingen": "Changes",
 	"Deze privacyverklaring kan worden aangepast wanneer de website, onze werkwijze of wettelijke verplichtingen veranderen. Laatste update: 23 juni 2026.": "This privacy statement may be updated when the website, our way of working or legal obligations change. Last update: June 23, 2026.",
+	"Bespreek je website": "Discuss your website",
+	"Vraag een offerte": "Request a quote",
+	"Digitaal en creatief bureau": "Digital and creative agency",
+	"We bouwen websites en apps voor lokale bedrijven, maken content en video’s en beheren sociale media. Ook voor campagnes, advertenties en onderhoud kan je bij ons terecht.": "We build websites and apps for local businesses, create content and videos, and manage social media. You can also come to us for campaigns, advertising and maintenance.",
+	"Wat we voor je kunnen maken.": "What we can make for you.",
+	"Je aanbod, realisaties en contactgegevens op een website die ook op je gsm werkt.": "Your services, work and contact details on a website that works on your phone too.",
+	"Een webapp waarmee klanten afspraken boeken, betalen of hun gegevens bekijken.": "A web app where customers book appointments, pay or view their details.",
+	"Beelden, video’s en posts voor je website en sociale media.": "Images, videos and posts for your website and social media.",
+	"Een campagne rond je aanbod, met advertenties op de kanalen die je klanten gebruiken.": "A campaign around your services or products, with ads on the channels your customers use.",
+	"Updates, technische controles en wijzigingen aan je website of app.": "Updates, technical checks and changes to your website or app.",
+	"Zo werken we samen.": "How we work together.",
+	"We bespreken wat je wil laten maken en leggen vast wat erbij hoort. Tijdens het project werk je rechtstreeks met Lio.": "We discuss what you want us to make and agree on what is included. During the project, you work directly with Lio.",
+	"Afspraken vooraf": "Agreed in advance",
+	"Je weet wat we maken, welke informatie we nodig hebben en hoeveel het kost.": "You know what we are making, what information we need and what it costs.",
+	"Nakijken voor oplevering": "Checked before delivery",
+	"We kijken de pagina’s en functies na op mobiel en desktop.": "We check pages and features on mobile and desktop.",
+	"Onderhoud en wijzigingen": "Maintenance and changes",
+	"We spreken af welke updates en wijzigingen inbegrepen zijn en hoe je extra werk kan aanvragen.": "We agree on which updates and changes are included and how to request additional work.",
+	"Rechtstreeks met Lio": "Direct contact with Lio",
+	"Je bespreekt je vragen en feedback met de persoon die je project uitwerkt.": "You discuss your questions and feedback with the person working on your project.",
+	"Websites die we maakten.": "Websites we have made.",
+	"Meer bekijken": "Explore further",
+	"Diensten, werk en contact.": "Services, work and contact.",
+	"Lees wat we maken en waarvoor je het kan gebruiken.": "Read what we make and what you can use it for.",
+	"Bekijk websites voor klanten en fictieve voorbeeldsites.": "View websites for clients and fictional example sites.",
+	"Stuur je vraag naar Lio of neem rechtstreeks contact op.": "Send Lio your question or contact him directly.",
+	"Wat wil je laten maken?": "What would you like us to make?",
+	"Een nieuwe website, een boekingssysteem of content voor je zaak? Vertel ons wat je nodig hebt, dan bespreken we de inhoud en timing.": "A new website, a booking system or content for your business? Tell us what you need and we will discuss the content and timing.",
+	"Reviews van klanten.": "Reviews from clients.",
+	"Websites, apps": "Websites, apps",
+	"en content.": "and content.",
+	"We maken websites, apps, content en video’s. We beheren ook sociale media, werken campagnes en advertenties uit en houden je website of app bij. Je kan één dienst kiezen of meerdere opdrachten bij ons leggen.": "We make websites, apps, content and videos. We also manage social media, create campaigns and ads, and maintain your website or app. You can choose one service or ask us to handle several projects.",
+	"Vertel wat je wil laten maken.": "Tell us what you want us to make.",
+	"We bespreken de inhoud, functies en timing.": "We discuss the content, features and timing.",
+	"We leggen het werk en de prijs vast in een voorstel.": "We set out the work and price in a proposal.",
+	"Wat we maken en bijhouden.": "What we make and maintain.",
+	"Je kan ons inschakelen voor een website, maar ook voor een losse video, een app of het beheer van je sociale media. Hieronder lees je wat elke dienst inhoudt.": "You can ask us to build a website, create a single video or app, or manage your social media. Below you can read what each service includes.",
+	"We bouwen een website waarop klanten je aanbod bekijken, je werk zien en contact opnemen. Een one-page zet alles op één pagina; een grotere website geeft elke dienst of onderwerp meer ruimte.": "We build a website where customers view your services or products, see your work and contact you. A one-page site puts everything on one page; a larger website gives each service or topic more space.",
+	"Je diensten en contactgegevens op één pagina": "Your services and contact details on one page",
+	"Aparte pagina’s voor diensten en realisaties": "Separate pages for services and completed work",
+	"Een formulier voor vragen of offerteaanvragen": "A form for questions or quote requests",
+	"Een webapp is een applicatie die je in je browser gebruikt. Klanten kunnen er bijvoorbeeld zelf een afspraak boeken, betalen of documenten bekijken. We spreken af welke functies jouw bedrijf nodig heeft.": "A web app is an application you use in your browser. Customers can use it to book an appointment, pay or view documents. We agree on the features your business needs.",
+	"Een boekingssysteem voor afspraken of reservaties": "A booking system for appointments or reservations",
+	"Een betaalfunctie voor je klanten": "A payment feature for your customers",
+	"Een klantenportaal of overzicht voor je team": "A customer portal or an overview for your team",
+	"We maken beelden, video’s en posts in jouw huisstijl. Je kan een losse video of een reeks posts aanvragen. We kunnen ook de contentplanning en het beheer van je sociale media verzorgen.": "We create images, videos and posts in your brand style. You can request a single video or a series of posts. We can also handle content planning and social media management.",
+	"Beelden en posts in je huisstijl": "Images and posts in your brand style",
+	"Video’s en montage voor je sociale media": "Videos and editing for your social media",
+	"We werken een campagne uit rond je bedrijf, een actie of een nieuw aanbod. Daarvoor maken we de content en advertenties. We bespreken op welke kanalen ze verschijnen en welk budget je wil inzetten.": "We create a campaign around your business, a promotion or a new service or product. We make the content and ads for it, and discuss which channels they will appear on and the budget you want to use.",
+	"Een campagne voor een actie of nieuw aanbod": "A campaign for a promotion or new service or product",
+	"Beelden, video’s en teksten voor je campagne": "Images, videos and text for your campaign",
+	"We voeren updates en technische controles uit en passen je website of app aan wanneer er iets verandert. Denk aan nieuwe openingsuren, een extra dienst of een aangepaste functie. Het onderhoud spreken we vooraf met je af.": "We perform updates and technical checks, and change your website or app when needed. For example, new opening hours, an additional service or an updated feature. We agree on maintenance with you in advance.",
+	"Functies aanpassen of uitbreiden": "Change or extend features",
+	"Prijzen voor websites.": "Website prices.",
+	"Hieronder vind je de prijzen voor een one-page, een Business Website en een Website + Content. Bij elke formule staat wat inbegrepen is.": "Below you will find prices for a one-page site, a Business Website and Website + Content. Each plan lists what is included.",
+	"Voor een bedrijf dat zijn aanbod op één pagina kan uitleggen.": "For a business that can explain its services or products on one page.",
+	"Een website van 3 tot 4 pagina’s voor je diensten, realisaties en contactgegevens.": "A website with 3 to 4 pages for your services, work and contact details.",
+	"Een website van 4 tot 5 pagina’s, met elke maand 2 korte video’s voor je sociale media.": "A website with 4 to 5 pages, plus 2 short social media videos every month.",
+	"Wil je eerst een ontwerpvoorstel zien?": "Would you like to see an initial design first?",
+	"Vraag een gratis websiteprototype": "Request a free website prototype",
+	"Vragen over de websiteformules": "Questions about website plans",
+	"Prijzen voor ander werk.": "Prices for other work.",
+	"Voor een app, video, socialmediabeheer of campagne maken we een offerte. De prijs hangt af van wat je nodig hebt; we spreken de inhoud en timing vooraf af.": "We prepare a quote for an app, video, social media management or campaign. The price depends on what you need; we agree on the content and timing in advance.",
+	"Heb je een vraag over een dienst?": "Do you have a question about a service?",
+	"Vertel wat je wil laten maken of aanpassen. We bespreken welke dienst erbij past en wat we van je nodig hebben.": "Tell us what you want us to make or change. We discuss which service fits and what we need from you.",
+	"BMA Studio en Lio Smeers.": "BMA Studio and Lio Smeers.",
+	"BMA Studio is het digitale en creatieve bureau van Lio Smeers. We maken websites, apps en content voor lokale bedrijven in België en verzorgen ook sociale media, campagnes en onderhoud.": "BMA Studio is Lio Smeers’ digital and creative agency. We make websites, apps and content for local businesses in Belgium, and also handle social media, campaigns and maintenance.",
+	"Afspraken over wat we maken, de timing en de prijs.": "Agreements on what we make, the timing and the price.",
+	"Je kan één dienst kiezen of meerdere opdrachten combineren.": "You can choose one service or combine several projects.",
+	"Wat je bij BMA kan laten maken.": "What you can ask BMA to make.",
+	"Een website om je aanbod te tonen, een app om afspraken te beheren of video’s voor je sociale media: we maken het werk dat je voor jouw bedrijf nodig hebt.": "A website to show your services, an app to manage appointments or videos for your social media: we make what your business needs.",
+	"We bespreken waarvoor je het wil gebruiken en wat er gemaakt moet worden. Zo kunnen we de inhoud, functies en planning afspreken voor we beginnen.": "We discuss how you want to use it and what needs to be made. That lets us agree on content, features and planning before starting.",
+	"Bij BMA Studio werk je rechtstreeks met Lio Smeers. Je bespreekt je plannen met de persoon die je project uitwerkt.": "At BMA Studio, you work directly with Lio Smeers. You discuss your plans with the person working on your project.",
+	"Lio denkt met je mee over de pagina’s, inhoud en functies. Tijdens het project weet je wat er klaar is en waar we nog aan werken.": "Lio helps you think through the pages, content and features. During the project, you know what is ready and what we are still working on.",
+	"Van je vraag tot de oplevering.": "From your enquiry to delivery.",
+	"Je project bespreken": "Discuss your project",
+	"Je vertelt wat je bedrijf doet en wat je wil laten maken. We bespreken wie het zal gebruiken of bekijken.": "You tell us what your business does and what you want us to make. We discuss who will use or view it.",
+	"Inhoud en afspraken": "Content and agreements",
+	"We leggen vast wat we maken, welke informatie we nodig hebben en hoeveel het kost.": "We agree on what we make, what information we need and what it costs.",
+	"Maken en nakijken": "Make and review",
+	"We werken je project uit en verwerken je feedback volgens de afspraken. Daarna bespreken we wat er aan opvolging nodig is.": "We work on your project and handle your feedback as agreed. Then we discuss what follow-up is needed.",
+	"Afspraken": "Agreements",
+	"Wat we vooraf afspreken.": "What we agree on in advance.",
+	"Wat inbegrepen is": "What is included",
+	"Welke pagina’s, functies of content we maken, hoeveel revisies inbegrepen zijn en wat apart wordt aangerekend.": "Which pages, features or content we make, how many revisions are included and what is charged separately.",
+	"Wat je aanlevert": "What you provide",
+	"Welke teksten, beelden en bedrijfsgegevens we van je nodig hebben om aan het project te beginnen.": "Which text, images and business details we need from you to start the project.",
+	"Wat er na oplevering gebeurt": "What happens after delivery",
+	"Wie de website of app bijhoudt en hoe je later wijzigingen kan aanvragen.": "Who maintains the website or app and how you can request changes later.",
+	"We werken voor bedrijven in België.": "We work for businesses in Belgium.",
+	"BMA Studio is gevestigd in Riemst en werkt voor bedrijven in Limburg, Brussel en de rest van België. Lees meer over": "BMA Studio is based in Riemst and works with businesses in Limburg, Brussels and the rest of Belgium. Read more about",
+	"of bespreek je project online met ons.": "or discuss your project with us online.",
+	"Heb je een project in gedachten?": "Do you have a project in mind?",
+	"Vertel wat je bedrijf doet en wat je wil laten maken. We bespreken je vraag met je.": "Tell us what your business does and what you want us to make. We will discuss your enquiry with you.",
+	"Websites en concepten.": "Websites and concepts.",
+	"Hier zie je websites voor klanten en fictieve voorbeeldsites. Bij elk project staat wat we hebben gemaakt.": "Here you can see websites for clients and fictional example sites. Each project explains what we made.",
+	"Wat je hier ziet": "What you will find here",
+	"Websites die voor klanten werden gemaakt.": "Websites made for clients.",
+	"Conceptsites om stijl en indeling te tonen.": "Concept sites showing style and layout.",
+	"Projectpagina’s met de geleverde diensten.": "Project pages with the services delivered.",
+	"Klantprojecten en voorbeeldsites.": "Client projects and example sites.",
+	"De klantprojecten tonen opgeleverd werk. De conceptsites laten zien hoe een website er voor een bepaald type bedrijf kan uitzien en zijn demonstraties.": "Client projects show delivered work. Concept sites demonstrate what a website could look like for a particular type of business.",
+	"Vertel kort wat je bedrijf doet en wat je wil laten maken. Als je nog twijfelt over de aanpak, bespreken we dat samen.": "Briefly tell us what your business does and what you want us to make. If you are unsure about the approach, we can discuss it together.",
+	"We bekijken wat je nodig hebt.": "We look at what you need.",
+	"We bespreken de inhoud en timing met je.": "We discuss the content and timing with you.",
+	"Je krijgt een voorstel voor het afgesproken werk.": "You receive a proposal for the agreed work.",
+	"Contact met Lio.": "Contact Lio.",
+	"Stuur je vraag via het formulier of neem rechtstreeks contact op. Lio bekijkt je bericht en bespreekt met je wat er mogelijk is.": "Send your question through the form or contact us directly. Lio reads your message and discusses what is possible with you.",
+	"Reactie: meestal dezelfde dag": "Response: usually the same day",
+	"Je hoeft nog geen formule te kiezen.": "You do not need to choose a plan yet.",
+	"Verstuur je bericht": "Send your message",
+	"Je bericht is verzonden. We nemen contact met je op.": "Your message has been sent. We will contact you.",
+	"Na je bericht": "After your message",
+	"Bedrijf (optioneel)": "Company (optional)",
+	"E-mailadres": "Email address",
+	"Bv. een website voor je zaak, een boekingssysteem of video’s voor je sociale media.": "For example, a website for your business, a booking system or videos for your social media.",
+	"We hebben je bericht ontvangen.": "We have received your message.",
+	"Bedankt voor je bericht. We bekijken je vraag en nemen contact met je op, meestal dezelfde dag.": "Thank you for your message. We will read your enquiry and contact you, usually the same day.",
+	"We bekijken wat je wil laten maken.": "We look at what you want us to make.",
+	"We leggen het afgesproken werk vast in een voorstel.": "We set out the agreed work in a proposal.",
+	"We bouwen websites voor zelfstandigen en lokale bedrijven in Limburg. Je klanten vinden er je aanbod, realisaties en contactgegevens, op hun gsm of computer.": "We build websites for independent professionals and local businesses in Limburg. Customers find your services, work and contact details on their phone or computer.",
+	"Een website voor je bedrijf in Limburg.": "A website for your business in Limburg.",
+	"We bespreken welke informatie jouw klanten zoeken. Dat kunnen je diensten, openingsuren, prijzen of realisaties zijn. We geven die informatie een plaats op je website en maken contact opnemen eenvoudig.": "We discuss what information your customers look for. This could be your services, opening hours, prices or completed work. We give that information a place on your website and make it easy to contact you.",
+	"BMA Studio is gevestigd in Riemst. We werken voor bedrijven in Limburg en de rest van België; overleg over je website kan ook online.": "BMA Studio is based in Riemst. We work with businesses in Limburg and the rest of Belgium; we can also discuss your website online.",
+	"Wat we op je website zetten.": "What we put on your website.",
+	"We maken een one-page of een website met meerdere pagina’s. Je aanbod en contactgegevens krijgen een plaats die bezoekers makkelijk vinden.": "We make a one-page site or a website with multiple pages. Visitors can easily find your services and contact details.",
+	"We ordenen je diensten, realisaties en praktische informatie en bepalen waar een contactknop of formulier nodig is.": "We organise your services, work and practical information, and decide where a contact button or form is needed.",
+	"We kunnen na oplevering teksten en beelden aanpassen en technische updates uitvoeren, volgens de afspraken bij je website.": "After delivery, we can update text and images and perform technical updates, as agreed for your website.",
+	"Hoe we je website maken.": "How we make your website.",
+	"Je website bespreken": "Discuss your website",
+	"Je vertelt wat je bedrijf doet en welke informatie je klanten op de website moeten vinden.": "You tell us what your business does and what information customers should find on the website.",
+	"We spreken de pagina’s en inhoud af en bekijken welke teksten, beelden en bedrijfsgegevens nodig zijn.": "We agree on pages and content, and look at the text, images and business details needed.",
+	"We bouwen de pagina’s, kijken de website na op mobiel en desktop en zetten hem online na je akkoord.": "We build the pages, check the website on mobile and desktop, and publish it with your approval.",
+	"Klantprojecten en een conceptsite.": "Client projects and a concept site.",
+	"Hieronder zie je twee klantprojecten en een fictieve voorbeeldsite.": "Below you can see two client projects and a fictional example site.",
+	"Voor zelfstandigen, starters en lokale bedrijven die hun aanbod, werk en contactgegevens op een website willen tonen.": "For independent professionals, startups and local businesses that want to show their services, work and contact details on a website.",
+	"Ja. We voorzien paginatitels, beschrijvingen en interne links en verwerken je bedrijfsgegevens en werkgebied op de relevante pagina’s. Dat helpt zoekmachines om de inhoud te begrijpen.": "Yes. We add page titles, descriptions and internal links, and include your business details and service area on relevant pages. This helps search engines understand the content.",
+	"Hieronder vind je de prijzen voor One-page Website, Business Website en Website + Content. Bij elke formule staat wat inbegrepen is.": "Below you will find prices for One-page Website, Business Website and Website + Content. Each plan lists what is included.",
+	"Zelfstandigen die hun diensten willen tonen.": "Independent professionals who want to show their services.",
+	"Bedrijven die realisaties en contactgegevens willen bundelen.": "Businesses that want to bring their work and contact details together.",
+	"Bedrijven die hun website willen laten bijhouden.": "Businesses that want someone to maintain their website."
 };
 
 const titleTranslations = {
+	"BMA Studio | Digitaal en creatief bureau voor lokale bedrijven": "BMA Studio | Digital and creative agency for local businesses",
+	"BMA Studio versterkt lokale bedrijven met websites, applicaties, content, sociale media en campagnes. Eén aanspreekpunt voor je online aanwezigheid.": "BMA Studio supports local businesses with websites, applications, content, social media and campaigns. One point of contact for your online presence.",
+	"Websites, applicaties, content en campagnes | BMA Studio": "Websites, applications, content and campaigns | BMA Studio",
+	"Ontdek de diensten van BMA Studio: websites, applicaties, content en sociale media, campagnes en advertenties, en onderhoud. Ook als losse dienst.": "Discover BMA Studio’s services: websites, applications, content and social media, campaigns and advertising, and maintenance. Also available individually.",
+	"Over BMA Studio | Digitaal en creatief bureau": "About BMA Studio | Digital and creative agency",
+	"Maak kennis met BMA Studio, het digitale en creatieve bureau van Lio Smeers voor lokale bedrijven. Persoonlijke samenwerking en rechtstreeks contact.": "Meet BMA Studio, Lio Smeers’ digital and creative agency for local businesses. Personal collaboration and direct contact.",
+	"Vertel ons over je project | BMA Studio": "Tell us about your project | BMA Studio",
+	"Bespreek je website, applicatie, content, sociale media of campagne met Lio van BMA Studio. Vertel ons vrijblijvend wat je bedrijf nodig heeft.": "Discuss your website, application, content, social media or campaign with Lio at BMA Studio. Tell us what your business needs, with no obligation.",
+	"Websitepakketten en diensten op maat | BMA Studio": "Website packages and tailored services | BMA Studio",
+	"Vergelijk de bestaande websitepakketten en prijzen van BMA Studio. Applicaties, content, socialmediabeheer en campagnes werken we op maat uit.": "Compare BMA Studio’s website packages and prices. Applications, content, social media management and campaigns are tailored to your needs.",
 	"BMA Studio - Websites voor lokale ondernemers": "BMA Studio - Websites for local business owners",
 	"Webdesign voor lokale ondernemers | BMA Studio": "Web design for local business owners | BMA Studio",
 	"BMA Studio bouwt duidelijke, professionele websites voor lokale ondernemers in Limburg en België, inclusief hosting, onderhoud en content.": "BMA Studio builds clear, professional websites for local business owners in Limburg and Belgium, including hosting, maintenance and content.",
@@ -933,7 +1196,19 @@ const titleTranslations = {
 	"Privacyverklaring | BMA Studio": "Privacy statement | BMA Studio",
 	"Lees hoe BMA Studio persoonsgegevens verwerkt bij contactaanvragen, offertes en samenwerking via bmastudio.be.": "Read how BMA Studio processes personal data for contact requests, proposals and collaboration via bmastudio.be.",
 	"Pagina niet gevonden | BMA Studio": "Page not found | BMA Studio",
-	"Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage, pakketten of contactpagina van BMA Studio.": "This page does not exist or has moved. Go back to the BMA Studio homepage, packages or contact page.",
+	"Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage, diensten of contactpagina van BMA Studio.": "This page does not exist or has moved. Go back to the BMA Studio homepage, services or contact page.",
+	"BMA Studio | Websites, apps en content": "BMA Studio | Websites, apps and content",
+	"We maken websites, apps, content en video’s voor lokale bedrijven. Ook socialmediabeheer, campagnes, advertenties en onderhoud.": "We make websites, apps, content and videos for local businesses. Also social media management, campaigns, advertising and maintenance.",
+	"Websites, apps, content en onderhoud | BMA Studio": "Websites, apps, content and maintenance | BMA Studio",
+	"Wat kan BMA Studio voor je maken? Websites, webapps, beelden en video’s, sociale media en campagnes. Bekijk ook de websiteprijzen en onderhoud.": "What can BMA Studio make for you? Websites, web apps, images and videos, social media and campaigns. View website prices and maintenance too.",
+	"Over BMA Studio en Lio Smeers": "About BMA Studio and Lio Smeers",
+	"BMA Studio is het digitale en creatieve bureau van Lio Smeers. Lees wat we maken voor lokale bedrijven en hoe je met ons samenwerkt.": "BMA Studio is Lio Smeers’ digital and creative agency. Read what we make for local businesses and how you work with us.",
+	"Websites en concepten | BMA Studio": "Websites and concepts | BMA Studio",
+	"Bekijk websites die BMA Studio voor klanten maakte en fictieve conceptsites. Bij elk project vind je informatie over het werk dat we leverden.": "View websites BMA Studio made for clients and fictional concept sites. Each project explains the work we delivered.",
+	"Bespreek je project met Lio | BMA Studio": "Discuss your project with Lio | BMA Studio",
+	"Wil je een website, app, video of campagne laten maken? Stuur je vraag naar Lio van BMA Studio via het formulier, per e-mail of telefonisch.": "Would you like a website, app, video or campaign? Send your enquiry to Lio at BMA Studio using the form, by email or by phone.",
+	"Website laten maken in Limburg | BMA Studio": "Have a website made in Limburg | BMA Studio",
+	"We bouwen websites voor lokale bedrijven in Limburg. Bekijk de werkwijze, websiteprijzen en klantprojecten van BMA Studio in Riemst.": "We build websites for local businesses in Limburg. View the process, website prices and client projects of BMA Studio in Riemst."
 };
 
 const header = document.querySelector(".site-header");
@@ -1046,7 +1321,7 @@ let currentLanguage = ["nl", "en"].includes(requestedLanguage)
 const originalTextByNode = new WeakMap();
 const originalAttributeByElement = new WeakMap();
 const originalMetadataByElement = new WeakMap();
-const translatableAttributes = ["aria-label", "alt", "title"];
+const translatableAttributes = ["aria-label", "alt", "title", "placeholder"];
 const livePreviewWidth = 1280;
 const livePreviewHeight = 800;
 const untranslatedText = new Set();
@@ -1141,7 +1416,7 @@ function translateValue(value) {
 }
 
 function translateAttributes() {
-	document.querySelectorAll("[aria-label], img[alt], iframe[title]").forEach((element) => {
+	document.querySelectorAll("[aria-label], img[alt], iframe[title], [placeholder]").forEach((element) => {
 		let originalAttributes = originalAttributeByElement.get(element);
 		if (!originalAttributes) {
 			originalAttributes = {};
@@ -1236,6 +1511,7 @@ function translateStaticText() {
 	translateMetadataContent("meta[name='twitter:description']");
 	updateLanguageMetadataLinks();
 	translateAttributes();
+	updateMenuLabel();
 }
 
 function updateLanguageSwitcher() {
@@ -1346,14 +1622,24 @@ function scheduleScrollStateUpdate() {
 	});
 }
 
-function closeMenu() {
-	if (!menuToggle || !mobileMenu) return;
-
-	menuToggle.classList.remove("is-open");
-	menuToggle.setAttribute("aria-expanded", "false");
-	mobileMenu.classList.remove("is-open");
-	document.body.classList.remove("menu-open");
+function updateMenuLabel() {
+ if (!menuToggle) return;
+ const open = menuToggle.getAttribute("aria-expanded") === "true";
+ menuToggle.setAttribute("aria-label", currentLanguage === "en" ? (open ? "Close menu" : "Open menu") : (open ? "Sluit menu" : "Open menu"));
 }
+
+function setMenuOpen(open) {
+ if (!menuToggle || !mobileMenu) return;
+ menuToggle.classList.toggle("is-open", open);
+ menuToggle.setAttribute("aria-expanded", String(open));
+ mobileMenu.classList.toggle("is-open", open);
+ mobileMenu.inert = !open;
+ mobileMenu.setAttribute("aria-hidden", String(!open));
+ document.body.classList.toggle("menu-open", open);
+ updateMenuLabel();
+}
+
+function closeMenu() { setMenuOpen(false); }
 
 function openSpotlight(packageKey) {
 	const item = getPackageDetails(packageKey);
@@ -1531,13 +1817,12 @@ function fillPackageMessage(packageKey) {
 
 	messageField.value = item.inquiryMessage;
 	if (packageField) packageField.value = packageDetails[packageKey]?.title || item.title;
+	if (contactForm.elements.service) contactForm.elements.service.value = "websites";
+	updateContactService();
 	contactForm.dataset.prefilledPackage = packageKey;
 	setError("message", "");
 	hideContactStatus();
 
-	window.setTimeout(() => {
-		messageField.focus({ preventScroll: true });
-	}, 220);
 }
 
 function setError(field, message) {
@@ -1852,6 +2137,49 @@ function setupVisibilitySprintToggle() {
 	updateVisibilitySprintCard();
 }
 
+function updateContactService() {
+	if (!contactForm?.elements.service) return;
+	const showPackages = contactForm.elements.service.value === "websites";
+	const row = contactForm.querySelector("[data-website-package-row]");
+	if (row) row.hidden = !showPackages;
+	if (contactForm.elements.package) contactForm.elements.package.disabled = !showPackages;
+}
+
+function setupWebsitePricing() {
+ const disclosure = document.querySelector(".website-pricing-disclosure");
+ if (!disclosure) return;
+ const openFromHash = () => {
+  const target = document.getElementById(window.location.hash.slice(1));
+  if (target && (target.id === "websiteprijzen" || disclosure.contains(target))) disclosure.open = true;
+ };
+ openFromHash();
+ window.addEventListener("hashchange", openFromHash);
+ document.querySelectorAll('a[href="#websiteprijzen"]').forEach(link => link.addEventListener("click", () => { disclosure.open = true; }));
+}
+
+function setupContactService() {
+	const field = contactForm?.elements.service;
+	if (!field) return;
+	const query = new URLSearchParams(window.location.search);
+	const service = query.get("dienst");
+	if (!contactForm.dataset.prefilledPackage && Array.from(field.options).some(option => option.value === service)) {
+		field.value = service;
+	}
+	field.addEventListener("change", () => {
+		if (field.value !== "websites") {
+			const packageKey = contactForm.dataset.prefilledPackage;
+			// Clear generated website text only; keep anything the visitor has written.
+			if (packageKey && contactForm.elements.message.value === getPackageDetails(packageKey)?.inquiryMessage) {
+				contactForm.elements.message.value = "";
+			}
+			contactForm.elements.package.value = "";
+			delete contactForm.dataset.prefilledPackage;
+		}
+		updateContactService();
+	});
+	updateContactService();
+}
+
 function setupPackageQueryPrefill() {
 	if (!contactForm) return;
 
@@ -1866,11 +2194,10 @@ document.querySelector("[data-scroll-top]")?.addEventListener("click", () => {
 });
 
 menuToggle?.addEventListener("click", () => {
-	const isOpen = !mobileMenu.classList.contains("is-open");
-	menuToggle.classList.toggle("is-open", isOpen);
-	menuToggle.setAttribute("aria-expanded", String(isOpen));
-	mobileMenu.classList.toggle("is-open", isOpen);
-	document.body.classList.toggle("menu-open", isOpen);
+ setMenuOpen(!mobileMenu.classList.contains("is-open"));
+});
+mobileMenu?.addEventListener("click", event => {
+ if (event.target.closest("a")) closeMenu();
 });
 
 navButtons.forEach((button) => {
@@ -1912,12 +2239,17 @@ if (portfolioModal) {
 }
 
 document.addEventListener("click", (event) => {
+	if (mobileMenu?.classList.contains("is-open") && !header.contains(event.target)) closeMenu();
 	if (event.target.closest(".portfolio-modal-close")) {
 		closePortfolioModal();
 	}
 });
 
 window.addEventListener("keydown", (event) => {
+	if (event.key === "Escape" && mobileMenu?.classList.contains("is-open")) {
+		closeMenu();
+		menuToggle.focus({ preventScroll: true });
+	}
 	if (event.key === "Escape" && spotlight && !spotlight.hidden) closeSpotlight();
 	if (event.key === "Escape" && portfolioModal && !portfolioModal.hidden) {
 		closePortfolioModal();
@@ -1929,6 +2261,7 @@ window.addEventListener("keydown", (event) => {
 
 window.addEventListener("scroll", scheduleScrollStateUpdate, { passive: true });
 window.addEventListener("resize", () => {
+	if (window.innerWidth >= 1200) closeMenu();
 	updateScrollState();
 	updateLiveSitePreviews();
 });
@@ -1955,12 +2288,15 @@ contactForm?.addEventListener("submit", async (event) => {
 	event.preventDefault();
 
 	if (isContactSubmitting) return;
-	if (!validateForm()) return;
+	if (!validateForm()) {
+  contactForm.querySelector('[aria-invalid="true"]')?.focus();
+  return;
+ }
 
 	hideContactStatus();
 	isContactSubmitting = true;
 	contactSubmit.disabled = true;
-	contactSubmit.textContent = currentLanguage === "en" ? "Sending..." : "Versturen...";
+	contactSubmit.textContent = currentLanguage === "en" ? "Sending..." : "Bericht versturen...";
 
 	try {
 		const response = await fetch(contactForm.dataset.endpoint, {
@@ -1993,14 +2329,17 @@ contactForm?.addEventListener("submit", async (event) => {
 		isContactSubmitting = false;
 		contactSubmit.disabled = false;
 		contactSubmit.textContent =
-			currentLanguage === "en" ? "Send request" : "Verstuur aanvraag";
+			currentLanguage === "en" ? "Send your message" : "Verstuur je bericht";
 	}
 });
 
+closeMenu();
 setupLanguageSwitcher();
 setupReveal();
 // Shared component motion replaces the older global tilt and cursor effects.
 setupPortfolioToggle();
 setupVisibilitySprintToggle();
 setupPackageQueryPrefill();
+setupContactService();
+setupWebsitePricing();
 updateScrollState();

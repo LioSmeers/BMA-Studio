@@ -3416,7 +3416,7 @@ body[data-page-theme="dark"] .footer .brand-logo-footer {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .desktop-nav {
     display: flex;
   }
@@ -3712,3 +3712,56 @@ body[data-page-theme="dark"] .footer .brand-logo-footer {
   .case-page .button-row { align-items:stretch; flex-direction:column; }
   .case-page .button-row > a { width:100%; text-align:center; }
 }
+
+
+/* Agency service overview: extends the existing BMA cards and typography. */
+.hero-grid { grid-template-columns: minmax(0, 1fr); }
+.hero-grid > * { min-width: 0; max-width: 100%; }
+.hero-badge-dot { flex-shrink: 0; }
+.home-services-section { padding-top: 2.5rem; }
+.agency-service-overview,
+.agency-services-grid,
+.agency-custom-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.agency-service-summary { display: block; padding: 1.35rem; color: var(--color-text); text-decoration: none; }
+.agency-service-summary h3 { margin-top: .75rem; font-size: 1.05rem; }
+.agency-service-summary p { margin-top: .65rem; color: var(--color-muted); font-size: .9rem; }
+.agency-service-card { display: flex; flex-direction: column; scroll-margin-top: 7rem; }
+.agency-service-card .compact-list { margin-bottom: 1.5rem; }
+.agency-service-actions { margin-top: auto; }
+.agency-service-note { font-size: .9rem; line-height: 1.65; }
+.agency-service-note a { color: var(--color-accent); text-underline-offset: .2em; }
+.contact-form [hidden] { display: none; }
+@media (min-width: 768px) {
+  .agency-service-overview { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .agency-services-grid, .agency-custom-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px) {
+  .agency-service-overview { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .agency-services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .agency-custom-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .hero-headline { font-size: clamp(2.1rem, 8vw, 2.7rem); overflow-wrap: anywhere; }
+  .hero-actions { width: 100%; }
+  .agency-service-actions .primary-button { width: 100%; }
+}
+
+/* A direct route from services to examples and a project enquiry. */
+.service-jump-nav{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.5rem 0 2rem}
+.service-jump-nav a{display:inline-flex;align-items:center;min-height:44px;padding:.6rem 1rem;border:1px solid var(--color-border);border-radius:999px;background:rgba(255,255,255,.7);font-size:.875rem;font-weight:700;color:var(--color-accent)}
+.service-jump-nav a:hover{background:#fff;border-color:var(--color-accent)}
+#websiteprijzen{scroll-margin-top:0}
+.website-pricing-disclosure{border:1px solid var(--color-border);border-radius:var(--radius-lg,24px);background:rgba(255,255,255,.76);padding:1.5rem}
+.website-pricing-disclosure>summary{cursor:pointer;color:var(--color-accent);font-weight:800;min-height:44px;line-height:1.5;padding:.55rem 0}
+.website-pricing-disclosure>summary:focus-visible{outline:3px solid var(--color-accent);outline-offset:5px;border-radius:4px}
+.website-pricing-disclosure[open]>summary{margin-bottom:1.5rem}
+.website-pricing-content .pricing-grid{display:grid;grid-template-columns:minmax(0,1fr);overflow:visible;scroll-snap-type:none;gap:1.25rem}
+.website-pricing-content .pricing-card{min-width:0;width:auto;max-width:none;flex:initial}
+.website-pricing-content .pricing-card h3{overflow-wrap:anywhere}
+.form-hint{font-size:.82rem;line-height:1.6;color:var(--color-muted);margin:0 0 .65rem}
+.form-hint a{color:var(--color-accent);text-decoration:underline;text-underline-offset:3px}
+@media(min-width:768px){.website-pricing-content .pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1200px){.website-pricing-content .pricing-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:767px){.website-pricing-disclosure{padding:1rem}.website-pricing-content .pricing-card{padding:1.1rem}.service-jump-nav{gap:.5rem}.service-jump-nav a{font-size:.8rem;padding:.55rem .8rem}}
+
+.mobile-menu.is-open{max-height:min(29rem,calc(100dvh - 5.5rem));overflow-y:auto;overscroll-behavior:contain}

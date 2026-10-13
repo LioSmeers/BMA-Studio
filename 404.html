@@ -2,8 +2,13 @@
 <html lang="nl">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      if (/\/pakketten(?:\.html)?\/?$/.test(window.location.pathname)) {
+        window.location.replace("/diensten.html" + window.location.search + "#websiteprijzen");
+      }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage, pakketten of contactpagina van BMA Studio." />
+    <meta name="description" content="Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage, diensten of contactpagina van BMA Studio." />
     <meta name="author" content="BMA Studio" />
     <meta name="robots" content="noindex, follow" />
     <meta name="theme-color" content="#315f9a" />
@@ -15,7 +20,7 @@
     <meta property="og:locale" content="nl_BE" />
     <meta property="og:site_name" content="BMA Studio" />
     <meta property="og:title" content="Pagina niet gevonden | BMA Studio" />
-    <meta property="og:description" content="Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage, pakketten of contactpagina van BMA Studio." />
+    <meta property="og:description" content="Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage, diensten of contactpagina van BMA Studio." />
     <meta property="og:url" content="https://bmastudio.be/404.html" />
     <meta property="og:image" content="https://bmastudio.be/assets/og-image.png" />
     <meta property="og:image:alt" content="BMA Studio pagina niet gevonden" />
@@ -24,7 +29,7 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pagina niet gevonden | BMA Studio" />
-    <meta name="twitter:description" content="Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage, pakketten of contactpagina van BMA Studio." />
+    <meta name="twitter:description" content="Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage, diensten of contactpagina van BMA Studio." />
     <meta name="twitter:image" content="https://bmastudio.be/assets/og-image.png" />
 
     <title>Pagina niet gevonden | BMA Studio</title>
@@ -34,7 +39,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css?v=20261001-portal-language" />
+    <link rel="stylesheet" href="./style.css?v=20261009-simple-ui-ready" />
       <link rel="stylesheet" href="./interactions.css?v=20261006-motion3" />
   </head>
   <body class="has-page-video">
@@ -65,7 +70,7 @@
 
         <nav class="desktop-nav" aria-label="Hoofdnavigatie">
           <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="./pakketten.html">Pakketten</a>
+
           <a class="nav-link" href="./diensten.html">Diensten</a>
           <a class="nav-link" href="./portfolio.html">Portfolio</a>
           <a class="nav-link" href="./over-ons.html">Over ons</a>
@@ -73,8 +78,8 @@
         </nav>
 
         <div class="header-actions">
-          <a class="pill-button header-cta" href="./contact.html">Vraag info aan</a>
-          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <a class="pill-button header-cta" href="./contact.html">Bespreek je project</a>
+          <button class="menu-toggle" aria-controls="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -82,15 +87,15 @@
         </div>
       </div>
 
-      <div class="mobile-menu">
+      <div class="mobile-menu" id="mobile-menu" inert aria-hidden="true">
         <div class="container mobile-menu-inner">
           <a class="mobile-nav-link" href="/">Home</a>
-          <a class="mobile-nav-link" href="./pakketten.html">Pakketten</a>
+
           <a class="mobile-nav-link" href="./diensten.html">Diensten</a>
           <a class="mobile-nav-link" href="./portfolio.html">Portfolio</a>
           <a class="mobile-nav-link" href="./over-ons.html">Over ons</a>
           <a class="mobile-nav-link" href="./contact.html">Contact</a><a class="mobile-nav-link portal-nav-link" href="./klantenportaal/"><span class="portal-lock-icon" aria-hidden="true"></span> Klantenportaal</a>
-          <a class="pill-button" href="./contact.html">Vraag info aan</a>
+          <a class="pill-button" href="./contact.html">Bespreek je project</a>
         </div>
       </div>
     </header>
@@ -110,9 +115,9 @@
           <aside class="page-hero-panel reveal">
             <span class="eyebrow">Verder zoeken</span>
             <ol class="page-flow">
-              <li><span>01</span> Bekijk de websitepakketten.</li>
+              <li><span>01</span> Ontdek onze digitale en creatieve diensten.</li>
               <li><span>02</span> Bekijk webdesignprojecten.</li>
-              <li><span>03</span> Vraag advies aan.</li>
+              <li><span>03</span> Bespreek je website.</li>
             </ol>
           </aside>
         </div>
@@ -144,7 +149,7 @@
       </div>
     </footer>
 
-    <script src="./main.js?v=20261006-motion3" defer></script><script src="./portal-popup.js?v=20261001-approval-email" defer></script>
+    <script src="./main.js?v=20261009-copy-final" defer></script><script src="./portal-popup.js?v=20261001-approval-email" defer></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8b7e230825e444a49804b8d6e17e1b79"}'></script><!-- End Cloudflare Web Analytics -->
       <script src="./interactions.js?v=20261006-cta4" defer></script>
   </body>
