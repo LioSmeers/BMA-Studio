@@ -26,3 +26,38 @@
 .chapter>p:not(.eyebrow){color:var(--muted)}
 .chapter-number{border-color:var(--line);color:var(--blue)}
 .text-link{color:var(--blue)}
+
+/* The fictional Noor website grows into a customer app. */
+.demo-views{display:flex;gap:4px;padding:4px;background:#eaf0f6;border:1px solid var(--line);border-radius:9px;margin:-14px 0 14px;align-self:flex-end}
+.demo-views button{border:0;background:transparent;color:var(--muted);padding:7px 15px;border-radius:6px;font-size:11px;min-height:34px}
+.demo-views button[aria-pressed=true]{background:#fff;color:var(--blue);box-shadow:0 2px 6px #15233712;font-weight:700}
+.noor-app{display:none;color:#253b30;background:#f4f3e9}
+.device[data-app=true] .example-site{display:none}
+.device[data-app=true] .noor-app{display:block;animation:app-reveal .35s ease-out}
+.device[data-app=true] .window-dots,.device[data-app=true] .browser-more{display:none}
+.app-header{display:flex;justify-content:space-between;align-items:center;padding:22px 22px 14px;border-bottom:1px solid #d8ddca}
+.app-header .noor-logo{font-size:28px}
+.app-avatar{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#e0e6d6;font-size:10px;font-weight:700}
+.app-panel{padding:20px 22px;min-height:338px}
+.noor-app [hidden]{display:none}
+.app-kicker{font-size:7px;letter-spacing:1.3px;font-weight:700;color:#5e7160}
+.app-panel h3{font-family:Georgia,serif;font-weight:400;font-size:32px;line-height:1.04;letter-spacing:-1px;margin:10px 0 17px}
+.app-project{display:flex;gap:12px;align-items:center;padding:12px;background:#e9ecdf;border-radius:9px;margin-bottom:18px}
+.app-project-art{display:grid;place-items:center;flex-shrink:0;width:44px;height:48px;background:#afc098;color:#294c37;font-size:32px;border-radius:30px 30px 5px 5px}
+.app-project b{font-size:10px;display:block}.app-project div>span{display:block;font-size:8px;margin-top:5px;color:#5e7160}
+.app-progress-label{display:flex;justify-content:space-between;font-size:8px;gap:8px}.app-progress-label b{font-weight:600}
+.app-progress{height:4px;border-radius:3px;background:#dce3d3;margin:9px 0 15px;overflow:hidden}.app-progress i{display:block;width:58%;height:100%;background:#61806a}
+.app-timeline{list-style:none;padding:0;margin:0;display:grid;gap:10px}.app-timeline li{display:flex;gap:10px;align-items:center;font-size:9px}.app-timeline li>span{display:grid;place-items:center;flex-shrink:0;width:22px;height:22px;border:1px solid #c9d2bf;border-radius:50%;font-size:8px}.app-timeline li:first-child>span{background:#294c37;color:#fff;border-color:#294c37}.app-timeline small{display:block;font-size:7px;color:#5e7160;margin-top:3px}
+.app-tabs{display:flex;justify-content:space-around;padding:8px 8px 10px;background:#edeedd;border-top:1px solid #d8ddca}.app-tabs button{border:0;background:none;color:#65735e;display:grid;gap:4px;justify-items:center;font-size:8px;min-width:60px;min-height:44px}.app-tabs button>span{font-size:17px}.app-tabs button[aria-pressed=true]{color:#294c37;font-weight:800}
+.app-info-card,.app-chat{border:1px solid #d8ddca;background:#fffdf5;border-radius:10px;padding:16px;font-size:10px;line-height:1.7}.app-info-card p{margin:9px 0}.app-info-card>span,.app-chat>span{display:block;font-size:8px;color:#5e7160}.app-info-card button{display:flex;justify-content:space-between;width:100%;background:#294c37;color:#fff;border:0;border-radius:5px;font-size:10px;padding:10px;margin-top:16px;min-height:40px}.app-booked{color:#294c37;font-weight:700}.app-chat p{margin:8px 0}.app-chat-reply{margin:14px 0 0 28px;background:#e0e6d6}
+@keyframes app-reveal{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+@media(max-width:760px){.demo-views{margin-top:-8px}.app-panel{min-height:340px}.app-panel h3{font-size:36px}.app-kicker{font-size:8px}.app-project b{font-size:12px}.app-project div>span,.app-progress-label{font-size:10px}.app-timeline li{font-size:11px}.app-timeline small{font-size:9px}.app-tabs button{font-size:10px}.app-info-card,.app-chat{font-size:12px}.app-info-card>span,.app-chat>span{font-size:10px}}
+@media(max-height:760px) and (min-width:761px){.app-header{padding:16px 20px 10px}.app-panel{min-height:302px;padding:16px 20px}.app-panel h3{font-size:28px;margin:8px 0 12px}.app-project{padding:9px;margin-bottom:12px}.app-progress{margin-bottom:10px}.app-timeline{gap:7px}.demo-views{margin:0 0 8px}.app-tabs{padding-block:4px}}
+/* Keep the app navigation inside the frame at each viewport height. */
+.device{flex-shrink:0}
+.app-panel{min-height:310px;padding:16px 22px}
+.app-panel h3{font-size:30px;margin:8px 0 12px}
+.app-project{padding:10px;margin-bottom:14px}.app-project-art{height:40px;width:40px}
+.app-progress{margin:7px 0 10px}.app-timeline{gap:7px}
+@media(min-width:761px){.maintenance{bottom:-70px;right:0;padding:12px 16px}}
+@media(max-width:760px){.app-panel{min-height:340px;padding:20px 22px}.app-panel h3{font-size:36px;margin:10px 0 17px}.app-timeline{gap:10px}}
