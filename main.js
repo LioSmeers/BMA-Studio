@@ -500,7 +500,6 @@ const translations = {
 	"Nieuwe functies, maatwerk en werk buiten je pakket vallen niet onder de inbegrepen onderhoudsaanvragen. We bespreken dit vooraf en voeren extra werk alleen na akkoord uit aan €50 per uur. Ongebruikte aanvragen vervallen aan het einde van de maand.": "New features, custom development and work outside your package are not included in maintenance requests. We discuss these in advance and only carry out additional work with your approval at €50 per hour. Unused requests expire at the end of the month.",
 	"Wat gebeurt er met mijn website bij opzegging?": "What happens to my website when I cancel?",
 	"Je kunt hosting en domeinnaam bij BMA Studio houden voor €59 per jaar zonder onderhoud, overdragen naar eigen beheer of volledig stopzetten. Bij volledige stopzetting gaat je website offline en wordt de domeinnaam niet verlengd. Een standaardoverdracht van domeinnaam en websitebestanden is inbegrepen. Voor het One-page Abonnement gaat het eigendom over na betaling van de eerste 12 maanden. De volledige afspraken staan bij de pakketvoorwaarden hieronder.": "You can keep hosting and your domain with BMA Studio for €59 per year without maintenance, transfer them to your own provider, or discontinue them entirely. If discontinued, your website goes offline and the domain is not renewed. A standard transfer of the domain and website files is included. Ownership of the One-page Subscription transfers after the first 12 months have been paid. See the package terms below for the full conditions.",
-	"Klantenportaal": "Client Portal",
 	"Business Website voor vastgoedfotografie, videografie en socialmediacontent, met een sterke visuele portfolio, duidelijke diensten en eenvoudige contactmogelijkheden.": "Business Website for real estate photography, videography and social media content, with a strong visual portfolio, clear services and easy contact options.",
 	"Thor Smeers — Business Website": "Thor Smeers — Business Website",
 	"Een one-page website met diensten, bewijs van vakmanschap en duidelijke contactmogelijkheden op één pagina.": "A one-page website bringing services, proof of craftsmanship and clear contact options together on a single page.",
@@ -1213,14 +1212,15 @@ const titleTranslations = {
 
 const header = document.querySelector(".site-header");
 const progressBar = document.querySelector(".scroll-progress");
-const pageBackgroundVideo = document.querySelector(".page-bg-video");
+// The preview uses a static light background; the previous scroll video is disabled.
+const pageBackgroundVideo = null;
 const mobileViewport = window.matchMedia("(max-width: 767px)");
 const backgroundReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const heroSection = document.querySelector(".hero-section");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 const navButtons = document.querySelectorAll(
-	"header [data-target], .hero-section [data-target], .founder-section [data-target]",
+		"header [data-target], .hero-section [data-target]",
 );
 const packageCards = document.querySelectorAll("[data-package]");
 const spotlight = document.querySelector(".package-spotlight");
@@ -1597,7 +1597,7 @@ function updateScrollState() {
 		String(clampNumber(progress, 0, 1)),
 	);
 
-	const activeId = ["diensten", "over-ons", "portfolio", "pakketten", "contact", "reviews"].reduce(
+	const activeId = ["diensten", "portfolio", "pakketten", "contact", "reviews"].reduce(
 		(current, id) => {
 			const section = document.getElementById(id);
 			return section && section.getBoundingClientRect().top <= 180

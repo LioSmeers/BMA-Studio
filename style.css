@@ -65,6 +65,18 @@ body.portal-popup-open { overflow: hidden; }
 .portal-popup-approve h3 { margin: 0.35rem 0 0; font-size: 1.25rem; }
 @media (max-width: 600px) { .portal-popup { padding: 0; } .portal-popup-card { max-height: 100vh; border-radius: 0; } .portal-popup-project-heading, .portal-popup-approve { align-items: stretch; flex-direction: column; } .portal-popup-facts { grid-template-columns: 1fr; } .portal-popup-status { align-self: start; } .portal-popup-statusline { gap: 0.15rem; font-size: 0.65rem; } }
 
+/* Preview variant: keep the site light and remove the old portal surface. */
+.portal-nav-link,
+a[href$="over-ons.html"] {
+  display: none !important;
+}
+
+.page-bg,
+.page-bg-video,
+.page-bg-image {
+  display: none !important;
+}
+
 body[data-page-theme="dark"] {
   --color-bg: #05070d;
   --color-surface: #161d2c;
@@ -90,11 +102,24 @@ body {
   min-width: 320px;
   margin: 0;
   overflow-x: hidden;
-  background: var(--color-bg);
+  position: relative;
+  isolation: isolate;
+  background: #fbfdff;
   color: var(--color-text);
   font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
   text-rendering: optimizeLegibility;
   transition: background 420ms ease, color 420ms ease;
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(226, 240, 255, 0.42), transparent 34%),
+    linear-gradient(315deg, rgba(238, 247, 255, 0.32), transparent 42%);
+  content: "";
+  pointer-events: none;
 }
 
 body.has-page-video {
@@ -129,11 +154,11 @@ body.menu-open {
   z-index: 90;
   top: 0;
   left: 0;
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
-  background: var(--color-accent);
-  filter: blur(8px);
+  background: radial-gradient(circle, rgba(49, 95, 154, 0.45) 0, rgba(89, 157, 225, 0.18) 42%, transparent 72%);
+  filter: blur(4px);
   opacity: 0;
   pointer-events: none;
   transform: translate3d(-50%, -50%, 0);
@@ -142,7 +167,13 @@ body.menu-open {
 }
 
 body.has-cursor-glow .cursor-glow {
-  opacity: 0.34;
+  opacity: 0.58;
+}
+
+@media (pointer: coarse) {
+  .cursor-glow {
+    display: none !important;
+  }
 }
 
 button,
@@ -2944,6 +2975,27 @@ body[data-page-theme="dark"] .review-stars { color: #65d5b4; }
 
 .contact-section-compact {
   padding-block: clamp(1.6rem, 3.5vw, 2.7rem) clamp(3.2rem, 6vw, 5rem);
+}
+
+.contact-about-wrap {
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.contact-about {
+  max-width: 48rem;
+  padding: clamp(1.35rem, 3vw, 2.25rem);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.contact-about h2 {
+  max-width: 20ch;
+  margin-top: 0.65rem;
+}
+
+.contact-about p {
+  max-width: 60ch;
+  margin-top: 0.9rem;
+  color: var(--color-muted);
 }
 
 .contact-info-card {
