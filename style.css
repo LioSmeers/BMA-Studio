@@ -166,6 +166,12 @@ body.menu-open {
   will-change: transform, opacity;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .cursor-glow {
+    display: block;
+  }
+}
+
 body.has-cursor-glow .cursor-glow {
   opacity: 0.58;
 }

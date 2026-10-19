@@ -2336,6 +2336,7 @@ contactForm?.addEventListener("submit", async (event) => {
 closeMenu();
 setupLanguageSwitcher();
 setupReveal();
+setupCursorGlow();
 // Shared component motion replaces the older global tilt and cursor effects.
 setupPortfolioToggle();
 setupVisibilitySprintToggle();
