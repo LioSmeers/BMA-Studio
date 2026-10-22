@@ -1,0 +1,133 @@
+/* About and booking extend the established Services / Portfolio page family. */
+.about-page .studio-hero { display: grid; min-height: min(78svh,54rem); align-items: center; padding-block: clamp(8rem,14vh,11rem) clamp(4rem,8vw,6.5rem); background: var(--color-bg); }
+.about-page .studio-hero::before,.about-page .studio-hero::after { content: none; }
+.about-page .studio-hero .page-hero-grid { max-width: var(--container-width); }
+.about-page .studio-hero-copy { max-width: 68rem; }
+.about-page .studio-hero-copy h1 { max-width: 28ch; padding-block: .04em; font-size: clamp(2.7rem,4.3vw,3.9rem); line-height: 1.02; letter-spacing: -.04em; text-wrap: balance; }
+.about-page .studio-hero-copy > p { max-width: 43rem; margin-top: clamp(1.2rem,2.6vw,1.8rem); font-size: clamp(1.05rem,1.45vw,1.18rem); line-height: 1.7; }
+.studio-introduction { padding: 0 0 clamp(4rem,8vw,7rem); background: var(--color-bg); }
+.studio-intro-grid { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: clamp(3rem,8vw,8rem); align-items: start; }
+.studio-bio { max-width: 30rem; padding-top: 1.3rem; }
+.studio-bio h2,.studio-process h2,.studio-next h2 { margin: 0 0 1.5rem; font-size: clamp(1.8rem,3vw,2.65rem); line-height: 1.16; letter-spacing: -.035em; text-wrap: balance; }
+.studio-bio p { margin: 0 0 1rem; color: var(--color-muted); line-height: 1.8; }
+.studio-text-link { display: inline-flex; align-items: center; gap: .7rem; min-height: 44px; color: var(--color-accent); font-weight: 750; text-decoration: none; text-underline-offset: 5px; }
+.studio-text-link:hover { text-decoration: underline; }
+.studio-text-link span { transition: transform 220ms cubic-bezier(.16,1,.3,1); }
+.studio-text-link:hover span { transform: translate(2px,-2px); }
+.studio-service-line { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1.55rem 0; border-top: 1px solid var(--color-border); color: var(--color-text); text-decoration: none; }
+.studio-service-line:last-child { border-bottom: 1px solid var(--color-border); }
+.studio-service-line strong { display: block; margin-bottom: .3rem; color: var(--color-accent); font: 750 clamp(1.9rem,3.3vw,2.9rem)/1.15 Manrope,sans-serif; letter-spacing: -.04em; }
+.studio-service-line span { display: block; color: var(--color-muted); font-size: .92rem; line-height: 1.6; }
+.studio-service-line svg { flex: 0 0 24px; width: 24px; height: 24px; fill: none; stroke: var(--color-accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform 250ms cubic-bezier(.16,1,.3,1); }
+.studio-service-line:hover svg { transform: translate(3px,-3px); }
+.studio-process { padding-block: clamp(3rem,6vw,5rem); background: #eaf0f8; }
+.studio-process h2 { max-width: 23ch; margin-bottom: clamp(2rem,4vw,3.5rem); }
+.studio-process-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(1.5rem,4vw,4rem); margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.studio-process-list li { counter-increment: step; padding-top: 1.2rem; border-top: 1px solid #b9cce2; }
+.studio-process-list li::before { display: block; margin-bottom: 1.2rem; color: #315f9a; font-size: .9rem; font-weight: 700; content: counter(step,decimal-leading-zero); }
+.studio-process-list h3 { margin: 0 0 .7rem; font-size: 1.1rem; letter-spacing: -.02em; }
+.studio-process-list p { max-width: 32ch; margin: 0; color: #526174; line-height: 1.75; }
+.studio-next { padding-block: clamp(4rem,8vw,6.5rem); }
+.studio-next-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.studio-next h2 { margin: 0; }
+.studio-next .primary-button { flex-shrink: 0; gap: .8rem; }
+
+.booking-main { padding-block: clamp(8.5rem,13vw,11rem) clamp(4rem,7vw,6rem); }
+.booking-layout { display: grid; grid-template-columns: minmax(0,.68fr) minmax(0,1.32fr); align-items: start; gap: clamp(2rem,5vw,4rem); }
+.booking-intro { min-width: 0; }
+.booking-intro h1 { max-width: 12ch; margin: 0 0 1.25rem; padding-block: .04em; font-size: clamp(2.7rem,4.3vw,3.9rem); line-height: 1.04; letter-spacing: -.04em; text-wrap: balance; }
+.booking-description { max-width: 34ch; margin: 0 0 1.1rem; color: #526174; font-size: 1.02rem; line-height: 1.75; }
+.booking-duration { display: flex; align-items: center; gap: .55rem; margin: 0; color: #315f9a; font-size: .88rem; font-weight: 600; }
+.booking-duration svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.booking-john { width: min(230px,85%); margin: 1.4rem 0 0 auto; }
+.booking-john img { display: block; width: 100%; height: auto; object-fit: contain; }
+.booking-email { position: relative; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
+.booking-email h2 { margin: 0 0 .6rem; font: 750 1.2rem/1.35 Manrope,sans-serif; letter-spacing: -.02em; }
+.booking-email p { max-width: 33ch; margin: 0 0 .6rem; color: #526174; font-size: .94rem; line-height: 1.7; }
+.booking-email small { display: block; margin-top: .15rem; color: #526174; font-size: .78rem; }
+.booking-calendar { min-width: 0; padding: 25px 24px 20px; border-radius: 16px; background: #fff; box-shadow: 0 12px 36px rgb(11 17 28 / 6%); scroll-margin-top: 1rem; }
+.booking-calendar-heading { padding-inline: 4px; }
+.booking-calendar-heading h2 { margin: 0 0 .6rem; font: 750 clamp(1.35rem,2vw,1.65rem)/1.25 Manrope,sans-serif; letter-spacing: -.025em; }
+.booking-calendar-heading p { margin: 0; color: #526174; font-size: .88rem; line-height: 1.6; }
+.booking-embed-wrap { position: relative; min-height: 540px; margin-top: 1.5rem; }
+#bma-booking-calendar { width: 100%; min-height: 540px; overflow: visible; }
+#bma-booking-calendar iframe { display: block; width: 100%; border: 0; }
+.booking-loading { position: absolute; top: 5rem; left: 0; right: 0; margin: 0; padding: 16px; color: #526174; text-align: center; font-size: .9rem; }
+.booking-loading[hidden] { display: none; }
+.booking-alternative { margin: 1.2rem 4px 0; color: #526174; font-size: .8rem; line-height: 1.8; }
+.booking-alternative a { color: #315f9a; text-underline-offset: 3px; }
+.booking-page :is(a,button):focus-visible,.about-page :is(a,button):focus-visible { outline: 2px solid #315f9a; outline-offset: 5px; }
+@media (max-width:1000px) {
+  .booking-layout { grid-template-columns: minmax(0,.6fr) minmax(0,1.4fr); gap: 1.5rem; }
+  .booking-intro h1 { font-size: clamp(2.4rem,4vw,3.2rem); }
+  .booking-calendar { padding: 22px 16px 18px; }
+  .booking-john { width: min(235px,100%); }
+}
+@media (max-width:767px) {
+  .about-page .studio-hero { min-height: auto; padding-block: 8.5rem 4.25rem; }
+  .about-page .studio-hero-copy h1 { font-size: clamp(2.5rem,10vw,3.25rem); }
+  .studio-intro-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .studio-bio { padding-top: 0; }
+  .studio-services { width: 100%; }
+  .studio-service-line { padding-block: 1.4rem; }
+  .studio-service-line strong { font-size: 2.2rem; }
+  .studio-process-list { grid-template-columns: 1fr; gap: 1.7rem; }
+  .studio-process-list li { display: grid; grid-template-columns: 32px 1fr; column-gap: 14px; }
+  .studio-process-list li::before { grid-row: 1 / 3; margin: 0; }
+  .studio-process-list p { max-width: none; grid-column: 2; }
+  .studio-next-inner { align-items: flex-start; flex-direction: column; }
+  .booking-main { padding-top: 8.5rem; }
+  .booking-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .booking-intro { display: grid; grid-template-columns: minmax(0,1fr) 110px; column-gap: .75rem; }
+  .booking-intro h1 { grid-column: 1/-1; max-width: 18ch; font-size: clamp(2.5rem,10vw,3.25rem); }
+  .booking-description { grid-column: 1; max-width: none; font-size: .96rem; }
+  .booking-duration { grid-column: 1; font-size: .8rem; align-self: start; }
+  .booking-john { grid-column: 2; grid-row: 2/4; align-self: center; width: 110px; margin: 0; }
+  .booking-email { grid-column: 1/-1; margin-top: 1.5rem; padding-top: 1.25rem; }
+  .booking-email h2 { font-size: 1.08rem; }
+  .booking-email p { max-width: none; }
+  .booking-calendar { padding: 22px 12px 18px; }
+  .booking-calendar-heading { padding-inline: 7px; }
+  .booking-calendar-heading h2 { font-size: 1.35rem; }
+  .booking-embed-wrap,#bma-booking-calendar { min-height: 540px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .studio-service-line svg,.studio-text-link span { transition: none; }
+}
+
+/* Two clear ways to get in touch; John belongs to the calendar edge. */
+.booking-layout { row-gap: 2.5rem; }
+.booking-intro { grid-column: 1; grid-row: 1; }
+.booking-email { grid-column: 2; grid-row: 1; align-self: center; margin: 0; padding: 1.6rem 1.8rem; border: 0; border-radius: 16px; background: #e7eef8; }
+.booking-email h2 { font-size: 1.35rem; }
+.booking-email p { max-width: 48ch; }
+.booking-mail-button { gap: .7rem; margin-block: .6rem .5rem; }
+.booking-mail-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.booking-email-address { display: block; width: fit-content; padding-block: .3rem; color: #315f9a; font-size: .94rem; text-underline-offset: 4px; }
+.booking-calendar { position: relative; grid-column: 2; grid-row: 2; }
+.booking-john { position: absolute; top: 3.5rem; right: calc(100% - 22px); width: clamp(230px,27vw,350px); margin: 0; pointer-events: none; }
+.booking-calendar-heading { position: relative; }
+.booking-calendar .booking-john { right: calc(100% + 2px); }
+@media (max-width:767px) {
+  .booking-layout { row-gap: 1.75rem; }
+  .booking-intro { display: block; grid-column: 1; grid-row: auto; }
+  .booking-email { grid-column: 1; grid-row: auto; padding: 1.3rem; }
+  .booking-calendar { grid-column: 1; grid-row: auto; }
+  .booking-calendar-heading { display: grid; grid-template-columns: 88px minmax(0,1fr); column-gap: .65rem; align-items: center; }
+  .booking-calendar-heading h2 { grid-column: 2; align-self: end; }
+  .booking-calendar-heading p { grid-column: 2; align-self: start; }
+  .booking-calendar .booking-john { position: static; grid-column: 1; grid-row: 1/3; width: 88px; margin: 0; align-self: center; }
+  .booking-email h2 { font-size: 1.2rem; }
+}
+
+/* BMA blue carries through the real booking interface. */
+.booking-calendar { background: #f5f8fd; box-shadow: 0 12px 36px rgb(11 17 28 / 6%); }
+.booking-calendar-heading h2 { color: #244b7d; }
+.booking-embed-wrap { border-radius: 12px; background: #f5f8fd; }
+.booking-alternative { padding-top: 1rem; border-top: 1px solid #d5e3f5; }
+
+@media (min-width:768px) {
+  .booking-calendar .booking-john { right: calc(100% - 50px); z-index: 2; }
+}
+
+.booking-calendar-heading { z-index: 1; }

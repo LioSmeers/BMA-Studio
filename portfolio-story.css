@@ -1,0 +1,268 @@
+/* One continuous surface, with the work itself carrying the colour. */
+.portfolio-page .page-hero,
+.portfolio-page .portfolio-section {
+  background: var(--color-bg);
+}
+
+.portfolio-page .page-hero::before,
+.portfolio-page .page-hero::after,
+.portfolio-page .portfolio-section::before {
+  content: none;
+}
+
+.portfolio-page .page-hero {
+  display: grid;
+  min-height: min(78svh, 54rem);
+  align-items: center;
+  padding-block: clamp(8rem, 14vh, 11rem) clamp(4rem, 8vw, 6.5rem);
+}
+
+.portfolio-page .page-hero-grid.page-hero-simple {
+  max-width: var(--container-width);
+}
+
+.portfolio-page .portfolio-hero-copy {
+  max-width: 68rem;
+}
+
+.portfolio-page .portfolio-hero-copy h1 {
+  max-width: 28ch;
+  padding-block: 0.04em;
+  font-size: clamp(2.7rem, 4.3vw, 3.9rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.portfolio-page .portfolio-hero-copy > p {
+  max-width: 43rem;
+  margin-top: clamp(1.2rem, 2.6vw, 1.8rem);
+  font-size: clamp(1.05rem, 1.45vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.portfolio-page .portfolio-section {
+  overflow: visible;
+  padding-block: 0 clamp(4rem, 8vw, 7rem);
+}
+
+.portfolio-page .portfolio-projects {
+  gap: 0;
+  margin: 0;
+}
+
+.portfolio-page .portfolio-card {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  min-width: 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: clamp(3rem, 7vw, 6rem) 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.portfolio-page .portfolio-card:hover,
+.portfolio-page .portfolio-card:focus-within {
+  z-index: auto;
+  border-color: var(--color-border);
+  box-shadow: none;
+  transform: none;
+}
+
+.portfolio-page .portfolio-copy {
+  min-width: 0;
+}
+
+.portfolio-page .portfolio-copy h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 2.5vw, 2.45rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  transition: color 300ms ease;
+}
+
+.portfolio-page .portfolio-copy .portfolio-summary {
+  max-width: 36ch;
+  margin-top: 1.2rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.portfolio-page .portfolio-sector {
+  margin-top: 1.5rem;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.portfolio-page .portfolio-link {
+  margin-top: 1.5rem;
+}
+
+.portfolio-page .portfolio-preview {
+  max-width: none;
+}
+
+.portfolio-page .portfolio-preview img {
+  display: block;
+  border-radius: 16px;
+  background: transparent;
+}
+
+.portfolio-page .portfolio-preview figcaption {
+  display: none;
+}
+
+.portfolio-story-stage[hidden] {
+  display: none;
+}
+
+/* A pinned viewing window accompanies the ordinary vertical reading path. */
+@media (min-width: 1024px) and (min-height: 650px) {
+  .has-portfolio-story .portfolio-story-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.4fr);
+    align-items: start;
+    column-gap: clamp(3rem, 6vw, 6rem);
+  }
+
+  .portfolio-page.has-portfolio-story .portfolio-card {
+    display: flex;
+    min-height: 78svh;
+    align-items: center;
+    padding-block: 4rem;
+    scroll-margin-top: 7rem;
+  }
+
+  .has-portfolio-story .portfolio-card > .portfolio-preview {
+    display: none;
+  }
+
+  .has-portfolio-story .portfolio-story-stage {
+    position: sticky;
+    top: max(7rem, calc(50svh - 14rem));
+    min-width: 0;
+    margin-top: 5rem;
+  }
+
+  .portfolio-stage-screen {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    isolation: isolate;
+    aspect-ratio: 1440 / 821;
+    border-radius: 16px;
+    background: var(--color-surface-soft);
+    box-shadow: 0 18px 44px rgba(11, 17, 28, 0.09);
+  }
+
+  .portfolio-stage-screen img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(1rem);
+    transition: clip-path 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1), opacity 250ms ease;
+  }
+
+  .portfolio-stage-screen img.is-previous {
+    z-index: 1;
+    opacity: 1;
+    clip-path: inset(0);
+    transform: none;
+  }
+
+  .portfolio-stage-screen img.is-current {
+    z-index: 2;
+    opacity: 1;
+    clip-path: inset(0);
+    transform: none;
+  }
+
+  .portfolio-stage-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+  }
+
+  .portfolio-stage-nav {
+    display: flex;
+  }
+
+  .portfolio-stage-nav button {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .portfolio-stage-nav button::after {
+    width: 24px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--color-border);
+    content: "";
+    transition: background 250ms ease;
+  }
+
+  .portfolio-stage-nav button[aria-current="true"]::after,
+  .portfolio-stage-nav button:hover::after {
+    background: var(--color-accent);
+  }
+
+  .portfolio-stage-screen:focus-visible,
+  .portfolio-stage-nav button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 5px;
+  }
+
+  .portfolio-page .portfolio-card.is-current h2 {
+    color: var(--color-accent);
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-page .page-hero {
+    min-height: min(74svh, 46rem);
+    padding-block: 8rem 4rem;
+  }
+
+  .portfolio-page .portfolio-hero-copy h1 {
+    max-width: 20ch;
+    font-size: clamp(2.55rem, 9.5vw, 3.25rem);
+  }
+
+  .portfolio-page .portfolio-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+    padding-block: 2.75rem;
+  }
+
+  .portfolio-page .portfolio-copy h2 {
+    max-width: 24ch;
+    font-size: clamp(1.7rem, 6.5vw, 2.2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-page .portfolio-copy h2 {
+    transition: none;
+  }
+}

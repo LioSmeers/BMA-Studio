@@ -1,7 +1,6 @@
 const packageDetails = {
 	"onepage-onetime": {
 		"title": "BMA Visibility Sprint - One-page Website (eenmalig)",
-		"price": "€499 eenmalig",
 		"description": "Een website met je aanbod en contactgegevens op één pagina. Je betaalt eenmalig.",
 		"benefits": [
 			"1 jaar hosting en .be-domeinnaam inbegrepen",
@@ -9,11 +8,10 @@ const packageDetails = {
 			"Eigendom vanaf oplevering",
 			"Vanaf jaar 2: €59/jaar"
 		],
-		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een offerte voor de One-page Website (€499 eenmalig). Ik lever de teksten en foto’s aan.\n\nAlvast bedankt."
+		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een voorstel op maat voor BMA Visibility Sprint - One-page Website (eenmalig).\n\nAlvast bedankt."
 	},
 	"onepage-subscription": {
 		"title": "BMA Visibility Sprint - One-page Website (abonnement)",
-		"price": "€0 opstart + €59/mnd",
 		"description": "Een one-page met hosting, domeinnaam en klein onderhoud via 1 aanvraag per maand.",
 		"benefits": [
 			"Minimum 12 maanden",
@@ -22,12 +20,11 @@ const packageDetails = {
 			"Klein · 1 aanvraag/mnd",
 			"Na de eerste 12 maanden maandelijks opzegbaar met één maand opzegtermijn"
 		],
-		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een offerte voor de One-page Website met abonnement: €0 opstart + €59 per maand, met een minimumlooptijd van 12 maanden.\n\nAlvast bedankt."
+		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een voorstel op maat voor BMA Visibility Sprint - One-page Website (abonnement).\n\nAlvast bedankt."
 	},
 	"business": {
 		"title": "Business Website",
 		"badge": "Aanbevolen voor lokale bedrijven",
-		"price": "€699 opstartkost + €59/mnd",
 		"description": "Een website van 3 tot 4 pagina’s, met hulp bij de inhoud en 2 onderhoudsaanvragen per maand.",
 		"benefits": [
 			"3 tot 4 pagina's",
@@ -40,11 +37,10 @@ const packageDetails = {
 			"Geen minimumlooptijd",
 			"Maandelijks opzegbaar met één maand opzegtermijn"
 		],
-		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een offerte voor de Business Website: €699 opstartkost + €59 per maand, voor 3 tot 4 pagina’s en 2 onderhoudsaanvragen per maand.\n\nAlvast bedankt."
+		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een voorstel op maat voor Business Website.\n\nAlvast bedankt."
 	},
 	"content": {
 		"title": "Website + Content",
-		"price": "€899 opstartkost + €149/mnd",
 		"description": "Een website van 4 tot 5 pagina’s, met 2 korte socialmediavideo’s en 4 onderhoudsaanvragen per maand.",
 		"benefits": [
 			"4 tot 5 pagina's",
@@ -57,7 +53,7 @@ const packageDetails = {
 			"Geen minimumlooptijd",
 			"Maandelijks opzegbaar met één maand opzegtermijn"
 		],
-		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een offerte voor Website + Content: €899 opstartkost + €149 per maand. Ik lever het beeldmateriaal voor de 2 maandelijkse video’s aan.\n\nAlvast bedankt."
+		"inquiryMessage": "Hallo Lio,\n\nIk wil graag een voorstel op maat voor Website + Content.\n\nAlvast bedankt."
 	},
 	"prototype": {
 		"title": "Gratis websiteprototype",
@@ -74,7 +70,6 @@ const packageDetails = {
 const englishPackageDetails = {
 	"onepage-onetime": {
 		"title": "BMA Visibility Sprint - One-page Website (one-time)",
-		"price": "€499 one-time",
 		"description": "A website with your services and contact details on one page. You pay once.",
 		"benefits": [
 			"1 year of hosting and .be domain name included",
@@ -82,11 +77,10 @@ const englishPackageDetails = {
 			"Ownership from delivery",
 			"From year 2: €59/year"
 		],
-		"inquiryMessage": "Hello Lio,\n\nI would like a quote for the One-page Website (€499 one-time). I will provide the text and photos.\n\nThank you."
+		"inquiryMessage": "Hello Lio,\n\nI would like a tailored proposal for BMA Visibility Sprint - One-page Website (one-time).\n\nThank you."
 	},
 	"onepage-subscription": {
 		"title": "BMA Visibility Sprint - One-page Website (subscription)",
-		"price": "€0 setup + €59/month",
 		"description": "A one-page site with hosting, a domain name and small maintenance through 1 request per month.",
 		"benefits": [
 			"Minimum 12 months",
@@ -95,12 +89,11 @@ const englishPackageDetails = {
 			"Small · 1 request/month",
 			"After the first 12 months, cancellable monthly with one month's notice"
 		],
-		"inquiryMessage": "Hello Lio,\n\nI would like a quote for the One-page Website subscription: €0 setup + €59 per month, with a minimum term of 12 months.\n\nThank you."
+		"inquiryMessage": "Hello Lio,\n\nI would like a tailored proposal for BMA Visibility Sprint - One-page Website (subscription).\n\nThank you."
 	},
 	"business": {
 		"title": "Business Website",
 		"badge": "Recommended for local businesses",
-		"price": "€699 setup fee + €59/month",
 		"description": "A website with 3 to 4 pages, help with content and 2 maintenance requests per month.",
 		"benefits": [
 			"3 to 4 pages",
@@ -113,11 +106,10 @@ const englishPackageDetails = {
 			"No minimum term",
 			"Cancellable monthly with one month's notice"
 		],
-		"inquiryMessage": "Hello Lio,\n\nI would like a quote for the Business Website: €699 setup fee + €59 per month, for 3 to 4 pages and 2 maintenance requests per month.\n\nThank you."
+		"inquiryMessage": "Hello Lio,\n\nI would like a tailored proposal for Business Website.\n\nThank you."
 	},
 	"content": {
 		"title": "Website + Content",
-		"price": "€899 setup fee + €149/month",
 		"description": "A website with 4 to 5 pages, 2 short social media videos and 4 maintenance requests per month.",
 		"benefits": [
 			"4 to 5 pages",
@@ -130,7 +122,7 @@ const englishPackageDetails = {
 			"No minimum term",
 			"Cancellable monthly with one month's notice"
 		],
-		"inquiryMessage": "Hello Lio,\n\nI would like a quote for Website + Content: €899 setup fee + €149 per month. I will provide footage for the 2 monthly videos.\n\nThank you."
+		"inquiryMessage": "Hello Lio,\n\nI would like a tailored proposal for Website + Content.\n\nThank you."
 	},
 	"prototype": {
 		"title": "Free website prototype",
@@ -249,12 +241,14 @@ const portfolioProjectDetails = {
 	thor: {
 		number: "01",
 		title: "Thor Smeers — Business Website",
-		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
+		badges: [],
 		summary:
 			"Business Website voor vastgoedfotografie, videografie en socialmediacontent, met een sterke visuele portfolio, duidelijke diensten en eenvoudige contactmogelijkheden.",
-		caption: "Live preview van de klantwebsite.",
-		previewUrl: "https://thorsmeers.be",
-		previewTitle: "Live preview van Thor Smeers",
+		caption: "Schermafbeelding van de website.",
+		image: "./assets/site-previews/thor-smeers.jpg",
+		imageAlt: "Schermafbeelding van de website van Thor Smeers",
+		imageWidth: 1440,
+		imageHeight: 821,
 		link: "https://thorsmeers.be",
 		linkLabel: "Bekijk Thor Smeers",
 		tags: ["Klantwebsite", "Live website", "Business Website"],
@@ -270,12 +264,14 @@ const portfolioProjectDetails = {
 	moeskops: {
 		number: "02",
 		title: "Moeskops Gevelwerken — Visibility Sprint",
-		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
+		badges: [],
 		summary:
 			"One-page website binnen de BMA Visibility Sprint voor een vakman in voegwerken en gevelrenovatie. Diensten, vakmanschap en contactmogelijkheden komen samen op één overzichtelijke pagina, gericht op offerteaanvragen.",
-		caption: "Live preview van de klantwebsite.",
-		previewUrl: "https://moeskopsgevelwerken.be/",
-		previewTitle: "Live preview van Moeskops Gevelwerken",
+		caption: "Schermafbeelding van de website.",
+		image: "./assets/site-previews/moeskops-gevelwerken.jpg",
+		imageAlt: "Schermafbeelding van de website van Moeskops Gevelwerken",
+		imageWidth: 1440,
+		imageHeight: 821,
 		link: "https://moeskopsgevelwerken.be/",
 		linkLabel: "Bekijk Moeskops Gevelwerken",
 		tags: ["Klantwebsite", "Live website", "Gevelwerken", "Visibility Sprint", "One-page website"],
@@ -292,12 +288,14 @@ const portfolioProjectDetails = {
 	agv: {
 		number: "04",
 		title: "AGV Smeers — Visibility Sprint",
-		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
+		badges: [],
 		summary:
 			"One-page website binnen de BMA Visibility Sprint voor voegwerken, gevelrenovatie en verbouwingswerken. Diensten, realisaties en werkwijze staan op één pagina, met duidelijke contactmogelijkheden voor een offerteaanvraag.",
-		caption: "Live preview van de klantwebsite.",
-		previewUrl: "https://agvsmeers.be/",
-		previewTitle: "Live preview van AGV Smeers",
+		caption: "Schermafbeelding van de website.",
+		image: "./assets/site-previews/agv-smeers.jpg",
+		imageAlt: "Schermafbeelding van de website van AGV Smeers",
+		imageWidth: 1440,
+		imageHeight: 821,
 		link: "https://agvsmeers.be/",
 		linkLabel: "Bekijk AGV Smeers",
 		tags: ["Klantwebsite", "Live website", "Gevelrenovatie", "Visibility Sprint", "One-page website"],
@@ -314,12 +312,14 @@ const portfolioProjectDetails = {
 	sunplanet: {
 		number: "03",
 		title: "Sunplanet Heusden — Visibility Sprint",
-		badges: [{ label: "Klantproject", className: "portfolio-badge-client" }],
+		badges: [],
 		summary:
 			"One-page website binnen de BMA Visibility Sprint voor zonnestudio Sunplanet in Heusden-Zolder. Zonnebanken, openingsuren en contact- en routemogelijkheden staan samen op één overzichtelijke pagina.",
-		caption: "Live preview van de klantwebsite.",
-		previewUrl: "https://sunplanet-heusden.be/",
-		previewTitle: "Live preview van Sunplanet Heusden",
+		caption: "Schermafbeelding van de klantwebsite.",
+		image: "./assets/site-previews/sunplanet-heusden.jpg",
+		imageAlt: "Schermafbeelding van de website van Sunplanet Heusden",
+		imageWidth: 1440,
+		imageHeight: 821,
 		link: "https://sunplanet-heusden.be/",
 		linkLabel: "Bekijk Sunplanet Heusden",
 		tags: ["Klantwebsite", "Live website", "Zonnestudio", "Visibility Sprint", "One-page website"],
@@ -331,9 +331,105 @@ const portfolioProjectDetails = {
 			["Belangrijkste functies", "Overzicht van zonnebanken, openingsuren, contactknoppen en route naar de studio."],
 		],
 	},
+	"kevin-claes": {
+		number: "05",
+		title: "Kevin Claes — Algemene Dakwerken",
+		badges: [],
+		summary:
+			"Website voor Algemene Dakwerken Kevin Claes, met dakrenovatie, Velux, zinkwerk, isolatie en zolderinrichting helder in beeld. De grote dakfoto zet het vakwerk centraal; de gratis-offerteknop maakt contact direct bereikbaar.",
+		caption: "Schermafbeelding van de website.",
+		image: "./assets/site-previews/kevin-claes.jpg",
+		imageAlt: "Schermafbeelding van de website van Kevin Claes — Algemene Dakwerken",
+		imageWidth: 1440,
+		imageHeight: 820,
+		link: "./project-kevin-claes.html",
+		linkLabel: "Bekijk Kevin Claes",
+		tags: ["Klantwebsite", "Live website", "Dakwerken", "Website"],
+		details: [
+			["Projecttype", "Klantproject"],
+			["Sector", "Algemene dakwerken"],
+			["Projectfocus", "Dakrenovatie, Velux, zinkwerk, rustieke dakbedekking, isolatie en zolderinrichting."],
+			["Uitdaging", "De verschillende dakdiensten helder uitleggen en bezoekers snel naar een offerteaanvraag leiden."],
+			["Oplossing", "Een beeldgerichte homepage met een overzichtelijke navigatie, een korte uitleg van de diensten en een opvallende offerteknop."],
+			["Belangrijkste functies", "Navigatie naar diensten en realisaties, een kernboodschap over dakvakmanschap en een directe CTA voor een gratis offerte."],
+		],
+	},
 };
 
 const translations = {
+	"Onze diensten": "Our services",
+	"Meer uitleg": "More details",
+	"Minder uitleg": "Less detail",
+	"Bekijk websites": "Explore websites",
+	"Bekijk applicaties": "Explore applications",
+	"Bekijk content en sociale media": "Explore content and social media",
+	"Bekijk campagnes": "Explore campaigns",
+	"Bekijk onderhoud": "Explore maintenance",
+	"We bouwen een website waarop klanten je aanbod bekijken, je werk zien en contact opnemen. Kies voor één overzichtelijke pagina of geef elke dienst meer ruimte.": "We build a website where customers can explore your services, see your work and get in touch. Choose one clear page or give each service more room.",
+	"Een webapp geeft klanten of je team handige functies in de browser. We bepalen samen wat past, zoals afspraken boeken, betalen of documenten bekijken.": "A web app gives your customers or team useful features in the browser. We decide together what fits, such as booking appointments, making payments or viewing documents.",
+	"We maken beelden, video’s en posts in jouw huisstijl. We kunnen ook helpen met contentplanning en het beheer van je sociale media.": "We create images, videos and posts in your brand style. We can also help plan content and manage your social media.",
+	"We werken campagnes uit voor je bedrijf, een actie of een nieuw aanbod. We bespreken samen de content, kanalen en het budget.": "We create campaigns for your business, a promotion or a new offer. We discuss the content, channels and budget together.",
+	"We voeren updates en technische controles uit en passen je website of app aan wanneer er iets verandert. De afspraken over onderhoud leggen we vooraf vast.": "We carry out updates and technical checks, and adapt your website or app when things change. We agree on the maintenance in advance.",
+	"Toon je aanbod en laat bezoekers makkelijk contact opnemen.": "Show your services and make it easy for visitors to get in touch.",
+	"Laat klanten boeken, betalen of documenten bekijken.": "Let customers book, pay or view documents.",
+	"Beelden, video’s en posts voor je kanalen.": "Images, videos and posts for your channels.",
+	"Breng je aanbod onder de aandacht met campagnes.": "Bring your services to people's attention with campaigns.",
+	"Updates en aanpassingen voor je website of app.": "Updates and changes for your website or app.",
+	"Fictief voorbeeld: ontdek hoe website, onderhoud en content samenwerken bij Atelier Noor.": "Fictional example: see how a website, maintenance and content work together at Atelier Noor.",
+	"Build: maak je website of app. Maintain: houd alles up-to-date. Attract: bereik klanten met content en campagnes.": "Build: create your website or app. Maintain: keep it up to date. Attract: reach customers with content and campaigns.",
+
+	"Reviews pauzeren": "Pause reviews",
+	"We bouwen websites en apps, maken content en houden je digitale werk bij. Rechtstreeks met Lio.": "We build websites and apps, create content and keep your digital work up to date. Directly with Lio.",
+	"Websites & apps": "Websites & apps",
+	"Content & campagnes": "Content & campaigns",
+	"Je aanbod tonen, afspraken boeken of informatie delen.": "Show your services, book appointments or share information.",
+	"Beelden, video’s en advertenties voor je bedrijf.": "Images, videos and ads for your business.",
+	"Updates, wijzigingen en technische controles.": "Updates, changes and technical checks.",
+	"Ontdek wat mogelijk is": "Explore what is possible",
+	"Bekijk de mogelijkheden": "Explore the options",
+	"Zo houden we alles bij": "How we keep things up to date",
+	"BMA Studio — Riemst, België": "BMA Studio — Riemst, Belgium",
+	"Meer over onze projecten": "More about our projects",
+	"Een eerste idee is genoeg. Vertel Lio wat je nodig hebt; samen bekijken we de aanpak.": "An initial idea is enough. Tell Lio what you need and we will work out the approach together.",
+	"BMA staat voor Build, Maintain en Attract. We maken je website, app of content, houden die bij en helpen je bedrijf zichtbaar worden.": "BMA stands for Build, Maintain and Attract. We create your website, app or content, keep it up to date and help your business gain visibility.",
+	"Je werkt rechtstreeks": "You work directly",
+	"met Lio.": "with Lio.",
+	"Je bespreekt je plannen met de persoon die je project uitwerkt. Van de eerste vraag tot de laatste aanpassing weet je met wie je contact hebt.": "You discuss your plans with the person building your project. From the first question to the last adjustment, you know who you are speaking with.",
+	"Een website, app of content voor je bedrijf: we bekijken samen wat je nodig hebt en leggen de inhoud, planning en prijs vooraf vast.": "A website, app or content for your business: we discuss what you need and agree on scope, timing and price before we begin.",
+	"Vanuit Riemst werken we voor bedrijven in heel België. Kennismaken kan ook online.": "Based in Riemst, we work for businesses throughout Belgium. We can also meet online.",
+	"Duidelijk voor we beginnen.": "Clear before we begin.",
+	"Wat we maken": "What we create",
+	"Wat we nodig hebben": "What we need",
+	"Wat er daarna gebeurt": "What happens afterwards",
+	"De pagina’s, functies of content, met duidelijke afspraken over feedback en aanpassingen.": "The pages, features or content, with clear agreements on feedback and changes.",
+	"Welke teksten, beelden en bedrijfsgegevens je aanlevert en waarmee we je kunnen helpen.": "Which texts, images and business details you supply and where we can help.",
+	"Wie je website of app bijhoudt en hoe je later wijzigingen aanvraagt.": "Who maintains your website or app and how to request changes later.",
+	"Vertel wat je wil laten maken. Lio denkt met je mee.": "Tell us what you want to create. Lio will help you work it out.",
+	"Van een nieuwe website tot content voor je sociale media. Kies wat je nodig hebt; we denken mee over de rest.": "From a new website to social media content. Choose what you need and we will help you with the rest.",
+	"Waar kunnen we je mee helpen?": "How can we help you?",
+
+	"Nog niet zeker? Beschrijf je idee hieronder; we denken met je mee.": "Not sure yet? Describe your idea below and we will help you work it out.",
+	"Bv. een website voor je bedrijf, een boekingssysteem of video’s voor je sociale media.": "E.g. a website for your business, a booking system or videos for your social media.",
+
+	"Websites, apps en content voor bedrijven. We bouwen, onderhouden en helpen je zichtbaar worden met sociale media en campagnes.": "Websites, apps and content for businesses. We build, maintain and help you gain visibility through social media and campaigns.",
+	"Direct": "Direct",
+	"Contact met Lio": "Contact with Lio",
+	"Bouwen. Bijhouden. Zichtbaar maken.": "Build. Maintain. Get noticed.",
+	"Fictief voorbeeld: Atelier Noor combineert een website met onderhoud en content.": "Fictional example: Atelier Noor combines a website with maintenance and content.",
+	"Website voor vastgoedfotografie en video, met een visueel portfolio en duidelijke contactmogelijkheden.": "A website for property photography and video, with a visual portfolio and clear contact options.",
+	"One-page website voor voegwerken en gevelrenovatie, met diensten en contactmogelijkheden voor offerteaanvragen.": "A one-page website for pointing and facade renovation, with services and contact options for quote requests.",
+	"One-page website met zonnebanken, openingsuren, contactgegevens en route-informatie.": "A one-page website with sunbeds, opening hours, contact details and directions.",
+	"One-page website voor voegwerken, gevelrenovatie en verbouwingen, met realisaties en contactmogelijkheden.": "A one-page website for pointing, facade renovation and building work, with projects and contact options.",
+	"Vertel Lio wat je wil laten maken. Samen bespreken we de inhoud, functies en timing van je project.": "Tell Lio what you would like to create. Together, we discuss your project’s scope, features and timing.",
+	"Voor bedrijven van elke grootte, in heel België": "For businesses of every size, across Belgium",
+	"BMA Studio is het digitale en creatieve bureau van Lio Smeers. We maken websites, apps en content voor bedrijven in België en verzorgen ook sociale media, campagnes en onderhoud.": "BMA Studio is Lio Smeers’s digital and creative agency. We build websites, apps and content for businesses in Belgium and also provide social media, campaigns and maintenance.",
+
+	"Een voorstel op maat.": "A tailored proposal.",
+	"Voor een website, app, video, socialmediabeheer of campagne maken we een offerte. De prijs hangt af van wat je nodig hebt; we spreken de inhoud en timing vooraf af.": "We prepare a tailored quote for a website, app, video, social media management or campaign. The price depends on your needs; we agree on the scope and timing in advance.",
+	"Je hoeft nog geen formule te kiezen. We bespreken samen wat bij je project past.": "You do not need to choose a plan yet. We will discuss what suits your project together.",
+	"De prijs hangt af van de inhoud en functies die je nodig hebt. Bespreek je project met BMA Studio voor een voorstel op maat.": "The price depends on the content and features you need. Discuss your project with BMA Studio for a tailored proposal.",
+	"Lees meer over": "Read more about",
+
 	"404": "404",
 	"Website + Content": "Website + Content",
 	"Business Website": "Business Website",
@@ -343,6 +439,33 @@ const translations = {
 	"Digitaal, creatief en persoonlijk.": "Digital, creative and personal.",
 	"Websites voor lokale bedrijven.": "Websites for local businesses.",
 	"Digitale en creatieve diensten.": "Digital and creative services.",
+	"Van websites en apps tot content, campagnes en onderhoud. Eén aanspreekpunt voor je online werk.": "From websites and apps to content, campaigns and maintenance. One point of contact for your digital work.",
+	"Kies wat je nodig hebt.": "Choose what you need.",
+	"Navigeer tussen diensten": "Navigate between services",
+	"Scroll om te ontdekken": "Scroll to explore",
+	"Aanbod": "Services",
+	"Realisaties": "Projects",
+	"Contactinformatie": "Contact details",
+	"Boekingen": "Bookings",
+	"Betalingen": "Payments",
+	"Klantenportaal": "Customer portal",
+	"Foto’s": "Photos",
+	"Video’s": "Videos",
+	"Posts": "Posts",
+	"Nieuw aanbod": "New offering",
+	"Beelden": "Images",
+	"Teksten": "Copy",
+	"Updates": "Updates",
+	"Technische controles": "Technical checks",
+	"Aanpassingen": "Changes",
+	"Een website die je aanbod, realisaties en contactinformatie helder samenbrengt.": "A website that clearly brings together your services, projects and contact details.",
+	"Vraag gratis een websiteprototype aan.": "Request a free website prototype.",
+	"Webapps voor boekingen, betalingen of een klantenportaal, afgestemd op wat je bedrijf nodig heeft.": "Web apps for bookings, payments or a customer portal, tailored to your business.",
+	"Foto’s, video’s en posts in je huisstijl. We kunnen ook de contentplanning en het beheer van je kanalen verzorgen.": "Photos, videos and posts in your brand style. We can also handle content planning and manage your channels.",
+	"Campagnes en advertenties voor een actie of nieuw aanbod, met de beelden, video’s en teksten die erbij horen.": "Campaigns and ads for a promotion or new offering, with the images, videos and copy to go with them.",
+	"Updates, technische controles en aanpassingen aan je website of app. We spreken vooraf af welk onderhoud inbegrepen is.": "Updates, technical checks and changes to your website or app. We agree in advance on the included maintenance.",
+	"Bespreek je idee.": "Discuss your idea.",
+	"Vertel wat je wil laten maken. We bespreken welke dienst past en spreken vooraf werk, timing en prijs af.": "Tell us what you want to make. We’ll discuss which service fits and agree on scope, timing and price up front.",
 	"Bekijk websiteprijzen": "View website prices",
 	"Duidelijke websiteprijzen.": "Clear website prices.",
 	"Een one-page, een businesswebsite of een website met content. Bekijk de bestaande formules en afspraken, of bespreek eerst wat je nodig hebt.": "A one-page site, a business website or a website with content. View the existing plans and terms, or discuss your needs first.",
@@ -426,6 +549,7 @@ const translations = {
 	"Wat heeft jouw bedrijf nodig?": "What does your business need?",
 	"Vertel ons over je plannen. We bespreken vrijblijvend welke digitale of creatieve dienst daarbij past.": "Tell us about your plans. We discuss which digital or creative service fits, with no obligation.",
 	"Plan een vrijblijvend gesprek": "Arrange a no-obligation conversation",
+	"15 minuten, online met Lio.": "15 minutes online with Lio.",
 	"Websites, applicaties en creatieve zichtbaarheid": "Websites, applications and creative visibility",
 	"BMA Studio is je digitale en creatieve bureau voor websites, applicaties, content, sociale media en campagnes. Kies één losse dienst of combineer wat jouw bedrijf nodig heeft.": "BMA Studio is your digital and creative agency for websites, applications, content, social media and campaigns. Choose one individual service or combine what your business needs.",
 	"Samenwerken": "Working together",
@@ -500,7 +624,7 @@ const translations = {
 	"Nieuwe functies, maatwerk en werk buiten je pakket vallen niet onder de inbegrepen onderhoudsaanvragen. We bespreken dit vooraf en voeren extra werk alleen na akkoord uit aan €50 per uur. Ongebruikte aanvragen vervallen aan het einde van de maand.": "New features, custom development and work outside your package are not included in maintenance requests. We discuss these in advance and only carry out additional work with your approval at €50 per hour. Unused requests expire at the end of the month.",
 	"Wat gebeurt er met mijn website bij opzegging?": "What happens to my website when I cancel?",
 	"Je kunt hosting en domeinnaam bij BMA Studio houden voor €59 per jaar zonder onderhoud, overdragen naar eigen beheer of volledig stopzetten. Bij volledige stopzetting gaat je website offline en wordt de domeinnaam niet verlengd. Een standaardoverdracht van domeinnaam en websitebestanden is inbegrepen. Voor het One-page Abonnement gaat het eigendom over na betaling van de eerste 12 maanden. De volledige afspraken staan bij de pakketvoorwaarden hieronder.": "You can keep hosting and your domain with BMA Studio for €59 per year without maintenance, transfer them to your own provider, or discontinue them entirely. If discontinued, your website goes offline and the domain is not renewed. A standard transfer of the domain and website files is included. Ownership of the One-page Subscription transfers after the first 12 months have been paid. See the package terms below for the full conditions.",
-	"Klantenportaal": "Client Portal",
+
 	"Business Website voor vastgoedfotografie, videografie en socialmediacontent, met een sterke visuele portfolio, duidelijke diensten en eenvoudige contactmogelijkheden.": "Business Website for real estate photography, videography and social media content, with a strong visual portfolio, clear services and easy contact options.",
 	"Thor Smeers — Business Website": "Thor Smeers — Business Website",
 	"Een one-page website met diensten, bewijs van vakmanschap en duidelijke contactmogelijkheden op één pagina.": "A one-page website bringing services, proof of craftsmanship and clear contact options together on a single page.",
@@ -516,9 +640,12 @@ const translations = {
 	"Websitevorm": "Website format",
 	"Zonnestudio": "Tanning studio",
 	"Overzicht van zonnebanken, openingsuren, contactknoppen en route naar de studio.": "Overview of tanning beds, opening hours, contact buttons and directions to the studio.",
-	"Live preview van Sunplanet Heusden": "Live preview of Sunplanet Heusden",
-	"Live mini-preview van de Sunplanet Heusden website": "Live mini-preview of the Sunplanet Heusden website",
-	"Live mini-preview van Sunplanet Heusden": "Live mini-preview of Sunplanet Heusden",
+	"Schermafbeelding van de website.": "Website screenshot.",
+	"Schermafbeelding van de klantwebsite.": "Screenshot of the client website.",
+	"Schermafbeelding van de website van Thor Smeers": "Screenshot of the Thor Smeers website",
+	"Schermafbeelding van de website van Moeskops Gevelwerken": "Screenshot of the Moeskops Gevelwerken website",
+	"Schermafbeelding van de website van AGV Smeers": "Screenshot of the AGV Smeers website",
+	"Schermafbeelding van de website van Sunplanet Heusden": "Screenshot of the Sunplanet Heusden website",
 	"Bekijk Sunplanet Heusden": "View Sunplanet Heusden",
 	"Home": "Home",
 	"Pakketten": "Packages",
@@ -610,10 +737,9 @@ const translations = {
 	"Vraag een gratis analyse of prototype aan": "Request a free analysis or prototype",
 	"Bekijk gratis opties": "View free options",
 	"Portfolio previews": "Portfolio previews",
-	"Live preview van Moeskops Gevelwerken": "Live preview of Moeskops Gevelwerken",
+	"Scroll opzij voor meer projecten": "Scroll sideways for more projects",
 	"Moeskops Gevelwerken": "Moeskops Gevelwerken",
 	"Website voor een ervaren vakman in voegwerken en gevelrenovatie, gericht op vertrouwen en offerteaanvragen.": "Website for an experienced craftsman in jointing and facade renovation, focused on trust and quote requests.",
-	"Live preview van AGV Smeers": "Live preview of AGV Smeers",
 	"AGV Smeers": "AGV Smeers",
 	"Klantwebsite voor een specialist in voegwerken en gevelrenovatie, met focus op vakmanschap, vertrouwen en offerteaanvragen.": "Client website for a specialist in jointing and facade renovation, focused on craftsmanship, trust and quote requests.",
 	"Bekijk details": "View details",
@@ -843,11 +969,25 @@ const translations = {
 	"Live website": "Live website",
 	"Gevelwerken": "Facade work",
 	"Gevelrenovatie": "Facade renovation",
-	"Live preview van de klantwebsite.": "Live preview of the client website.",
-	"Live preview van Thor Smeers": "Live preview of Thor Smeers",
-	"Live mini-preview van de Thor Smeers website": "Live mini-preview of the Thor Smeers website",
-	"Live mini-preview van Thor Smeers": "Live mini-preview of Thor Smeers",
 	"Bekijk Thor Smeers": "View Thor Smeers",
+	"Kevin Claes — Algemene Dakwerken": "Kevin Claes — General Roofing",
+	"Website voor Algemene Dakwerken Kevin Claes, met dakrenovatie, Velux, zinkwerk, isolatie en zolderinrichting helder in beeld. De grote dakfoto zet het vakwerk centraal; de gratis-offerteknop maakt contact direct bereikbaar.": "Website for Kevin Claes General Roofing, presenting roof renovation, Velux windows, zinc work, insulation and attic conversion. A large roof photo puts the craftsmanship front and centre, while the free-quote button makes it easy to get in touch.",
+	"Dakrenovatie, Velux, zinkwerk, rustieke dakbedekking, isolatie en zolderinrichting staan helder in beeld. De grote dakfoto zet het vakwerk centraal en de gratis-offerteknop houdt contact dichtbij.": "Roof renovation, Velux windows, zinc work, traditional roofing, insulation and attic conversion are presented clearly. A large roof photo puts the craftsmanship front and centre, with a direct route to a free quote.",
+	"Websitefocus": "Website focus",
+	"Diensten en realisaties helder presenteren en bezoekers snel naar een gratis offerteaanvraag leiden.": "Present services and completed projects clearly and guide visitors toward a free quote.",
+	"Websitepreview voor Algemene Dakwerken Kevin Claes.": "Website preview for Kevin Claes General Roofing.",
+	"Website van Kevin Claes — Algemene Dakwerken, met een dakrenovatie in beeld": "Kevin Claes General Roofing website showing a roof renovation.",
+	"De homepage brengt dakvakmanschap, de belangrijkste diensten en realisaties samen, met een directe route naar een gratis offerteaanvraag.": "The homepage brings roofing craftsmanship, key services and completed projects together, with a direct route to a free quote.",
+	"Dakwerken": "Roofing",
+	"Websiteontwerp": "Website design",
+	"Algemene dakwerken": "General roofing",
+	"Projectfocus": "Project focus",
+	"Dakrenovatie, Velux, zinkwerk, rustieke dakbedekking, isolatie en zolderinrichting.": "Roof renovation, Velux windows, zinc work, traditional roofing, insulation and attic conversion.",
+	"De verschillende dakdiensten helder uitleggen en bezoekers snel naar een offerteaanvraag leiden.": "Clearly explain the different roofing services and guide visitors toward a quote request.",
+	"Een beeldgerichte homepage met een overzichtelijke navigatie, een korte uitleg van de diensten en een opvallende offerteknop.": "An image-led homepage with clear navigation, concise service descriptions and a prominent quote button.",
+	"Navigatie naar diensten en realisaties, een kernboodschap over dakvakmanschap en een directe CTA voor een gratis offerte.": "Navigation to services and projects, a clear message about roofing craftsmanship, and a direct call to request a free quote.",
+	"Schermafbeelding van de website van Kevin Claes — Algemene Dakwerken": "Screenshot of the Kevin Claes General Roofing website",
+	"Bekijk Kevin Claes": "View Kevin Claes",
 	"Vastgoedfotografie, videografie en socialmediacontent": "Real estate photography, videography and social media content",
 	"Een sterke visuele portfolio combineren met duidelijke diensten en een eenvoudige contactflow.": "Combine a strong visual portfolio with clear services and a simple contact flow.",
 	"Een visuele bedrijfswebsite die het aanbod helder presenteert en bezoekers vlot naar contact leidt.": "A visual business website that presents the offer clearly and guides visitors smoothly toward contact.",
@@ -865,8 +1005,6 @@ const translations = {
 	"Voegwerken en gevelrenovatie": "Jointing and facade renovation",
 	"Een ervaren vakman online betrouwbaar positioneren en bezoekers vlot naar een offerteaanvraag sturen.": "Position an experienced craftsman as trustworthy online and guide visitors smoothly toward a quote request.",
 	"Dienstenoverzicht, vertrouwen, offertefocus en mobiele contactknoppen.": "Service overview, trust, quote focus and mobile contact buttons.",
-	"Live mini-preview van de AGV Smeers website": "Live mini-preview of the AGV Smeers website",
-	"Live mini-preview van AGV Smeers": "Live mini-preview of AGV Smeers",
 	"Bekijk AGV Smeers": "View AGV Smeers",
 	"Voegwerken, gevelrenovatie en verbouwingswerken": "Jointing, facade renovation and renovation works",
 	"Meer dan 30 jaar vakervaring online helder en betrouwbaar presenteren.": "Present more than 30 years of professional experience clearly and reliably online.",
@@ -1007,7 +1145,7 @@ const translations = {
 	"Vraag een offerte": "Request a quote",
 	"Digitaal en creatief bureau": "Digital and creative agency",
 	"We bouwen websites en apps voor lokale bedrijven, maken content en video’s en beheren sociale media. Ook voor campagnes, advertenties en onderhoud kan je bij ons terecht.": "We build websites and apps for local businesses, create content and videos, and manage social media. You can also come to us for campaigns, advertising and maintenance.",
-	"Wat we voor je kunnen maken.": "What we can make for you.",
+	"Wat we doen.": "What we do.",
 	"Je aanbod, realisaties en contactgegevens op een website die ook op je gsm werkt.": "Your services, work and contact details on a website that works on your phone too.",
 	"Een webapp waarmee klanten afspraken boeken, betalen of hun gegevens bekijken.": "A web app where customers book appointments, pay or view their details.",
 	"Beelden, video’s en posts voor je website en sociale media.": "Images, videos and posts for your website and social media.",
@@ -1023,7 +1161,7 @@ const translations = {
 	"We spreken af welke updates en wijzigingen inbegrepen zijn en hoe je extra werk kan aanvragen.": "We agree on which updates and changes are included and how to request additional work.",
 	"Rechtstreeks met Lio": "Direct contact with Lio",
 	"Je bespreekt je vragen en feedback met de persoon die je project uitwerkt.": "You discuss your questions and feedback with the person working on your project.",
-	"Websites die we maakten.": "Websites we have made.",
+	"Wat we maakten": "What we made",
 	"Meer bekijken": "Explore further",
 	"Diensten, werk en contact.": "Services, work and contact.",
 	"Lees wat we maken en waarvoor je het kan gebruiken.": "Read what we make and what you can use it for.",
@@ -1104,6 +1242,16 @@ const translations = {
 	"Conceptsites om stijl en indeling te tonen.": "Concept sites showing style and layout.",
 	"Projectpagina’s met de geleverde diensten.": "Project pages with the services delivered.",
 	"Klantprojecten en voorbeeldsites.": "Client projects and example sites.",
+	"Websites die we maakten.": "Websites we made.",
+	"Websites voor klanten | BMA Studio": "Client websites | BMA Studio",
+	"Bekijk websites die BMA Studio voor klanten maakte, van vastgoedfotografie tot dakwerken. Ontdek het werk achter elk project.": "Explore websites BMA Studio made for clients, from property photography to roofing. Discover the work behind each project.",
+	"Van vastgoedfotografie tot dakwerken. Bekijk de websites die we voor onze klanten maakten.": "From property photography to roofing. Explore the websites we made for our clients.",
+	"Dakwerken, isolatie en zolderinrichting in beeld, met realisaties en een korte weg naar een offerte.": "Roofing, insulation and attic conversions, with completed projects and a simple way to request a quote.",
+	"Vastgoedfotografie & video": "Property photography & video",
+	"Voegwerken & gevelrenovatie": "Pointing & facade renovation",
+	"Gevelwerken & verbouwingen": "Facade work & renovations",
+	"Algemene dakwerken": "Roofing services",
+	"Websites voor onze klanten": "Websites for our clients",
 	"De klantprojecten tonen opgeleverd werk. De conceptsites laten zien hoe een website er voor een bepaald type bedrijf kan uitzien en zijn demonstraties.": "Client projects show delivered work. Concept sites demonstrate what a website could look like for a particular type of business.",
 	"Vertel kort wat je bedrijf doet en wat je wil laten maken. Als je nog twijfelt over de aanpak, bespreken we dat samen.": "Briefly tell us what your business does and what you want us to make. If you are unsure about the approach, we can discuss it together.",
 	"We bekijken wat je nodig hebt.": "We look at what you need.",
@@ -1143,10 +1291,165 @@ const translations = {
 	"Hieronder vind je de prijzen voor One-page Website, Business Website en Website + Content. Bij elke formule staat wat inbegrepen is.": "Below you will find prices for One-page Website, Business Website and Website + Content. Each plan lists what is included.",
 	"Zelfstandigen die hun diensten willen tonen.": "Independent professionals who want to show their services.",
 	"Bedrijven die realisaties en contactgegevens willen bundelen.": "Businesses that want to bring their work and contact details together.",
-	"Bedrijven die hun website willen laten bijhouden.": "Businesses that want someone to maintain their website."
+	"Bedrijven die hun website willen laten bijhouden.": "Businesses that want someone to maintain their website.",
+	// Current page copy: keep English complete as the site evolves.
+	"Naar inhoud": "Skip to content",
+	"One-page website voor de zonnestudio, met zonnebanken, openingsuren en contactmogelijkheden.": "A one-page website for the tanning studio, with tanning beds, opening hours and contact details.",
+	"One-page website voor voegwerken, gevelrenovatie en verbouwingen, met duidelijke contactmogelijkheden.": "A one-page website for pointing, facade renovation and building renovations, with clear contact options.",
+	"Vertrouwde partners": "Trusted partners",
+	"“Duidelijke afspraken nagekomen en prachtig resultaat!”": "“Clear agreements delivered on and a wonderful result!”",
+	"“Je suis très satisfait et je vous le recommande.”": "“I am very satisfied and would recommend them.”",
+	"“Er was een goed contact, maar de oplevering duurde ietsjes langer dan verwacht, maar was geen probleem.”": "“Communication was good. Delivery took a little longer than expected, but that was not a problem.”",
+	"“De communicatie was duidelijk en professioneel.”": "“Communication was clear and professional.”",
+	"“Super tevreden over BMA Studios! Ze hebben voor mij een prachtige en professionele website gemaakt die helemaal aansluit bij wat ik voor ogen had.”": "“Really happy with BMA Studios! They created a beautiful, professional website that matches exactly what I had in mind.”",
+	"Lees volledige review": "Read full review",
+	"Sluiten": "Close",
+	"Review van Thor Smeers": "Review by Thor Smeers",
+	"“Super tevreden over BMA Studios! Ze hebben voor mij een prachtige en professionele website gemaakt die helemaal aansluit bij wat ik voor ogen had.": "“Really happy with BMA Studios! They created a beautiful, professional website that matches exactly what I had in mind.",
+	"De communicatie verliep heel vlot, er werd goed geluisterd naar mijn wensen en alles werd tot in de puntjes afgewerkt.": "Communication was very smooth, they listened carefully to what I wanted and every detail was taken care of.",
+	"Het eindresultaat ziet er modern, overzichtelijk en professioneel uit. Je merkt echt dat ze oog hebben voor detail en weten waar ze mee bezig zijn. Ook aanpassingen en vragen werden snel opgevolgd.": "The result looks modern, clear and professional. You can tell they have an eye for detail and know what they are doing. Changes and questions were handled quickly too.",
+	"Heel blij met het resultaat en absoluut een aanrader voor iedereen die op zoek is naar een professionele website!”": "I am very happy with the result and would absolutely recommend them to anyone looking for a professional website!”",
+	"Contactgegevens BMA Studio": "BMA Studio contact details",
+	"Broodkruimels": "Breadcrumbs",
+	"Websitepreview": "Website preview",
+	"Over het project": "About the project",
+	"Sluit projectinfo": "Close project information",
+	"Je wordt doorgestuurd naar de boekingspagina.": "You are being redirected to the booking page.",
+	"Vastgoedfotografie, video en social content. De website toont het werk en maakt het aanbod en contact helder.": "Property photography, video and social content. The website showcases the work and makes the services and contact details clear.",
+	"Websitepreview van Thor Smeers met vastgoedfotografie in beeld": "Preview of Thor Smeers’ website featuring property photography",
+	"Websitepreview voor Thor Smeers.": "Website preview for Thor Smeers.",
+	"Vastgoedmedia": "Property media",
+	"Portfolio, diensten en contact helder samenbrengen.": "Bringing the portfolio, services and contact details together clearly.",
+	"Laat je werk voor zich spreken": "Let your work speak for itself",
+	"Een heldere portfolio helpt bezoekers je werk en diensten te ontdekken.": "A clear portfolio helps visitors discover your work and services.",
+	"Voegwerken en gevelrenovatie voor woningen. De website brengt de diensten en het vakwerk samen met een duidelijke route naar contact.": "Pointing and facade renovation for homes. The website brings the services and craftsmanship together with a clear way to get in touch.",
+	"Websitepreview van Moeskops Gevelwerken met een gerenoveerde gevel in beeld": "Preview of the Moeskops Gevelwerken website featuring a renovated facade",
+	"Websitepreview voor Moeskops Gevelwerken.": "Website preview for Moeskops Gevelwerken.",
+	"Diensten en vakwerk tonen en contact eenvoudig maken.": "Showcasing services and craftsmanship and making contact easy.",
+	"Maak je vakwerk zichtbaar": "Showcase your craftsmanship",
+	"Breng je diensten en realisaties samen op één duidelijke plek.": "Bring your services and completed projects together in one clear place.",
+	"Websites en apps die werken.": "Websites and apps that work.",
+	"Van websites en webapps tot content, campagnes en onderhoud. Alles voor je online werk, met één aanspreekpunt.": "From websites and web apps to content, campaigns and maintenance. Everything for your online presence, with one point of contact.",
+	"Een duidelijke plek voor je verhaal.": "A clear home for your story.",
+	"Overzicht": "Overview",
+	"Handige tools die werk uit handen nemen.": "Practical tools that take work off your hands.",
+	"IN BEELD": "IN FOCUS",
+	"Jouw verhaal,": "Your story,",
+	"in beweging.": "in motion.",
+	"Foto, video en posts in één herkenbare stijl.": "Photos, video and posts in one recognisable style.",
+	"NU TE ONTDEKKEN": "DISCOVER WHAT’S NEW",
+	"Nieuw": "New",
+	"aanbod.": "offer.",
+	"BEKIJK DE MOGELIJKHEDEN": "EXPLORE THE OPTIONS",
+	"Campagne": "Campaign",
+	"Beeld": "Visuals",
+	"Tekst": "Copy",
+	"Bereik": "Reach",
+	"Één verhaal,": "One story,",
+	"op de juiste plek.": "in the right place.",
+	"Van eerste idee tot zichtbare campagne.": "From the first idea to a visible campaign.",
+	"PERIODIEKE CHECK": "REGULAR CHECK",
+	"Software bijgewerkt": "Software updated",
+	"Controle": "Check",
+	"Alles werkt zoals verwacht": "Everything works as expected",
+	"Aanpassing": "Adjustment",
+	"In overleg uitgevoerd": "Carried out as agreed",
+	"Je site blijft in goede staat.": "Keep your website in good shape.",
+	"Een vaste afspraak voor zorg na oplevering.": "An agreed plan for support after launch.",
+	"Gevelwerken en verbouwingen door AGV Smeers. De website brengt diensten, realisaties en contact op één plek.": "Facade work and renovations by AGV Smeers. The website brings services, completed projects and contact details together.",
+	"Websitepreview van AGV Smeers met gevelwerken in beeld": "Preview of the AGV Smeers website featuring facade work",
+	"Websitepreview voor AGV Smeers.": "Website preview for AGV Smeers.",
+	"Gevelwerken en verbouwingen": "Facade work and renovations",
+	"Diensten en realisaties tonen, met contact binnen handbereik.": "Showcasing services and completed projects, with contact details close at hand.",
+	"Gevelwerken helder in beeld": "Facade work clearly presented",
+	"Een duidelijke presentatie brengt diensten, realisaties en contact samen.": "A clear presentation brings services, completed projects and contact details together.",
+	"Een overzichtelijke website voor Sunplanet in Heusden-Zolder. Bezoekers vinden snel informatie over zonnebanken, openingsuren en contact.": "A clear website for Sunplanet in Heusden-Zolder. Visitors can quickly find information on tanning beds, opening hours and contact details.",
+	"Websitepreview van Sunplanet Heusden-Zolder met de zonnestudio in beeld": "Preview of the Sunplanet Heusden-Zolder website featuring the tanning studio",
+	"Websitepreview voor Sunplanet Heusden-Zolder.": "Website preview for Sunplanet Heusden-Zolder.",
+	"Zonnebanken, openingsuren en contact op één plek.": "Tanning beds, opening hours and contact details in one place.",
+	"Een helder online vertrekpunt": "A clear online starting point",
+	"Belangrijke studio-informatie en contact staan overzichtelijk bij elkaar.": "Essential studio information and contact details, clearly organised in one place.",
+	"Volledige privacyverklaring": "Full privacy statement",
+	"Deze website gebruikt geen trackingcookies voor advertenties. De site bevat wel externe links, zoals LinkedIn en portfolio-links. Daarnaast gebruiken we Cloudflare Web Analytics om anonieme bezoek- en prestatiestatistieken te meten. Externe websites hebben hun eigen privacybeleid.": "This website does not use advertising tracking cookies. It does contain external links, such as LinkedIn and portfolio links. We also use Cloudflare Web Analytics to measure anonymous visitor and performance statistics. External websites have their own privacy policies.",
+	"Een portfolio voor vastgoedfotografie, video en social content, met het werk en de diensten centraal.": "A portfolio for property photography, video and social content, focused on the work and services.",
+	"Voegwerken en gevelrenovatie, met diensten en vakwerk helder in beeld.": "Pointing and facade renovation, with services and craftsmanship clearly presented.",
+	"Een zonnestudio met zonnebanken, openingsuren en contact op één overzichtelijke plek.": "A tanning studio with tanning beds, opening hours and contact details in one clear place.",
+	"Gevelwerken en verbouwingen, met diensten, realisaties en contact helder bij elkaar.": "Facade work and renovations, with services, completed projects and contact details clearly brought together.",
+	"Websitevoorbeeld": "Website preview",
+	"Webdesign Limburg": "Web design in Limburg",
+	"Bekijk realisaties": "View completed projects",
+	"Lokale SEO": "Local SEO",
+	"Website laten maken": "Have a website built",
+	"Webdesign en structuur": "Web design and structure",
+	"Onderhoud en content": "Maintenance and content",
+	"Structuur en inhoud": "Structure and content",
+	"Bouw en lancering": "Build and launch",
+	"Website voor een vakman in voegwerken en gevelrenovatie.": "A website for a specialist in pointing and facade renovation.",
+	"Bekijk in portfolio": "View in portfolio",
+	"Website voor een specialist in voegwerken, gevelrenovatie en verbouwingen.": "A website for a specialist in pointing, facade renovation and building renovations.",
+	"Conceptwebsite voor een beautyzaak, bedoeld om stijl, diensten en contentmogelijkheden te tonen.": "A concept website for a beauty business, showcasing style, services and content possibilities.",
+	"Veelgestelde vragen over webdesign in Limburg": "Frequently asked questions about web design in Limburg",
+	"Voor wie maakt BMA Studio websites in Limburg?": "Who does BMA Studio build websites for in Limburg?",
+	"Wat kost een website laten maken?": "How much does a website cost?",
+	"Kan BMA Studio ook buiten Limburg werken?": "Can BMA Studio work outside Limburg too?",
+	"Ja. BMA Studio werkt voor lokale bedrijven in Limburg en ondernemingen in de rest van België. Overleg kan vlot online.": "Yes. BMA Studio works with local businesses in Limburg and companies across Belgium. Meetings can easily take place online.",
+	"Wordt lokale SEO meegenomen?": "Is local SEO included?",
+	"Kan ik eerst gratis advies krijgen?": "Can I get free advice first?",
+	"Ja. Je kan gratis een websiteanalyse of eerste websiteprototype aanvragen voordat je een pakket kiest.": "Yes. You can request a free website review or initial website prototype before choosing a package.",
+	"Wil je een website laten maken in Limburg?": "Need a website built in Limburg?",
+	"Stuur kort door wat je bedrijf doet, welke pagina's je nodig hebt en wanneer je online wil staan.": "Briefly tell us what your business does, which pages you need and when you want to launch.",
+	"Achter BMA staat Lio.": "Lio is the person behind BMA.",
+	"Websites, apps en content voor bedrijven. Van het eerste idee tot de oplevering werk je rechtstreeks met Lio Smeers.": "Websites, apps and content for businesses. From the first idea to launch, you work directly with Lio Smeers.",
+	"Kort op de bal.": "Personal contact.",
+	"Direct met de maker.": "Directly with the maker.",
+	"Je bespreekt je plannen met de persoon die ze uitwerkt. Samen bepalen we wat nodig is, wat het kost en hoe we het aanpakken.": "You discuss your plans with the person who brings them to life. Together, we agree on what you need, what it costs and how to approach it.",
+	"Vanuit Riemst werken we voor bedrijven in heel België. Kennismaken kan gewoon online.": "Based in Riemst, we work with businesses across Belgium. We can meet online.",
+	"Bekijk het werk": "Explore the work",
+	"Wat BMA Studio doet": "What BMA Studio does",
+	"Websites en apps die passen bij je bedrijf.": "Websites and apps that fit your business.",
+	"Updates, aanpassingen en technische opvolging.": "Updates, adjustments and technical support.",
+	"Content, sociale media en campagnes.": "Content, social media and campaigns.",
+	"Duidelijk, van begin tot verder.": "Clear, from the start and beyond.",
+	"Je idee bespreken.": "Discuss your idea.",
+	"Wat wil je maken, voor wie en met welk doel?": "What do you want to make, who is it for, and what should it achieve?",
+	"Maken en afstemmen.": "Create and refine.",
+	"We spreken inhoud, timing en prijs af en werken je feedback uit.": "We agree on content, timing and price, then work through your feedback.",
+	"Goed verder kunnen.": "Ready for what comes next.",
+	"Voor de oplevering leggen we vast wie opvolgt en wat onderhoud inhoudt.": "Before launch, we agree on who handles follow-up and what maintenance includes.",
+	"Een idee?": "Have an idea?",
+	"Laten we praten.": "Let’s talk.",
+	"Laten we kennismaken.": "Let’s get acquainted.",
+	"Vertel Lio wat je wil laten maken. In een vrijblijvend gesprek van 15 minuten bekijken we samen de mogelijkheden.": "Tell Lio what you would like to make. We will explore the options together in a 15-minute, no-obligation call.",
+	"15 minuten · online": "15 minutes · online",
+	"John wijst naar de kalender": "John pointing towards the calendar",
+	"Liever een offerte per mail?": "Prefer a quote by email?",
+	"Vertel kort wat je wil laten maken en voor welk bedrijf.": "Briefly describe what you would like to make and which business it is for.",
+	"Vraag een offerte aan": "Request a quote",
+	"Mail je offerteaanvraag": "Email your quote request",
+	"Opent je mailprogramma.": "Opens your email app.",
+	"Kies een moment dat past.": "Choose a time that suits you.",
+	"De kalender toont de beschikbare momenten van Lio.": "The calendar shows Lio’s available times.",
+	"Kalender wordt geladen…": "Loading calendar…",
+	"Boekingskalender van BMA Studio": "BMA Studio booking calendar",
+	"Laadt de kalender niet?": "Calendar not loading?",
+	"Open de kalender apart": "Open the calendar separately",
+	"Schakel JavaScript in om de kalender te gebruiken, of": "Enable JavaScript to use the calendar, or",
+	"open de boekingspagina": "open the booking page",
+	"Plan een vrijblijvend gesprek van 15 minuten met Lio Smeers of vraag per mail een offerte aan voor je website, app of content.": "Book a 15-minute, no-obligation call with Lio Smeers or request a quote by email for your website, app or content.",
+	"Plan je gesprek met BMA Studio": "Plan your call with BMA Studio",
+
 };
 
 const titleTranslations = {
+  "Kevin Claes — Algemene Dakwerken | BMA Studio": "Kevin Claes — Roofing Services | BMA Studio",
+  "Thor Smeers — Vastgoedfotografie | BMA Studio": "Thor Smeers — Property Photography | BMA Studio",
+  "Plan een vrijblijvend gesprek | BMA Studio": "Plan a no-obligation call | BMA Studio",
+	"We maken websites, apps, content en video’s voor bedrijven. Ook socialmediabeheer, campagnes, advertenties en onderhoud.": "We make websites, apps, content and videos for businesses. Also social media management, campaigns, advertising and maintenance.",
+	"BMA Studio is het digitale en creatieve bureau van Lio Smeers. Lees wat we maken voor bedrijven en hoe je met ons samenwerkt.": "BMA Studio is Lio Smeers’s digital and creative agency. Discover what we create for businesses and how we work together.",
+
+	"Wat kan BMA Studio voor je maken? Websites, webapps, beelden en video’s, sociale media en campagnes. Bespreek je project en het gewenste onderhoud.": "What can BMA Studio make for you? Websites, web apps, images and videos, social media and campaigns. Discuss your project and maintenance needs.",
+	"We bouwen websites voor lokale bedrijven in Limburg. Bekijk de werkwijze, mogelijkheden en klantprojecten van BMA Studio in Riemst.": "We build websites for local businesses in Limburg. Explore the process, options and client projects of BMA Studio in Riemst.",
+
 	"BMA Studio | Digitaal en creatief bureau voor lokale bedrijven": "BMA Studio | Digital and creative agency for local businesses",
 	"BMA Studio versterkt lokale bedrijven met websites, applicaties, content, sociale media en campagnes. Eén aanspreekpunt voor je online aanwezigheid.": "BMA Studio supports local businesses with websites, applications, content, social media and campaigns. One point of contact for your online presence.",
 	"Websites, applicaties, content en campagnes | BMA Studio": "Websites, applications, content and campaigns | BMA Studio",
@@ -1204,6 +1507,7 @@ const titleTranslations = {
 	"Over BMA Studio en Lio Smeers": "About BMA Studio and Lio Smeers",
 	"BMA Studio is het digitale en creatieve bureau van Lio Smeers. Lees wat we maken voor lokale bedrijven en hoe je met ons samenwerkt.": "BMA Studio is Lio Smeers’ digital and creative agency. Read what we make for local businesses and how you work with us.",
 	"Websites en concepten | BMA Studio": "Websites and concepts | BMA Studio",
+	"Websites voor klanten | BMA Studio": "Client websites | BMA Studio",
 	"Bekijk websites die BMA Studio voor klanten maakte en fictieve conceptsites. Bij elk project vind je informatie over het werk dat we leverden.": "View websites BMA Studio made for clients and fictional concept sites. Each project explains the work we delivered.",
 	"Bespreek je project met Lio | BMA Studio": "Discuss your project with Lio | BMA Studio",
 	"Wil je een website, app, video of campagne laten maken? Stuur je vraag naar Lio van BMA Studio via het formulier, per e-mail of telefonisch.": "Would you like a website, app, video or campaign? Send your enquiry to Lio at BMA Studio using the form, by email or by phone.",
@@ -1213,9 +1517,7 @@ const titleTranslations = {
 
 const header = document.querySelector(".site-header");
 const progressBar = document.querySelector(".scroll-progress");
-const pageBackgroundVideo = document.querySelector(".page-bg-video");
 const mobileViewport = window.matchMedia("(max-width: 767px)");
-const backgroundReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const heroSection = document.querySelector(".hero-section");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -1251,79 +1553,21 @@ const campaignParameterNames = [
 ];
 const campaignStorageKey = "bma-campaign-params";
 let activePackageKey = "";
-let backgroundFrameReady = false;
-
-function updatePageBackground() {
-	if (!pageBackgroundVideo) return;
-
-	// Keep the video paused: scrolling selects a frame instead of starting playback.
-	pageBackgroundVideo.pause();
-	const duration = pageBackgroundVideo.duration;
-	if (pageBackgroundVideo.readyState >= 2) backgroundFrameReady = true;
-	const isReady = backgroundFrameReady && !pageBackgroundVideo.error && Number.isFinite(duration) && duration > 0;
-	document.body.classList.toggle("has-scroll-background", isReady && !backgroundReducedMotion.matches);
-	if (!isReady || backgroundReducedMotion.matches || document.hidden || pageBackgroundVideo.seeking) return;
-
-	const maxScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-	const progress = maxScroll > 0 ? clampNumber(window.scrollY / maxScroll, 0, 1) : 0;
-	// Stay just before the end to avoid a blank end frame.
-	const targetTime = progress * Math.max(0, duration - 0.05);
-	if (Math.abs(pageBackgroundVideo.currentTime - targetTime) >= 1 / 60) {
-		pageBackgroundVideo.currentTime = targetTime;
-	}
-}
-
-function setupScrollBackground() {
-	if (!pageBackgroundVideo) return;
-
-	let backgroundLoaded = false;
-	const loadBackground = () => {
-		if (backgroundLoaded || backgroundReducedMotion.matches || navigator.connection?.saveData) return;
-		backgroundLoaded = true;
-		pageBackgroundVideo.preload = "auto";
-		pageBackgroundVideo.querySelectorAll("source[data-src]").forEach(source => { source.src = source.dataset.src; });
-		pageBackgroundVideo.load();
-	};
-	window.addEventListener("scroll", loadBackground, { passive: true });
-	backgroundReducedMotion.addEventListener("change", () => { if (window.scrollY > 0) loadBackground(); });
-	if (window.scrollY > 0) loadBackground();
-
-	pageBackgroundVideo.autoplay = false;
-	pageBackgroundVideo.loop = false;
-	pageBackgroundVideo.muted = true;
-	pageBackgroundVideo.playsInline = true;
-	pageBackgroundVideo.removeAttribute("autoplay");
-	pageBackgroundVideo.removeAttribute("loop");
-	pageBackgroundVideo.removeAttribute("controls");
-	pageBackgroundVideo.addEventListener("play", () => pageBackgroundVideo.pause());
-	// After decoding a frame, catch up to the latest scroll position if needed.
-	["loadeddata", "durationchange", "seeked", "error"].forEach((event) => {
-		pageBackgroundVideo.addEventListener(event, updatePageBackground);
-	});
-	pageBackgroundVideo.addEventListener("emptied", () => {
-		backgroundFrameReady = false;
-		updatePageBackground();
-	});
-	window.addEventListener("pageshow", updatePageBackground);
-	document.addEventListener("visibilitychange", updatePageBackground);
-	backgroundReducedMotion.addEventListener("change", updatePageBackground);
-	updatePageBackground();
-}
 
 let activePortfolioProjectKey = "";
+let previousReviewFocus = null;
 let previousPortfolioFocus = null;
 let scrollUpdateQueued = false;
 let isContactSubmitting = false;
 const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
 let currentLanguage = ["nl", "en"].includes(requestedLanguage)
 	? requestedLanguage
-	: localStorage.getItem("bma-language") || "nl";
+	: localStorage.getItem("bma-language") === "en" ? "en" : "nl";
+if (["nl", "en"].includes(requestedLanguage)) localStorage.setItem("bma-language", currentLanguage);
 const originalTextByNode = new WeakMap();
 const originalAttributeByElement = new WeakMap();
 const originalMetadataByElement = new WeakMap();
 const translatableAttributes = ["aria-label", "alt", "title", "placeholder"];
-const livePreviewWidth = 1280;
-const livePreviewHeight = 800;
 const untranslatedText = new Set();
 
 function syncPortfolioNumbers() {
@@ -1416,7 +1660,8 @@ function translateValue(value) {
 }
 
 function translateAttributes() {
-	document.querySelectorAll("[aria-label], img[alt], iframe[title], [placeholder]").forEach((element) => {
+	document.querySelectorAll("[aria-label], img[alt], [title], [placeholder]").forEach((element) => {
+		if (element.closest("[data-no-translate]")) return;
 		let originalAttributes = originalAttributeByElement.get(element);
 		if (!originalAttributes) {
 			originalAttributes = {};
@@ -1524,6 +1769,11 @@ function updateLanguageSwitcher() {
 
 function setLanguage(language) {
 	currentLanguage = language;
+	const languageUrl = new URL(window.location.href);
+	if (languageUrl.searchParams.has('lang')) {
+		languageUrl.searchParams.set('lang', language);
+		history.replaceState(history.state, '', languageUrl);
+	}
 	localStorage.setItem("bma-language", language);
 	translateStaticText();
 	updateLanguageSwitcher();
@@ -1584,7 +1834,6 @@ function scrollToSection(id) {
 }
 
 function updateScrollState() {
-	updatePageBackground();
 	const maxScroll =
 		document.documentElement.scrollHeight - document.documentElement.clientHeight;
 	const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
@@ -1686,45 +1935,33 @@ function renderPortfolioModal(projectKey, options = {}) {
 	portfolioModal.querySelector(".portfolio-modal-summary").textContent =
 		translateValue(item.summary);
 
-	const image = portfolioModal.querySelector(".portfolio-modal-media img");
 	const media = portfolioModal.querySelector(".portfolio-modal-media");
-	const livePreview = portfolioModal.querySelector(".portfolio-modal-live-preview");
-	const liveFrame = livePreview?.querySelector("iframe");
+	let image = media.querySelector("img");
 	const hideModalMedia = Boolean(item.hideModalMedia);
-	portfolioModal.classList.toggle("has-live-preview", Boolean(item.previewUrl));
 	portfolioModal.classList.toggle("no-modal-media", hideModalMedia);
 
 	if (hideModalMedia) {
 		media.hidden = true;
-		livePreview.hidden = true;
-		if (liveFrame) {
-			liveFrame.src = "";
-			liveFrame.title = "";
+		image?.removeAttribute("src");
+		if (image) {
+			image.hidden = true;
+			image.alt = "";
 		}
-		image.hidden = true;
-		image.removeAttribute("src");
-		image.alt = "";
-	} else if (item.previewUrl && livePreview && liveFrame) {
-		media.hidden = false;
-		image.hidden = true;
-		image.removeAttribute("src");
-		image.alt = "";
-		livePreview.hidden = false;
-		liveFrame.src = item.previewUrl;
-		liveFrame.title = translateValue(item.previewTitle || item.title);
 	} else {
 		media.hidden = false;
-		livePreview.hidden = true;
-		if (liveFrame) {
-			liveFrame.src = "";
-			liveFrame.title = "";
+		if (!image) {
+			image = document.createElement("img");
+			image.className = "site-preview-image";
+			media.prepend(image);
 		}
 		image.hidden = false;
 		image.src = item.image;
 		image.alt = translateValue(item.imageAlt);
+		image.classList.toggle("is-contained", item.imageFit === "contain");
 		image.width = item.imageWidth || 1200;
 		image.height = item.imageHeight || 630;
-		image.loading = "lazy";
+		image.loading = "eager";
+		image.decoding = "async";
 	}
 
 	portfolioModal.querySelector(".portfolio-modal-media figcaption").textContent =
@@ -1758,7 +1995,6 @@ function renderPortfolioModal(projectKey, options = {}) {
 
 	portfolioModal.hidden = false;
 	document.body.style.overflow = "hidden";
-	updateLiveSitePreviews();
 	if (!options.keepFocus) portfolioModalClose?.focus({ preventScroll: true });
 }
 
@@ -1776,10 +2012,13 @@ function closeReviewModal() {
 	if (!reviewModal || reviewModal.hidden) return;
 	reviewModal.hidden = true;
 	document.body.style.overflow = "";
+	previousReviewFocus?.focus?.({ preventScroll: true });
+	previousReviewFocus = null;
 }
 
 if (reviewModal) {
 	reviewTriggers.forEach((trigger) => trigger.addEventListener("click", () => {
+		previousReviewFocus = trigger;
 		reviewModal.hidden = false;
 		document.body.style.overflow = "hidden";
 		reviewModalClose?.focus({ preventScroll: true });
@@ -1788,37 +2027,35 @@ if (reviewModal) {
 		if (event.target === reviewModal) closeReviewModal();
 	});
 	reviewModalClose?.addEventListener("click", closeReviewModal);
-}
-
-function updateLiveSitePreviews() {
-	document.querySelectorAll(".live-site-preview").forEach((preview) => {
-		if (preview.hidden) return;
-
-		const frame = preview.querySelector("iframe");
-		const frameWidth = Number(frame?.getAttribute("width")) || livePreviewWidth;
-		const frameHeight = Number(frame?.getAttribute("height")) || livePreviewHeight;
-		// Use the layout width so opening/reveal transforms do not shrink the iframe.
-		const width = preview.clientWidth;
-		if (!width) return;
-
-		const scale = width / frameWidth;
-		preview.style.setProperty("--iframe-width", `${frameWidth}px`);
-		preview.style.setProperty("--iframe-height", `${frameHeight}px`);
-		preview.style.setProperty("--preview-scale", String(scale));
-		preview.style.setProperty("--preview-height", `${frameHeight * scale}px`);
+	reviewModal.addEventListener("keydown", (event) => {
+		if (event.key !== "Tab") return;
+		const controls = [...reviewModal.querySelectorAll('button, a[href], [tabindex="0"]')]
+			.filter((control) => !control.disabled && control.getClientRects().length);
+		const first = controls[0];
+		const last = controls[controls.length - 1];
+		if (event.shiftKey && document.activeElement === first) {
+			event.preventDefault(); last?.focus();
+		} else if (!event.shiftKey && document.activeElement === last) {
+			event.preventDefault(); first?.focus();
+		}
 	});
 }
+
+const reviewPause = document.querySelector("[data-review-pause]");
+reviewPause?.addEventListener("click", () => {
+	const paused = reviewPause.getAttribute("aria-pressed") !== "true";
+	reviewPause.setAttribute("aria-pressed", String(paused));
+	document.querySelector(".reviews-section")?.classList.toggle("is-paused", paused);
+});
 
 function fillPackageMessage(packageKey) {
 	const item = getPackageDetails(packageKey);
 	const messageField = contactForm?.elements.message;
-	const packageField = contactForm?.elements.package;
 	if (!item || !messageField) return;
 
 	messageField.value = item.inquiryMessage;
-	if (packageField) packageField.value = packageDetails[packageKey]?.title || item.title;
 	if (contactForm.elements.service) contactForm.elements.service.value = "websites";
-	updateContactService();
+
 	contactForm.dataset.prefilledPackage = packageKey;
 	setError("message", "");
 	hideContactStatus();
@@ -1918,6 +2155,197 @@ function setupReveal() {
 	);
 
 	revealItems.forEach((item) => observer.observe(item));
+}
+
+function setupHeroPixelReveal() {
+	const headline = document.querySelector(".hero-headline");
+	if (!headline || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+	const reveal = document.createElement("span");
+	reveal.className = "hero-pixel-reveal";
+	reveal.setAttribute("aria-hidden", "true");
+	reveal.dataset.heroPixelReveal = "";
+
+	const totalCells = 18 * 6;
+	const accents = new Set();
+	while (accents.size < 10) accents.add(Math.floor(Math.random() * totalCells));
+	let finishedCells = 0;
+
+	for (let index = 0; index < totalCells; index += 1) {
+		const cell = document.createElement("span");
+		cell.className = accents.has(index)
+			? "hero-pixel-cell hero-pixel-cell--accent"
+			: "hero-pixel-cell";
+		cell.style.setProperty("--pixel-delay", `${Math.round(Math.random() * 400)}ms`);
+		cell.addEventListener("animationend", () => {
+			finishedCells += 1;
+			if (finishedCells === totalCells) reveal.remove();
+		}, { once: true });
+		reveal.append(cell);
+	}
+
+	headline.append(reveal);
+	window.setTimeout(() => {
+		if (!reveal.isConnected) return;
+		reveal.classList.add("is-revealing");
+	}, 820);
+	window.setTimeout(() => reveal.remove(), 1850);
+}
+
+function setupHomeServiceCards() {
+	const cards = document.querySelectorAll(".agency-service-summary");
+	const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+	const useTapAccordion = window.matchMedia("(max-width: 767px)").matches || !canHover;
+	const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	if (!cards.length) return;
+	const panelStates = new WeakMap();
+	cards.forEach((card) => panelStates.set(card, { panel: card.querySelector(".service-more"), motion: 0 }));
+	const closeTapCard = (card) => {
+		const state = panelStates.get(card);
+		if (!state?.panel || !card.open || card.classList.contains("is-closing")) return;
+		const motion = ++state.motion;
+		if (reduceMotion) {
+			card.classList.remove("is-closing");
+			card.open = false;
+			state.panel.style.height = "0px";
+			return;
+		}
+		card.classList.add("is-closing");
+		state.panel.style.height = `${state.panel.getBoundingClientRect().height}px`;
+		void state.panel.offsetHeight;
+		requestAnimationFrame(() => {
+			if (motion !== state.motion || !card.open || !card.classList.contains("is-closing")) return;
+			state.panel.style.height = "0px";
+		});
+	};
+
+	cards.forEach((card) => {
+		let openedByHover = false;
+		let pinnedByClick = false;
+		let pointerInside = false;
+		let closeAfterFocus = false;
+		const summary = card.querySelector("summary");
+		const morePanel = card.querySelector(".service-more");
+		if (useTapAccordion) {
+			const state = panelStates.get(card);
+			morePanel?.addEventListener("transitionend", (event) => {
+				if (event.target !== morePanel || event.propertyName !== "height") return;
+				if (card.classList.contains("is-closing")) {
+					card.classList.remove("is-closing");
+					card.open = false;
+					morePanel.style.height = "0px";
+				} else if (card.open) morePanel.style.height = "auto";
+			});
+			summary?.addEventListener("click", (event) => {
+				event.preventDefault();
+				if (!morePanel) {
+					card.open = !card.open;
+					return;
+				}
+
+				const wasOpen = card.open;
+				const wasClosing = card.classList.contains("is-closing");
+				if (wasOpen && !wasClosing) {
+					closeTapCard(card);
+					return;
+				}
+
+				const motion = ++state.motion;
+				card.classList.remove("is-closing");
+				if (!wasOpen) {
+					card.open = true;
+					morePanel.style.height = "0px";
+				} else {
+					morePanel.style.height = `${morePanel.getBoundingClientRect().height}px`;
+					void morePanel.offsetHeight;
+				}
+				cards.forEach((otherCard) => {
+					if (otherCard !== card) closeTapCard(otherCard);
+				});
+				if (reduceMotion) {
+					morePanel.style.height = "auto";
+					return;
+				}
+				requestAnimationFrame(() => {
+					if (motion !== state.motion || !card.open || card.classList.contains("is-closing")) return;
+					morePanel.style.height = `${morePanel.scrollHeight}px`;
+				});
+			});
+			return;
+		}
+
+		card.addEventListener("pointerenter", (event) => {
+			if (event.pointerType !== "mouse") return;
+			pointerInside = true;
+			if (card.open) return;
+
+			cards.forEach((otherCard) => {
+				if (otherCard !== card) otherCard.open = false;
+			});
+			openedByHover = true;
+			card.open = true;
+		});
+
+		morePanel?.addEventListener("click", (event) => {
+			if (event.target.closest("a, button") || !card.open) return;
+			card.open = false;
+			openedByHover = false;
+			pinnedByClick = false;
+			closeAfterFocus = false;
+		});
+
+		summary?.addEventListener("click", (event) => {
+			// A mouse click on a card already opened by hover should pin it open,
+			// rather than immediately toggling it shut. Keyboard activation stays native.
+			if (event.detail === 0) return;
+
+			if (openedByHover && card.open) {
+				event.preventDefault();
+				openedByHover = false;
+				pinnedByClick = true;
+				closeAfterFocus = false;
+				return;
+			}
+
+			if (pinnedByClick && card.open) {
+				event.preventDefault();
+				card.open = false;
+				pinnedByClick = false;
+			}
+		});
+
+		card.addEventListener("pointerleave", (event) => {
+			if (event.pointerType !== "mouse") return;
+			pointerInside = false;
+			if (!openedByHover) return;
+
+			if (card.contains(document.activeElement)) {
+				closeAfterFocus = true;
+				return;
+			}
+
+			card.open = false;
+			openedByHover = false;
+			closeAfterFocus = false;
+		});
+
+		card.addEventListener("focusout", (event) => {
+			if (event.relatedTarget && card.contains(event.relatedTarget)) return;
+			if (!closeAfterFocus || pointerInside) return;
+
+			card.open = false;
+			openedByHover = false;
+			closeAfterFocus = false;
+		});
+
+		card.addEventListener("toggle", () => {
+			if (!card.open) {
+				openedByHover = false;
+				pinnedByClick = false;
+				closeAfterFocus = false;
+			}
+		});
+	});
 }
 
 function setupPagePressure() {
@@ -2137,14 +2565,6 @@ function setupVisibilitySprintToggle() {
 	updateVisibilitySprintCard();
 }
 
-function updateContactService() {
-	if (!contactForm?.elements.service) return;
-	const showPackages = contactForm.elements.service.value === "websites";
-	const row = contactForm.querySelector("[data-website-package-row]");
-	if (row) row.hidden = !showPackages;
-	if (contactForm.elements.package) contactForm.elements.package.disabled = !showPackages;
-}
-
 function setupWebsitePricing() {
  const disclosure = document.querySelector(".website-pricing-disclosure");
  if (!disclosure) return;
@@ -2172,12 +2592,11 @@ function setupContactService() {
 			if (packageKey && contactForm.elements.message.value === getPackageDetails(packageKey)?.inquiryMessage) {
 				contactForm.elements.message.value = "";
 			}
-			contactForm.elements.package.value = "";
 			delete contactForm.dataset.prefilledPackage;
 		}
-		updateContactService();
+
 	});
-	updateContactService();
+
 }
 
 function setupPackageQueryPrefill() {
@@ -2263,25 +2682,12 @@ window.addEventListener("scroll", scheduleScrollStateUpdate, { passive: true });
 window.addEventListener("resize", () => {
 	if (window.innerWidth >= 1200) closeMenu();
 	updateScrollState();
-	updateLiveSitePreviews();
 });
-
-window.addEventListener("load", updateLiveSitePreviews);
-window.requestAnimationFrame(updateLiveSitePreviews);
-setupScrollBackground();
 
 contactForm?.addEventListener("input", (event) => {
 	if (event.target.name) setError(event.target.name, "");
 	if (event.target.name === "message") delete contactForm.dataset.prefilledPackage;
 	hideContactStatus();
-});
-
-contactForm?.elements.package?.addEventListener("change", (event) => {
-	const selectedKey = Object.entries(packageDetails).find(
-		([, details]) => details.title === event.target.value,
-	)?.[0];
-
-	if (selectedKey) fillPackageMessage(selectedKey);
 });
 
 contactForm?.addEventListener("submit", async (event) => {
@@ -2336,6 +2742,8 @@ contactForm?.addEventListener("submit", async (event) => {
 closeMenu();
 setupLanguageSwitcher();
 setupReveal();
+setupHeroPixelReveal();
+setupHomeServiceCards();
 // Shared component motion replaces the older global tilt and cursor effects.
 setupPortfolioToggle();
 setupVisibilitySprintToggle();
@@ -2343,3 +2751,4 @@ setupPackageQueryPrefill();
 setupContactService();
 setupWebsitePricing();
 updateScrollState();
+
