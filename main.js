@@ -764,6 +764,8 @@ const translations = {
 	"Klanten aan het woord": "Customers speak up",
 	"Wat lokale ondernemers over ons zeggen.": "What local business owners say about us.",
 	"Review us on Trustpilot": "Review us on Trustpilot",
+	"Beoordeel ons op Trustpilot": "Review us on Trustpilot",
+	"Veeg opzij voor meer reviews": "Swipe for more reviews",
 	"Kies sneller wat bij je bedrijf past.": "Choose what fits your business faster.",
 	"Website laten maken met duidelijke pakketten en prijzen": "Have a website made with clear packages and prices",
 	"Drie duidelijke keuzes, van een compacte one-page tot een website met maandelijkse content.": "Three clear choices, from a compact one-page website to a website with monthly content.",

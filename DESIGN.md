@@ -136,3 +136,12 @@ Controls have gently rounded rectangular corners; the incumbent card radius and 
 - Don't turn the chosen Nevel effect into a site-wide background treatment.
 - Don't replace the established identity with a new font or accent without a brand decision.
 - Don't simulate available appointment slots or booking confirmation.
+
+### Transparent animation delivery
+John keeps the same animation geometry and timings. Safari and iOS use HEVC-with-alpha `.mov` sources; Chromium and other browsers retain VP9-with-alpha WebM. Both Apple exports were checked with AVFoundation for a real alpha channel. The welcome mist uses explicitly premultiplied WebGL output, transparent clears and a soft canvas-edge mask to avoid mobile compositor rectangles. Actual iPhone rendering still requires device confirmation.
+
+### Phone homepage readability
+Below 768px, partner marks use 100px slots with 12px gaps and 48px image height. Reviews use a manual horizontal scroll-snap row, with duplicate marquee content hidden, a localized swipe hint and 15px body text. Desktop retains its existing automatic review animation and pause control. Full-review controls and the modal close target are at least 44px.
+
+### Compact phone page family
+`mobile-refinements.css` is the final, <=767px-only layer. Services, Portfolio, About and Booking titles share `clamp(2rem,8.2vw,2.4rem)` with 1.12 line height. Page introductions begin at 7rem and no longer impose tall viewport-based minimum heights. Service headings use 1.65–2rem; project names use 1.5rem. Body text remains 1rem with generous line spacing. Calendar and mascot animation positions are not altered by this layer. Current 360px captures under `.impeccable/review/studio-20261022/compact-*.png` show the refined page family.

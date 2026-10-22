@@ -116,8 +116,9 @@
 }
 </script>
       <link rel="stylesheet" href="./interactions.css?v=20261006-motion3" />
-      <link rel="stylesheet" href="/theo.css?v=20261022-studio-booking" />
-    <link rel="stylesheet" href="/partner-ticker.css?v=20261022-kevin" />
+      <link rel="stylesheet" href="/theo.css?v=20261022-mobile-alpha" />
+    <link rel="stylesheet" href="/partner-ticker.css?v=20261022-mobile-reviews" />
+    <link rel="stylesheet" href="/mobile-refinements.css?v=20261022-compact" />
   </head>
   <body>
     <div class="cursor-glow" aria-hidden="true"></div>
@@ -391,14 +392,15 @@
             rel="noopener"
           >
             <span class="trustpilot-star" aria-hidden="true">★</span>
-            <span>Review us on Trustpilot</span>
+            <span>Beoordeel ons op Trustpilot</span>
           </a>
 
           <div class="review-heading">
             <div><span class="eyebrow">Klanten aan het woord</span><h2 id="reviews-title">Reviews van klanten.</h2></div>
             <button class="review-pause" type="button" data-review-pause aria-pressed="false" aria-controls="review-track">Reviews pauzeren</button>
           </div>
-          <div class="review-marquee" aria-label="Trustpilot reviews">
+          <p class="review-swipe-hint" id="review-swipe-hint">Veeg opzij voor meer reviews</p>
+          <div class="review-marquee" role="region" tabindex="0" aria-label="Trustpilot reviews">
             <div class="review-track" id="review-track">
             <div class="review-group">
               <article class="review-card">
@@ -514,10 +516,10 @@
       </div>
     </footer>
 
-    <script src="./main.js?v=20261022-studio-booking"></script>
+    <script src="./main.js?v=20261022-mobile-compact"></script>
     <script type="module" src="./bma-story.js?v=20261009-copy"></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8b7e230825e444a49804b8d6e17e1b79"}'></script><!-- End Cloudflare Web Analytics -->
       <script src="./interactions.js?v=20261018-restored" defer></script>
-      <script src="/theo.js?v=20261022-studio-booking" defer></script>
+      <script src="/theo.js?v=20261022-mobile-alpha" defer></script>
   </body>
 </html>
