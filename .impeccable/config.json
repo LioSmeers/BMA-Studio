@@ -1,0 +1,372 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T19:42:41.211Z",
+        "reason": "Agent source triage: restored style.css header and home-cta-band declare padding; former bma-simple.css override removed after user requested prior layout. No computed-style claim; rendered browser verification unavailable."
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T19:42:41.307Z",
+        "reason": "Agent: restored hero-scroll-cue is a literal scroll-direction affordance linked to diensten-overzicht, not a live status indicator. User confirmed restoring the entire preceding layout."
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T19:42:41.402Z",
+        "reason": "User confirmed: homepage reviews must continue moving even on hover. Existing motion retained with explicit Reviews pauzeren toggle, keyboard-focus pause and reduced-motion fallback."
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "diensten.html"
+        ],
+        "createdAt": "2026-10-18T21:21:19.155Z",
+        "reason": "User confirmed restoring the full previous layout; the Diensten eyebrow belongs to that restored page layout."
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "diensten.html"
+        ],
+        "createdAt": "2026-10-18T21:21:19.236Z",
+        "reason": "Source review: diensten.html has no pulsing status dot; the detector sees a shared homepage-only style."
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "diensten.html"
+        ],
+        "createdAt": "2026-10-18T21:21:19.316Z",
+        "reason": "Source review: diensten.html contains no marquee or ticker; the detector sees the shared homepage review animation."
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "contact.html"
+        ],
+        "createdAt": "2026-10-18T23:20:37.553Z",
+        "reason": "Source review: contact.html does not render .hero-scroll-cue; the detector sees a shared stylesheet rule."
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "contact.html"
+        ],
+        "createdAt": "2026-10-18T23:20:37.568Z",
+        "reason": "Source review: contact.html does not render .review-track; the detector sees shared stylesheet rules for other pages."
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "diensten.html",
+          "index.html"
+        ],
+        "createdAt": "2026-10-19T13:45:58.880Z",
+        "reason": "Agent: the detector flags the shared offset blue CTA shadow as a dark-surface glow; both pages use light surfaces, and diensten overrides CTA shadows with neutral elevation."
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "project-kevin-claes.html"
+        ],
+        "createdAt": "2026-10-21T19:23:40.108Z",
+        "reason": "Agent: the shared John mascot button uses the brand-blue shadow as a purposeful interactive affordance on this page."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "project-kevin-claes.html"
+        ],
+        "createdAt": "2026-10-21T19:34:35.986Z",
+        "reason": "Agent: the rendered desktop and mobile cards have visible 22px+ inner insets; the detector matches base .card styling but misses padding on .case-fact and .case-next-card."
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "project-kevin-claes.html"
+        ],
+        "createdAt": "2026-10-21T19:34:36.079Z",
+        "reason": "Agent: project-kevin-claes.html contains no .hero-scroll-cue element; only the shared stylesheet rule matches."
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "project-kevin-claes.html"
+        ],
+        "createdAt": "2026-10-21T19:34:36.174Z",
+        "reason": "Agent: project-kevin-claes.html contains no .review-track or .review-marquee element; only shared homepage styles match."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "diensten.html"
+        ],
+        "createdAt": "2026-10-21T20:01:59.754Z",
+        "reason": "Verified care-preview-row has 10.4px computed vertical padding and 11–13px text-to-border clearance; detector false positive"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "project-thor-smeers.html"
+        ],
+        "createdAt": "2026-10-21T20:08:30.717Z",
+        "reason": "This light case page matches Kevin and contains no colored glow; the shared brand blue is not rendered as a dark-page shadow here."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "project-agv-smeers.html",
+          "project-moeskops-gevelwerken.html",
+          "project-sunplanet-heusden.html",
+          "project-thor-smeers.html"
+        ],
+        "createdAt": "2026-10-21T20:19:58.592Z",
+        "reason": "The shared case-next card has 32px computed padding; the detector misidentifies its inner spacing."
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "project-agv-smeers.html",
+          "project-moeskops-gevelwerken.html",
+          "project-sunplanet-heusden.html",
+          "project-thor-smeers.html"
+        ],
+        "createdAt": "2026-10-21T20:19:58.683Z",
+        "reason": "No hero-scroll-cue element exists on these case pages; it is only in index.html."
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "project-agv-smeers.html",
+          "project-moeskops-gevelwerken.html",
+          "project-sunplanet-heusden.html",
+          "project-thor-smeers.html"
+        ],
+        "createdAt": "2026-10-21T20:19:58.778Z",
+        "reason": "No review-track element exists on these case pages; the marquee is only on index.html."
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "project-agv-smeers.html",
+          "project-moeskops-gevelwerken.html",
+          "project-sunplanet-heusden.html"
+        ],
+        "createdAt": "2026-10-21T20:19:58.874Z",
+        "reason": "These light case pages match Kevin; the shared stylesheet trigger is not a dark-page glow rendered in their content."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "over-ons.html"
+        ],
+        "createdAt": "2026-10-22T08:14:28.799Z",
+        "reason": "Page sections and cards use responsive padding of 1.25rem minimum (20px); detector findings are false positives."
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "over-ons.html"
+        ],
+        "createdAt": "2026-10-22T08:14:47.424Z",
+        "reason": "The pulse animation is defined as shared CSS, but over-ons.html has no .hero-scroll-cue element or other pulsing indicator."
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "over-ons.html"
+        ],
+        "createdAt": "2026-10-22T08:15:09.142Z",
+        "reason": "The marquee animation is defined as shared CSS, but over-ons.html contains no .review-track or marquee element."
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "over-ons.html"
+        ],
+        "createdAt": "2026-10-22T08:15:26.513Z",
+        "reason": "The shared primary-button shadow is offset elevation on this light page, not a chromatic halo or colored glow on a dark surface."
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "portfolio.html"
+        ],
+        "createdAt": "2026-10-22T10:09:40.962Z",
+        "reason": "Agent inspected portfolio DOM: no hero-scroll-cue element exists; finding comes from unused shared CSS."
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "portfolio.html"
+        ],
+        "createdAt": "2026-10-22T10:09:41.033Z",
+        "reason": "Agent inspected portfolio DOM: no review-track or marquee exists on this page; finding comes from unused shared CSS."
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "portfolio.html"
+        ],
+        "createdAt": "2026-10-22T10:09:41.102Z",
+        "reason": "Agent inspected portfolio DOM and rendered page: portfolio uses a light flat background and neutral preview shadows; dark-page glow finding comes from unused shared theme rules."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "over-ons.html"
+        ],
+        "createdAt": "2026-10-22T14:13:34.690Z",
+        "reason": "User-selected blue mist has a small gradient fallback inside the light chat. About page is light #f5f8fc; no dark-page background halo is rendered."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "contact.html"
+        ],
+        "createdAt": "2026-10-22T14:13:34.715Z",
+        "reason": "User-selected blue mist has a small gradient fallback inside the light chat. Booking page is pale blue and white; no dark-page background halo is rendered."
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "contact.html"
+        ],
+        "createdAt": "2026-10-22T14:13:34.738Z",
+        "reason": "Legacy shared theme declarations trigger this on a rendered light page. Booking uses a neutral offset calendar shadow, no dark background or glow. Existing mascot motion is preserved."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-22T14:30:08.099Z",
+        "reason": "User explicitly selected the soft blue mist concept. Shared theo.css supplies a small radial-gradient fallback inside the light chat, not a decorative halo on a dark page. Preserve requested effect."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "diensten.html"
+        ],
+        "createdAt": "2026-10-22T14:30:08.196Z",
+        "reason": "User explicitly selected the soft blue mist concept. Shared theo.css supplies a small radial-gradient fallback inside the light chat, not a decorative halo on a dark page. Preserve requested effect."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "portfolio.html"
+        ],
+        "createdAt": "2026-10-22T14:30:08.290Z",
+        "reason": "User explicitly selected the soft blue mist concept. Shared theo.css supplies a small radial-gradient fallback inside the light chat, not a decorative halo on a dark page. Preserve requested effect."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "project-thor-smeers.html"
+        ],
+        "createdAt": "2026-10-22T14:30:08.383Z",
+        "reason": "User explicitly selected the soft blue mist concept. Shared theo.css supplies a small radial-gradient fallback inside the light chat, not a decorative halo on a dark page. Preserve requested effect."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "project-moeskops-gevelwerken.html"
+        ],
+        "createdAt": "2026-10-22T14:30:08.478Z",
+        "reason": "User explicitly selected the soft blue mist concept. Shared theo.css supplies a small radial-gradient fallback inside the light chat, not a decorative halo on a dark page. Preserve requested effect."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "project-agv-smeers.html"
+        ],
+        "createdAt": "2026-10-22T14:30:08.571Z",
+        "reason": "User explicitly selected the soft blue mist concept. Shared theo.css supplies a small radial-gradient fallback inside the light chat, not a decorative halo on a dark page. Preserve requested effect."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "project-sunplanet-heusden.html"
+        ],
+        "createdAt": "2026-10-22T14:30:08.669Z",
+        "reason": "User explicitly selected the soft blue mist concept. Shared theo.css supplies a small radial-gradient fallback inside the light chat, not a decorative halo on a dark page. Preserve requested effect."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "project-kevin-claes.html"
+        ],
+        "createdAt": "2026-10-22T14:30:08.765Z",
+        "reason": "User explicitly selected the soft blue mist concept. Shared theo.css supplies a small radial-gradient fallback inside the light chat, not a decorative halo on a dark page. Preserve requested effect."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "website-laten-maken-limburg/index.html"
+        ],
+        "createdAt": "2026-10-22T14:30:08.860Z",
+        "reason": "User explicitly selected the soft blue mist concept. Shared theo.css supplies a small radial-gradient fallback inside the light chat, not a decorative halo on a dark page. Preserve requested effect."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "georgia",
+        "files": [
+          "style.css"
+        ],
+        "createdAt": "2026-10-22T14:30:08.955Z",
+        "reason": "Existing Georgia is confined to aria-hidden decorative quotation marks in homepage reviews; it is not a new text font or brand typography change."
+      }
+    ]
+  }
+}

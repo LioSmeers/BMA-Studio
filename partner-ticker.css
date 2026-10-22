@@ -1,0 +1,23 @@
+/* A continuous strip of genuine partner marks. */
+.home-portfolio-logos.partner-ticker { margin-top: 3rem; padding: 2rem 0 0; background: transparent; border-radius: 0; box-shadow: none; border-top: 1px solid var(--color-border); }
+.partner-ticker-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.partner-ticker-heading h3 { margin: 0; font-size: 1rem; letter-spacing: 0; }
+.partner-ticker-window { overflow: hidden; }
+.partner-logo-track { display: flex; width: max-content; animation: partner-logo-scroll 36s linear infinite; }
+.partner-logo-group { display: flex; flex: 0 0 auto; align-items: center; width: max(100vw,64rem); }
+.partner-logo { display: grid; flex: 1 0 0; height: 128px; place-items: center; padding: 1rem 2rem; }
+.partner-logo img { display: block; width: 192px; max-width: 100%; height: 88px; object-fit: contain; }
+.partner-logo-kevin img { filter: url(#kevin-logo-ink); }
+@keyframes partner-logo-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+ .partner-logo-track { width: 100%; animation: none; }
+ .partner-logo-group { flex-wrap: wrap; width: 100%; }
+ .partner-logo-group[aria-hidden="true"] { display: none; }
+ .partner-logo { flex-basis: 50%; min-width: 0; padding-inline: .75rem; }
+ .partner-logo img { max-width: 100%; }
+}
+
+.review-pause { border: 1px solid var(--color-border); border-radius: 999px; padding: .6rem .9rem; background: var(--color-surface); color: var(--color-muted); font: inherit; font-size: .8125rem; }
+.review-pause:hover,.review-pause[aria-pressed="true"] { border-color: var(--color-accent); color: var(--color-accent); }
+.reviews-section.is-paused .review-track { animation-play-state: paused; }
+@media(max-width:700px) { .review-heading { flex-wrap: wrap; gap: 1rem; } }

@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T14:20:36.211018+00:00",
+  "title": "Design System: BMA Studio",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Studio blue",
+        "tonalRamp": [
+          "oklch(15% 0.10 255)",
+          "oklch(27% 0.10 255)",
+          "oklch(39% 0.10 255)",
+          "oklch(51% 0.10 255)",
+          "oklch(63% 0.10 255)",
+          "oklch(75% 0.10 255)",
+          "oklch(87% 0.10 255)",
+          "oklch(95% 0.10 255)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Pale blue background",
+        "tonalRamp": [
+          "oklch(15% 0.02 255)",
+          "oklch(27% 0.02 255)",
+          "oklch(39% 0.02 255)",
+          "oklch(51% 0.02 255)",
+          "oklch(63% 0.02 255)",
+          "oklch(75% 0.02 255)",
+          "oklch(87% 0.02 255)",
+          "oklch(95% 0.02 255)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "White surface",
+        "tonalRamp": [
+          "oklch(15% 0.02 255)",
+          "oklch(27% 0.02 255)",
+          "oklch(39% 0.02 255)",
+          "oklch(51% 0.02 255)",
+          "oklch(63% 0.02 255)",
+          "oklch(75% 0.02 255)",
+          "oklch(87% 0.02 255)",
+          "oklch(95% 0.02 255)"
+        ]
+      },
+      "surface-soft": {
+        "role": "neutral",
+        "displayName": "Soft blue surface",
+        "tonalRamp": [
+          "oklch(15% 0.02 255)",
+          "oklch(27% 0.02 255)",
+          "oklch(39% 0.02 255)",
+          "oklch(51% 0.02 255)",
+          "oklch(63% 0.02 255)",
+          "oklch(75% 0.02 255)",
+          "oklch(87% 0.02 255)",
+          "oklch(95% 0.02 255)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Dark ink",
+        "tonalRamp": [
+          "oklch(15% 0.02 255)",
+          "oklch(27% 0.02 255)",
+          "oklch(39% 0.02 255)",
+          "oklch(51% 0.02 255)",
+          "oklch(63% 0.02 255)",
+          "oklch(75% 0.02 255)",
+          "oklch(87% 0.02 255)",
+          "oklch(95% 0.02 255)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted slate",
+        "tonalRamp": [
+          "oklch(15% 0.02 255)",
+          "oklch(27% 0.02 255)",
+          "oklch(39% 0.02 255)",
+          "oklch(51% 0.02 255)",
+          "oklch(63% 0.02 255)",
+          "oklch(75% 0.02 255)",
+          "oklch(87% 0.02 255)",
+          "oklch(95% 0.02 255)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Quiet blue border",
+        "tonalRamp": [
+          "oklch(15% 0.02 255)",
+          "oklch(27% 0.02 255)",
+          "oklch(39% 0.02 255)",
+          "oklch(51% 0.02 255)",
+          "oklch(63% 0.02 255)",
+          "oklch(75% 0.02 255)",
+          "oklch(87% 0.02 255)",
+          "oklch(95% 0.02 255)"
+        ]
+      },
+      "accent-soft": {
+        "role": "neutral",
+        "displayName": "Accent wash",
+        "tonalRamp": [
+          "oklch(15% 0.02 255)",
+          "oklch(27% 0.02 255)",
+          "oklch(39% 0.02 255)",
+          "oklch(51% 0.02 255)",
+          "oklch(63% 0.02 255)",
+          "oklch(75% 0.02 255)",
+          "oklch(87% 0.02 255)",
+          "oklch(95% 0.02 255)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Editorial page title",
+        "purpose": "Desktop Portfolio/About title role; see documented Services and mobile differences."
+      }
+    },
+    "shadows": [
+      {
+        "name": "soft",
+        "value": "0 12px 32px rgba(11, 17, 28, 0.06)",
+        "purpose": "Incumbent ambient surface shadow."
+      },
+      {
+        "name": "calendar",
+        "value": "0 12px 36px rgb(11 17 28 / 6%)",
+        "purpose": "Contact calendar enclosure."
+      }
+    ],
+    "motion": [
+      {
+        "name": "service-arrow",
+        "value": "250ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Small directional cue on linked services; disabled under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "booking-narrow-desktop",
+        "value": "1000px"
+      },
+      {
+        "name": "studio-mobile",
+        "value": "767px"
+      }
+    ],
+    "evidence": {
+      "type": "source-extraction",
+      "renderedReview": false,
+      "sources": [
+        "style.css",
+        "services-story.css",
+        "portfolio-story.css",
+        "studio-pages.css",
+        "theo.css",
+        "john-mist.js",
+        "theo.js",
+        "booking.js",
+        "over-ons.html",
+        "contact.html"
+      ],
+      "tonalRamps": "Generated OKLCH reference strips only; not implemented CSS tokens.",
+      "specimens": "Source-derived isolated specimens; production motion and full layout remain in source."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "description": "Source-derived core action; production also includes a highlight sweep.",
+      "html": "<a class=\"ds-button-primary\" href=\"#\">Plan een gesprek</a>",
+      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;background:#315f9a;color:#fff;border:1px solid #315f9a;border-radius:.85rem;padding:.96rem 1.25rem;font:800 16px/1 Manrope,sans-serif;text-decoration:none;transition:transform 180ms ease,box-shadow 180ms ease}.ds-button-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(11,17,28,.06)}.ds-button-primary:active{transform:scale(.98)}.ds-button-primary:focus-visible{outline:2px solid #315f9a;outline-offset:5px}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "description": "Source-derived core action; production also includes a highlight sweep.",
+      "html": "<a class=\"ds-button-secondary\" href=\"#\">Plan een gesprek</a>",
+      "css": ".ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;background:#fff;color:#0b111c;border:1px solid #d7e2f0;border-radius:.85rem;padding:.96rem 1.25rem;font:800 16px/1 Manrope,sans-serif;text-decoration:none;transition:transform 180ms ease,box-shadow 180ms ease}.ds-button-secondary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(11,17,28,.06)}.ds-button-secondary:active{transform:scale(.98)}.ds-button-secondary:focus-visible{outline:2px solid #315f9a;outline-offset:5px}",
+      "refersTo": "button-secondary"
+    },
+    {
+      "name": "Text field",
+      "kind": "input",
+      "description": "Existing local form style; not a Cal.com input.",
+      "html": "<label class=\"ds-label\">Bedrijf<input class=\"ds-field\" type=\"text\" placeholder=\"Je bedrijfsnaam\"></label>",
+      "css": ".ds-label{display:grid;gap:.5rem;color:#0b111c;font:800 .9rem Manrope,sans-serif}.ds-field{border:1px solid #d7e2f0;border-radius:1rem;background:#eaf1f9;color:#0b111c;padding:.95rem 1rem;font:400 16px Manrope,sans-serif;transition:background 180ms ease,box-shadow 180ms ease}.ds-field:hover,.ds-field:focus{background:#fff;border-color:#718fb4;box-shadow:0 0 0 4px rgba(49,95,154,.12)}.ds-field:focus-visible{outline:2px solid #315f9a;outline-offset:5px}",
+      "refersTo": "field"
+    },
+    {
+      "name": "Desktop navigation",
+      "kind": "nav",
+      "description": "Compact specimen of desktop navigation colors and active marker.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Voorbeeld\"><a href=\"#\">Diensten</a><a href=\"#\" aria-current=\"page\">Over ons</a></nav>",
+      "css": ".ds-nav{display:flex;gap:1.5rem}.ds-nav a{border-bottom:2px solid transparent;padding:.45rem 0;color:#5d6a7c;font:700 .94rem Manrope,sans-serif;text-decoration:none;transition:color 180ms ease,border-color 180ms ease}.ds-nav a:hover,.ds-nav a[aria-current]{color:#0b111c;border-color:#315f9a}.ds-nav a:focus-visible{outline:2px solid #315f9a;outline-offset:5px}"
+    },
+    {
+      "name": "Linked service row",
+      "kind": "custom",
+      "description": "Open service summary with a directional arrow.",
+      "html": "<a class=\"ds-service\" href=\"#\"><span><strong>Build.</strong><small>Websites en apps die passen bij je bedrijf.</small></span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
+      "css": ".ds-service{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.55rem 0;border-block:1px solid #d7e2f0;text-decoration:none}.ds-service strong{display:block;color:#315f9a;font:750 clamp(1.9rem,3.3vw,2.9rem)/1.15 Manrope,sans-serif;letter-spacing:-.04em}.ds-service small{display:block;margin-top:.3rem;color:#5d6a7c;font:400 .92rem/1.6 Manrope,sans-serif}.ds-service svg{width:24px;height:24px;fill:none;stroke:#315f9a;stroke-width:1.5;transition:transform 250ms cubic-bezier(.16,1,.3,1)}.ds-service:hover svg{transform:translate(3px,-3px)}.ds-service:focus-visible{outline:2px solid #315f9a;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-service svg{transition:none}}"
+    },
+    {
+      "name": "Calendar enclosure",
+      "kind": "card",
+      "description": "BMA wrapper only; the live provider embed is deliberately not reproduced.",
+      "html": "<section class=\"ds-calendar\"><h2>Kies een moment dat past.</h2><p>De kalender toont de beschikbare momenten van Lio.</p></section>",
+      "css": ".ds-calendar{padding:25px 24px 20px;border-radius:16px;background:#fff;box-shadow:0 12px 36px rgb(11 17 28 / 6%)}.ds-calendar h2{margin:0 0 .6rem;color:#0b111c;font:750 clamp(1.35rem,2vw,1.65rem)/1.25 Manrope,sans-serif;letter-spacing:-.025em}.ds-calendar p{margin:0;color:#526174;font:400 .88rem/1.6 Manrope,sans-serif}",
+      "refersTo": "calendar"
+    }
+  ],
+  "narrative": {
+    "northStar": "Established BMA studio identity",
+    "overview": "The established BMA identity uses pale blue space, dark ink and a restrained blue accent. Sora supplies the headings; Manrope supplies reading text, controls and selected compact titles. Open editorial arrangements sit alongside contained functional surfaces.\n\nThis is a source extraction of the incumbent system and its About/Contact extension on 22 October 2026, not a replacement identity. Sources: `style.css`, `services-story.css`, `portfolio-story.css`, `studio-pages.css`, `theo.css`, `john-mist.js`, `theo.js`, `booking.js`, `over-ons.html` and `contact.html`. This documentation pass did not inspect rendered output or operate a browser; screenshots in `.impeccable/review/studio-20261022/` belong to the separate finish review.",
+    "keyCharacteristics": [
+      "Pale blue continuity and generous spacing.",
+      "Confident headings with readable supporting copy.",
+      "Blue actions and quiet borders.",
+      "Purposeful motion with reduced-motion handling."
+    ],
+    "rules": [],
+    "dos": [
+      "Do extend the existing Manrope/Sora pairing and root palette.",
+      "Do use open rows for linked service summaries and contained surfaces for functional tools.",
+      "Do preserve visible focus, direct calendar access and the email quote alternative.",
+      "Do keep Nevel anchored and local to the assistant welcome state."
+    ],
+    "donts": [
+      "Don't turn the chosen Nevel effect into a site-wide background treatment.",
+      "Don't replace the established identity with a new font or accent without a brand decision.",
+      "Don't simulate available appointment slots or booking confirmation."
+    ]
+  }
+}

@@ -1,0 +1,346 @@
+/* Theo's transparent mascot and compact help chat. */
+.theo-companion {
+  --theo-blue: #315f9a;
+  --theo-dock-bottom: max(-50px, calc(env(safe-area-inset-bottom) - 50px));
+  position: fixed;
+  z-index: 1100;
+  right: max(0px, env(safe-area-inset-right));
+  bottom: var(--theo-dock-bottom);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 112px;
+  pointer-events: none;
+  transition: width 300ms cubic-bezier(.22,1,.36,1), bottom 440ms cubic-bezier(.16,1,.3,1);
+}
+.theo-companion.is-intro-waiting {
+  visibility: hidden;
+  opacity: 0;
+  transform: translate3d(0, 120%, 0);
+  transition: none;
+}
+.theo-companion.is-intro-entering {
+  visibility: visible;
+  opacity: 0;
+  transform: translate3d(0, calc(100% + 24px), 0);
+  transition: none !important;
+}
+.theo-companion.is-intro-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: width 300ms cubic-bezier(.22,1,.36,1), bottom 440ms cubic-bezier(.16,1,.3,1), opacity 480ms ease, transform 760ms cubic-bezier(.16, 1, .3, 1);
+}
+.theo-companion.is-returning { transition: width 300ms cubic-bezier(.22,1,.36,1), bottom 520ms cubic-bezier(.22,1,.36,1), opacity 480ms ease, transform 760ms cubic-bezier(.16,1,.3,1); }
+.theo-companion.is-closing.is-standing-before-drop { bottom: max(12px, env(safe-area-inset-bottom)); }
+.theo-companion.is-closing.is-returning:not(.is-standing-before-drop) {
+  transition: width 300ms cubic-bezier(.22,1,.36,1), bottom 640ms cubic-bezier(.37,0,.25,1), opacity 480ms ease, transform 760ms cubic-bezier(.16,1,.3,1);
+}
+.theo-intro {
+  position: absolute;
+  z-index: 1099;
+  width: min(300px, calc(100vw - 40px));
+  aspect-ratio: 1052 / 876;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: 50% 74%;
+  transform: none;
+  transition: none;
+}
+.theo-intro.is-visible { opacity: 1; transform: none; }
+.theo-intro.is-jumping { animation: theo-jump-fall 1900ms forwards; }
+.hero-section .hero-primary.is-theo-recoiling {
+  transform-origin: 50% 50%;
+  animation: theo-button-recoil 2200ms both;
+}
+.hero-section .hero-primary.is-theo-recoiling::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 50%;
+  width: 32%;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(12, 24, 42, .2);
+  content: "";
+  filter: blur(5px);
+  pointer-events: none;
+  animation: theo-contact-shadow 2200ms both;
+}
+.theo-intro video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  object-fit: contain;
+  transform: scale(1.12);
+  transform-origin: 50% 74%;
+}
+@keyframes theo-jump-fall {
+  0% { transform: translateY(0) rotate(0) scale(1); animation-timing-function: cubic-bezier(.4, 0, .7, .45); }
+  10% { transform: translateY(7px) rotate(0) scale(1, .97); animation-timing-function: cubic-bezier(.2, .75, .25, 1); }
+  16% { transform: translateY(-28px) rotate(0) scale(1.055); animation-timing-function: cubic-bezier(.4, .08, .82, .65); }
+  23% { transform: translateY(-2px) rotate(2deg) scale(1.075); animation-timing-function: cubic-bezier(.28, .46, .7, .55); }
+  31% { transform: translateY(35px) rotate(3deg) scale(1.1); animation-timing-function: linear; }
+  37% { transform: translateY(85px) rotate(4deg) scale(1.11); animation-timing-function: linear; }
+  42% { transform: translateY(130px) rotate(4deg) scale(1.12); animation-timing-function: linear; }
+  48% { transform: translateY(190px) rotate(5deg) scale(1.12); animation-timing-function: linear; }
+  54% { transform: translateY(265px) rotate(6deg) scale(1.12); animation-timing-function: linear; }
+  60% { transform: translateY(410px) rotate(6deg) scale(1.12); opacity: 1; animation-timing-function: linear; }
+  66% { transform: translateY(560px) rotate(6deg) scale(1.12); opacity: 1; animation-timing-function: linear; }
+  73% { transform: translateY(760px) rotate(6deg) scale(1.12); opacity: 1; animation-timing-function: linear; }
+  80% { transform: translateY(1200px) rotate(6deg) scale(1.12); opacity: 1; animation-timing-function: linear; }
+  88% { transform: translateY(2100px) rotate(6deg) scale(1.12); opacity: 1; animation-timing-function: linear; }
+  92% { transform: translateY(3000px) rotate(6deg) scale(1.12); opacity: .86; animation-timing-function: linear; }
+  96% { transform: translateY(4100px) rotate(6deg) scale(1.12); opacity: .42; animation-timing-function: linear; }
+  100% { transform: translateY(5200px) rotate(6deg) scale(1.12); opacity: 0; }
+}
+@keyframes theo-button-recoil {
+  0% { transform: translateY(0) scaleY(1); box-shadow: 0 8px 18px color-mix(in srgb, var(--color-accent), transparent 82%); animation-timing-function: cubic-bezier(.4, 0, .7, .45); }
+  32% { transform: translateY(5px) scaleY(.988); box-shadow: 0 3px 9px rgba(12, 28, 48, .14); animation-timing-function: cubic-bezier(.2, .7, .25, 1); }
+  41% { transform: translateY(5px) scaleY(.988); box-shadow: 0 3px 9px rgba(12, 28, 48, .14); animation-timing-function: cubic-bezier(.22, .8, .25, 1); }
+  68% { transform: translateY(0) scaleY(1); box-shadow: 0 8px 18px color-mix(in srgb, var(--color-accent), transparent 82%); animation-timing-function: cubic-bezier(.3, .8, .3, 1); }
+  84% { transform: translateY(-1px) scaleY(1.003); box-shadow: 0 7px 16px color-mix(in srgb, var(--color-accent), transparent 82%); animation-timing-function: cubic-bezier(.16, 1, .3, 1); }
+  93% { transform: translateY(1px) scaleY(.998); box-shadow: 0 8px 18px color-mix(in srgb, var(--color-accent), transparent 82%); animation-timing-function: cubic-bezier(.16, 1, .3, 1); }
+  100% { transform: translateY(0) scaleY(1); box-shadow: 0 8px 18px color-mix(in srgb, var(--color-accent), transparent 82%); }
+}
+@keyframes theo-contact-shadow {
+  0%, 16% { opacity: 0; transform: translateX(-50%) scale(.7); }
+  32%, 41% { opacity: .58; transform: translateX(-50%) scale(1); }
+  68% { opacity: .16; transform: translateX(-50%) scale(.82); }
+  100% { opacity: 0; transform: translateX(-50%) scale(.72); }
+}
+.theo-companion.is-open {
+  flex-direction: row-reverse;
+  width: calc(112px + 12px + min(408px, calc(100vw - 150px)));
+  bottom: max(12px, env(safe-area-inset-bottom));
+}
+.theo-companion.is-hovered:not(.is-open) { bottom: max(-18px, calc(env(safe-area-inset-bottom) - 18px)); }
+.theo-trigger {
+  position: relative;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 112px;
+  height: 112px;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: none;
+}
+.theo-trigger:focus-visible { outline: 3px solid var(--theo-blue); outline-offset: 2px; }
+.theo-companion.is-hovered:not(.is-open) .theo-trigger::before {
+  position: absolute;
+  z-index: 1;
+  top: -112px;
+  right: -4px;
+  bottom: 0;
+  left: -4px;
+  border-radius: 56px 56px 18px 18px;
+  background: transparent;
+  content: "";
+}
+.theo-trigger video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  transform: rotate(0deg);
+  clip-path: inset(0);
+  filter: drop-shadow(0 7px 9px rgb(22 47 75 / 19%));
+  transition: transform 520ms cubic-bezier(.2,.8,.2,1), width 520ms cubic-bezier(.2,.8,.2,1), height 520ms cubic-bezier(.2,.8,.2,1), top 520ms cubic-bezier(.2,.8,.2,1), bottom 520ms cubic-bezier(.2,.8,.2,1), left 520ms cubic-bezier(.2,.8,.2,1), clip-path 520ms cubic-bezier(.2,.8,.2,1);
+}
+.theo-companion:not(.is-hovered):not(.is-open) .theo-trigger video {
+  position: absolute;
+  top: auto;
+  bottom: -17%;
+  left: -17.5%;
+  width: 135%;
+  height: 135%;
+  object-fit: contain;
+  clip-path: inset(0 0 22% 0);
+}
+@media (min-width: 768px) {
+  .theo-companion:not(.is-hovered):not(.is-open) .theo-trigger video {
+    z-index: 1;
+  }
+}
+@media (max-width: 767px) {
+  /* Use the desktop crop: John's hands rest on the actual viewport edge. */
+  .theo-companion::before,
+  .theo-companion::after,
+  .theo-trigger::after {
+    content: none;
+  }
+}
+.theo-companion.is-hovered:not(.is-open) .theo-trigger video,
+.theo-companion.is-open .theo-trigger video,
+.theo-companion.is-closing:not(.is-open) .theo-trigger video {
+  position: absolute;
+  left: -40%;
+  bottom: 0;
+  width: 180%;
+  height: 180%;
+  object-fit: contain;
+  transform: rotate(0deg);
+  clip-path: inset(0);
+}
+.theo-companion.is-settling .theo-trigger video {
+  transition-duration: 1350ms;
+  transition-timing-function: cubic-bezier(.22,1,.36,1);
+}
+/* John conversation: a quiet studio correspondence panel. */
+.theo-panel {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: min(408px, calc(100vw - 150px));
+  height: min(610px, 80dvh);
+  min-height: 300px;
+  overflow: hidden;
+  pointer-events: auto;
+  background: #fff;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 16px 55px rgb(18 28 42 / 20%);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(.97);
+  transform-origin: bottom right;
+  transition: opacity 160ms ease, transform 200ms ease, visibility 200ms;
+}
+.theo-companion.is-open .theo-panel {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 200ms ease, transform 380ms cubic-bezier(.16,1,.3,1), visibility 0ms;
+}
+.theo-panel .theo-panel-bar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 17px 16px;
+  color: #17283e;
+  background: #fff;
+  border-bottom: 1px solid #e4eaf1;
+  font-family: Manrope, sans-serif;
+}
+.theo-panel .theo-john-avatar { flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: center; background: #f8f4eb; }
+.theo-panel-heading { display: grid; gap: 5px; min-width: 0; }
+.theo-panel .theo-panel-title { margin: 0; color: #17283e; font: 800 18px/1.2 Manrope, sans-serif; letter-spacing: -.025em; }
+.theo-panel .theo-panel-subtitle { color: #526174; font: 500 12px/1.4 Manrope, sans-serif; }
+.theo-panel .theo-panel-close { flex: 0 0 44px; display: grid; place-items: center; width: 44px; height: 44px; margin-left: 0; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #34455c; font: 24px/1 Manrope, sans-serif; cursor: pointer; transition: background 150ms ease; }
+.theo-panel-close:hover { background: #edf2f8; }
+.theo-panel .theo-panel-reset { display: grid; place-items: center; flex: 0 0 40px; width: 40px; height: 44px; margin: 0 0 0 auto; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #315f9a; cursor: pointer; transition: background 160ms ease; }
+.theo-panel .theo-panel-reset:hover:not(:disabled) { background: #edf2f8; }
+.theo-panel .theo-panel-reset:disabled { opacity: .35; cursor: default; }
+.theo-panel-reset svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+.theo-panel :is(button,a):focus-visible { outline: 2px solid #315f9a; outline-offset: 3px; }
+.theo-panel .theo-messages { display: flex; flex: 1 1 auto; flex-direction: column; align-items: flex-start; gap: 22px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 24px 20px; color: #24354c; background: #fff; font: 400 14px/1.65 Manrope, sans-serif; scrollbar-width: thin; scrollbar-color: #a8b6c7 transparent; }
+.theo-panel ::selection { color: #fff; background: #315f9a; }
+.theo-panel .theo-message { flex-shrink: 0; max-width: 94%; padding: 0; border-radius: 0; background: transparent; overflow-wrap: anywhere; animation: john-message-arrive 240ms cubic-bezier(.16,1,.3,1); }
+.theo-panel .theo-message-avatar { position: absolute; top: 0; left: -36px; width: 26px; height: 26px; border-radius: 50%; object-fit: cover; background: #f8f4eb; }
+.theo-panel .theo-message--theo { position: relative; max-width: calc(100% - 36px); margin-left: 36px; padding: 12px 14px; border-radius: 3px 15px 15px 15px; background: #f0f3f7; color: #24354c; }
+.theo-panel .theo-chat-date { display: flex; flex: 0 0 auto; align-items: center; gap: 12px; width: 100%; margin: 0 0 1px; color: #637086; font: 500 11px/1.4 Manrope, sans-serif; }
+.theo-chat-date::before, .theo-chat-date::after { flex: 1; height: 1px; background: #e6ebf1; content: ''; }
+.theo-panel .theo-message-author { display: block; margin: 0 0 5px; color: #526174; font: 700 11px/1.4 Manrope, sans-serif; }
+.theo-panel .theo-message p { margin: 0; padding: 0; color: inherit; font: inherit; white-space: pre-wrap; }
+.theo-panel .theo-message--visitor { align-self: flex-end; max-width: 88%; padding: 12px 15px; border-radius: 15px 3px 15px 15px; background: #234b80; color: #fff; }
+.theo-panel .theo-message--visitor .theo-message-author { color: #e1eafa; }
+.theo-panel .theo-message a { display: inline-flex; align-items: center; min-height: 36px; margin-top: 12px; padding: 0 11px; border: 1px solid #bccbe0; border-radius: 8px; color: #234b80; background: #fff; font: 700 12px/1.4 Manrope, sans-serif; text-decoration: none; transition: background 160ms ease; }
+.theo-panel .theo-message a:hover { background: #eaf0f8; }
+.theo-panel .theo-suggestions { display: grid; width: 100%; gap: 8px; margin: -6px 0 0; }
+.theo-panel .theo-suggestion { min-height: 44px; padding: 10px 13px; border: 1px solid #d4deea; border-radius: 10px; background: #fff; color: #234b80; font: 600 13px/1.4 Manrope, sans-serif; text-align: left; cursor: pointer; transition: border-color 150ms ease, background 150ms ease; }
+.theo-panel .theo-suggestion:hover { border-color: #315f9a; background: #eef3fa; }
+.theo-panel .theo-chat-form { display: flex; flex: 0 0 auto; align-items: flex-end; gap: 8px; margin: 12px 16px 0; padding: 6px 6px 6px 16px; border: 1px solid #e5eaf0; border-radius: 28px; background: #f2f5f8; box-shadow: none; transition: border-color 160ms ease; }
+.theo-panel .theo-chat-form:focus-within { border-color: #234b80; outline: 2px solid #234b80; outline-offset: 2px; box-shadow: none; }
+.theo-panel .theo-chat-input { display: block; flex: 1 1 auto; width: 0; min-width: 0; min-height: 44px; max-height: 112px; margin: 0; padding: 10px 0; border: 0; border-radius: 0; outline: 0; box-shadow: none; resize: none; overflow-y: hidden; background: transparent; color: #17283e; caret-color: #234b80; font: 400 16px/1.5 Manrope, sans-serif; }
+.theo-panel .theo-chat-input::placeholder { color: #526174; opacity: 1; }
+.theo-panel .theo-chat-send { display: grid; flex: 0 0 44px; place-items: center; width: 44px; height: 44px; margin: 0; padding: 0; border: 0; border-radius: 50%; background: #234b80; color: #fff; cursor: pointer; transition: background-color 160ms ease, transform 140ms ease; }
+.theo-panel .theo-chat-send:hover:not(:disabled) { background: #18385f; }
+.theo-panel .theo-chat-send:active:not(:disabled) { transform: scale(.95); }
+.theo-panel .theo-chat-send:disabled { background: #e7edf4; color: #64758c; cursor: default; }
+.theo-chat-send svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.theo-panel .theo-chat-note { flex: 0 0 auto; margin: 10px 16px 13px; padding: 0; color: #526174; font: 500 11px/1.5 Manrope, sans-serif; text-align: center; }
+/* The welcome orb yields the space to real messages after the first question. */
+.theo-panel .theo-messages.has-welcome { gap: 0; padding-top: 12px; padding-bottom: 12px; }
+.theo-panel .theo-welcome { display: flex; flex: 1 0 auto; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin: auto 0; text-align: center; }
+.theo-panel .theo-orb { position: relative; flex: 0 0 auto; width: 150px; height: 150px; margin: -12px 0 4px; isolation: isolate; }
+.theo-orb::before { position: absolute; inset: 12%; border-radius: 50%; background: radial-gradient(ellipse at 60% 40%, #84aecb, transparent 65%); filter: blur(12px); content: ''; }
+.theo-orb.has-orb-render::before { content: none; }
+.theo-orb canvas { position: relative; display: block; width: 100%; height: 100%; }
+.theo-panel .theo-welcome-title { max-width: 12ch; margin: 0 0 10px; padding: 0; color: #17283e; font: 800 25px/1.18 Manrope, sans-serif; letter-spacing: -.03em; text-wrap: balance; }
+.theo-panel .theo-welcome-intro { max-width: 30ch; margin: 0 0 16px; padding: 0; color: #526174; font: 400 13px/1.6 Manrope, sans-serif; }
+.theo-panel .theo-welcome .theo-suggestions { width: 100%; gap: 7px; margin: 0; }
+.theo-panel .theo-welcome .theo-suggestion { text-align: center; }
+@media (max-height: 740px) {
+  .theo-panel .theo-welcome { padding: 4px 0; }
+  .theo-panel .theo-orb { width: 112px; height: 112px; margin: -10px 0 0; }
+  .theo-panel .theo-welcome-title { font-size: 22px; }
+  .theo-panel .theo-welcome-intro { margin-bottom: 14px; }
+}
+.theo-panel .theo-thinking { display: flex; align-items: center; gap: 10px; min-height: 26px; color: #526174; font-size: 12px; }
+.theo-thinking-bars { display: flex; align-items: center; gap: 3px; height: 20px; }
+.theo-thinking-bars i { width: 3px; height: 8px; border-radius: 3px; background: #315f9a; animation: john-thinking 1050ms ease-in-out infinite; }
+.theo-companion:not(.is-open) .theo-thinking-bars i { animation-play-state: paused; }
+.theo-thinking-bars i:nth-child(2) { animation-delay: 120ms; }
+.theo-thinking-bars i:nth-child(3) { animation-delay: 240ms; }
+.theo-thinking-bars i:nth-child(4) { animation-delay: 360ms; }
+@keyframes john-thinking { 0%,100% { transform: scaleY(.6); opacity: .55; } 50% { transform: scaleY(1.6); opacity: 1; } }
+@keyframes john-message-arrive { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@media (max-width: 600px) {
+  .theo-companion .theo-panel, .theo-companion.is-open .theo-panel { position: fixed; right: 12px; bottom: max(18px, env(safe-area-inset-bottom)); width: calc(100vw - 24px); height: min(600px, calc(100dvh - 100px)); min-height: 240px; }
+  .theo-companion.is-open .theo-trigger { pointer-events: none; visibility: hidden; }
+  .theo-panel .theo-panel-bar { padding: 16px; }
+  .theo-panel .theo-messages { padding: 20px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .theo-panel .theo-message, .theo-thinking-bars i { animation: none; }
+}
+.theo-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 600px) {
+  .theo-intro { width: min(260px, calc(100vw - 40px)); }
+  .theo-intro video { transform: scale(1.05); }
+  .theo-companion { --theo-dock-bottom: max(-40px, calc(env(safe-area-inset-bottom) - 40px)); right: max(0px, env(safe-area-inset-right)); bottom: var(--theo-dock-bottom); gap: 8px; width: 88px; }
+  .theo-companion.is-open { width: calc(100vw - 16px); bottom: max(8px, env(safe-area-inset-bottom)); }
+  .theo-companion.is-closing.is-standing-before-drop { bottom: max(8px, env(safe-area-inset-bottom)); }
+  .theo-companion.is-hovered:not(.is-open) { bottom: max(-6px, calc(env(safe-area-inset-bottom) - 6px)); }
+  .theo-trigger { width: 88px; height: 88px; flex-basis: 88px; }
+  
+  .theo-panel-bar { flex-basis: 54px; }
+  
+  .theo-message { max-width: 94%; }
+  .theo-chat-input { font-size: 16px; }
+}
+@media (max-width: 380px) {
+  .theo-trigger { width: 72px; height: 72px; flex-basis: 72px; }
+  
+  .theo-companion { --theo-dock-bottom: max(-32px, calc(env(safe-area-inset-bottom) - 32px)); gap: 6px; width: 72px; bottom: var(--theo-dock-bottom); }
+  .theo-companion.is-open { width: calc(100vw - 12px); }
+  .theo-companion.is-hovered:not(.is-open) { bottom: max(-10px, calc(env(safe-area-inset-bottom) - 10px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .theo-intro { display: none; }
+  .theo-trigger, .theo-trigger video, .theo-companion, .theo-chat-form, .theo-chat-send { transition-duration: .01ms; }
+  .theo-companion.is-intro-visible, .theo-companion.is-returning { transition-duration: .01ms; }
+  .theo-companion.is-settling .theo-trigger video { transition-duration: .01ms; }
+  .theo-companion .theo-panel, .theo-companion.is-open .theo-panel { transition-duration: .01ms; }
+}
