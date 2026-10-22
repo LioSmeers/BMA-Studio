@@ -21,3 +21,38 @@
 .review-pause:hover,.review-pause[aria-pressed="true"] { border-color: var(--color-accent); color: var(--color-accent); }
 .reviews-section.is-paused .review-track { animation-play-state: paused; }
 @media(max-width:700px) { .review-heading { flex-wrap: wrap; gap: 1rem; } }
+
+/* A compact partner strip on phones: several marks remain visible together. */
+@media (max-width: 767px) {
+  .home-portfolio-logos.partner-ticker { margin-top: 1.75rem; padding-top: 1.25rem; }
+  .partner-ticker-heading { gap: .5rem; margin-bottom: .5rem; }
+  .partner-ticker-heading h3 { font-size: .9rem; }
+  .partner-logo-group { width: auto; gap: 12px; padding-inline: 6px; }
+  .partner-logo { flex: 0 0 100px; width: 100px; height: 64px; padding: 4px; }
+  .partner-logo img { width: 92px; height: 48px; }
+}
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .partner-logo-group { width: 100%; justify-content: center; gap: 8px; padding: 0; }
+  .partner-logo { flex: 0 0 calc((100% - 16px) / 3); width: auto; min-width: 0; }
+}
+
+.review-swipe-hint { display: none; }
+@media (max-width: 767px) {
+  .review-heading { display: block; }
+  .review-heading h2 { font-size: 1.5rem; line-height: 1.25; letter-spacing: -.035em; }
+  .reviews-section .review-pause { display: none; }
+  .review-swipe-hint { display: block; margin: .65rem 0 0; color: var(--color-muted); font-size: .85rem; line-height: 1.5; }
+  .review-marquee { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; scrollbar-width: thin; scrollbar-color: #a8b6c7 transparent; margin-top: 1rem; padding-bottom: .7rem; }
+  .review-marquee::before,.review-marquee::after { content: none; }
+  .review-track { width: max-content; animation: none; padding: 0 16px .25rem; }
+  .review-group { min-width: 0; gap: 12px; padding: 0; justify-content: flex-start; }
+  .review-group[aria-hidden="true"] { display: none; }
+  .review-card { flex: 0 0 min(320px,calc(100vw - 48px)); width: min(320px,calc(100vw - 48px)); min-height: 218px; padding: 20px; scroll-snap-align: start; }
+  .review-card blockquote { margin-block: 1rem 1.25rem; font-size: .9375rem; line-height: 1.65; letter-spacing: 0; }
+  .review-stars { font-size: .95rem; }
+  .review-author { font-size: .85rem; }
+  .review-read-more { min-height: 44px; margin-block: -.5rem .5rem; font-size: .875rem; }
+  .review-modal-close { width: 44px; height: 44px; }
+  .review-modal-card h2 { padding-right: 2.5rem; }
+  .reviews-section .trustpilot-strip { padding: .65rem .75rem .9rem; font-size: .9rem; }
+}

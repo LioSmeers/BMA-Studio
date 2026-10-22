@@ -344,3 +344,7 @@
   .theo-companion.is-settling .theo-trigger video { transition-duration: .01ms; }
   .theo-companion .theo-panel, .theo-companion.is-open .theo-panel { transition-duration: .01ms; }
 }
+
+/* Transparent compositing on mobile WebKit and other GPU paths. */
+.theo-intro video,.theo-trigger video { background: transparent; }
+.theo-orb canvas { background: transparent; -webkit-mask-image: radial-gradient(ellipse at center, #000 52%, transparent 71%); mask-image: radial-gradient(ellipse at center, #000 52%, transparent 71%); }

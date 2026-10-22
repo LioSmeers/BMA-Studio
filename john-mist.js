@@ -1,6 +1,6 @@
 /* Selected Nevel concept. Local flow deformation; the cloud never follows the cursor as an image. */
 export function mountJohnMist(canvas, panel) {
-  const gl = canvas.getContext('webgl', { alpha: true, antialias: false, premultipliedAlpha: false, depth: false });
+  const gl = canvas.getContext('webgl', { alpha: true, antialias: false, premultipliedAlpha: true, preserveDrawingBuffer: true, depth: false });
   if (!gl) return () => {};
   const vertex = `attribute vec2 position; varying vec2 uv;
     void main(){ uv=position; gl_Position=vec4(position,0.,1.); }`;
@@ -30,7 +30,8 @@ export function mountJohnMist(canvas, panel) {
       vec3 color=mix(vec3(.12,.29,.51),vec3(.19,.43,.72),smoothstep(.2,.6,fog));
       color=mix(color,vec3(.30,.68,.86),smoothstep(.43,.75,wisps)*.7);
       alpha*=1.-smoothstep(.9,1.48,length(p));
-      gl_FragColor=vec4(color,clamp(alpha,0.,.88));
+      float a=clamp(alpha,0.,.88);
+      gl_FragColor=vec4(color*a,a);
     }`;
   const compile = (type, source) => {
     const shader = gl.createShader(type);
@@ -72,6 +73,8 @@ export function mountJohnMist(canvas, panel) {
     gl.uniform2f(mouseUniform, x, y);
     gl.uniform2f(velocityUniform, vx, vy);
     gl.uniform1f(influenceUniform, strength);
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
   };
   const visible = () => !document.hidden && panel.getAttribute('aria-hidden') === 'false' && canvas.isConnected;

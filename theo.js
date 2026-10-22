@@ -2,6 +2,11 @@
 (() => {
   if (window.self !== window.top || document.querySelector('.theo-companion')) return;
 
+  // iOS browsers and Safari require HEVC alpha; Chromium keeps the VP9 alpha source.
+  const appleVideo = /iPad|iPhone|iPod/.test(navigator.userAgent)
+    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+    || (/Safari/.test(navigator.userAgent) && !/Chrome|Chromium|Edg|OPR|Android/.test(navigator.userAgent));
+  const johnSources = name => `${appleVideo ? `<source src="/public/${name}.mov?v=20261022-alpha" type='video/quicktime; codecs="hvc1"'>` : ''}<source src="/public/${name}.webm" type="video/webm">`;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const introTarget = document.querySelector('.hero-primary');
   const playHomeIntro = location.pathname === '/' && introTarget && !reducedMotion.matches;
@@ -15,7 +20,7 @@
   }
   root.innerHTML = `
     <button class="theo-trigger" type="button" aria-label="Open de chat met John" aria-controls="theo-chat-panel" aria-expanded="false" title="Stel je vraag aan John">
-      <video muted playsinline preload="auto" aria-hidden="true"><source src="/public/john-interactief-transparant.webm" type="video/webm"></video>
+      <video muted playsinline preload="auto" aria-hidden="true">${johnSources('john-interactief-transparant')}</video>
     </button>
     <aside class="theo-panel" id="theo-chat-panel" aria-label="Chat met John" aria-hidden="true" inert>
       <div class="theo-panel-bar">
@@ -69,7 +74,7 @@
     const stage = document.createElement('div');
     stage.className = 'theo-intro';
     stage.setAttribute('aria-hidden', 'true');
-    stage.innerHTML = '<video muted playsinline preload="auto" tabindex="-1"><source src="/public/john-normaal-zwaaien-vallen-transparant.webm?v=20261019-john1" type="video/webm"></video>';
+    stage.innerHTML = `<video muted playsinline preload="auto" tabindex="-1">${johnSources('john-normaal-zwaaien-vallen-transparant')}</video>`;
     const introVideo = stage.querySelector('video');
     const pageLayer = document.documentElement;
     let finished = false;
@@ -318,7 +323,7 @@
     welcome.querySelector('.theo-welcome-intro').textContent = t('welcomeIntro');
     messages.classList.add('has-welcome');
     messages.append(welcome);
-    import('/john-mist.js?v=20261022-flow1').then(({ mountJohnMist }) => {
+    import('/john-mist.js?v=20261022-mobile-alpha').then(({ mountJohnMist }) => {
       if (!welcome.isConnected) return;
       disposeWelcomeOrb = mountJohnMist(welcome.querySelector('canvas'), panel);
     }).catch(() => {});

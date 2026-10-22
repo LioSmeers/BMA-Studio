@@ -1,0 +1,58 @@
+/* Phone composition: content first, without scaling down touch targets or body copy. */
+@media (max-width: 767px) {
+  .services-page .services-story-hero,
+  .portfolio-page .page-hero,
+  .about-page .studio-hero {
+    min-height: auto;
+    padding-block: 7rem 2.5rem;
+  }
+  .services-page .services-hero-copy .services-page-title,
+  .portfolio-page .portfolio-hero-copy h1,
+  .about-page .studio-hero-copy h1,
+  .booking-intro h1 {
+    font-size: clamp(2rem,8.2vw,2.4rem);
+    line-height: 1.12;
+    letter-spacing: -.035em;
+    max-width: 22ch;
+  }
+  .services-page .services-hero-copy > p,
+  .portfolio-page .portfolio-hero-copy > p,
+  .about-page .studio-hero-copy > p {
+    margin-top: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .services-scroll-cue { margin-top: 1.25rem; }
+  .services-page .services-section { padding-block: 2.25rem; }
+  .services-page .services-section-heading { margin-bottom: 1.5rem; }
+  .services-page .services-section-heading h2,
+  .studio-bio h2,.studio-process h2,.studio-next h2 {
+    font-size: clamp(1.65rem,6.8vw,1.95rem);
+    line-height: 1.2;
+    letter-spacing: -.03em;
+  }
+  .service-chapter { padding-block: 2rem; row-gap: 1rem; }
+  .service-chapter-title { font-size: clamp(1.65rem,7vw,2rem); line-height: 1.16; max-width: 20ch; }
+  .service-art { min-height: 12.5rem; }
+  .portfolio-page .portfolio-card { gap: 1rem; padding-block: 2rem; }
+  .portfolio-page .portfolio-copy h2 { font-size: 1.5rem; line-height: 1.22; }
+  .portfolio-page .portfolio-summary { font-size: 1rem; line-height: 1.65; }
+  .home-portfolio-copy { padding: 1rem; }
+  .home-portfolio-copy h3 { font-size: 1.2rem; line-height: 1.25; }
+  .home-portfolio-copy p { font-size: .9375rem; line-height: 1.65; }
+  .home-services-section,.home-portfolio-section,.home-cta-section { --section-padding: 2.5rem; }
+  .home-services-section .section-heading h2,
+  .home-portfolio-section .section-heading h2 { font-size: 1.8rem; line-height: 1.2; }
+  .studio-intro-grid { gap: 1.75rem; }
+  .studio-service-line { padding-block: 1rem; }
+  .studio-service-line strong { font-size: 1.8rem; }
+  .studio-introduction { padding-bottom: 2.5rem; }
+  .studio-process,.studio-next { padding-block: 2.5rem; }
+  .booking-main { padding-top: 7rem; }
+  .booking-email { padding: 1.2rem; }
+  .case-hero { min-height: auto; padding-block: 7rem 2.25rem; }
+  .case-intro h1 { font-size: clamp(1.9rem,8vw,2.3rem); line-height: 1.15; letter-spacing: -.035em; }
+  .case-page .case-lead { font-size: 1rem; line-height: 1.65; }
+  .case-page .section { --section-padding: 2.25rem; }
+  .case-breadcrumbs { flex-wrap: wrap; row-gap: .4rem; font-size: .8rem; }
+}
