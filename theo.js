@@ -31,12 +31,11 @@
       <div class="theo-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
       <form class="theo-chat-form">
         <label class="theo-sr-only" for="theo-chat-input">Bericht aan John</label>
-        <textarea class="theo-chat-input" id="theo-chat-input" name="question" rows="1" maxlength="500" autocomplete="off" aria-describedby="theo-chat-note" placeholder="Vraag John…" required></textarea>
+        <textarea class="theo-chat-input" id="theo-chat-input" name="question" rows="1" maxlength="500" autocomplete="off" placeholder="Vraag John…" required></textarea>
         <button class="theo-chat-send" type="submit" aria-label="Verstuur je vraag" title="Verstuur" disabled>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7" /></svg>
         </button>
       </form>
-      <p class="theo-chat-note" id="theo-chat-note">John geeft automatische antwoorden op basis van de website.</p>
     </aside>`;
   document.body.append(root);
 
@@ -259,7 +258,7 @@
       heading: 'John', subtitle: 'Je BMA Studio-assistent',
       reset: 'Nieuw gesprek',
       closeButton: 'Sluit de chat', inputLabel: 'Bericht aan John', placeholder: 'Vraag John…',
-      send: 'Verstuur je vraag', note: 'AI-assistent · Je berichten worden via OpenAI verwerkt.',
+      send: 'Verstuur je vraag',
       greeting: 'Aangenaam, ik ben John. Wat wil je weten over websites, content of campagnes?',
       welcomeTitle: 'Waar kan ik je mee helpen?',
       welcomeIntro: 'Stel je vraag over websites, content of campagnes.',
@@ -282,7 +281,7 @@
       heading: 'John', subtitle: 'Your BMA Studio assistant',
       reset: 'New conversation',
       closeButton: 'Close the chat', inputLabel: 'Message John', placeholder: 'Ask John…',
-      send: 'Send your question', note: 'AI assistant · Your messages are processed via OpenAI.',
+      send: 'Send your question',
       greeting: 'Hello, I’m John. What would you like to know about websites, content or campaigns?',
       welcomeTitle: 'How can I help you?',
       welcomeIntro: 'Ask me about websites, content or campaigns.',
@@ -715,7 +714,6 @@
     input.placeholder = t('placeholder');
     root.querySelector('.theo-chat-send').setAttribute('aria-label', t('send'));
     sendButton.title = t('send');
-    root.querySelector('.theo-chat-note').textContent = t('note');
     const welcome = messages.querySelector('.theo-welcome');
     if (welcome) {
       welcome.querySelector('.theo-welcome-title').textContent = t('welcomeTitle');
