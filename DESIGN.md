@@ -145,3 +145,6 @@ Below 768px, partner marks use 100px slots with 12px gaps and 48px image height.
 
 ### Compact phone page family
 `mobile-refinements.css` is the final, <=767px-only layer. Services, Portfolio, About and Booking titles share `clamp(2rem,8.2vw,2.4rem)` with 1.12 line height. Page introductions begin at 7rem and no longer impose tall viewport-based minimum heights. Service headings use 1.65–2rem; project names use 1.5rem. Body text remains 1rem with generous line spacing. Calendar and mascot animation positions are not altered by this layer. Current 360px captures under `.impeccable/review/studio-20261022/compact-*.png` show the refined page family.
+
+### Mobile John playback recovery
+Transparent PNG posters keep John visible before video decoding and during autoplay restrictions. Apple HEVC sources advertise `video/mp4; codecs=hvc1`, while other browsers retain VP9 WebM. The home intro starts playback without waiting for `loadeddata`; mobile waits until the CTA intersects the viewport instead of skipping the intro. The former 2.5-second load cutoff is removed. An autoplay rejection waits for a real pointer/touch gesture; reduced-motion preference continues to skip the intro. Mobile Chromium playback was observed reaching the jump at video time 1.122 seconds. Physical iPhone/Safari confirmation remains outstanding.

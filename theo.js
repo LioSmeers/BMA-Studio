@@ -6,10 +6,10 @@
   const appleVideo = /iPad|iPhone|iPod/.test(navigator.userAgent)
     || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
     || (/Safari/.test(navigator.userAgent) && !/Chrome|Chromium|Edg|OPR|Android/.test(navigator.userAgent));
-  const johnSources = name => `${appleVideo ? `<source src="/public/${name}.mov?v=20261022-alpha" type='video/quicktime; codecs="hvc1"'>` : ''}<source src="/public/${name}.webm" type="video/webm">`;
+  const johnSources = name => `${appleVideo ? `<source src="/public/${name}.mov?v=20261022-alpha" type='video/mp4; codecs="hvc1"'>` : ''}<source src="/public/${name}.webm" type="video/webm">`;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const introTarget = document.querySelector('.hero-primary');
-  const playHomeIntro = location.pathname === '/' && introTarget && !reducedMotion.matches;
+  const playHomeIntro = ['/', '/index.html'].includes(location.pathname) && introTarget && !reducedMotion.matches;
   const root = document.createElement('div');
   root.className = 'theo-companion';
   root.setAttribute('data-no-translate', '');
@@ -20,7 +20,7 @@
   }
   root.innerHTML = `
     <button class="theo-trigger" type="button" aria-label="Open de chat met John" aria-controls="theo-chat-panel" aria-expanded="false" title="Stel je vraag aan John">
-      <video muted playsinline preload="auto" aria-hidden="true">${johnSources('john-interactief-transparant')}</video>
+      <video muted playsinline webkit-playsinline preload="auto" poster="/assets/john/john-idle.png" aria-hidden="true">${johnSources('john-interactief-transparant')}</video>
     </button>
     <aside class="theo-panel" id="theo-chat-panel" aria-label="Chat met John" aria-hidden="true" inert>
       <div class="theo-panel-bar">
@@ -45,6 +45,8 @@
   const closeButton = root.querySelector('.theo-panel-close');
   const resetButton = root.querySelector('.theo-panel-reset');
   const video = root.querySelector('video');
+  video.muted = video.defaultMuted = true;
+  video.playsInline = true;
   const form = root.querySelector('.theo-chat-form');
   const input = root.querySelector('.theo-chat-input');
   const sendButton = root.querySelector('.theo-chat-send');
@@ -74,7 +76,7 @@
     const stage = document.createElement('div');
     stage.className = 'theo-intro';
     stage.setAttribute('aria-hidden', 'true');
-    stage.innerHTML = `<video muted playsinline preload="auto" tabindex="-1">${johnSources('john-normaal-zwaaien-vallen-transparant')}</video>`;
+    stage.innerHTML = `<video muted playsinline webkit-playsinline preload="auto" poster="/assets/john/john-jump-start.png" tabindex="-1">${johnSources('john-normaal-zwaaien-vallen-transparant')}</video>`;
     const introVideo = stage.querySelector('video');
     const pageLayer = document.documentElement;
     let finished = false;
@@ -101,6 +103,8 @@
       window.clearTimeout(jumpFinishTimer);
       window.clearTimeout(playDelayTimer);
       window.cancelAnimationFrame(jumpWatchFrame);
+      document.removeEventListener('pointerdown', resumeIntroPlayback);
+      document.removeEventListener('touchend', resumeIntroPlayback);
       target.classList.remove('is-theo-recoiling');
       target.removeEventListener('animationend', onButtonRecoilEnd);
       window.removeEventListener('resize', placeIntro);
@@ -185,18 +189,42 @@
       if (reducedMotion.matches) skipIntro();
     }
 
+    const seekStart = () => {
+      if (!started || introVideo.currentTime > .2) return;
+      try { introVideo.currentTime = .18; } catch { /* Metadata may still be loading. */ }
+    };
+    function resumeIntroPlayback() {
+      if (finished || jumpStarted) return;
+      // Calling play() from a real touch also recovers iOS low-power autoplay blocking.
+      introVideo.play().then(() => {
+        document.removeEventListener('pointerdown', resumeIntroPlayback);
+        document.removeEventListener('touchend', resumeIntroPlayback);
+        window.cancelAnimationFrame(jumpWatchFrame);
+        jumpWatchFrame = window.requestAnimationFrame(checkIntroVideoTime);
+        window.clearTimeout(fallbackTimer);
+        fallbackTimer = window.setTimeout(() => {
+          if (!jumpStarted && !introVideo.paused) startJump();
+        }, 6500);
+      }).catch(error => {
+        if (error.name === 'NotAllowedError' || error.name === 'AbortError') {
+          // Keep the transparent starting pose visible until the browser permits playback.
+          document.addEventListener('pointerdown', resumeIntroPlayback, { passive: true });
+          document.addEventListener('touchend', resumeIntroPlayback, { passive: true });
+        } else revealCompanion();
+      });
+    }
     const playWhenReady = () => {
       if (started || finished) return;
       started = true;
       placeIntro();
       stage.classList.add('is-visible');
-      introVideo.currentTime = 0.18;
+      introVideo.muted = introVideo.defaultMuted = true;
+      introVideo.playsInline = true;
+      seekStart();
       playDelayTimer = window.setTimeout(() => {
         if (finished) return;
-        introVideo.playbackRate = 0.85;
-        introVideo.play()
-          .then(() => { jumpWatchFrame = window.requestAnimationFrame(checkIntroVideoTime); })
-          .catch(revealCompanion);
+        introVideo.playbackRate = .85;
+        resumeIntroPlayback();
       }, 450);
     };
 
@@ -204,19 +232,25 @@
     window.addEventListener('resize', placeIntro, { passive: true });
     document.addEventListener('visibilitychange', onVisibilityChange);
     reducedMotion.addEventListener('change', onMotionPreferenceChange);
-    introVideo.addEventListener('loadeddata', playWhenReady, { once: true });
+    introVideo.addEventListener('loadedmetadata', seekStart, { once: true });
     stage.addEventListener('animationend', onIntroAnimationEnd);
     introVideo.addEventListener('error', revealCompanion, { once: true });
-    if (introVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) playWhenReady();
-    window.setTimeout(() => {
-      if (!started && !finished) revealCompanion();
-    }, 2500);
-    fallbackTimer = window.setTimeout(() => {
-      if (!jumpStarted) startJump();
-    }, 6500);
+    // Do not wait for loadeddata: mobile Safari may defer decoding until play() is called.
+    playWhenReady();
   };
 
-  if (playHomeIntro) startHomeIntro();
+  if (playHomeIntro) {
+    // A phone's browser bars or delayed layout can put the CTA below the initial viewport.
+    // Start when the button is actually visible, instead of silently skipping the jump.
+    if (matchMedia('(max-width: 767px)').matches && 'IntersectionObserver' in window) {
+      const introVisibility = new IntersectionObserver(entries => {
+        if (!entries.some(entry => entry.isIntersecting) || document.hidden) return;
+        introVisibility.disconnect();
+        startHomeIntro();
+      }, { threshold: .2 });
+      introVisibility.observe(introTarget);
+    } else startHomeIntro();
+  }
 
   const language = () => document.documentElement.lang.toLowerCase().startsWith('en') ? 'en' : 'nl';
   const copy = {
