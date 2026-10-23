@@ -1,0 +1,28 @@
+/* Project evidence and AI workflow in the existing BMA system. */
+.case-story .container { max-width: 66rem; }
+.case-story-row { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr); gap: 2.5rem; border-top: 1px solid var(--color-border); padding-block: 2rem; }
+.case-story-row h2 { margin: 0; font-size: clamp(1.3rem, 2vw, 1.65rem); line-height: 1.3; letter-spacing: -.025em; }
+.case-story-row :is(p, ul) { margin: 0; font-size: 1.05rem; line-height: 1.8; color: var(--color-muted); max-width: 65ch; }
+.case-story-row ul { padding-left: 1.2rem; }
+.case-story-row li + li { margin-top: .35rem; }
+.case-client-quote { margin: 2rem 0 0; padding: clamp(1.5rem, 4vw, 3rem); border-radius: 16px; background: var(--color-accent-soft); }
+.case-client-quote h2 { margin: 0 0 1.25rem; font-size: 1.1rem; line-height: 1.4; color: var(--color-accent); }
+.case-client-quote blockquote { margin: 0 0 1.5rem; max-width: 48ch; font-size: clamp(1.25rem, 2.5vw, 1.8rem); line-height: 1.5; font-weight: 600; letter-spacing: -.02em; }
+.case-client-quote figcaption { font-size: .9rem; line-height: 1.6; }
+.case-quote-en, .case-translation-note { display: none; }
+html[lang^="en"] .case-quote-nl { display: none; }
+html[lang^="en"] .case-quote-en { display: block; }
+html[lang^="en"] .case-translation-note { display: block; margin: -1rem 0 1.2rem; font-size: .8rem; color: var(--color-muted); }
+.service-chapter .ai-workflow { box-shadow: none; border-radius: 16px; background: #edf3fa; }
+.ai-workflow h4 { font-size: 1.1rem; line-height: 1.4; margin: 0 0 1rem; color: var(--color-accent); }
+.ai-workflow ol { margin: 0; padding-left: 1.5rem; }
+.ai-workflow li { padding: .7rem 0 .7rem .4rem; color: var(--color-text); font-size: .95rem; line-height: 1.5; }
+.ai-workflow li + li { border-top: 1px solid #cbd9e9; }
+.ai-workflow li::marker { color: var(--color-accent); font-weight: 800; }
+.service-chapter .ai-workflow figcaption { font-size: .85rem; letter-spacing: 0; color: #47576b; }
+@media (max-width: 767px) {
+  .case-story-row { grid-template-columns: 1fr; gap: .7rem; padding-block: 1.5rem; }
+  .case-story-row :is(p, ul) { font-size: 1rem; }
+  .case-client-quote { margin-top: 1rem; padding: 1.4rem; }
+  .case-client-quote blockquote { font-size: 1.25rem; }
+}

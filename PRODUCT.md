@@ -12,9 +12,9 @@ BMA Studio richt zich op bedrijven, van kleine ondernemingen tot grote bedrijven
 
 ## Product Purpose
 
-De website presenteert BMA Studio en zijn aanbod: applicaties maken, websites bouwen, advertenties maken en sociale media onderhouden. Deze activiteiten zijn bevestigd door de eigenaar.
+De website presenteert BMA Studio en zijn aanbod: applicaties maken, websites bouwen, advertenties maken en sociale media onderhouden. Deze activiteiten zijn bevestigd door de eigenaar. Op 23 oktober 2026 bevestigde de eigenaar ook AI-assistenten en automatisering als actief aanbod.
 
-De bestaande website laat bezoekers diensten en projecten bekijken en contact opnemen. Projectaanvragen als primaire succesmaatstaf is nog niet expliciet bevestigd.
+De bestaande website laat bezoekers diensten en projecten bekijken en contact opnemen. De eigenaar wil bezoekers een passende dienst laten kiezen en een gesprek of projectaanvraag laten starten.
 
 ## Positioning
 
@@ -48,6 +48,6 @@ De repository bevat bestaande projectpagina’s voor Thor Smeers, Moeskops Gevel
 
 ## Open Decisions
 
-- Primaire websiteconversie en meetbare succescriteria.
+- Meetbare succescriteria voor projectaanvragen.
 - Onderscheidende belofte en eventuele prioriteit tussen diensten of klantsegmenten.
-- Specifieke toegankelijkheidseisen en eventuele bijkomende talen.
+- Specifieke toegankelijkheidseisen. Nederlands en Engels zijn bevestigd.

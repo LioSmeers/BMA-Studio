@@ -5,6 +5,7 @@ Het werkt voor bedrijven van verschillende groottes in België, niet alleen voor
 
 Diensten:
 - Websites: aanbod, realisaties en contactinformatie helder samenbrengen.
+- AI-assistenten en automatisering: terugkerende zakelijke vragen beantwoorden en stappen zoals het verzamelen en doorsturen van aanvragen verbinden. Vooraf afspreken welke informatie wordt gebruikt en waar de klant controle houdt. Geen foutloosheid of tijdwinst beloven.
 - Webapps: bijvoorbeeld boekingen, betalingen of een klantenportaal, afgestemd op het bedrijf.
 - Content en sociale media: foto's, video's en posts in de huisstijl; ook contentplanning en kanaalbeheer.
 - Campagnes en advertenties: voor een actie of nieuw aanbod, met bijpassende beelden, video's en teksten.
@@ -27,7 +28,7 @@ Contact:
 - E-mail: info@bmastudio.be
 - Telefoon: +32 460 97 37 36
 - Adres: Sieberg 13 bus 3, 3770 Riemst
-- Kennismaking en offerte per mail: https://bmastudio.be/contact.html
+- Kennismaking via de kalender en offerteaanvragen via de mailknop: https://bmastudio.be/contact.html
 `;
 
 export const JOHN_INSTRUCTIONS = `

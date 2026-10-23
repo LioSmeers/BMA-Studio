@@ -3941,3 +3941,15 @@ body[data-page-theme="dark"] .footer .brand-logo-footer {
   .services-title-text { opacity: 1; transform: none; transition: none; }
   .services-row { transition-delay: 0ms !important; }
 }
+
+/* Keep details content paintable while closing; the controller owns the final close. */
+.agency-service-summary[open]::details-content { content-visibility: visible; }
+@media (min-width:768px) {
+ .agency-service-summary.is-closing > summary { transform: none; }
+ .agency-service-summary.is-closing > .service-more { transform: translateX(100%); pointer-events: none; }
+ .service-more { transition-duration: 620ms; }
+}
+@media (max-width:767px) {
+ .agency-service-summary[open] > .service-more { height: auto; padding: 0 1rem 1rem; visibility: visible; transition: none; }
+ .agency-service-summary[open] .service-more-inner { opacity: 1; transform: none; }
+}

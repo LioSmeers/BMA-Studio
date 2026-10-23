@@ -149,7 +149,7 @@
   background: transparent;
   content: "";
 }
-.theo-trigger video {
+.theo-trigger :is(video,.john-video-poster) {
   display: block;
   width: 100%;
   height: 100%;
@@ -160,7 +160,7 @@
   filter: drop-shadow(0 7px 9px rgb(22 47 75 / 19%));
   transition: transform 520ms cubic-bezier(.2,.8,.2,1), width 520ms cubic-bezier(.2,.8,.2,1), height 520ms cubic-bezier(.2,.8,.2,1), top 520ms cubic-bezier(.2,.8,.2,1), bottom 520ms cubic-bezier(.2,.8,.2,1), left 520ms cubic-bezier(.2,.8,.2,1), clip-path 520ms cubic-bezier(.2,.8,.2,1);
 }
-.theo-companion:not(.is-hovered):not(.is-open) .theo-trigger video {
+.theo-companion:not(.is-hovered):not(.is-open) .theo-trigger :is(video,.john-video-poster) {
   position: absolute;
   top: auto;
   bottom: -17%;
@@ -171,7 +171,7 @@
   clip-path: inset(0 0 22% 0);
 }
 @media (min-width: 768px) {
-  .theo-companion:not(.is-hovered):not(.is-open) .theo-trigger video {
+  .theo-companion:not(.is-hovered):not(.is-open) .theo-trigger :is(video,.john-video-poster) {
     z-index: 1;
   }
 }
@@ -183,9 +183,9 @@
     content: none;
   }
 }
-.theo-companion.is-hovered:not(.is-open) .theo-trigger video,
-.theo-companion.is-open .theo-trigger video,
-.theo-companion.is-closing:not(.is-open) .theo-trigger video {
+.theo-companion.is-hovered:not(.is-open) .theo-trigger :is(video,.john-video-poster),
+.theo-companion.is-open .theo-trigger :is(video,.john-video-poster),
+.theo-companion.is-closing:not(.is-open) .theo-trigger :is(video,.john-video-poster) {
   position: absolute;
   left: -40%;
   bottom: 0;
@@ -195,7 +195,7 @@
   transform: rotate(0deg);
   clip-path: inset(0);
 }
-.theo-companion.is-settling .theo-trigger video {
+.theo-companion.is-settling .theo-trigger :is(video,.john-video-poster) {
   transition-duration: 1350ms;
   transition-timing-function: cubic-bezier(.22,1,.36,1);
 }
@@ -339,12 +339,23 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .theo-intro { display: none; }
-  .theo-trigger, .theo-trigger video, .theo-companion, .theo-chat-form, .theo-chat-send { transition-duration: .01ms; }
+  .theo-trigger, .theo-trigger :is(video,.john-video-poster), .theo-companion, .theo-chat-form, .theo-chat-send { transition-duration: .01ms; }
   .theo-companion.is-intro-visible, .theo-companion.is-returning { transition-duration: .01ms; }
-  .theo-companion.is-settling .theo-trigger video { transition-duration: .01ms; }
+  .theo-companion.is-settling .theo-trigger :is(video,.john-video-poster) { transition-duration: .01ms; }
   .theo-companion .theo-panel, .theo-companion.is-open .theo-panel { transition-duration: .01ms; }
 }
 
 /* Transparent compositing on mobile WebKit and other GPU paths. */
-.theo-intro video,.theo-trigger video { background: transparent; }
+.theo-intro video,.theo-trigger :is(video,.john-video-poster) { background: transparent; }
 .theo-orb canvas { background: transparent; -webkit-mask-image: radial-gradient(ellipse at center, #000 52%, transparent 71%); mask-image: radial-gradient(ellipse at center, #000 52%, transparent 71%); }
+
+.john-video-poster { z-index: 2; }
+.theo-trigger .john-video-poster[hidden] { display: none; }
+@media (max-width:767px) {
+ .theo-companion { --theo-dock-bottom: max(-25px,calc(env(safe-area-inset-bottom) - 25px)); }
+ .theo-trigger :is(video,.john-video-poster) { filter: none; }
+}
+@media (max-width:380px) {
+ .theo-companion { --theo-dock-bottom: max(-20px,calc(env(safe-area-inset-bottom) - 20px)); }
+}
+.theo-trigger .john-video-poster { max-width: none; }
