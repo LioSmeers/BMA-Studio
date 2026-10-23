@@ -6,7 +6,8 @@
   const appleVideo = /iPad|iPhone|iPod/.test(navigator.userAgent)
     || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
     || (/Safari/.test(navigator.userAgent) && !/Chrome|Chromium|Edg|OPR|Android/.test(navigator.userAgent));
-  const johnSources = name => `${appleVideo ? `<source src="/public/${name}.mov?v=20261022-alpha" type='video/mp4; codecs="hvc1"'>` : ''}<source src="/public/${name}.webm" type="video/webm">`;
+  const mobileJohn = matchMedia('(max-width: 767px)').matches;
+  const johnSources = name => `${appleVideo ? `<source src="/public/${name}${mobileJohn ? "-mobile" : ""}.mov?v=20261023-dock" type='video/mp4; codecs="hvc1"'>` : ''}<source src="/public/${name}.webm" type="video/webm">`;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const introTarget = document.querySelector('.hero-primary');
   const playHomeIntro = ['/', '/index.html'].includes(location.pathname) && introTarget && !reducedMotion.matches;
@@ -20,7 +21,7 @@
   }
   root.innerHTML = `
     <button class="theo-trigger" type="button" aria-label="Open de chat met John" aria-controls="theo-chat-panel" aria-expanded="false" title="Stel je vraag aan John">
-      <video muted playsinline webkit-playsinline preload="auto" poster="/assets/john/john-idle.png" aria-hidden="true">${johnSources('john-interactief-transparant')}</video>
+      <video muted playsinline webkit-playsinline preload="auto" poster="/assets/john/john-idle.png" aria-hidden="true">${johnSources('john-interactief-transparant')}</video><img class="john-video-poster" src="/assets/john/john-idle.png" width="960" height="960" alt="" aria-hidden="true">
     </button>
     <aside class="theo-panel" id="theo-chat-panel" aria-label="Chat met John" aria-hidden="true" inert>
       <div class="theo-panel-bar">
@@ -46,6 +47,14 @@
   const video = root.querySelector('video');
   video.muted = video.defaultMuted = true;
   video.playsInline = true;
+  const idlePoster = root.querySelector('.john-video-poster');
+  const syncIdlePoster = event => {
+    if (event?.type === 'playing' && video.readyState >= 2) { idlePoster.hidden = true; return; }
+    if (video.currentTime < .05 || (Number.isFinite(video.duration) && video.currentTime >= video.duration - .08)) idlePoster.hidden = false;
+    else if (video.readyState >= 2) idlePoster.hidden = true;
+  };
+  ['loadeddata', 'seeked', 'playing', 'pause', 'ended'].forEach(event => video.addEventListener(event, syncIdlePoster));
+  video.addEventListener('error', () => { idlePoster.hidden = false; });
   const form = root.querySelector('.theo-chat-form');
   const input = root.querySelector('.theo-chat-input');
   const sendButton = root.querySelector('.theo-chat-send');
@@ -222,7 +231,7 @@
       seekStart();
       playDelayTimer = window.setTimeout(() => {
         if (finished) return;
-        introVideo.playbackRate = .85;
+        introVideo.playbackRate = mobileJohn ? 1 : .85;
         resumeIntroPlayback();
       }, 450);
     };
@@ -234,6 +243,8 @@
     introVideo.addEventListener('loadedmetadata', seekStart, { once: true });
     stage.addEventListener('animationend', onIntroAnimationEnd);
     introVideo.addEventListener('error', revealCompanion, { once: true });
+    // Recover the dock even when a browser never resolves its media-play promise.
+    fallbackTimer = window.setTimeout(revealCompanion, 15000);
     // Do not wait for loadeddata: mobile Safari may defer decoding until play() is called.
     playWhenReady();
   };
@@ -242,9 +253,15 @@
     // A phone's browser bars or delayed layout can put the CTA below the initial viewport.
     // Start when the button is actually visible, instead of silently skipping the jump.
     if (matchMedia('(max-width: 767px)').matches && 'IntersectionObserver' in window) {
+      root.classList.remove('is-intro-waiting');
+      root.removeAttribute('aria-hidden');
+      root.inert = false;
       const introVisibility = new IntersectionObserver(entries => {
         if (!entries.some(entry => entry.isIntersecting) || document.hidden) return;
         introVisibility.disconnect();
+        root.classList.add('is-intro-waiting');
+        root.setAttribute('aria-hidden', 'true');
+        root.inert = true;
         startHomeIntro();
       }, { threshold: .2 });
       introVisibility.observe(introTarget);
@@ -263,7 +280,7 @@
       welcomeTitle: 'Waar kan ik je mee helpen?',
       welcomeIntro: 'Stel je vraag over websites, content of campagnes.',
       suggestionsIntro: 'Voorbeeldvragen',
-      services: 'BMA Studio maakt websites en apps, content en video’s, beheert sociale media en helpt met campagnes, advertenties en onderhoud. Bekijk alle diensten op de dienstenpagina.',
+      services: 'BMA Studio maakt websites en apps, AI-assistenten en automatisering, content en video’s, en helpt met sociale media, campagnes en onderhoud. Bekijk alle diensten op de dienstenpagina.',
       price: 'De prijs hangt af van wat je nodig hebt. Bespreek je project met Lio voor een voorstel op maat.',
       contact: 'Je kan je vraag sturen via het contactformulier, mailen naar info@bmastudio.be of bellen naar +32 460 97 37 36.',
       work: 'Je kan voorbeelden van ons werk bekijken op de portfoliopagina. Daar vind je ook links naar de websites van klanten.',
@@ -286,7 +303,7 @@
       welcomeTitle: 'How can I help you?',
       welcomeIntro: 'Ask me about websites, content or campaigns.',
       suggestionsIntro: 'Suggested questions',
-      services: 'BMA Studio builds websites and apps, creates content and video, manages social media, and helps with campaigns, ads and maintenance. See all services on our services page.',
+      services: 'BMA Studio builds websites and apps, AI assistants and automation, creates content and video, and helps with social media, campaigns and maintenance. See all services on our services page.',
       price: 'Pricing depends on what you need. Discuss your project with Lio for a tailored proposal.',
       contact: 'You can send your question through the contact form, email info@bmastudio.be or call +32 460 97 37 36.',
       work: 'You can see examples of our work on the portfolio page, including links to client websites.',

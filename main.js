@@ -357,6 +357,52 @@ const portfolioProjectDetails = {
 };
 
 const translations = {
+	"Mail kort wat je nodig hebt. Lio bekijkt je vraag en neemt contact met je op.": "Briefly email us what you need. Lio will review your enquiry and get in touch.",
+	"Mail voor een offerte": "Email for a quote",
+	"Helder online.": "Clear online.",
+	"Minder handwerk.": "Less manual work.",
+	"We maken je aanbod duidelijk met websites en content. Met apps, AI-assistenten en automatisering helpen we terugkerend werk vereenvoudigen.": "We make your offer clear through websites and content. Apps, AI assistants and automation help simplify repetitive work.",
+	"AI & automatisering": "AI & automation",
+	"Beantwoord terugkerende vragen en verbind stappen in je werkproces.": "Answer recurring questions and connect steps in your workflow.",
+	"Een AI-assistent voor vragen over je bedrijf, of een workflow die aanvragen verzamelt en doorstuurt. We spreken af wat automatisch gebeurt en waar jij controle houdt.": "An AI assistant for questions about your business, or a workflow that collects and routes enquiries. We agree what runs automatically and where you stay in control.",
+	"Bekijk AI & automatisering": "Explore AI & automation",
+	"Maak je aanbod duidelijk, help klanten hun volgende stap zetten en vereenvoudig terugkerend werk. Van website tot AI-assistent, met één aanspreekpunt.": "Make your offer clear, help customers take their next step and simplify repetitive work. From website to AI assistant, with one point of contact.",
+	"Van vraag naar opvolging.": "From enquiry to follow-up.",
+	"Een klant stelt een vraag": "A customer asks a question",
+	"De assistent maakt een voorstel": "The assistant drafts a response",
+	"Jij bepaalt de volgende stap": "You decide the next step",
+	"Voorbeeld van een workflow, afgestemd op jouw proces.": "An example workflow, tailored to your process.",
+	"Liever eerst een offerte?": "Prefer a quote first?",
+	"Stuur je projectvraag via het korte formulier. Je hoeft geen mailprogramma te openen.": "Send your project enquiry using the short form. No email app needed.",
+	"Vraag een offerte aan": "Request a quote",
+	"Of mail rechtstreeks:": "Or email directly:",
+	"Vertel wat je wil aanpakken.": "Tell us what you want to tackle.",
+	"Een nieuwe website, minder handmatig werk of een concrete campagne? Geef kort aan wat je nodig hebt. Lio bekijkt je vraag en neemt contact met je op.": "A new website, less manual work or a specific campaign? Briefly describe what you need. Lio will review your enquiry and get in touch.",
+	"Naam": "Name",
+	"E-mailadres": "Email address",
+	"Bedrijf (optioneel)": "Business (optional)",
+	"Wat wil je laten maken of verbeteren?": "What would you like to build or improve?",
+	"Verstuur je aanvraag": "Send your enquiry",
+	"We gebruiken je gegevens om je aanvraag te beantwoorden.": "We use your details to respond to your enquiry.",
+	"Lees het privacybeleid": "Read the privacy policy",
+	"Hoe geef je vastgoedfoto’s, video en sociale content één herkenbare plek, zodat bezoekers het werk én het aanbod begrijpen?": "How do you give property photos, video and social content one recognisable home, so visitors understand both the work and the offer?",
+	"Een beeldgerichte portfolio met een duidelijke scheiding tussen werk, diensten en contact. De fotografie krijgt de ruimte; navigatie maakt de volgende stap vindbaar.": "An image-led portfolio with a clear separation between work, services and contact. Photography takes centre stage, while navigation makes the next step easy to find.",
+	"Visueel portfolio voor vastgoedmedia": "Visual portfolio for property media",
+	"Overzicht van fotografie, video en content": "Overview of photography, video and content",
+	"Directe routes naar contact": "Direct routes to contact",
+	"De ontwerpvraag": "The design question",
+	"De oplossing": "The solution",
+	"Geleverd werk": "Delivered work",
+	"Wat de klant zegt": "What the client says",
+	"Klantreactie": "Client feedback",
+	"Vertaling van de oorspronkelijke klantreactie.": "Translation of the original client feedback.",
+	"Hoe maak je voegwerken en gevelrenovatie begrijpelijk voor iemand die zijn woning wil laten aanpakken?": "How do you explain pointing and facade renovation to a homeowner considering work on their property?",
+	"Een overzichtelijke one-page website: diensten, beelden van het vakwerk en contact staan samen op één plek. Bezoekers kunnen van oriëntatie naar een offerteaanvraag.": "A clear one-page website brings services, images of the work and contact details together. Visitors can move from exploring the offer to requesting a quote.",
+	"One-page website met duidelijke navigatie": "One-page website with clear navigation",
+	"Presentatie van diensten en gevelwerken": "Presentation of services and facade work",
+	"Contactmogelijkheden voor offerteaanvragen": "Contact options for quote enquiries",
+	"Lees de case": "Read the case",
+
 	"Onze diensten": "Our services",
 	"Meer uitleg": "More details",
 	"Minder uitleg": "Less detail",
@@ -2195,159 +2241,75 @@ function setupHeroPixelReveal() {
 }
 
 function setupHomeServiceCards() {
-	const cards = document.querySelectorAll(".agency-service-summary");
-	const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-	const useTapAccordion = window.matchMedia("(max-width: 767px)").matches || !canHover;
-	const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-	if (!cards.length) return;
-	const panelStates = new WeakMap();
-	cards.forEach((card) => panelStates.set(card, { panel: card.querySelector(".service-more"), motion: 0 }));
-	const closeTapCard = (card) => {
-		const state = panelStates.get(card);
-		if (!state?.panel || !card.open || card.classList.contains("is-closing")) return;
-		const motion = ++state.motion;
-		if (reduceMotion) {
-			card.classList.remove("is-closing");
-			card.open = false;
-			state.panel.style.height = "0px";
-			return;
-		}
-		card.classList.add("is-closing");
-		state.panel.style.height = `${state.panel.getBoundingClientRect().height}px`;
-		void state.panel.offsetHeight;
-		requestAnimationFrame(() => {
-			if (motion !== state.motion || !card.open || !card.classList.contains("is-closing")) return;
-			state.panel.style.height = "0px";
-		});
-	};
-
-	cards.forEach((card) => {
-		let openedByHover = false;
-		let pinnedByClick = false;
-		let pointerInside = false;
-		let closeAfterFocus = false;
-		const summary = card.querySelector("summary");
-		const morePanel = card.querySelector(".service-more");
-		if (useTapAccordion) {
-			const state = panelStates.get(card);
-			morePanel?.addEventListener("transitionend", (event) => {
-				if (event.target !== morePanel || event.propertyName !== "height") return;
-				if (card.classList.contains("is-closing")) {
-					card.classList.remove("is-closing");
-					card.open = false;
-					morePanel.style.height = "0px";
-				} else if (card.open) morePanel.style.height = "auto";
-			});
-			summary?.addEventListener("click", (event) => {
-				event.preventDefault();
-				if (!morePanel) {
-					card.open = !card.open;
-					return;
-				}
-
-				const wasOpen = card.open;
-				const wasClosing = card.classList.contains("is-closing");
-				if (wasOpen && !wasClosing) {
-					closeTapCard(card);
-					return;
-				}
-
-				const motion = ++state.motion;
-				card.classList.remove("is-closing");
-				if (!wasOpen) {
-					card.open = true;
-					morePanel.style.height = "0px";
-				} else {
-					morePanel.style.height = `${morePanel.getBoundingClientRect().height}px`;
-					void morePanel.offsetHeight;
-				}
-				cards.forEach((otherCard) => {
-					if (otherCard !== card) closeTapCard(otherCard);
-				});
-				if (reduceMotion) {
-					morePanel.style.height = "auto";
-					return;
-				}
-				requestAnimationFrame(() => {
-					if (motion !== state.motion || !card.open || card.classList.contains("is-closing")) return;
-					morePanel.style.height = `${morePanel.scrollHeight}px`;
-				});
-			});
-			return;
-		}
-
-		card.addEventListener("pointerenter", (event) => {
-			if (event.pointerType !== "mouse") return;
-			pointerInside = true;
-			if (card.open) return;
-
-			cards.forEach((otherCard) => {
-				if (otherCard !== card) otherCard.open = false;
-			});
-			openedByHover = true;
-			card.open = true;
-		});
-
-		morePanel?.addEventListener("click", (event) => {
-			if (event.target.closest("a, button") || !card.open) return;
-			card.open = false;
-			openedByHover = false;
-			pinnedByClick = false;
-			closeAfterFocus = false;
-		});
-
-		summary?.addEventListener("click", (event) => {
-			// A mouse click on a card already opened by hover should pin it open,
-			// rather than immediately toggling it shut. Keyboard activation stays native.
-			if (event.detail === 0) return;
-
-			if (openedByHover && card.open) {
-				event.preventDefault();
-				openedByHover = false;
-				pinnedByClick = true;
-				closeAfterFocus = false;
-				return;
-			}
-
-			if (pinnedByClick && card.open) {
-				event.preventDefault();
-				card.open = false;
-				pinnedByClick = false;
-			}
-		});
-
-		card.addEventListener("pointerleave", (event) => {
-			if (event.pointerType !== "mouse") return;
-			pointerInside = false;
-			if (!openedByHover) return;
-
-			if (card.contains(document.activeElement)) {
-				closeAfterFocus = true;
-				return;
-			}
-
-			card.open = false;
-			openedByHover = false;
-			closeAfterFocus = false;
-		});
-
-		card.addEventListener("focusout", (event) => {
-			if (event.relatedTarget && card.contains(event.relatedTarget)) return;
-			if (!closeAfterFocus || pointerInside) return;
-
-			card.open = false;
-			openedByHover = false;
-			closeAfterFocus = false;
-		});
-
-		card.addEventListener("toggle", () => {
-			if (!card.open) {
-				openedByHover = false;
-				pinnedByClick = false;
-				closeAfterFocus = false;
-			}
-		});
-	});
+ const cards = [...document.querySelectorAll('.agency-service-summary')];
+ if (!cards.length) return;
+ const phone = matchMedia('(max-width: 767px)');
+ const hover = matchMedia('(hover: hover) and (pointer: fine)');
+ const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+ const states = new Map(cards.map(card => [card, { target: card.open, animation: null, timer: 0, pinned: false }]));
+ const setOpen = (card, expanded) => {
+  const state = states.get(card);
+  if (!expanded && !card.open && !state.animation) return;
+  const from = card.getBoundingClientRect().height;
+  state.animation?.cancel(); clearTimeout(state.timer);
+  state.animation = null; state.target = expanded;
+  card.classList.remove('is-closing');
+  const panel = card.querySelector('.service-more');
+  panel.style.removeProperty('height');
+  if (phone.matches) {
+   card.open = true;
+   const to = expanded ? card.getBoundingClientRect().height : card.querySelector('summary').getBoundingClientRect().height + 2;
+   if (reduced.matches || !card.animate) { card.open = expanded; return; }
+   state.animation = card.animate([{height: `${from}px`}, {height: `${to}px`}], {
+    duration: expanded ? 420 : 340, easing: 'cubic-bezier(.22,.8,.22,1)', fill: 'both'
+   });
+   const animation = state.animation;
+   animation.finished.then(() => {
+    if (state.animation !== animation) return;
+    card.open = state.target; animation.cancel(); state.animation = null;
+   }).catch(() => {});
+  } else if (expanded) card.open = true;
+  else if (card.open && !reduced.matches) {
+   card.classList.add('is-closing');
+   state.timer = setTimeout(() => { if (!state.target) { card.open = false; card.classList.remove('is-closing'); } }, 650);
+  } else card.open = false;
+ };
+ cards.forEach(card => {
+  const state = states.get(card);
+  card.querySelector('summary').addEventListener('click', event => {
+   event.preventDefault();
+   const expanded = !phone.matches && hover.matches && state.target && !state.pinned ? true : !state.target;
+   state.pinned = expanded;
+   if (expanded) cards.forEach(other => { if (other !== card) { states.get(other).pinned = false; setOpen(other, false); } });
+   setOpen(card, expanded);
+  });
+  card.querySelector('.service-more').addEventListener('click', event => {
+   if (phone.matches || event.target.closest('a,button')) return;
+   state.pinned = false; setOpen(card, false);
+  });
+  card.addEventListener('keydown', event => {
+   if (event.key !== 'Escape' || !state.target) return;
+   state.pinned = false; setOpen(card, false); card.querySelector('summary').focus({preventScroll:true});
+  });
+  card.addEventListener('pointerenter', event => {
+   if (phone.matches || !hover.matches || event.pointerType !== 'mouse' || state.target) return;
+   cards.forEach(other => { if (other !== card) { states.get(other).pinned = false; setOpen(other, false); } });
+   setOpen(card, true);
+  });
+  card.addEventListener('pointerleave', event => {
+   if (!phone.matches && event.pointerType === 'mouse' && !state.pinned && !card.contains(document.activeElement)) setOpen(card, false);
+  });
+  card.addEventListener('focusout', event => {
+   if (!phone.matches && !state.pinned && !card.contains(event.relatedTarget) && !card.matches(':hover')) setOpen(card, false);
+  });
+ });
+ const resetLayout = () => cards.forEach(card => {
+  const state = states.get(card); state.animation?.cancel(); clearTimeout(state.timer);
+  state.animation = null; state.target = false; state.pinned = false;
+  card.open = false; card.classList.remove('is-closing');
+  card.querySelector('.service-more').style.removeProperty('height');
+ });
+ phone.addEventListener('change', resetLayout);
 }
 
 function setupPagePressure() {
@@ -2706,8 +2668,11 @@ contactForm?.addEventListener("submit", async (event) => {
 	contactSubmit.disabled = true;
 	contactSubmit.textContent = currentLanguage === "en" ? "Sending..." : "Bericht versturen...";
 
+	const submissionController = new AbortController();
+	const submissionTimeout = setTimeout(() => submissionController.abort(), 15000);
 	try {
 		const response = await fetch(contactForm.dataset.endpoint, {
+			signal: submissionController.signal,
 			method: "POST",
 			body: new FormData(contactForm),
 			headers: {
@@ -2737,7 +2702,9 @@ contactForm?.addEventListener("submit", async (event) => {
 		isContactSubmitting = false;
 		contactSubmit.disabled = false;
 		contactSubmit.textContent =
-			currentLanguage === "en" ? "Send your message" : "Verstuur je bericht";
+			currentLanguage === "en" ? "Send your enquiry" : "Verstuur je aanvraag";
+	} finally {
+		clearTimeout(submissionTimeout);
 	}
 });
 
