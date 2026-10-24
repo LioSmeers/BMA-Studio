@@ -352,10 +352,19 @@
 .john-video-poster { z-index: 2; }
 .theo-trigger .john-video-poster[hidden] { display: none; }
 @media (max-width:767px) {
- .theo-companion { --theo-dock-bottom: max(-25px,calc(env(safe-area-inset-bottom) - 25px)); }
  .theo-trigger :is(video,.john-video-poster) { filter: none; }
 }
-@media (max-width:380px) {
- .theo-companion { --theo-dock-bottom: max(-20px,calc(env(safe-area-inset-bottom) - 20px)); }
-}
 .theo-trigger .john-video-poster { max-width: none; }
+
+/* The resting frame's hands end at 58% of its square canvas.
+   At the 135% idle scale this meets the viewport at -40% of the trigger.
+   Do not add the safe-area inset here: the hands lean on the visible edge. */
+@media (max-width: 1199px) {
+  .theo-companion { --theo-dock-bottom: -45px; }
+}
+@media (max-width: 600px) {
+  .theo-companion { --theo-dock-bottom: -35px; }
+}
+@media (max-width: 380px) {
+  .theo-companion { --theo-dock-bottom: -29px; }
+}

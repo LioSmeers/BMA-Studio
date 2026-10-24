@@ -357,6 +357,8 @@ const portfolioProjectDetails = {
 };
 
 const translations = {
+	"Jouw ambitie.": "Your ambition.",
+	"Wij bouwen mee.": "Let’s build it together.",
 	"Mail kort wat je nodig hebt. Lio bekijkt je vraag en neemt contact met je op.": "Briefly email us what you need. Lio will review your enquiry and get in touch.",
 	"Mail voor een offerte": "Email for a quote",
 	"Helder online.": "Clear online.",

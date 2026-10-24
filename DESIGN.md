@@ -154,3 +154,6 @@ Home service cards use one responsive controller: live media queries, cancellabl
 
 ### Offer clarity and enquiry route
 The homepage pairs a clearer online offer with less repetitive manual work. AI assistants and automation are a confirmed sixth service, using the existing service accordion and story chapters. Contact keeps the calendar and a compact email quote option near the introduction. The owner subsequently requested removal of the on-site form; the quote button opens a prepared email. Thor and Moeskops cases use open ruled rows for design question, solution and delivered work, followed by existing client feedback. English quotes are explicitly marked as translations. No business performance figures are claimed.
+
+### Resting mascot at compact viewport edges
+Below 1200px, the idle dock aligns the bottom of John’s hands with the actual visible viewport edge: -45px for the 112px trigger, -35px for 88px, and -29px for 72px. Safe-area padding is not added to the resting offset, since that raised his hands above the edge. Chat open, hover and jump geometry remain independently controlled.
