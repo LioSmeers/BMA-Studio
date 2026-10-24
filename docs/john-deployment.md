@@ -6,7 +6,7 @@ The static site connects to `https://bma-john.sneeuwpio.workers.dev/api/john` in
 
 - Entry: `server/worker.mjs`, configured in `wrangler.jsonc`.
 - Shared handler and business context: `server/john.mjs` and `server/john-knowledge.mjs`.
-- Run `npx wrangler deploy` after changes to the server or knowledge.
+- Load the private deploy token from `~/.config/bma-studio/cloudflare.env`, then run `npx wrangler deploy` after changes to the server or knowledge.
 - Store `OPENAI_API_KEY` only as a Cloudflare Worker secret using `npx wrangler secret put OPENAI_API_KEY`. Never commit or embed the key.
 - Model: `gpt-6-luna`. NL/EN follows the site's selected language.
 - Requests have input limits, origin checks, per-isolate rate limits and an upstream timeout. Prompts and answers are not logged by the application; OpenAI storage is disabled in the request.
