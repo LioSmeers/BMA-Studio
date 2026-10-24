@@ -324,7 +324,9 @@
   const conversation = [];
   const languageThreads = new Map();
   let chatLanguage = language();
-  const apiBase = ['localhost', '127.0.0.1'].includes(location.hostname) ? 'http://127.0.0.1:8787' : '';
+  const apiBase = ['localhost', '127.0.0.1'].includes(location.hostname)
+    ? 'http://127.0.0.1:8787'
+    : 'https://bma-john.sneeuwpio.workers.dev';
   const t = key => copy[language()][key];
   const fitComposer = () => {
     input.style.height = 'auto';
