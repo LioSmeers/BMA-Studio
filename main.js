@@ -426,7 +426,6 @@ const translations = {
 	"Fictief voorbeeld: ontdek hoe website, onderhoud en content samenwerken bij Atelier Noor.": "Fictional example: see how a website, maintenance and content work together at Atelier Noor.",
 	"Build: maak je website of app. Maintain: houd alles up-to-date. Attract: bereik klanten met content en campagnes.": "Build: create your website or app. Maintain: keep it up to date. Attract: reach customers with content and campaigns.",
 
-	"Reviews pauzeren": "Pause reviews",
 	"We bouwen websites en apps, maken content en houden je digitale werk bij. Rechtstreeks met Lio.": "We build websites and apps, create content and keep your digital work up to date. Directly with Lio.",
 	"Websites & apps": "Websites & apps",
 	"Content & campagnes": "Content & campaigns",
@@ -718,8 +717,6 @@ const translations = {
 	"Trustpilot reviews": "Trustpilot reviews",
 	"Goed werk. Blije klanten.": "Good work. Happy clients.",
 	"Alle reviews": "All reviews",
-	"Reviews pauzeren": "Pause reviews",
-	"Reviews hervatten": "Resume reviews",
 	"Trustpilot review van Manu Moeskops: Perfecte samenwerking gehad met Berend.": "Trustpilot review by Manu Moeskops: Perfect collaboration with Berend.",
 	"Trustpilot review van azdin bhdz: Ils ont fait un tres bon site.": "Trustpilot review by azdin bhdz: They made a very good site.",
 	"Trustpilot review van Noemi Hurkens: Mooie website gemaakt": "Trustpilot review by Noemi Hurkens: Beautiful website made",
@@ -2090,13 +2087,6 @@ if (reviewModal) {
 		}
 	});
 }
-
-const reviewPause = document.querySelector("[data-review-pause]");
-reviewPause?.addEventListener("click", () => {
-	const paused = reviewPause.getAttribute("aria-pressed") !== "true";
-	reviewPause.setAttribute("aria-pressed", String(paused));
-	document.querySelector(".reviews-section")?.classList.toggle("is-paused", paused);
-});
 
 function fillPackageMessage(packageKey) {
 	const item = getPackageDetails(packageKey);

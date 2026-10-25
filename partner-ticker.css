@@ -17,9 +17,6 @@
  .partner-logo img { max-width: 100%; }
 }
 
-.review-pause { border: 1px solid var(--color-border); border-radius: 999px; padding: .6rem .9rem; background: var(--color-surface); color: var(--color-muted); font: inherit; font-size: .8125rem; }
-.review-pause:hover,.review-pause[aria-pressed="true"] { border-color: var(--color-accent); color: var(--color-accent); }
-.reviews-section.is-paused .review-track { animation-play-state: paused; }
 @media(max-width:700px) { .review-heading { flex-wrap: wrap; gap: 1rem; } }
 
 /* A compact partner strip on phones: several marks remain visible together. */
@@ -40,7 +37,6 @@
 @media (max-width: 767px) {
   .review-heading { display: block; }
   .review-heading h2 { font-size: 1.5rem; line-height: 1.25; letter-spacing: -.035em; }
-  .reviews-section .review-pause { display: none; }
   .review-swipe-hint { display: block; margin: .65rem 0 0; color: var(--color-muted); font-size: .85rem; line-height: 1.5; }
   .review-marquee { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; scrollbar-width: thin; scrollbar-color: #a8b6c7 transparent; margin-top: 1rem; padding-bottom: .7rem; }
   .review-marquee::before,.review-marquee::after { content: none; }
