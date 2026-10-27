@@ -1484,7 +1484,8 @@ const translations = {
 	"open de boekingspagina": "open the booking page",
 	"Plan een vrijblijvend gesprek van 15 minuten met Lio Smeers of vraag per mail een offerte aan voor je website, app of content.": "Book a 15-minute, no-obligation call with Lio Smeers or request a quote by email for your website, app or content.",
 	"Plan je gesprek met BMA Studio": "Plan your call with BMA Studio",
-
+	"Ja. Je kan gratis een websiteanalyse of een eerste websiteprototype aanvragen om je project te bespreken.": "Yes. You can request a free website analysis or initial website prototype to discuss your project.",
+	"Klantprojecten.": "Client projects.",
 };
 
 const titleTranslations = {
@@ -1559,7 +1560,28 @@ const titleTranslations = {
 	"Bespreek je project met Lio | BMA Studio": "Discuss your project with Lio | BMA Studio",
 	"Wil je een website, app, video of campagne laten maken? Stuur je vraag naar Lio van BMA Studio via het formulier, per e-mail of telefonisch.": "Would you like a website, app, video or campaign? Send your enquiry to Lio at BMA Studio using the form, by email or by phone.",
 	"Website laten maken in Limburg | BMA Studio": "Have a website made in Limburg | BMA Studio",
-	"We bouwen websites voor lokale bedrijven in Limburg. Bekijk de werkwijze, websiteprijzen en klantprojecten van BMA Studio in Riemst.": "We build websites for local businesses in Limburg. View the process, website prices and client projects of BMA Studio in Riemst."
+	"We bouwen websites voor lokale bedrijven in Limburg. Bekijk de werkwijze, websiteprijzen en klantprojecten van BMA Studio in Riemst.": "We build websites for local businesses in Limburg. View the process, website prices and client projects of BMA Studio in Riemst.",
+	"Webdesign Limburg voor bedrijven | BMA Studio": "Web design in Limburg for businesses | BMA Studio",
+	"BMA Studio in Riemst maakt websites voor bedrijven in Limburg. Ook webapps, AI-assistenten, automatisering en content. Bespreek je project met Lio.": "BMA Studio in Riemst builds websites for businesses in Limburg. Also web apps, AI assistants, automation and content. Discuss your project with Lio.",
+	"Webdesign, apps en AI-automatisering | BMA Studio": "Web design, apps and AI automation | BMA Studio",
+	"Ontdek de diensten van BMA Studio: webdesign voor bedrijven in Limburg, webapps, AI-assistenten, automatisering, content, campagnes en onderhoud.": "Explore BMA Studio’s services: web design for businesses in Limburg, web apps, AI assistants, automation, content, campaigns and maintenance.",
+	"Webdesignrealisaties voor bedrijven | BMA Studio": "Web design projects for businesses | BMA Studio",
+	"Bekijk websites van BMA Studio voor Thor Smeers, Moeskops Gevelwerken, AGV Smeers, Kevin Claes en Sunplanet. Ontdek de aanpak en het geleverde werk.": "View BMA Studio websites for Thor Smeers, Moeskops Gevelwerken, AGV Smeers, Kevin Claes and Sunplanet. Discover the approach and work delivered.",
+	"Webdesignstudio in Riemst: Lio Smeers | BMA Studio": "Web design studio in Riemst: Lio Smeers | BMA Studio",
+	"Maak kennis met Lio Smeers van BMA Studio in Riemst. Websites, apps en content voor bedrijven in Limburg en België, met rechtstreeks contact.": "Meet Lio Smeers of BMA Studio in Riemst. Websites, apps and content for businesses in Limburg and Belgium, with direct contact.",
+	"Contact en offerte voor je website | BMA Studio": "Contact and website quotes | BMA Studio",
+	"Een website laten maken of een ander digitaal project bespreken? Plan 15 minuten met Lio van BMA Studio of mail je vraag voor een offerte op maat.": "Want a website or to discuss another digital project? Book 15 minutes with Lio at BMA Studio or email your enquiry for a tailored quote.",
+	"Webdesign voor Thor Smeers | BMA Studio": "Web design for Thor Smeers | BMA Studio",
+	"Bekijk de website die BMA Studio maakte voor Thor Smeers: vastgoedfotografie en video, een visueel portfolio, diensten en duidelijke contactmogelijkheden.": "Explore the website BMA Studio built for Thor Smeers: real estate photography and video, a visual portfolio, services and clear contact options.",
+	"Website voor Moeskops Gevelwerken | BMA Studio": "Website for Moeskops Gevelwerken | BMA Studio",
+	"Een one-page website voor Moeskops Gevelwerken: voegwerken, gevelrenovatie en contact voor offerteaanvragen. Bekijk het webdesign van BMA Studio.": "A one-page website for Moeskops Gevelwerken: pointing, facade renovation and contact for quote requests. Explore BMA Studio’s web design.",
+	"Website voor AGV Smeers | BMA Studio": "Website for AGV Smeers | BMA Studio",
+	"BMA Studio maakte een one-page website voor AGV Smeers, met gevelwerken, verbouwingen, realisaties en contact. Bekijk de aanpak en het resultaat.": "BMA Studio built a one-page website for AGV Smeers with facade work, renovations, projects and contact. Explore the approach and design.",
+	"Website voor Dakwerken Kevin Claes | BMA Studio": "Website for roofing contractor Kevin Claes | BMA Studio",
+	"Bekijk de website voor Algemene Dakwerken Kevin Claes: dakrenovatie, isolatie, zolderinrichting en realisaties, met een duidelijke route naar een offerte.": "Explore the website for Algemene Dakwerken Kevin Claes: roof renovation, insulation, attic conversion and projects, with a clear route to a quote.",
+	"Website voor Sunplanet Heusden-Zolder | BMA Studio": "Website for Sunplanet Heusden-Zolder | BMA Studio",
+	"Een one-page website voor Sunplanet in Heusden-Zolder, met zonnebanken, openingsuren en contact. Ontdek het lokale webdesignproject van BMA Studio.": "A one-page website for Sunplanet in Heusden-Zolder, with sunbeds, opening hours and contact. Discover BMA Studio’s local web design project.",
+	"Een website laten maken in Limburg? BMA Studio in Riemst verzorgt webdesign voor zelfstandigen en bedrijven. Bekijk realisaties en vraag een offerte.": "Want a website in Limburg? BMA Studio in Riemst provides web design for independent professionals and businesses. Explore projects and request a quote.",
 };
 
 const header = document.querySelector(".site-header");
@@ -1795,7 +1817,7 @@ function translateStaticText() {
 		currentLanguage === "en"
 			? titleTranslations[originalTitle] || originalTitle
 			: originalTitle;
-	document.documentElement.lang = currentLanguage === "en" ? "en" : "nl";
+	document.documentElement.lang = currentLanguage === "en" ? "en" : "nl-BE";
 	translateMetadataContent("meta[name='description']");
 	translateMetadataContent("meta[property='og:title']");
 	translateMetadataContent("meta[property='og:description']");
