@@ -324,9 +324,9 @@
   const conversation = [];
   const languageThreads = new Map();
   let chatLanguage = language();
-  const apiBase = ['localhost', '127.0.0.1'].includes(location.hostname)
-    ? 'http://127.0.0.1:8787'
-    : 'https://bma-john.sneeuwpio.workers.dev';
+  // John runs on Cloudflare, independently of the visitor's or developer's laptop.
+  const apiBase = 'https://bma-john.sneeuwpio.workers.dev';
+  const requestJohn = options => fetch(`${apiBase}/api/john`, options);
   const t = key => copy[language()][key];
   const fitComposer = () => {
     input.style.height = 'auto';
@@ -584,7 +584,7 @@
     const history = conversation.slice(-10);
     while (history.reduce((total, item) => total + item.content.length, question.length) > 5500) history.splice(0, 2);
     try {
-      const response = await fetch(`${apiBase}/api/john`, {
+      const response = await requestJohn({
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: [...history, { role: 'user', content: question }], language: language() }),
         signal: controller.signal,
