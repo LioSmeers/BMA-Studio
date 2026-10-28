@@ -2,9 +2,9 @@
 
 ## Status
 
-De wijzigingen zijn klaargemaakt voor publicatie via GitHub Pages. De live URL-controle hieronder controleert de bestaande URL’s en canonicals. De Search Console-indiening en publicatiestatus worden na uitvoering aangevuld.
+De SEO-update is op 28 oktober 2026 gecommit en gepusht naar GitHub Pages (commit `8063687`). De nieuwe homepage-metadata en sitemap zijn live gecontroleerd. Alle 12 canonieke sitemap-URL’s geven HTTP 200 zonder redirect en met een overeenkomende canonical.
 
-Sitemap voor Google Search Console na publicatie: https://bmastudio.be/sitemap.xml
+Succesvol ingediende sitemap voor Google Search Console: https://bmastudio.be/sitemap.xml
 
 ## Uitgevoerd
 
@@ -37,6 +37,7 @@ Sitemap voor Google Search Console na publicatie: https://bmastudio.be/sitemap.x
 | `project-sunplanet-heusden.html` | Website voor Sunplanet Heusden-Zolder — BMA Studio | Ja |
 | `privacy.html` | Privacyverklaring — BMA Studio | Ja |
 | `portfolio.html` | Webdesignrealisaties voor bedrijven — BMA Studio | Ja |
+| `pakketten.html` | Doorverwijzing naar onze diensten — BMA Studio | Nee |
 | `diensten/index.html` | Doorverwijzing naar diensten — BMA Studio | Nee |
 | `website-laten-maken-limburg/index.html` | Website laten maken in Limburg — BMA Studio | Ja |
 
@@ -71,6 +72,39 @@ Verder aangepast: `main.js` (vertalingen en taalcode), `sitemap.xml` (canonieke 
 | https://bmastudio.be/project-sunplanet-heusden.html | 200 | Geen | Komt overeen |
 | https://bmastudio.be/website-laten-maken-limburg/ | 200 | Geen | Komt overeen |
 
-## Publicatie en indexering
+## Google Search Console — uitvoering via Chrome
 
-Publiceer de lokale wijzigingen via de bestaande GitHub Pages-workflow. Dien daarna `https://bmastudio.be/sitemap.xml` in bij de juiste domeinproperty in Google Search Console. De sitemap maakt de pagina’s vindbaar voor crawlers; opname en posities in Google worden hiermee niet gegarandeerd.
+- De bestaande geverifieerde domeinproperty `bmastudio.be` gebruikt.
+- `https://bmastudio.be/sitemap.xml` opnieuw ingediend en Google bevestigde **Sitemap ingediend**.
+- Het sitemaprapport toont **Succesvol**, verzonden en laatst gelezen op **28 oktober 2026**, met **12 ontdekte pagina’s**.
+- De live test van de dienstenpagina meldt **URL is beschikbaar voor Google** en **Pagina kan worden geïndexeerd**.
+- Na een tijdelijke verbindingsfout met Googles reCAPTCHA-service is de pagina herladen. De volgende indexeringsaanvragen zijn daarna geaccepteerd.
+- Negen unieke URL’s zijn bevestigd met **Indexering aangevraagd** en toegevoegd aan de prioriteitscrawlwachtrij.
+- Bij de contactpagina meldde Google **Quotum overschreden**: de resterende handmatige aanvragen moeten na de dagelijkse reset opnieuw. Er is geen omweg via een ander account of property gebruikt.
+
+| URL | Laatste vastgestelde actie/status |
+| --- | --- |
+| https://bmastudio.be/website-laten-maken-limburg/ | Indexering aangevraagd; prioriteitscrawlwachtrij |
+| https://bmastudio.be/diensten.html | Indexering aangevraagd; prioriteitscrawlwachtrij |
+| https://bmastudio.be/project-kevin-claes.html | Indexering aangevraagd; prioriteitscrawlwachtrij |
+| https://bmastudio.be/project-thor-smeers.html | Indexering aangevraagd; prioriteitscrawlwachtrij |
+| https://bmastudio.be/project-agv-smeers.html | Indexering aangevraagd; prioriteitscrawlwachtrij |
+| https://bmastudio.be/project-moeskops-gevelwerken.html | Indexering aangevraagd; prioriteitscrawlwachtrij |
+| https://bmastudio.be/project-sunplanet-heusden.html | Indexering aangevraagd; prioriteitscrawlwachtrij |
+| https://bmastudio.be/ | Indexering aangevraagd; prioriteitscrawlwachtrij |
+| https://bmastudio.be/portfolio.html | Indexering aangevraagd; prioriteitscrawlwachtrij |
+| https://bmastudio.be/contact.html | Reeds geïndexeerd; nieuwe crawl geblokkeerd door dagquotum |
+| https://bmastudio.be/over-ons.html | Reeds geïndexeerd; nieuwe crawl niet aangevraagd wegens dagquotum |
+| https://bmastudio.be/privacy.html | Gevonden, nog niet geïndexeerd; in sitemap opgenomen; handmatige aanvraag uitgesteld wegens dagquotum |
+
+### Nog te doen na de dagelijkse reset
+
+1. Nieuwe crawl aanvragen voor `https://bmastudio.be/contact.html` (reeds geïndexeerd).
+2. Nieuwe crawl aanvragen voor `https://bmastudio.be/over-ons.html` (reeds geïndexeerd).
+3. Indexering aanvragen voor `https://bmastudio.be/privacy.html` (gevonden, momenteel niet geïndexeerd).
+
+Alle drie staan al in de succesvol verwerkte sitemap. Deze resterende handmatige stappen blokkeren de automatische ontdekking via de sitemap niet. Een geaccepteerd verzoek is geen bewijs van voltooide indexering of een hogere positie; Google bepaalt dat na verwerking.
+
+`robots.txt` is live beschikbaar met HTTP 200 en `text/plain`; de sitemap met HTTP 200 en `application/xml`. Robots.txt wordt door crawlers gelezen en wordt niet als inhoudelijke pagina ter indexering ingediend.
+
+Schermafbeeldingen van de sitemapbevestiging, aanvraagbevestiging en quotummelding zijn lokaal bewaard buiten de publieke repository.
