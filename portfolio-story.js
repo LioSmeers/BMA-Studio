@@ -3,7 +3,8 @@
   const stage = document.querySelector('.portfolio-story-stage');
   if (!stage || !chapters.length) return;
 
-  const desktop = matchMedia('(min-width: 1024px) and (min-height: 650px) and (prefers-reduced-motion: no-preference)');
+  const desktop = matchMedia('(min-width: 768px) and (min-height: 650px) and (prefers-reduced-motion: no-preference)');
+  document.body.dataset.portfolioMotion = 'vertical';
   const screen = document.createElement('a');
   screen.className = 'portfolio-stage-screen';
   const footer = document.createElement('div');
@@ -23,7 +24,8 @@
     const image = source.cloneNode();
     image.alt = '';
     image.className = '';
-    image.loading = index ? 'lazy' : 'eager';
+    image.loading = 'eager';
+    image.decoding = 'async';
     screen.append(image);
     images.push(image);
     const button = document.createElement('button');
@@ -39,6 +41,7 @@
 
   function setActive(index) {
     if (index === active) return;
+    stage.dataset.direction = active > index ? 'up' : 'down';
     images.forEach((image, i) => {
       image.classList.toggle('is-previous', i === active);
       image.classList.toggle('is-current', i === index);
@@ -72,7 +75,9 @@
       const rect = chapter.getBoundingClientRect();
       return Math.abs(rect.top + rect.height / 2 - center);
     });
-    setActive(distances.indexOf(Math.min(...distances)));
+    const nearest = distances.indexOf(Math.min(...distances));
+    // A small dead zone avoids flickering between projects near a boundary.
+    if (active < 0 || distances[nearest] + 32 < distances[active]) setActive(nearest);
   }
 
   function scheduleUpdate() {

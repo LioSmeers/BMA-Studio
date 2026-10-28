@@ -28,7 +28,7 @@ De bestaande website noemt Lio Smeers als oprichter en aanspreekpunt, met BMA St
 
 - Bestaande implementatie: statische HTML, gedeelde CSS en JavaScript; geen framework of buildstap in de onderzochte bestanden.
 - Bestaande pagina’s omvatten home, diensten, portfolio, projectdetails, over ons, contact en privacy.
-- Het contactformulier gebruikt FormSubmit; daarnaast zijn e-mail en telefoon beschikbaar. De werking van deze externe dienst is tijdens init niet getest.
+- Contact verloopt via de Cal.com-agenda, een voorbereide e-mail en telefoon. Het vroegere FormSubmit-formulier is verwijderd; de oude formuliercode is op 28 oktober 2026 opgeruimd.
 - Bestaande websiteprijzen en contractvoorwaarden zijn geen bevestigde productfeiten uit deze intake. Wijzig of breid ze niet uit zonder afstemming.
 
 ## Brand Commitments
@@ -51,3 +51,10 @@ De repository bevat bestaande projectpagina’s voor Thor Smeers, Moeskops Gevel
 - Meetbare succescriteria voor projectaanvragen.
 - Onderscheidende belofte en eventuele prioriteit tussen diensten of klantsegmenten.
 - Specifieke toegankelijkheidseisen. Nederlands en Engels zijn bevestigd.
+
+## Actuele zichtbaarheid — 28 oktober 2026
+
+De eigenaar wil voorlopig alleen Websites, Applicaties en AI & automatisering in het publieke dienstenoverzicht tonen. Content & sociale media, Campagnes & advertenties en Onderhoud zijn tijdelijk uit dit overzicht en de dienstenpagina gehaald. Dit vervangt de eerdere bevestigde bedrijfscapaciteiten niet door een definitieve stopzetting. Concept 1 met gelijktijdig uitschuiven en blauw inkleuren is gekozen; vaste kaartbreedtes waren een misinterpretatie en zijn teruggedraaid.
+
+
+De eigenaar heeft AI-assistenten en automatisering gesplitst. Het publieke aanbod bestaat nu uit vier aparte diensten: Websites, Applicaties, AI-assistenten en Automatisering. De homepage heeft vier uitschuivende kaarten met de gekozen tragere timing; de dienstenpagina, Over ons, interne links, Engelse teksten en lokale assistentkennis volgen dezelfde indeling. De oude #ai-automatisering-link blijft als anker naar de AI-sectie geldig.

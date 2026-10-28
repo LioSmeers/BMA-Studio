@@ -108,3 +108,8 @@ Alle drie staan al in de succesvol verwerkte sitemap. Deze resterende handmatige
 `robots.txt` is live beschikbaar met HTTP 200 en `text/plain`; de sitemap met HTTP 200 en `application/xml`. Robots.txt wordt door crawlers gelezen en wordt niet als inhoudelijke pagina ter indexering ingediend.
 
 Schermafbeeldingen van de sitemapbevestiging, aanvraagbevestiging en quotummelding zijn lokaal bewaard buiten de publieke repository.
+
+
+## Latere opschoning op 28 oktober 2026
+
+De niet-gelinkte noindex-bedankpagina is na verwijdering van het formulier op verzoek opgeruimd. De bovenstaande tabel beschrijft de eerdere SEO-controle; de sitemap en de twee redirects blijven behouden.

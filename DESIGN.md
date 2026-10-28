@@ -157,3 +157,28 @@ The homepage pairs a clearer online offer with less repetitive manual work. AI a
 
 ### Resting mascot at compact viewport edges
 Below 1200px, the idle dock aligns the bottom of John’s hands with the actual visible viewport edge: -45px for the 112px trigger, -35px for 88px, and -29px for 72px. Safe-area padding is not added to the resting offset, since that raised his hands above the edge. Chat open, hover and jump geometry remain independently controlled.
+
+### Original homepage and selected sliding service row — 28 October 2026
+
+The owner retained “Jouw ambitie. Wij bouwen mee.” and selected the simultaneous sliding concept. Above 1024px the active service expands in a horizontal row while its blue layer fades in; neighbors contract to their numbers. The fixed-card grid proposal was rejected. Layout work is contained to the fixed-height row. Summary and detail text use fixed widths during movement to avoid continuous word rewrapping. No scale transform is applied to the text. The selected timings are 480ms for expansion and 360ms for the blue surface, with a 110ms content delay.
+
+Only Websites, Applicaties and AI & automatisering remain in the public service overviews. Content/social media, campaigns/advertising and maintenance are temporarily withdrawn from those listings. On phones the three cards remain a single column of native disclosures with automatic summary height and white text on blue.
+
+Local pointer feedback and the visible-by-default content remain. Obsolete sources, earlier previews, the local archive and the unused Cavalry source have been deleted at the owner's request. Current review evidence lives outside the website project in the Codex visualization folder. Historical archive and screenshot links in earlier sections no longer refer to retained project files.
+
+
+De eigenaar heeft ook het volledige fictieve Atelier Noor/Build-Maintain-Attract-voorbeeld van de homepage laten verwijderen. Portfolio gaat nu direct over in reviews. De module, eigen stylesheet en ongebruikte vertalingen zijn verwijderd. De BMA-merkregel in de footer blijft behouden.
+
+
+De eigenaar heeft AI-assistenten en automatisering gesplitst. Het publieke aanbod bestaat nu uit vier aparte diensten: Websites, Applicaties, AI-assistenten en Automatisering. De homepage heeft vier uitschuivende kaarten met de gekozen tragere timing; de dienstenpagina, Over ons, interne links, Engelse teksten en lokale assistentkennis volgen dezelfde indeling. De oude #ai-automatisering-link blijft als anker naar de AI-sectie geldig.
+
+
+Op verzoek zijn de pauzeknoppen voor partnerlogo’s en reviews verwijderd. Beide stroken blijven automatisch bewegen, ook bij hover of focus. Reviews bewegen nu ook op telefoons; dubbele groepen en tussenruimtes sluiten naadloos op elkaar aan. De apparaatvoorkeur voor minder beweging behoudt een statische of handmatig scrollbare weergave.
+
+Portfolio scroll concepts (2026-10-28): all five CTAs read “Bekijk het project”. Preview with portfolio.html?scrollconcept=1 (crossfade), 2 (vertical), or 3 (horizontal). Comparison controls appear only with this query parameter. Default uses crossfade provisionally. Transitions use opacity/transform without masks; a 32px selection dead zone prevents boundary flicker. Ordinary mobile keeps inline project images; reduced-motion retains the static layout. Preview enables the pinned stage from 768px so it can be compared in the app's narrower browser panel; ordinary page retains the 1024px threshold.
+
+Palette approved for trial (2026-10-28): #DDF2D4 mint surfaces (home hero, reviews, CTA), #435510 olive text/dark areas, #315F9A blue actions, #F5F6FE canvas, #41B0F0 small accent (progress/selection). Secondary olive text #606B50 and border #D4DEC9 are derived neutrals. Preserve real customer imagery, logos and semantic review colours. Portfolio concept 2 (vertical) selected; comparison toolbar and alternate concepts removed. Pinned stage available from 768px with adequate height; phones/reduced motion retain inline images.
+
+2026-10-28: Owner reverted the mint/olive palette trial. Original blue, pale blue-white and dark ink restored. Portfolio vertical concept 2 retained. Services sticky sidebar extends to tablet widths from 768px; phone navigation stays pinned below the header as a horizontally scrollable row.
+
+Services correction: sticky refers to the illustration on the right, with chapter copy scrolling on the left. Implemented one persistent right stage with a crossfade between the four service illustrations; navigation sits above. Mobile, short viewports and reduced motion retain inline illustrations.

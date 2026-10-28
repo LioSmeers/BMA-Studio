@@ -466,7 +466,7 @@
   transition-delay: 140ms;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   .services-story-layout {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
@@ -582,4 +582,52 @@
     transform: none;
     transition: none;
   }
+}
+
+/* The illustration stays on the right while service copy scrolls on the left. */
+.services-visual-stage { display: none; }
+@media (min-width: 768px) and (min-height: 650px) and (prefers-reduced-motion: no-preference) {
+  .has-services-visual-stage .services-story-layout {
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: 2rem clamp(2rem, 6vw, 6rem);
+  }
+  .has-services-visual-stage .services-story-nav {
+    position: static;
+    grid-column: 1 / -1;
+    flex-flow: row wrap;
+    gap: .5rem 1.75rem;
+    border-left: 0;
+    padding: 0;
+  }
+  .has-services-visual-stage .services-story-nav a::before { content: none; }
+  .has-services-visual-stage .services-story-nav a[aria-current] { transform: none; text-decoration: underline; text-underline-offset: .4em; }
+  .has-services-visual-stage .services-chapters { grid-column: 1; grid-row: 2; }
+  .has-services-visual-stage .service-chapter {
+    display: flex;
+    min-height: 78svh;
+    align-items: center;
+    padding-block: 4rem;
+  }
+  .has-services-visual-stage .service-chapter-copy { display: flex; }
+  .has-services-visual-stage .service-chapter-title { font-size: clamp(2rem, 3.6vw, 3.7rem); }
+  .has-services-visual-stage .service-chapter > .service-art { display: none; }
+  .has-services-visual-stage .services-visual-stage {
+    position: sticky;
+    top: max(7rem, calc(50svh - 12rem));
+    display: grid;
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+    margin-top: 4rem;
+  }
+  .services-visual-stage > .service-art {
+    grid-area: 1 / 1;
+    width: 100%;
+    min-height: 24rem;
+    opacity: 0;
+    transform: translateY(1rem);
+    pointer-events: none;
+    transition: opacity 500ms ease, transform 650ms cubic-bezier(.22, 1, .36, 1);
+  }
+  .services-visual-stage > .service-art.is-current { opacity: 1; transform: none; }
 }
