@@ -8,3 +8,12 @@ dist/
 .dev.vars
 .dev.vars.*
 .wrangler/
+
+# Local source archive, screenshots and previous design-review artifacts.
+_archive/
+output/
+.impeccable/backups/
+.impeccable/critique/
+.impeccable/live/
+.impeccable/mocks/
+.impeccable/review/

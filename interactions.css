@@ -70,14 +70,6 @@
 .mi-faq.is-open .mi-answer-inner > * { transform:translateY(0) scale(1); transition-delay:70ms; }
 .mi-faq.is-open .mi-answer-inner > :is(a,button),
 .mi-faq.is-open .mi-answer-inner > :nth-child(n+2) { transition-delay:140ms; }
-.mi-faq .package-details-body { border:0; padding:0; background:transparent; border-radius:0; }
-.mi-faq.is-enhanced :is(.package-details-body,.terms-list) > * {
-  opacity:0; transform:translateY(10px);
-  transition:opacity 250ms ease,transform 460ms var(--mi-ease);
-}
-.mi-faq.is-open :is(.package-details-body,.terms-list) > * { opacity:1; transform:none; transition-delay:100ms; }
-.mi-faq.is-open :is(.package-details-body,.terms-list) > :nth-child(2) { transition-delay:145ms; }
-.mi-faq.is-open :is(.package-details-body,.terms-list) > :nth-child(n+3) { transition-delay:190ms; }
 .mi-faq .mi-answer-inner > a { margin-top:12px; margin-bottom:4px; }
 @media (prefers-reduced-motion:reduce) {
   .mi-faq, .mi-faq *, .mi-faq *::before, .mi-question::after { transition:none !important; }
@@ -85,21 +77,24 @@
 
 /* Shared motion vocabulary across public pages: feedback, navigation, selection. */
 :root { --mi-fast:180ms; --mi-medium:320ms; }
-.pricing-switch, .language-switcher { position:relative; isolation:isolate; }
-.pricing-switch::before, .language-switcher::before {
+
+.language-switcher { position:relative; isolation:isolate; }
+
+.language-switcher::before {
   content:""; position:absolute; z-index:-1; pointer-events:none;
   inset:4px auto 4px 4px; width:calc((100% - 12px)/2);
   border-radius:inherit; background:#315F9A;
   box-shadow:0 4px 12px rgba(var(--mi-blue),.18);
   transition:transform var(--mi-duration) var(--mi-spring);
 }
-.pricing-switch:has(input[value="subscription"]:checked)::before,
+
 .language-switcher:has([data-language-option="en"][aria-pressed="true"])::before { transform:translateX(calc(100% + 4px)); }
-.pricing-switch input { z-index:2; }
-.pricing-switch input:checked + span, .language-option.is-active {
+
+.language-option.is-active {
   background:transparent; box-shadow:none; color:#fff;
 }
-.pricing-switch span, .language-option { transition:color var(--mi-fast) ease; }
+
+.language-option { transition:color var(--mi-fast) ease; }
 .language-option:hover { transform:none; background:transparent; }
 .language-switcher { gap:4px; padding:4px; }
 .language-option { width:2.15rem; }
@@ -111,10 +106,6 @@
 .nav-link::after { transform-origin:left; transition:transform var(--mi-medium) var(--mi-ease); }
 .reveal { transition-duration:520ms; transition-timing-function:var(--mi-ease); }
 .mobile-menu, .mobile-nav-link { transition-timing-function:var(--mi-ease); }
-.form-row :is(input,textarea,select) {
-  transition:border-color var(--mi-fast) ease,box-shadow var(--mi-medium) var(--mi-ease),background var(--mi-fast) ease;
-}
-.form-row :is(input,textarea,select):focus-visible { outline:2px solid #315F9A; outline-offset:3px; box-shadow:0 0 0 5px rgba(var(--mi-blue),.08); }
 @media (hover:hover) and (pointer:fine) {
   :is(.primary-button,.secondary-button,.pill-button):hover { transform:translateY(-2px); box-shadow:0 10px 24px -12px rgba(var(--mi-blue),.4); }
   :is(.primary-button,.secondary-button,.pill-button):active { transform:translateY(1px) scale(.98); }
@@ -126,8 +117,10 @@
   }
 }
 @media (prefers-reduced-motion:reduce) {
-  .pricing-switch::before,.language-switcher::before,
-  :is(.primary-button,.secondary-button,.pill-button,.language-option,.reveal,.mobile-menu,.mobile-nav-link,.flow-card,.process-card,.service-card,.home-portfolio-card,.portfolio-card),.nav-link::after {
+
+.language-switcher::before,
+:is(.primary-button,.secondary-button,.pill-button,.language-option,.reveal,.mobile-menu,.mobile-nav-link,.flow-card,.process-card,.service-card,.home-portfolio-card,.portfolio-card),
+.nav-link::after {
     transition:none !important; animation:none !important;
   }
   :is(.primary-button,.secondary-button,.pill-button,.flow-card,.process-card,.service-card,.home-portfolio-card,.portfolio-card):hover { transform:none; }

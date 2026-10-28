@@ -37,12 +37,11 @@
 @media (max-width: 767px) {
   .review-heading { display: block; }
   .review-heading h2 { font-size: 1.5rem; line-height: 1.25; letter-spacing: -.035em; }
-  .review-swipe-hint { display: block; margin: .65rem 0 0; color: var(--color-muted); font-size: .85rem; line-height: 1.5; }
-  .review-marquee { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; scrollbar-width: thin; scrollbar-color: #a8b6c7 transparent; margin-top: 1rem; padding-bottom: .7rem; }
+  .review-swipe-hint { display: none; margin: .65rem 0 0; color: var(--color-muted); font-size: .85rem; line-height: 1.5; }
+  .review-marquee { overflow: hidden; margin-top: 1rem; padding-bottom: .7rem; }
   .review-marquee::before,.review-marquee::after { content: none; }
-  .review-track { width: max-content; animation: none; padding: 0 16px .25rem; }
-  .review-group { min-width: 0; gap: 12px; padding: 0; justify-content: flex-start; }
-  .review-group[aria-hidden="true"] { display: none; }
+  .review-track { width: max-content; animation: review-marquee 60s linear infinite; padding: 0 0 .25rem; }
+  .review-group { min-width: 0; gap: 12px; padding: 0 12px 0 0; justify-content: flex-start; }
   .review-card { flex: 0 0 min(320px,calc(100vw - 48px)); width: min(320px,calc(100vw - 48px)); min-height: 218px; padding: 20px; scroll-snap-align: start; }
   .review-card blockquote { margin-block: 1rem 1.25rem; font-size: .9375rem; line-height: 1.65; letter-spacing: 0; }
   .review-stars { font-size: .95rem; }
@@ -51,4 +50,12 @@
   .review-modal-close { width: 44px; height: 44px; }
   .review-modal-card h2 { padding-right: 2.5rem; }
   .reviews-section .trustpilot-strip { padding: .65rem .75rem .9rem; font-size: .9rem; }
+}
+
+/* Device-level reduced motion keeps a readable, manually scrollable phone row. */
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .review-swipe-hint { display: block; }
+  .review-track { animation: none; width: max-content; padding-inline: 16px; }
+  .review-marquee { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; }
+  .review-group[aria-hidden="true"] { display: none; }
 }
