@@ -17,3 +17,10 @@ output/
 .impeccable/live/
 .impeccable/mocks/
 .impeccable/review/
+
+# Local tooling and internal notes stay out of the published repo.
+.claude/
+.impeccable/
+docs/
+PRODUCT.md
+DESIGN.md
