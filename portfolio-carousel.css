@@ -1,0 +1,122 @@
+/* 3D ring carousel for the homepage portfolio. Only applies once portfolio-carousel.js
+   adds .is-carousel; without JavaScript the original scrolling row stays in place. */
+
+.home-portfolio-section { overflow-x: clip; }
+
+.home-portfolio-grid.is-carousel {
+  --pc-w: clamp(17rem, 40vw, 31rem);
+  --pc-ease: cubic-bezier(.22, .8, .24, 1);
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: stretch;
+  gap: 0;
+  overflow: visible;
+  margin-top: clamp(.5rem, 2vw, 1rem);
+  padding: 1.75rem 0 1rem;
+  perspective: 1500px;
+  perspective-origin: 50% 38%;
+  scroll-snap-type: none;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+.home-portfolio-grid.is-carousel.is-dragging { cursor: grabbing; }
+.home-portfolio-grid.is-carousel:focus-visible { outline-offset: 2px; border-radius: var(--radius-card); }
+
+.home-portfolio-grid.is-carousel .home-portfolio-card {
+  grid-area: 1 / 1;
+  width: var(--pc-w);
+  min-height: 0;
+  opacity: var(--o, 1);
+  z-index: var(--z-index, 1);
+  transform: translate3d(var(--x, 0px), 0, var(--z, 0px)) rotateY(var(--r, 0deg));
+  filter: blur(var(--b, 0px)) brightness(var(--br, 1));
+  transition:
+    transform 850ms var(--pc-ease),
+    filter 850ms var(--pc-ease),
+    opacity 520ms ease,
+    box-shadow 600ms ease;
+  will-change: transform, filter, opacity;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 26px -18px rgba(11, 17, 28, .35);
+  cursor: pointer;
+}
+.home-portfolio-grid.is-carousel .home-portfolio-card.is-active {
+  cursor: auto;
+  box-shadow: 0 34px 60px -28px rgba(31, 69, 120, .55), 0 14px 30px -20px rgba(11, 17, 28, .35);
+}
+/* a card that wraps from one end of the ring to the other fades in at its new spot */
+.home-portfolio-grid.is-carousel .home-portfolio-card.pc-jump {
+  opacity: 0;
+  transition: none;
+}
+/* side cards are only there to be clicked into the middle, never to be read or tabbed */
+.home-portfolio-grid.is-carousel .home-portfolio-card:not(.is-active) .home-portfolio-link { pointer-events: none; }
+.home-portfolio-grid.is-carousel .home-portfolio-card:not(.is-active) .home-portfolio-media img { pointer-events: none; }
+.home-portfolio-grid.is-carousel .home-portfolio-media img { -webkit-user-drag: none; }
+
+/* the carousel owns the transform, so the generic hover lift is switched off here */
+.home-portfolio-grid.is-carousel .home-portfolio-card:hover,
+.home-portfolio-grid.is-carousel .home-portfolio-card:focus-within {
+  transform: translate3d(var(--x, 0px), 0, var(--z, 0px)) rotateY(var(--r, 0deg));
+}
+
+.home-portfolio-scroll-hint { display: none; }
+.home-portfolio-section:not(.has-carousel) .home-portfolio-scroll-hint { display: block; }
+
+.pc-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .9rem;
+  margin-top: clamp(.4rem, 1.5vw, .9rem);
+}
+.pc-arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.pc-arrow svg { width: 1.1rem; height: 1.1rem; }
+.pc-arrow:hover { background: var(--color-accent-soft); border-color: var(--color-accent); }
+.pc-arrow:active { transform: scale(.94); }
+.pc-arrow:focus-visible, .pc-dot:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+.pc-dots { display: flex; align-items: center; gap: .15rem; }
+.pc-dot {
+  position: relative;
+  width: 1.5rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.pc-dot::before {
+  content: "";
+  position: absolute;
+  inset: 50% .3rem auto;
+  height: .45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-accent), transparent 72%);
+  transform: translateY(-50%);
+  transition: background-color .3s ease, inset .4s var(--pc-ease, ease);
+}
+.pc-dot[aria-current="true"]::before { background: var(--color-accent); inset: 50% 0 auto; }
+
+@media (max-width: 767px) {
+  .home-portfolio-grid.is-carousel { --pc-w: 76vw; padding-top: 1.25rem; perspective: 1100px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-portfolio-grid.is-carousel .home-portfolio-card { transition: opacity .2s ease; will-change: auto; }
+  .pc-dot::before { transition: none; }
+}
