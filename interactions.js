@@ -26,13 +26,15 @@
     update();
     button.addEventListener('click', () => { open = !open; update(); });
   });
-  const resetters = [];
+  // Only elements under the pointer need resetting, so scrolling does no work for the rest.
+  const resetters = new Set();
   const targets = new Set(document.querySelectorAll('[data-spotlight], .primary-button, .pill-button, [data-magnetic]'));
   targets.forEach(element => {
     const spotlight = element.hasAttribute('data-spotlight');
     if (!spotlight) element.setAttribute('data-magnetic', '');
     let bounds, frame = 0, point;
     const reset = () => {
+      resetters.delete(reset);
       cancelAnimationFrame(frame);
       frame = 0;
       bounds = null;
@@ -40,9 +42,9 @@
       element.style.removeProperty('--mag-x');
       element.style.removeProperty('--mag-y');
     };
-    resetters.push(reset);
     element.addEventListener('pointerenter', event => {
       if (!fine.matches || reduced.matches || event.pointerType !== 'mouse') return;
+      resetters.add(reset);
       bounds = element.getBoundingClientRect();
       if (spotlight) element.classList.add('mi-lit');
     });
@@ -64,7 +66,7 @@
     }, { passive: true });
     element.addEventListener('pointerleave', reset);
   });
-  const resetAll = () => resetters.forEach(reset => reset());
+  const resetAll = () => { if (resetters.size) [...resetters].forEach(reset => reset()); };
   addEventListener('blur', resetAll);
   addEventListener('scroll', resetAll, { passive: true });
   addEventListener('resize', resetAll, { passive: true });

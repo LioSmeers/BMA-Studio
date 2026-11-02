@@ -52,6 +52,7 @@
   opacity: 0;
   transition: none;
 }
+.home-portfolio-grid.is-carousel.pc-static .home-portfolio-card { transition: none; }
 /* side cards are only there to be clicked into the middle, never to be read or tabbed */
 .home-portfolio-grid.is-carousel .home-portfolio-card:not(.is-active) .home-portfolio-link { pointer-events: none; }
 .home-portfolio-grid.is-carousel .home-portfolio-card:not(.is-active) .home-portfolio-media img { pointer-events: none; }

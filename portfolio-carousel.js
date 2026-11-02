@@ -218,6 +218,10 @@
 
   labels();
   width = cards[0].offsetWidth;
+  // The first placement is instant, so the cards do not fly out of the middle on page load.
+  grid.classList.add('pc-static');
   place();
+  void grid.offsetWidth;
+  setTimeout(() => grid.classList.remove('pc-static'), 60);
   restart();
 })();
