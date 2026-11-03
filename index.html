@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css?v=20261102-smooth" />
+    <link rel="stylesheet" href="./style.css?v=20261103-blobs" />
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -418,11 +418,15 @@
         <div class="container">
           <div class="home-cta-band reveal">
             <div class="home-cta-glow" aria-hidden="true"></div>
+            <video class="blob-bg" data-blob-video muted loop playsinline preload="none" poster="/assets/motion/blobs-blauw.png" aria-hidden="true">
+              <source src="/assets/motion/blobs-blauw.mov" type='video/quicktime; codecs="hvc1"'>
+              <source src="/assets/motion/blobs-blauw.webm" type="video/webm">
+            </video>
 
 
-            <span class="eyebrow home-cta-eyebrow">Volgende stap</span>
-            <h2 id="home-next-title">Wat wil je laten maken?</h2>
-            <p>
+            <span class="eyebrow home-cta-eyebrow" data-blob-ink>Volgende stap</span>
+            <h2 id="home-next-title" data-blob-ink>Wat wil je laten maken?</h2>
+            <p data-blob-ink>
               Vertel Lio wat je wil laten maken. Samen bespreken we de inhoud, functies en timing van je project.
             </p>
             <div class="button-row home-cta-actions">
@@ -470,7 +474,7 @@
 
     <script src="./main.js?v=20261028-continuous-tickers"></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8b7e230825e444a49804b8d6e17e1b79"}'></script><!-- End Cloudflare Web Analytics -->
-      <script src="./interactions.js?v=20261102-smooth" defer></script>
+      <script src="./interactions.js?v=20261103-blobs" defer></script>
       <script src="./portfolio-carousel.js?v=20261102-smooth" defer></script>
       <script src="/theo.js?v=20261028-cloudflare" defer></script>
   </body>
