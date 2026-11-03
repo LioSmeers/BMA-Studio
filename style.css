@@ -1971,6 +1971,37 @@ p {
   pointer-events: none;
 }
 
+.blob-bg,
+.blob-ink {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.blob-bg {
+  z-index: 0;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+/* Text redrawn in white wherever a blob sits behind it. */
+.blob-ink {
+  z-index: 2;
+}
+
+.has-blobs {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.has-blobs > :not(.blob-bg, .blob-ink) {
+  position: relative;
+  z-index: 1;
+}
+
 .home-cta-eyebrow {
   position: relative;
   z-index: 1;

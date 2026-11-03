@@ -72,4 +72,92 @@
   addEventListener('resize', resetAll, { passive: true });
   reduced.addEventListener('change', resetAll);
   fine.addEventListener('change', resetAll);
+  // Background loops only play while on screen; reduced motion keeps the poster still.
+  const blobs = document.querySelectorAll('[data-blob-video]');
+  if (blobs.length) {
+    const visible = new Set();
+    const sync = video => {
+      if (visible.has(video) && !reduced.matches) video.play().catch(() => {});
+      else video.pause();
+    };
+    const observer = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting) visible.add(target); else visible.delete(target);
+      sync(target);
+    }), { rootMargin: '200px 0px' });
+    blobs.forEach(video => observer.observe(video));
+    reduced.addEventListener('change', () => blobs.forEach(sync));
+    blobs.forEach(blobInk);
+  }
+
+  // Redraws [data-blob-ink] text in white, clipped to the blobs' alpha, on a canvas above the text.
+  function blobInk(video) {
+    const box = video.parentElement;
+    const targets = box.querySelectorAll('[data-blob-ink]');
+    if (!targets.length) return;
+    const canvas = document.createElement('canvas');
+    canvas.className = 'blob-ink';
+    canvas.setAttribute('aria-hidden', 'true');
+    box.append(canvas);
+    const ctx = canvas.getContext('2d');
+    // Glyph mask, redrawn only on layout changes.
+    const mask = document.createElement('canvas');
+    const mctx = mask.getContext('2d');
+    let width = 0, height = 0;
+    const layout = () => {
+      const dpr = Math.min(devicePixelRatio || 1, 2);
+      const origin = box.getBoundingClientRect();
+      width = origin.width; height = origin.height;
+      canvas.width = mask.width = Math.round(width * dpr);
+      canvas.height = mask.height = Math.round(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      mctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      mctx.textBaseline = 'alphabetic';
+      targets.forEach(element => {
+        const style = getComputedStyle(element);
+        const font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+        const spacing = style.letterSpacing === 'normal' ? '0px' : style.letterSpacing;
+        const upper = style.textTransform === 'uppercase';
+        const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+        const range = document.createRange();
+        for (let node; (node = walker.nextNode());) {
+          for (const match of node.data.matchAll(/\S+/g)) {
+            range.setStart(node, match.index);
+            range.setEnd(node, match.index + match[0].length);
+            const rect = range.getBoundingClientRect();
+            if (!rect.width) continue;
+            const text = upper ? match[0].toUpperCase() : match[0];
+            mctx.font = font;
+            mctx.letterSpacing = spacing;
+            const m = mctx.measureText(text);
+            const ascent = m.fontBoundingBoxAscent, descent = m.fontBoundingBoxDescent;
+            mctx.fillText(text, rect.left - origin.left, rect.top - origin.top + (rect.height - ascent - descent) / 2 + ascent);
+          }
+        }
+      });
+      draw();
+    };
+    const draw = () => {
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.clearRect(0, 0, width, height);
+      if (!video.videoWidth) return;
+      // Same crop as object-fit: cover.
+      const scale = Math.max(width / video.videoWidth, height / video.videoHeight);
+      const w = video.videoWidth * scale, h = video.videoHeight * scale;
+      ctx.drawImage(video, (width - w) / 2, (height - h) / 2, w, h);
+      // Keep only blob pixels that sit under glyphs, then paint them white.
+      ctx.globalCompositeOperation = 'destination-in';
+      ctx.drawImage(mask, 0, 0, width, height);
+      ctx.globalCompositeOperation = 'source-in';
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, width, height);
+    };
+    const frame = video.requestVideoFrameCallback
+      ? () => video.requestVideoFrameCallback(() => { draw(); frame(); })
+      : () => requestAnimationFrame(() => { if (!video.paused) draw(); frame(); });
+    new ResizeObserver(layout).observe(box);
+    new MutationObserver(layout).observe(box, { subtree: true, childList: true, characterData: true });
+    document.fonts?.ready.then(layout);
+    layout();
+    frame();
+  }
 })();
