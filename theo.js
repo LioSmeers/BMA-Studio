@@ -64,6 +64,8 @@
   const hoverPoseEnd = 1.65;
   const idleSettleLead = 1.7;
   const idleSettleRate = 0.9;
+  const poseRate = 2; // was 4x: hover/open/close poses now play at a natural pace
+  const settleStartRate = 1.6;
   let isOpen = false;
   let animationFrame = 0;
   let playbackRun = 0;
@@ -409,7 +411,7 @@
     cancelAnimationFrame(animationFrame);
     animationFrame = 0;
     video.pause();
-    video.playbackRate = 2.2;
+    video.playbackRate = settleStartRate;
     root.classList.add('is-settling');
 
     const settle = () => {
@@ -438,7 +440,7 @@
       }
       const settleProgress = Math.max(0, Math.min(1, (video.currentTime - settleStart) / (end - settleStart)));
       const easedSettleProgress = settleProgress * settleProgress * (3 - (2 * settleProgress));
-      video.playbackRate = 2.2 + ((idleSettleRate - 2.2) * easedSettleProgress);
+      video.playbackRate = settleStartRate + ((idleSettleRate - settleStartRate) * easedSettleProgress);
       animationFrame = requestAnimationFrame(settle);
     };
 
@@ -465,7 +467,7 @@
     animationFrame = 0;
     video.pause();
     if (!wasMidHoverMotion && !alreadyHoldingHoverPose) video.currentTime = 0;
-    video.playbackRate = 4;
+    video.playbackRate = poseRate;
 
     if (reducedMotion.matches) {
       video.currentTime = hoverPoseEnd;
@@ -609,7 +611,7 @@
     animationFrame = 0;
     video.pause();
     if (Math.abs(video.currentTime - from) > 0.08) video.currentTime = from;
-    video.playbackRate = 4;
+    video.playbackRate = poseRate;
 
     const complete = () => {
       if (completed || run !== playbackRun) return;
@@ -654,6 +656,12 @@
     const from = Math.min(video.currentTime, openedAt);
     playSegment(from, openedAt);
   };
+  // Closing by clicking John leaves the pointer on him: stay up in the hover pose instead of dropping.
+  const keepHoverIfPointerStays = () => {
+    if (isOpen || !trigger.matches(':hover')) return;
+    video.currentTime = Math.min(hoverPoseEnd, video.duration || hoverPoseEnd);
+    enterHover();
+  };
   const hideLaptop = () => {
     stopVideoPlayback();
     root.classList.add('is-returning', 'is-closing', 'is-standing-before-drop');
@@ -666,13 +674,13 @@
       video.pause();
       video.playbackRate = 1;
       video.currentTime = standAt;
-      requestAnimationFrame(() => root.classList.remove('is-standing-before-drop'));
+      requestAnimationFrame(() => { root.classList.remove('is-standing-before-drop'); keepHoverIfPointerStays(); });
       return;
     }
     const from = Math.min(video.currentTime, standAt);
     playSegment(from, standAt, {
       allowClosed: true,
-      onComplete: () => root.classList.remove('is-standing-before-drop'),
+      onComplete: () => { root.classList.remove('is-standing-before-drop'); keepHoverIfPointerStays(); },
     });
   };
   const close = () => {
