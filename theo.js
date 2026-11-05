@@ -10,7 +10,7 @@
   const johnSources = name => `${appleVideo ? `<source src="/public/${name}${mobileJohn ? "-mobile" : ""}.mov?v=20261023-dock" type='video/mp4; codecs="hvc1"'>` : ''}<source src="/public/${name}.webm" type="video/webm">`;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const introTarget = document.querySelector('.hero-primary');
-  const playHomeIntro = ['/', '/index.html'].includes(location.pathname) && introTarget && !reducedMotion.matches;
+  const playHomeIntro = ['/', '/index.html'].includes(location.pathname) && introTarget && !reducedMotion.matches && !mobileJohn; // phones: no jump, John just docks bottom right
   const root = document.createElement('div');
   root.className = 'theo-companion';
   root.setAttribute('data-no-translate', '');
@@ -249,24 +249,7 @@
     playWhenReady();
   };
 
-  if (playHomeIntro) {
-    // A phone's browser bars or delayed layout can put the CTA below the initial viewport.
-    // Start when the button is actually visible, instead of silently skipping the jump.
-    if (matchMedia('(max-width: 767px)').matches && 'IntersectionObserver' in window) {
-      root.classList.remove('is-intro-waiting');
-      root.removeAttribute('aria-hidden');
-      root.inert = false;
-      const introVisibility = new IntersectionObserver(entries => {
-        if (!entries.some(entry => entry.isIntersecting) || document.hidden) return;
-        introVisibility.disconnect();
-        root.classList.add('is-intro-waiting');
-        root.setAttribute('aria-hidden', 'true');
-        root.inert = true;
-        startHomeIntro();
-      }, { threshold: .2 });
-      introVisibility.observe(introTarget);
-    } else startHomeIntro();
-  }
+  if (playHomeIntro) startHomeIntro();
 
   const language = () => document.documentElement.lang.toLowerCase().startsWith('en') ? 'en' : 'nl';
   const copy = {

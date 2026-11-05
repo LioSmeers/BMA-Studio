@@ -76,6 +76,11 @@
   const blobs = document.querySelectorAll('[data-blob-video]');
   if (blobs.length) {
     const visible = new Set();
+    // Phones get a 640px loop: 1080p HEVC/VP9 alpha is too heavy for mobile decoders next to John's videos.
+    if (matchMedia('(max-width: 767px)').matches) blobs.forEach(video => {
+      video.querySelectorAll('source').forEach(source => source.setAttribute('src', source.getAttribute('src').replace('blobs-blauw.', 'blobs-blauw-mobile.')));
+      video.load();
+    });
     const sync = video => {
       if (visible.has(video) && !reduced.matches) video.play().catch(() => {});
       else video.pause();
@@ -86,6 +91,8 @@
     }), { rootMargin: '200px 0px' });
     blobs.forEach(video => observer.observe(video));
     reduced.addEventListener('change', () => blobs.forEach(sync));
+    // iOS Low Power Mode blocks autoplay until a real touch.
+    addEventListener('touchend', () => blobs.forEach(sync), { passive: true, once: true });
     blobs.forEach(blobInk);
   }
 
