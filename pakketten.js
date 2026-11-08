@@ -36,10 +36,27 @@
   const per = () => (state.yearly ? 'jaar' : 'mnd');
   const careAmt = c => eur(state.yearly ? c * 10 : c);
 
+  function moveIndicator(el) {
+    const selected = el.querySelector('[aria-selected="true"]');
+    if (!selected) return;
+    el.style.setProperty('--pk-indicator-x', `${selected.offsetLeft}px`);
+    el.style.setProperty('--pk-indicator-width', `${selected.offsetWidth}px`);
+    el.classList.add('has-indicator');
+  }
+
   function renderSwitch(el, options, value, label) {
     el.setAttribute('role', 'tablist');
     el.setAttribute('aria-label', label);
-    el.innerHTML = options.map(o => `<button type="button" role="tab" aria-selected="${o === value}" data-v="${esc(o)}">${esc(o)}</button>`).join('');
+    // Keep the buttons and indicator mounted so the highlight can slide between states.
+    if (!el.children.length) {
+      el.innerHTML = options.map(o => `<button type="button" role="tab" data-v="${esc(o)}">${esc(o)}</button>`).join('');
+    }
+    el.querySelectorAll('button').forEach(button => {
+      const selected = button.dataset.v === value;
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
+    });
+    moveIndicator(el);
   }
 
   function card(p, d, i) {
@@ -87,6 +104,25 @@
     c.querySelector('.pk-care').classList.toggle('is-on', e.target.checked);
     c.querySelector('.pk-price span').textContent = e.target.checked ? `+ ${careAmt(p.care)} per ${state.yearly ? 'jaar' : 'maand'} · incl. btw` : 'eenmalig · incl. btw';
   });
+  const switches = [$('pk-service'), $('pk-billing')];
+  switches.forEach(el => {
+    el.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const buttons = [...el.querySelectorAll('button')];
+      const current = buttons.indexOf(document.activeElement);
+      const index = event.key === 'Home' ? 0 : event.key === 'End' ? buttons.length - 1
+        : (current + (event.key === 'ArrowRight' ? 1 : -1) + buttons.length) % buttons.length;
+      buttons[index].focus();
+      buttons[index].click();
+    });
+  });
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(() => switches.forEach(moveIndicator));
+    switches.forEach(el => observer.observe(el));
+  }
+  document.fonts?.ready.then(() => switches.forEach(moveIndicator));
   $('pk-faq').innerHTML = FAQ.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('');
   render();
+  requestAnimationFrame(() => switches.forEach(el => el.classList.add("is-motion-ready")));
 })();
