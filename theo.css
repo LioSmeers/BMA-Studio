@@ -199,121 +199,146 @@
   transition-duration: 1350ms;
   transition-timing-function: cubic-bezier(.22,1,.36,1);
 }
-/* John conversation: a quiet studio correspondence panel. */
+/* John chat: premium dark panel. */
 .theo-panel {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  width: min(408px, calc(100vw - 150px));
-  height: min(610px, 80dvh);
-  min-height: 300px;
-  overflow: hidden;
-  pointer-events: auto;
-  background: #fff;
-  border: 0;
-  border-radius: 16px;
-  box-shadow: 0 16px 55px rgb(18 28 42 / 20%);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(16px) scale(.97);
-  transform-origin: bottom right;
+  --j-ink: #0b111c; --j-line: #e3e9f2; --j-muted: #526174; --j-soft: #315f9a; --j-brand: #315f9a;
+  position: absolute; right: 0; bottom: 0;
+  display: flex; flex-direction: column; flex-shrink: 0;
+  width: min(408px, calc(100vw - 150px)); height: min(652px, calc(100dvh - 48px)); min-height: 300px;
+  overflow: hidden; pointer-events: auto;
+  background: #fff; color: var(--j-ink); font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  border: 1px solid var(--j-line); border-radius: 24px;
+  box-shadow: 0 40px 80px -24px rgb(11 17 28 / 35%), 0 8px 20px -8px rgb(11 17 28 / 16%);
+  -webkit-font-smoothing: antialiased;
+  opacity: 0; visibility: hidden; transform: translateY(16px) scale(.97); transform-origin: bottom right;
   transition: opacity 160ms ease, transform 200ms ease, visibility 200ms;
 }
 .theo-companion.is-open .theo-panel {
-  position: relative;
-  right: auto;
-  bottom: auto;
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  transition: opacity 200ms ease, transform 380ms cubic-bezier(.16,1,.3,1), visibility 0ms;
+  position: relative; right: auto; bottom: auto; opacity: 1; visibility: visible; transform: none;
+  transition: opacity 200ms ease, visibility 0ms; animation: john-pop 380ms cubic-bezier(.2,.9,.25,1);
 }
-.theo-panel .theo-panel-bar {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 17px 16px;
-  color: #17283e;
-  background: #fff;
-  border-bottom: 1px solid #e4eaf1;
-  font-family: Manrope, sans-serif;
-}
-.theo-panel .theo-john-avatar { flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: center; background: #f8f4eb; }
-.theo-panel-heading { display: grid; gap: 5px; min-width: 0; }
-.theo-panel .theo-panel-title { margin: 0; color: #17283e; font: 800 18px/1.2 Manrope, sans-serif; letter-spacing: -.025em; }
-.theo-panel .theo-panel-subtitle { color: #526174; font: 500 12px/1.4 Manrope, sans-serif; }
-.theo-panel .theo-panel-close { flex: 0 0 44px; display: grid; place-items: center; width: 44px; height: 44px; margin-left: 0; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #34455c; font: 24px/1 Manrope, sans-serif; cursor: pointer; transition: background 150ms ease; }
-.theo-panel-close:hover { background: #edf2f8; }
-.theo-panel .theo-panel-reset { display: grid; place-items: center; flex: 0 0 40px; width: 40px; height: 44px; margin: 0 0 0 auto; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #315f9a; cursor: pointer; transition: background 160ms ease; }
-.theo-panel .theo-panel-reset:hover:not(:disabled) { background: #edf2f8; }
+@keyframes john-pop { from { opacity: 0; transform: translateY(14px) scale(.96); } }
+.theo-panel :is(button,a):focus-visible { outline: 2px solid var(--j-soft); outline-offset: 3px; }
+.theo-panel ::selection { color: #fff; background: var(--j-brand); }
+.theo-panel-bar { flex: 0 0 auto; display: flex; align-items: center; gap: 12px; padding: 16px 12px 14px 18px; border-bottom: 1px solid #e8edf4; }
+.theo-avatar { position: relative; flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%; animation: john-ring 2.4s ease-out infinite; }
+.theo-avatar::after { content: ""; position: absolute; right: -1px; bottom: 0; width: 12px; height: 12px; border-radius: 50%; background: #2fbf71; border: 2px solid #fff; }
+.theo-panel .theo-john-avatar { display: block; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: #fbf6ec; }
+@keyframes john-ring { 0% { box-shadow: 0 0 0 0 rgba(79,127,192,.6); } 100% { box-shadow: 0 0 0 12px rgba(79,127,192,0); } }
+.theo-panel-heading { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.theo-panel .theo-panel-title { color: var(--j-ink); font: 600 16px/1.2 Sora, ui-sans-serif, system-ui, sans-serif; letter-spacing: -.01em; }
+.theo-panel .theo-panel-subtitle { color: var(--j-muted); font: 500 12.5px/1.4 Manrope, sans-serif; }
+.theo-panel :is(.theo-panel-reset,.theo-panel-close) { flex: 0 0 44px; display: grid; place-items: center; width: 44px; height: 44px; margin: 0; padding: 0; border: 1px solid transparent; border-radius: 12px; background: transparent; color: var(--j-muted); cursor: pointer; transition: background 180ms, border-color 180ms, color 180ms; }
+.theo-panel .theo-panel-close { border-color: var(--j-line); background: #f5f8fd; color: var(--j-ink); }
+.theo-panel :is(.theo-panel-reset,.theo-panel-close):hover:not(:disabled) { background: #eef3fa; color: var(--j-ink); }
 .theo-panel .theo-panel-reset:disabled { opacity: .35; cursor: default; }
-.theo-panel-reset svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.theo-panel :is(.theo-panel-reset,.theo-panel-close) svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-.theo-panel :is(button,a):focus-visible { outline: 2px solid #315f9a; outline-offset: 3px; }
-.theo-panel .theo-messages { display: flex; flex: 1 1 auto; flex-direction: column; align-items: flex-start; gap: 22px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 24px 20px; color: #24354c; background: #fff; font: 400 14px/1.65 Manrope, sans-serif; scrollbar-width: thin; scrollbar-color: #a8b6c7 transparent; }
-.theo-panel ::selection { color: #fff; background: #315f9a; }
-.theo-panel .theo-message { flex-shrink: 0; max-width: 94%; padding: 0; border-radius: 0; background: transparent; overflow-wrap: anywhere; animation: john-message-arrive 240ms cubic-bezier(.16,1,.3,1); }
-.theo-panel .theo-message-avatar { position: absolute; top: 0; left: -36px; width: 26px; height: 26px; border-radius: 50%; object-fit: cover; background: #f8f4eb; }
-.theo-panel .theo-message--theo { position: relative; max-width: calc(100% - 36px); margin-left: 36px; padding: 12px 14px; border-radius: 3px 15px 15px 15px; background: #f0f3f7; color: #24354c; }
-.theo-panel .theo-chat-date { display: flex; flex: 0 0 auto; align-items: center; gap: 12px; width: 100%; margin: 0 0 1px; color: #637086; font: 500 11px/1.4 Manrope, sans-serif; }
-.theo-chat-date::before, .theo-chat-date::after { flex: 1; height: 1px; background: #e6ebf1; content: ''; }
-.theo-panel .theo-message-author { display: block; margin: 0 0 5px; color: #526174; font: 700 11px/1.4 Manrope, sans-serif; }
-.theo-panel .theo-message p { margin: 0; padding: 0; color: inherit; font: inherit; white-space: pre-wrap; }
-.theo-panel .theo-message--visitor { align-self: flex-end; max-width: 88%; padding: 12px 15px; border-radius: 15px 3px 15px 15px; background: #234b80; color: #fff; }
-.theo-panel .theo-message--visitor .theo-message-author { color: #e1eafa; }
-.theo-panel .theo-message a { display: inline-flex; align-items: center; min-height: 36px; margin-top: 12px; padding: 0 11px; border: 1px solid #bccbe0; border-radius: 8px; color: #234b80; background: #fff; font: 700 12px/1.4 Manrope, sans-serif; text-decoration: none; transition: background 160ms ease; }
-.theo-panel .theo-message a:hover { background: #eaf0f8; }
-.theo-panel .theo-suggestions { display: grid; width: 100%; gap: 8px; margin: -6px 0 0; }
-.theo-panel .theo-suggestion { min-height: 44px; padding: 10px 13px; border: 1px solid #d4deea; border-radius: 10px; background: #fff; color: #234b80; font: 600 13px/1.4 Manrope, sans-serif; text-align: left; cursor: pointer; transition: border-color 150ms ease, background 150ms ease; }
-.theo-panel .theo-suggestion:hover { border-color: #315f9a; background: #eef3fa; }
-.theo-panel .theo-chat-form { display: flex; flex: 0 0 auto; align-items: flex-end; gap: 8px; margin: 12px 16px 16px; padding: 6px 6px 6px 16px; border: 1px solid #e5eaf0; border-radius: 28px; background: #f2f5f8; box-shadow: none; transition: border-color 160ms ease; }
-.theo-panel .theo-chat-form:focus-within { border-color: #234b80; outline: 2px solid #234b80; outline-offset: 2px; box-shadow: none; }
-.theo-panel .theo-chat-input { display: block; flex: 1 1 auto; width: 0; min-width: 0; min-height: 44px; max-height: 112px; margin: 0; padding: 10px 0; border: 0; border-radius: 0; outline: 0; box-shadow: none; resize: none; overflow-y: hidden; background: transparent; color: #17283e; caret-color: #234b80; font: 400 16px/1.5 Manrope, sans-serif; }
-.theo-panel .theo-chat-input::placeholder { color: #526174; opacity: 1; }
-.theo-panel .theo-chat-send { display: grid; flex: 0 0 44px; place-items: center; width: 44px; height: 44px; margin: 0; padding: 0; border: 0; border-radius: 50%; background: #234b80; color: #fff; cursor: pointer; transition: background-color 160ms ease, transform 140ms ease; }
-.theo-panel .theo-chat-send:hover:not(:disabled) { background: #18385f; }
+.theo-panel .theo-messages { flex: 1 1 auto; display: flex; flex-direction: column; gap: 18px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 22px 18px 12px; scrollbar-width: none; }
+.theo-messages::-webkit-scrollbar, .theo-cards::-webkit-scrollbar, .theo-chips::-webkit-scrollbar { display: none; }
+.theo-panel .theo-welcome { display: flex; flex-direction: column; gap: 22px; animation: john-rise 280ms ease-out; }
+.theo-welcome-head { display: flex; flex-direction: column; gap: 8px; }
+.theo-welcome-eyebrow { color: var(--j-soft); font: 700 12px/1.3 Manrope, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.theo-panel .theo-welcome-title { margin: 0; color: var(--j-ink); font: 600 27px/1.2 Sora, ui-sans-serif, system-ui, sans-serif; letter-spacing: -.025em; }
+.theo-panel .theo-welcome-intro { margin: 0; color: var(--j-muted); font: 400 14px/1.55 Manrope, sans-serif; }
+.theo-tiles { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+.theo-panel .theo-tile { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; min-height: 112px; padding: 14px; border: 1px solid var(--j-line); border-radius: 16px; background: #f5f8fd; color: var(--j-ink); text-align: left; cursor: pointer; transition: transform 200ms, border-color 200ms, background 200ms; }
+.theo-panel .theo-tile:hover { transform: translateY(-2px); border-color: #315f9a; background: #eef3fa; }
+.theo-tile-top { display: flex; width: 100%; align-items: center; justify-content: space-between; color: #6a7a8f; }
+.theo-tile-top span { color: var(--j-soft); font: 700 11px/1.3 Manrope, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.theo-tile-top svg { transition: transform 200ms, color 200ms; }
+.theo-tile:hover .theo-tile-top svg { transform: translate(2px,-2px); color: var(--j-ink); }
+.theo-tile-label { font: 600 14.5px/1.3 Sora, ui-sans-serif, system-ui, sans-serif; }
+
+.theo-panel .theo-message { flex-shrink: 0; animation: john-rise 280ms ease-out; }
+@keyframes john-rise { from { opacity: 0; transform: translateY(8px); } }
+.theo-panel .theo-message--visitor { align-self: flex-end; max-width: 80%; padding: 10px 14px; border-radius: 18px 18px 6px 18px; background: #315f9a; color: #fff; font: 400 14px/1.5 Manrope, sans-serif; white-space: pre-wrap; overflow-wrap: anywhere; }
+.theo-panel .theo-message--theo { display: flex; align-items: flex-start; gap: 10px; }
+.theo-panel .theo-message-avatar { flex: 0 0 26px; width: 26px; height: 26px; margin-top: 1px; border-radius: 50%; object-fit: cover; background: #fbf6ec; }
+.theo-message-body { display: flex; flex: 1; flex-direction: column; gap: 12px; min-width: 0; }
+.theo-panel .theo-message-text { margin: 0; color: #24354c; font: 400 14.5px/1.6 Manrope, sans-serif; white-space: pre-wrap; overflow-wrap: anywhere; }
+.theo-message-text.is-typing::after { content: ""; display: inline-block; width: 2px; height: 15px; margin-left: 2px; background: #315f9a; vertical-align: -2px; animation: john-caret 1s steps(1) infinite; }
+@keyframes john-caret { 50% { opacity: 0; } }
+.theo-cards { display: flex; gap: 10px; margin-right: -18px; padding-right: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.theo-card { flex: 0 0 168px; display: flex; flex-direction: column; gap: 10px; padding: 14px; border: 1px solid var(--j-line); border-radius: 16px; background: linear-gradient(180deg, rgba(49,95,154,.12), rgba(49,95,154,.02)); scroll-snap-align: start; }
+.theo-card b { color: var(--j-soft); font: 600 22px/1 Sora, sans-serif; }
+.theo-card strong { color: var(--j-ink); font: 600 14px/1.3 Sora, sans-serif; }
+.theo-card span { color: var(--j-muted); font: 400 12.5px/1.5 Manrope, sans-serif; }
+.theo-panel .theo-link { align-self: flex-start; color: #315f9a; font: 600 14px/1.4 Manrope, sans-serif; }
+.theo-dots { display: flex; align-items: center; gap: 5px; padding: 12px 14px; border-radius: 14px; background: #eef3fa; }
+.theo-dots i { width: 6px; height: 6px; border-radius: 50%; background: #8fa6c4; animation: john-blink 1.1s infinite; }
+.theo-dots i:nth-child(2) { animation-delay: 150ms; }
+.theo-dots i:nth-child(3) { animation-delay: 300ms; }
+@keyframes john-blink { 0%,80%,100% { opacity: .3; transform: none; } 40% { opacity: 1; transform: translateY(-3px); } }
+
+.theo-chips { flex: 0 0 auto; display: flex; gap: 8px; padding: 0 18px 10px; overflow-x: auto; scrollbar-width: none; }
+.theo-chips:empty { display: none; }
+.theo-panel .theo-chip { flex-shrink: 0; min-height: 40px; padding: 0 14px; border: 1px solid #d4deea; border-radius: 999px; background: #fff; color: #234b80; font: 600 13px/1 Manrope, sans-serif; white-space: nowrap; cursor: pointer; transition: background 180ms, border-color 180ms; }
+.theo-panel .theo-chip:hover { background: #eef3fa; border-color: #315f9a; }
+.theo-panel .theo-chat-form { flex: 0 0 auto; display: flex; align-items: flex-end; gap: 6px; margin: 4px 14px 0; padding: 4px 4px 4px 16px; border: 1px solid #dbe3ee; border-radius: 16px; background: #f5f8fd; transition: border-color 200ms, box-shadow 200ms; }
+.theo-panel .theo-chat-form:focus-within { border-color: #315f9a; outline: 0; box-shadow: 0 0 0 4px rgba(49,95,154,.18); background: #fff; }
+.theo-panel .theo-chat-input { display: block; flex: 1 1 auto; width: 0; min-width: 0; min-height: 44px; max-height: 112px; margin: 0; padding: 10px 0; border: 0; outline: 0; box-shadow: none; resize: none; overflow-y: hidden; background: transparent; color: var(--j-ink); caret-color: #315f9a; font: 400 16px/1.5 Manrope, sans-serif; }
+.theo-panel .theo-chat-input::placeholder { color: #6a7a8f; opacity: 1; }
+.theo-panel .theo-chat-send { display: grid; flex: 0 0 44px; place-items: center; width: 44px; height: 44px; margin: 0; padding: 0; border: 0; border-radius: 12px; background: var(--j-brand); color: #fff; box-shadow: 0 8px 18px -6px rgba(49,95,154,.7); cursor: pointer; transition: background 200ms, box-shadow 200ms, transform 140ms; }
 .theo-panel .theo-chat-send:active:not(:disabled) { transform: scale(.95); }
-.theo-panel .theo-chat-send:disabled { background: #e7edf4; color: #64758c; cursor: default; }
-.theo-chat-send svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
-.theo-panel .theo-chat-note { flex: 0 0 auto; margin: 10px 16px 13px; padding: 0; color: #526174; font: 500 11px/1.5 Manrope, sans-serif; text-align: center; }
-/* The welcome orb yields the space to real messages after the first question. */
-.theo-panel .theo-messages.has-welcome { gap: 0; padding-top: 12px; padding-bottom: 12px; }
-.theo-panel .theo-welcome { display: flex; flex: 1 0 auto; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin: auto 0; text-align: center; }
-.theo-panel .theo-orb { position: relative; flex: 0 0 auto; width: 150px; height: 150px; margin: -12px 0 4px; isolation: isolate; }
-.theo-orb::before { position: absolute; inset: 12%; border-radius: 50%; background: radial-gradient(ellipse at 60% 40%, #84aecb, transparent 65%); filter: blur(12px); content: ''; }
-.theo-orb.has-orb-render::before { content: none; }
-.theo-orb canvas { position: relative; display: block; width: 100%; height: 100%; }
-.theo-panel .theo-welcome-title { max-width: 12ch; margin: 0 0 10px; padding: 0; color: #17283e; font: 800 25px/1.18 Manrope, sans-serif; letter-spacing: -.03em; text-wrap: balance; }
-.theo-panel .theo-welcome-intro { max-width: 30ch; margin: 0 0 16px; padding: 0; color: #526174; font: 400 13px/1.6 Manrope, sans-serif; }
-.theo-panel .theo-welcome .theo-suggestions { width: 100%; gap: 7px; margin: 0; }
-.theo-panel .theo-welcome .theo-suggestion { text-align: center; }
-@media (max-height: 740px) {
-  .theo-panel .theo-welcome { padding: 4px 0; }
-  .theo-panel .theo-orb { width: 112px; height: 112px; margin: -10px 0 0; }
-  .theo-panel .theo-welcome-title { font-size: 22px; }
-  .theo-panel .theo-welcome-intro { margin-bottom: 14px; }
-}
-.theo-panel .theo-thinking { display: flex; align-items: center; gap: 10px; min-height: 26px; color: #526174; font-size: 12px; }
-.theo-thinking-bars { display: flex; align-items: center; gap: 3px; height: 20px; }
-.theo-thinking-bars i { width: 3px; height: 8px; border-radius: 3px; background: #315f9a; animation: john-thinking 1050ms ease-in-out infinite; }
-.theo-companion:not(.is-open) .theo-thinking-bars i { animation-play-state: paused; }
-.theo-thinking-bars i:nth-child(2) { animation-delay: 120ms; }
-.theo-thinking-bars i:nth-child(3) { animation-delay: 240ms; }
-.theo-thinking-bars i:nth-child(4) { animation-delay: 360ms; }
-@keyframes john-thinking { 0%,100% { transform: scaleY(.6); opacity: .55; } 50% { transform: scaleY(1.6); opacity: 1; } }
-@keyframes john-message-arrive { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+.theo-panel .theo-chat-send:disabled { background: #e7edf4; color: #8592a6; box-shadow: none; cursor: default; }
+.theo-chat-send svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.theo-panel .theo-chat-note { flex: 0 0 auto; margin: 0; padding: 10px 14px 14px; color: #526174; font: 500 11px/1.4 Manrope, sans-serif; text-align: center; }
+.theo-chat-note a { color: #315f9a; }
+
+.theo-teaser { position: absolute; right: calc(100% - 14px); bottom: 40px; display: flex; flex-direction: column; gap: 3px; width: max-content; max-width: min(300px, calc(100vw - 110px)); padding: 14px 16px; border: 1px solid #e3e9f2; border-radius: 18px 18px 6px 18px; background: #fff; box-shadow: 0 18px 40px -16px rgba(23,40,62,.35); text-align: left; cursor: pointer; pointer-events: auto; animation: john-pop 400ms cubic-bezier(.2,.9,.25,1); transform-origin: bottom right; }
+.theo-teaser[hidden], .theo-companion:is(.is-open,.is-hovered) .theo-teaser { display: none; }
+.theo-teaser strong { color: #0b111c; font: 600 14px/1.3 Sora, sans-serif; }
+.theo-teaser span { color: #4d5b6e; font: 400 13px/1.45 Manrope, sans-serif; }
+/* In-chat booking card. */
+.theo-booker { display: flex; flex-direction: column; gap: 12px; padding: 14px; border: 1px solid #e3e9f2; border-radius: 16px; background: #fff; box-shadow: 0 8px 20px -12px rgba(23,40,62,.25); color: #0b111c; font-family: Manrope, sans-serif; }
+.theo-booker-title { font: 600 15px/1.3 Sora, sans-serif; }
+.theo-booker-days { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.theo-panel .theo-booker-day { min-height: 44px; padding: 6px 4px; border: 1px solid #dbe3ee; border-radius: 12px; background: #fff; color: #0b111c; font: 600 13px/1.2 Manrope, sans-serif; text-transform: capitalize; cursor: pointer; transition: background 160ms, border-color 160ms, color 160ms; }
+.theo-panel .theo-booker-day:hover { border-color: #315f9a; }
+.theo-panel .theo-booker-day[aria-selected="true"] { border-color: #315f9a; background: #315f9a; color: #fff; }
+.theo-booker-times { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; max-height: 152px; overflow-y: auto; scrollbar-width: thin; }
+.theo-panel .theo-booker-time { min-height: 44px; border: 1px solid #dbe3ee; border-radius: 12px; background: #f5f8fd; color: #0b111c; font: 600 14px/1 Manrope, sans-serif; cursor: pointer; transition: background 160ms, border-color 160ms, transform 140ms; }
+.theo-panel .theo-booker-time:hover { border-color: #315f9a; background: #eaf0f9; transform: translateY(-1px); }
+.theo-panel .theo-book-more { align-self: flex-start; padding: 4px 0; border: 0; background: transparent; color: #315f9a; font: 600 13px/1.3 Manrope, sans-serif; text-decoration: underline; cursor: pointer; }
+.theo-booker-form { display: flex; flex-direction: column; gap: 10px; }
+.theo-booker-form input { min-height: 44px; padding: 0 12px; border: 1px solid #dbe3ee; border-radius: 12px; background: #fff; color: #0b111c; font: 400 16px/1 Manrope, sans-serif; outline: 0; transition: border-color 160ms, box-shadow 160ms; }
+.theo-booker-form input:focus { border-color: #315f9a; box-shadow: 0 0 0 3px rgba(49,95,154,.2); }
+.theo-booker-when { font: 600 14px/1.3 Sora, sans-serif; }
+.theo-booker-when::first-letter, .theo-booker-done b::first-letter { text-transform: uppercase; }
+.theo-panel .theo-booker-back { align-self: flex-start; padding: 2px 0; border: 0; background: transparent; color: #4d5b6e; font: 600 13px/1.3 Manrope, sans-serif; cursor: pointer; }
+.theo-panel .theo-booker-submit { min-height: 48px; border: 0; border-radius: 12px; background: #315f9a; color: #fff; font: 700 14px/1 Manrope, sans-serif; cursor: pointer; transition: background 160ms; }
+.theo-panel .theo-booker-submit:hover:not(:disabled) { background: #244b7d; }
+.theo-panel .theo-booker-submit:disabled { opacity: .6; cursor: default; }
+.theo-booker-note { margin: 0; color: #4d5b6e; font: 400 12px/1.5 Manrope, sans-serif; }
+.theo-booker-error { margin: 0; color: #b42318; font: 500 13px/1.5 Manrope, sans-serif; }
+.theo-booker-done { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.theo-booker-done p { margin: 0; color: #4d5b6e; font: 400 13.5px/1.5 Manrope, sans-serif; }
+.theo-booker-done b { font: 600 14px/1.3 Sora, sans-serif; }
+.theo-booker-done i { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #2fbf71; color: #fff; }
+.theo-booker-done svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+/* White booking sheet with the real Cal.com calendar. */
+.theo-book { position: absolute; inset: 0; z-index: 5; display: flex; flex-direction: column; background: #fff; color: #0b111c; animation: john-sheet 320ms cubic-bezier(.2,.9,.25,1); }
+.theo-book[hidden] { display: none; }
+@keyframes john-sheet { from { opacity: 0; transform: translateY(24px); } }
+.theo-book-bar { flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px 10px 8px; border-bottom: 1px solid #e3e9f2; }
+.theo-panel .theo-book-back { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; border: 0; border-radius: 12px; background: transparent; color: #0b111c; font: 700 14px/1 Manrope, sans-serif; cursor: pointer; transition: background 180ms; }
+.theo-panel .theo-book-back:hover { background: #eef3fa; }
+.theo-book-back svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.theo-panel .theo-book-ext { color: #315f9a; font: 600 13px/1.3 Manrope, sans-serif; }
+.theo-book-stage { position: relative; flex: 1; min-height: 0; background: #fff; }
+.theo-book-status { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 24px; color: #4d5b6e; font: 500 14px/1.5 Manrope, sans-serif; text-align: center; }
+.theo-book-status[hidden] { display: none; }
+.theo-book-frame { position: relative; display: block; width: 100%; height: 100%; border: 0; background: #fff; }
 @media (max-width: 600px) {
-  .theo-companion .theo-panel, .theo-companion.is-open .theo-panel { position: fixed; right: 12px; bottom: max(18px, env(safe-area-inset-bottom)); width: calc(100vw - 24px); height: min(600px, calc(100dvh - 100px)); min-height: 240px; }
+  .theo-companion .theo-panel, .theo-companion.is-open .theo-panel { position: fixed; right: 12px; bottom: max(18px, env(safe-area-inset-bottom)); width: calc(100vw - 24px); height: min(652px, calc(100dvh - 100px)); min-height: 240px; }
   .theo-companion.is-open .theo-trigger { pointer-events: none; visibility: hidden; }
-  .theo-panel .theo-panel-bar { padding: 16px; }
-  .theo-panel .theo-messages { padding: 20px 16px; }
+}
+@media (max-width: 519px) {
+  .theo-companion .theo-panel, .theo-companion.is-open .theo-panel { inset: 0; width: 100%; height: 100dvh; border: 0; border-radius: 0; padding-bottom: env(safe-area-inset-bottom); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .theo-panel .theo-message, .theo-thinking-bars i { animation: none; }
+  .theo-panel, .theo-panel *, .theo-teaser, .theo-book { animation: none !important; }
 }
 .theo-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 @media (max-width: 600px) {
@@ -347,7 +372,6 @@
 
 /* Transparent compositing on mobile WebKit and other GPU paths. */
 .theo-intro video,.theo-trigger :is(video,.john-video-poster) { background: transparent; }
-.theo-orb canvas { background: transparent; -webkit-mask-image: radial-gradient(ellipse at center, #000 52%, transparent 71%); mask-image: radial-gradient(ellipse at center, #000 52%, transparent 71%); }
 
 .john-video-poster { z-index: 2; }
 .theo-trigger .john-video-poster[hidden] { display: none; }

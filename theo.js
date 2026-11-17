@@ -25,11 +25,13 @@
     </button>
     <aside class="theo-panel" id="theo-chat-panel" aria-label="Chat met John" aria-hidden="true" inert>
       <div class="theo-panel-bar">
-        <img class="theo-john-avatar" src="/assets/john/john-avatar.jpg" width="44" height="44" alt="" aria-hidden="true"><span class="theo-panel-heading"><strong class="theo-panel-title">Chat met John</strong><small class="theo-panel-subtitle">Vragen over BMA Studio</small></span>
-        <button class="theo-panel-reset" type="button" aria-label="Nieuw gesprek" title="Nieuw gesprek" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M20 12a8 8 0 1 0-2.3 5.7M20 7v5"/></svg></button>
-        <button class="theo-panel-close" type="button" aria-label="Sluit de chat" title="Sluiten">&times;</button>
+        <span class="theo-avatar"><img class="theo-john-avatar" src="/assets/john/john-avatar.jpg" width="44" height="44" alt="" aria-hidden="true"></span>
+        <span class="theo-panel-heading"><strong class="theo-panel-title">John</strong><small class="theo-panel-subtitle" aria-live="polite"></small></span>
+        <button class="theo-panel-reset" type="button" aria-label="Nieuw gesprek" title="Nieuw gesprek" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg></button>
+        <button class="theo-panel-close" type="button" aria-label="Sluit de chat" title="Sluiten"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
       <div class="theo-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <div class="theo-chips"></div>
       <form class="theo-chat-form">
         <label class="theo-sr-only" for="theo-chat-input">Bericht aan John</label>
         <textarea class="theo-chat-input" id="theo-chat-input" name="question" rows="1" maxlength="500" autocomplete="off" placeholder="Vraag John…" required></textarea>
@@ -37,7 +39,16 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7" /></svg>
         </button>
       </form>
-    </aside>`;
+      <p class="theo-chat-note"><span></span> · <a href="/privacy.html"></a></p>
+      <div class="theo-book" role="dialog" aria-modal="true" hidden>
+        <div class="theo-book-bar">
+          <button class="theo-book-back" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg><span></span></button>
+          <a class="theo-book-ext" target="_blank" rel="noopener" href="https://cal.com/lio-smeers-uisp1o/vrijblijvend-gesprek-met-lio"></a>
+        </div>
+        <div class="theo-book-stage"><p class="theo-book-status" role="status"></p></div>
+      </div>
+    </aside>
+    <button class="theo-teaser" type="button" hidden><strong></strong><span></span></button>`;
   document.body.append(root);
 
   const trigger = root.querySelector('.theo-trigger');
@@ -59,6 +70,12 @@
   const input = root.querySelector('.theo-chat-input');
   const sendButton = root.querySelector('.theo-chat-send');
   const messages = root.querySelector('.theo-messages');
+  const chips = root.querySelector('.theo-chips');
+  const subtitle = root.querySelector('.theo-panel-subtitle');
+  const teaser = root.querySelector('.theo-teaser');
+  const book = root.querySelector('.theo-book');
+  const bookStage = book.querySelector('.theo-book-stage');
+  const bookStatus = book.querySelector('.theo-book-status');
   const segmentSeconds = 4;
   const openedAt = segmentSeconds;
   const hoverPoseEnd = 1.65;
@@ -257,62 +274,88 @@
   const copy = {
     nl: {
       open: 'Open de chat met John', close: 'Sluit de chat met John',
-      heading: 'John', subtitle: 'Je BMA Studio-assistent',
-      reset: 'Nieuw gesprek',
-      closeButton: 'Sluit de chat', inputLabel: 'Bericht aan John', placeholder: 'Vraag John…',
-      send: 'Verstuur je vraag',
-      greeting: 'Aangenaam, ik ben John. Wat wil je weten over websites, apps of AI-assistenten?',
-      welcomeTitle: 'Waar kan ik je mee helpen?',
-      welcomeIntro: 'Stel je vraag over websites, apps of AI-assistenten.',
-      suggestionsIntro: 'Voorbeeldvragen',
-      services: 'BMA Studio maakt websites, webapps, AI-assistenten en automatisering. Bekijk de diensten op de dienstenpagina.',
-      price: 'De prijs hangt af van wat je nodig hebt. Bespreek je project met Lio voor een voorstel op maat.',
-      contact: 'Je kan mailen naar info@bmastudio.be, bellen naar +32 460 97 37 36 of een vrijblijvend gesprek plannen via de contactpagina.',
-      work: 'Je kan voorbeelden van ons werk bekijken op de portfoliopagina. Daar vind je ook links naar de websites van klanten.',
-      process: 'We bespreken eerst wat je nodig hebt en leggen daarna de inhoud, timing en prijs vast. Tijdens het project heb je rechtstreeks contact met Lio.',
-      region: 'BMA Studio is gevestigd in Riemst en werkt voor bedrijven in België. Neem gerust contact op om je project te bespreken.',
-      fallback: 'Daar heb ik geen zeker antwoord op. Mail je vraag naar info@bmastudio.be; dan kan Lio je verder helpen.',
-      servicesLink: 'Bekijk de diensten', priceLink: 'Bespreek je project', contactLink: 'Naar de contactpagina', workLink: 'Bekijk het portfolio',
-      suggestions: ['Welke diensten biedt BMA?', 'Wat kost een website?'],
-      thinking: 'John denkt na',
-      tooLong: 'Gebruik maximaal 500 tekens.',
-      empty: 'Typ eerst je vraag.'
+      reset: 'Nieuw gesprek', closeButton: 'Sluit de chat', inputLabel: 'Bericht aan John', placeholder: 'Vraag John iets…',
+      send: 'Verstuur je vraag', online: 'Online · antwoordt meteen', typing: 'Typt een antwoord…',
+      greet: ['Goeiemorgen', 'Goeiemiddag', 'Goeieavond'],
+      welcomeTitle: 'Wat bouwen we voor jouw zaak?',
+      welcomeIntro: 'Ik ben John, de assistent van BMA Studio. Kies een onderwerp of stel gewoon je vraag.',
+      disclaimer: 'John is een AI en kan zich vergissen', privacy: 'Privacy',
+      teaserTitle: 'Hoi, ik ben John.', teaserText: 'Vragen over je website? Ik antwoord meteen.',
+      book: 'Plan een gratis gesprek met Lio', bookPick: 'Kies een moment', bookSlots: 'Beschikbare momenten laden…', bookNone: 'Geen vrije momenten gevonden.', bookName: 'Je naam', bookEmail: 'Je e-mailadres', bookConfirm: 'Bevestig afspraak', bookSending: 'Bezig…', bookChange: 'Ander moment', bookDone: 'Ingeboekt! Je krijgt een bevestiging op', bookError: 'Boeken lukte niet. Kies een ander moment of open de volledige kalender.', bookMore: 'Andere dag? Open de volledige kalender', bookNote: 'Je gegevens gaan naar Cal.com om de afspraak te bevestigen.', bookBack: 'Terug naar de chat', bookTab: 'Open in nieuw tabblad', bookLoading: 'Kalender wordt geladen…', bookFailed: 'De kalender kon niet laden. Gebruik “Open in nieuw tabblad”.',
+      tooLong: 'Gebruik maximaal 500 tekens.', empty: 'Typ eerst je vraag.',
+      tiles: [
+        { key: 'services', tag: 'Diensten', label: 'Wat doet BMA Studio?' },
+        { key: 'price', tag: 'Prijs', label: 'Wat kost een website?' },
+        { key: 'process', tag: 'Aanpak', label: 'Hoe verloopt een project?' },
+        { key: 'call', tag: 'Gesprek', label: 'Plan een call met Lio' }
+      ],
+      answers: {
+        services: { q: 'Welke diensten biedt BMA?', a: 'BMA Studio bouwt vier soorten dingen voor bedrijven. Swipe even door:', extra: 'services' },
+        price: { q: 'Wat kost een website?', a: 'Elke site is maatwerk: de prijs hangt af van het aantal pagina’s, functies en content. Na een korte kennismaking krijg je van Lio een voorstel op maat.', extra: 'book' },
+        process: { q: 'Hoe verloopt een project?', a: 'We bespreken eerst wat je nodig hebt en leggen daarna inhoud, timing en prijs vast. Tijdens het project heb je rechtstreeks contact met Lio.', extra: 'book' },
+        call: { q: 'Ik wil een gesprek met Lio', a: 'Top! Kies hieronder een moment dat jou past. Het gesprek is gratis en vrijblijvend.', extra: 'book' }
+      },
+      services: [
+        ['01', 'Websites', 'Snelle, moderne sites die bezoekers omzetten in klanten.'],
+        ['02', 'Webapps', 'Klantportalen, boekingstools en dashboards op maat.'],
+        ['03', 'AI-assistenten', 'Een assistent zoals ik, getraind op jouw zaak.'],
+        ['04', 'Automatisering', 'Repetitief werk dat zichzelf regelt.']
+      ]
     },
     en: {
       open: 'Open the chat with John', close: 'Close the chat with John',
-      heading: 'John', subtitle: 'Your BMA Studio assistant',
-      reset: 'New conversation',
-      closeButton: 'Close the chat', inputLabel: 'Message John', placeholder: 'Ask John…',
-      send: 'Send your question',
-      greeting: 'Hello, I’m John. What would you like to know about websites, apps or AI assistants?',
-      welcomeTitle: 'How can I help you?',
-      welcomeIntro: 'Ask me about websites, apps or AI assistants.',
-      suggestionsIntro: 'Suggested questions',
-      services: 'BMA Studio builds websites, web apps, AI assistants and automation. Explore the services on the services page.',
-      price: 'Pricing depends on what you need. Discuss your project with Lio for a tailored proposal.',
-      contact: 'You can email info@bmastudio.be, call +32 460 97 37 36 or arrange a no-obligation conversation through the contact page.',
-      work: 'You can see examples of our work on the portfolio page, including links to client websites.',
-      process: 'We first discuss what you need, then agree on the scope, timing and price. You’ll work directly with Lio throughout the project.',
-      region: 'BMA Studio is based in Riemst and works with businesses across Belgium. Feel free to get in touch about your project.',
-      fallback: 'I don’t have a reliable answer for that. Email your question to info@bmastudio.be and Lio can help you further.',
-      servicesLink: 'View services', priceLink: 'Discuss your project', contactLink: 'Open the contact page', workLink: 'View the portfolio',
-      suggestions: ['What services does BMA offer?', 'How much does a website cost?'],
-      thinking: 'John is thinking',
-      tooLong: 'Use no more than 500 characters.',
-      empty: 'Type your question first.'
+      reset: 'New conversation', closeButton: 'Close the chat', inputLabel: 'Message John', placeholder: 'Ask John anything…',
+      send: 'Send your question', online: 'Online · replies instantly', typing: 'Typing a reply…',
+      greet: ['Good morning', 'Good afternoon', 'Good evening'],
+      welcomeTitle: 'What are we building for your business?',
+      welcomeIntro: 'I’m John, BMA Studio’s assistant. Pick a topic or just ask your question.',
+      disclaimer: 'John is an AI and can make mistakes', privacy: 'Privacy',
+      teaserTitle: 'Hi, I’m John.', teaserText: 'Questions about your website? I reply instantly.',
+      book: 'Book a free call with Lio', bookPick: 'Pick a time', bookSlots: 'Loading available times…', bookNone: 'No free times found.', bookName: 'Your name', bookEmail: 'Your email', bookConfirm: 'Confirm booking', bookSending: 'Booking…', bookChange: 'Other time', bookDone: 'Booked! A confirmation is on its way to', bookError: 'Booking failed. Pick another time or open the full calendar.', bookMore: 'Another day? Open the full calendar', bookNote: 'Your details go to Cal.com to confirm the booking.', bookBack: 'Back to the chat', bookTab: 'Open in new tab', bookLoading: 'Loading calendar…', bookFailed: 'The calendar could not load. Use “Open in new tab”.',
+      tooLong: 'Use no more than 500 characters.', empty: 'Type your question first.',
+      tiles: [
+        { key: 'services', tag: 'Services', label: 'What does BMA Studio do?' },
+        { key: 'price', tag: 'Pricing', label: 'How much is a website?' },
+        { key: 'process', tag: 'Process', label: 'How does a project work?' },
+        { key: 'call', tag: 'Call', label: 'Book a call with Lio' }
+      ],
+      answers: {
+        services: { q: 'What services does BMA offer?', a: 'BMA Studio builds four kinds of things for businesses. Swipe through:', extra: 'services' },
+        price: { q: 'How much does a website cost?', a: 'Every site is custom: the price depends on pages, features and content. After a short intro call, Lio sends you a tailored proposal.', extra: 'book' },
+        process: { q: 'How does a project work?', a: 'We first discuss what you need, then agree on scope, timing and price. You work directly with Lio throughout the project.', extra: 'book' },
+        call: { q: 'I’d like to talk to Lio', a: 'Great! Pick a time that suits you below. The call is free and without obligation.', extra: 'book' }
+      },
+      services: [
+        ['01', 'Websites', 'Fast, modern sites that turn visitors into customers.'],
+        ['02', 'Web apps', 'Client portals, booking tools and custom dashboards.'],
+        ['03', 'AI assistants', 'An assistant like me, trained on your business.'],
+        ['04', 'Automation', 'Repetitive work that runs itself.']
+      ]
     }
   };
-  let disposeWelcomeOrb = null;
   let isSending = false;
   let requestRun = 0;
   let activeRequest = null;
+  let asked = new Set();
   const conversation = [];
   const languageThreads = new Map();
   let chatLanguage = language();
   // John runs on Cloudflare, independently of the visitor's or developer's laptop.
   const apiBase = 'https://bma-john.sneeuwpio.workers.dev';
   const requestJohn = options => fetch(`${apiBase}/api/john`, options);
+  const calUrl = 'https://cal.com/lio-smeers-uisp1o/vrijblijvend-gesprek-met-lio';
+  const avatarUrl = '/assets/john/john-avatar.jpg';
   const t = key => copy[language()][key];
+  const icons = {
+    arrow: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>',
+    right: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+  };
+  const el = (tag, className, text) => {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text) node.textContent = text;
+    return node;
+  };
   const fitComposer = () => {
     input.style.height = 'auto';
     const contentHeight = input.scrollHeight;
@@ -321,63 +364,245 @@
     input.style.overflowY = contentHeight > maxHeight ? 'auto' : 'hidden';
     sendButton.disabled = isSending || !input.value.trim();
   };
+  const scrollEnd = () => requestAnimationFrame(() => { messages.scrollTop = messages.scrollHeight; });
+  const syncStatus = () => { subtitle.textContent = t(isSending ? 'typing' : 'online'); };
+  // Follow-up questions: only the presets the visitor has not asked yet, once a conversation is running.
+  const renderChips = () => {
+    chips.replaceChildren();
+    if (isSending || !messages.childElementCount || messages.querySelector('.theo-welcome')) return;
+    Object.entries(t('answers')).filter(([key]) => !asked.has(key)).forEach(([key, answer]) => {
+      const chip = el('button', 'theo-chip', answer.q);
+      chip.type = 'button';
+      chip.addEventListener('click', () => askPreset(key));
+      chips.append(chip);
+    });
+  };
+  const setBusy = value => {
+    isSending = value;
+    if (value) form.setAttribute('aria-busy', 'true'); else form.removeAttribute('aria-busy');
+    syncStatus();
+    fitComposer();
+    renderChips();
+  };
 
-  const addMessage = (text, sender, link) => {
-    const message = document.createElement('div');
-    message.className = `theo-message theo-message--${sender}`;
-    const content = document.createElement('p');
-    content.textContent = text;
-    message.append(content);
-    if (link && link.href !== '/contact.html' && !link.href.startsWith('https://cal.com/')) {
-      const action = document.createElement('a');
-      action.href = link.href;
-      action.textContent = link.label;
-      message.append(action);
-    }
-    const author = document.createElement('span');
-    author.className = 'theo-message-author';
-    author.textContent = sender === 'visitor' ? (language() === 'en' ? 'You' : 'Jij') : 'John';
-    message.prepend(author);
-    if (sender === 'theo') {
-      const portrait = document.createElement('img');
-      portrait.className = 'theo-message-avatar';
-      portrait.src = '/assets/john/john-avatar.jpg';
-      portrait.alt = '';
-      portrait.width = portrait.height = 26;
-      portrait.setAttribute('aria-hidden', 'true');
-      message.prepend(portrait);
-    }
-    messages.append(message);
-    messages.scrollTop = messages.scrollHeight;
+  const buildWelcome = () => {
+    const hour = new Date().getHours();
+    const welcome = el('div', 'theo-welcome');
+    const head = el('div', 'theo-welcome-head');
+    head.append(el('div', 'theo-welcome-eyebrow', t('greet')[hour < 12 ? 0 : hour < 18 ? 1 : 2]), el('h2', 'theo-welcome-title', t('welcomeTitle')), el('p', 'theo-welcome-intro', t('welcomeIntro')));
+    const grid = el('div', 'theo-tiles');
+    t('tiles').forEach(tile => {
+      const button = el('button', 'theo-tile');
+      button.type = 'button';
+      const top = el('span', 'theo-tile-top');
+      top.append(el('span', '', tile.tag));
+      top.insertAdjacentHTML('beforeend', icons.arrow);
+      button.append(top, el('span', 'theo-tile-label', tile.label));
+      button.addEventListener('click', () => askPreset(tile.key));
+      grid.append(button);
+    });
+    welcome.append(head, grid);
+    return welcome;
   };
   const addGreeting = () => {
     if (hasGreeted) return;
     hasGreeted = true;
-    const welcome = document.createElement('div');
-    welcome.className = 'theo-welcome';
-    welcome.innerHTML = '<div class="theo-orb" aria-hidden="true"><canvas></canvas></div><h2 class="theo-welcome-title"></h2><p class="theo-welcome-intro"></p>';
-    welcome.querySelector('.theo-welcome-title').textContent = t('welcomeTitle');
-    welcome.querySelector('.theo-welcome-intro').textContent = t('welcomeIntro');
-    messages.classList.add('has-welcome');
-    messages.append(welcome);
-    import('/john-mist.js?v=20261022-mobile-alpha').then(({ mountJohnMist }) => {
-      if (!welcome.isConnected) return;
-      disposeWelcomeOrb = mountJohnMist(welcome.querySelector('canvas'), panel);
-    }).catch(() => {});
-    const suggestions = document.createElement('div');
-    suggestions.className = 'theo-suggestions';
-    suggestions.setAttribute('role', 'group');
-    suggestions.setAttribute('aria-label', t('suggestionsIntro'));
-    t('suggestions').forEach(label => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'theo-suggestion';
-      button.textContent = label;
-      button.addEventListener('click', () => sendQuestion(button.textContent));
-      suggestions.append(button);
-    });
-    welcome.append(suggestions);
+    messages.append(buildWelcome());
+    renderChips();
   };
+  const addUser = text => {
+    messages.querySelector('.theo-welcome')?.remove();
+    resetButton.disabled = false;
+    messages.append(el('div', 'theo-message theo-message--visitor', text));
+    scrollEnd();
+  };
+  const addTyping = () => {
+    const row = el('div', 'theo-message theo-message--theo theo-thinking');
+    const portrait = el('img', 'theo-message-avatar');
+    portrait.src = avatarUrl; portrait.alt = ''; portrait.width = portrait.height = 26;
+    const dots = el('div', 'theo-dots');
+    dots.innerHTML = '<i></i><i></i><i></i>';
+    dots.append(el('span', 'theo-sr-only', t('typing')));
+    row.append(portrait, dots);
+    messages.append(row);
+    scrollEnd();
+    return row;
+  };
+  const extras = (kind, link) => {
+    if (kind === 'services') {
+      const row = el('div', 'theo-cards');
+      t('services').forEach(([number, title, text]) => {
+        const card = el('div', 'theo-card');
+        card.append(el('b', '', number), el('strong', '', title), el('span', '', text));
+        row.append(card);
+      });
+      return row;
+    }
+    if (kind === 'book') {
+      return buildBooker();
+    }
+    if (link) {
+      const anchor = el('a', 'theo-link', link.label);
+      anchor.href = link.href;
+      return anchor;
+    }
+    return null;
+  };
+  // John's answer types in letter by letter; an aborted run (reset, language switch) just shows the full text.
+  const addBot = (text, kind, link, run) => new Promise(resolve => {
+    const row = el('div', 'theo-message theo-message--theo');
+    const portrait = el('img', 'theo-message-avatar');
+    portrait.src = avatarUrl; portrait.alt = ''; portrait.width = portrait.height = 26;
+    portrait.setAttribute('aria-hidden', 'true');
+    const body = el('div', 'theo-message-body');
+    const paragraph = el('p', 'theo-message-text is-typing');
+    body.append(paragraph);
+    row.append(portrait, body);
+    messages.append(row);
+    const finish = () => {
+      paragraph.textContent = text;
+      paragraph.classList.remove('is-typing');
+      const extra = extras(kind, link);
+      if (extra) body.append(extra);
+      scrollEnd();
+      resolve();
+    };
+    if (reducedMotion.matches) return finish();
+    let shown = 0;
+    const step = () => {
+      if (run !== requestRun) return finish();
+      shown = Math.min(text.length, shown + 3);
+      paragraph.textContent = text.slice(0, shown);
+      scrollEnd();
+      if (shown < text.length) setTimeout(step, 18); else finish();
+    };
+    step();
+  });
+  async function askPreset(key) {
+    if (isSending) return;
+    const answer = t('answers')[key];
+    const run = ++requestRun;
+    asked.add(key);
+    addUser(answer.q);
+    setBusy(true);
+    const pending = addTyping();
+    await new Promise(resolve => setTimeout(resolve, reducedMotion.matches ? 0 : 700));
+    if (run !== requestRun) return;
+    pending.remove();
+    await addBot(answer.a, answer.extra, null, run);
+    if (run !== requestRun) return;
+    conversation.push({ role: 'user', content: answer.q }, { role: 'assistant', content: answer.a });
+    conversation.splice(0, Math.max(0, conversation.length - 10));
+    setBusy(false);
+  }
+  // The real Cal.com calendar runs inside a white sheet over the chat: availability and confirmation stay with Cal.
+  let bookFailedLoad = false;
+  const syncBook = () => {
+    book.setAttribute('aria-label', t('book'));
+    book.querySelector('.theo-book-back span').textContent = t('bookBack');
+    book.querySelector('.theo-book-ext').textContent = t('bookTab');
+    bookStatus.textContent = t(bookFailedLoad ? 'bookFailed' : 'bookLoading');
+  };
+  function openBook() {
+    if (!bookStage.querySelector('iframe')) {
+      const frame = el('iframe', 'theo-book-frame');
+      frame.src = `${calUrl}?embed=true&layout=month_view&theme=light&hideEventTypeDetails=true`;
+      frame.title = t('book');
+      frame.loading = 'eager';
+      frame.addEventListener('load', () => { bookStatus.hidden = true; });
+      bookStage.append(frame);
+      setTimeout(() => { if (!bookStatus.hidden) { bookFailedLoad = true; syncBook(); } }, 12000);
+    }
+    syncBook();
+    book.hidden = false;
+    book.querySelector('.theo-book-back').focus({ preventScroll: true });
+  }
+  const closeBook = () => { if (book.hidden) return false; book.hidden = true; return true; };
+  // Native mini booking in the chat: next 3 days with free slots, pick a time, confirm with name + email.
+  const calApi = 'https://api.cal.com/v2';
+  const calTarget = { username: 'lio-smeers-uisp1o', eventTypeSlug: 'vrijblijvend-gesprek-met-lio' };
+  function buildBooker() {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Europe/Brussels';
+    const lang = language();
+    const locale = lang === 'en' ? 'en-GB' : 'nl-BE';
+    const fmtDay = key => new Intl.DateTimeFormat(locale, { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }).format(new Date(`${key}T12:00:00Z`));
+    const fmtTime = iso => new Intl.DateTimeFormat(locale, { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: tz }).format(new Date(iso));
+    const fmtFull = iso => new Intl.DateTimeFormat(locale, { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: tz }).format(new Date(iso));
+    const tx = key => copy[lang][key];
+    const box = el('div', 'theo-booker');
+    let days = null, failed = false, day = 0, slot = null, view = 'pick', sending = false, error = false, email = '';
+    const more = () => { const b = el('button', 'theo-book-more', tx('bookMore')); b.type = 'button'; b.addEventListener('click', openBook); return b; };
+    const render = () => {
+      const title = el('strong', 'theo-booker-title', tx('bookPick'));
+      if (view === 'done') {
+        const ok = el('div', 'theo-booker-done');
+        ok.innerHTML = '<i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></i>';
+        const text = el('p', '', `${tx('bookDone')} ${email}`);
+        ok.append(text, el('b', '', fmtFull(slot.start)));
+        return box.replaceChildren(ok);
+      }
+      if (view === 'form') {
+        const form = el('form', 'theo-booker-form');
+        const back = el('button', 'theo-booker-back', `← ${tx('bookChange')}`);
+        back.type = 'button';
+        back.addEventListener('click', () => { view = 'pick'; error = false; render(); });
+        const when = el('b', 'theo-booker-when', fmtFull(slot.start));
+        const name = el('input'); name.type = 'text'; name.required = true; name.maxLength = 80; name.autocomplete = 'name'; name.placeholder = tx('bookName'); name.setAttribute('aria-label', tx('bookName'));
+        const mail = el('input'); mail.type = 'email'; mail.required = true; mail.maxLength = 120; mail.autocomplete = 'email'; mail.placeholder = tx('bookEmail'); mail.setAttribute('aria-label', tx('bookEmail'));
+        const submit = el('button', 'theo-booker-submit', tx('bookConfirm')); submit.type = 'submit'; submit.disabled = sending;
+        const note = el('p', 'theo-booker-note', tx('bookNote'));
+        form.append(back, when, name, mail, submit);
+        if (error) { const e = el('p', 'theo-booker-error', tx('bookError')); e.setAttribute('role', 'alert'); form.append(e, more()); }
+        form.append(note);
+        form.addEventListener('submit', async event => {
+          event.preventDefault();
+          if (sending) return;
+          sending = true; error = false; submit.disabled = true; submit.textContent = tx('bookSending');
+          try {
+            const response = await fetch(`${calApi}/bookings`, {
+              method: 'POST', headers: { 'Content-Type': 'application/json', 'cal-api-version': '2024-08-13' },
+              body: JSON.stringify({ start: new Date(slot.start).toISOString(), attendee: { name: name.value.trim(), email: mail.value.trim(), timeZone: tz, language: lang }, ...calTarget }),
+            });
+            const result = await response.json();
+            if (!response.ok || result.status !== 'success') throw new Error('booking');
+            email = mail.value.trim(); view = 'done';
+          } catch { error = true; }
+          sending = false; render(); scrollEnd();
+        });
+        box.replaceChildren(form);
+        return;
+      }
+      if (!days) return box.replaceChildren(title, el('p', 'theo-booker-note', tx(failed ? 'bookNone' : 'bookSlots')), ...(failed ? [more()] : []));
+      const tabs = el('div', 'theo-booker-days');
+      tabs.setAttribute('role', 'tablist');
+      days.forEach(([key], index) => {
+        const tab = el('button', 'theo-booker-day', fmtDay(key));
+        tab.type = 'button'; tab.setAttribute('role', 'tab'); tab.setAttribute('aria-selected', String(index === day));
+        tab.addEventListener('click', () => { day = index; render(); });
+        tabs.append(tab);
+      });
+      const grid = el('div', 'theo-booker-times');
+      days[day][1].forEach(item => {
+        const time = el('button', 'theo-booker-time', fmtTime(item.start));
+        time.type = 'button';
+        time.addEventListener('click', () => { slot = item; view = 'form'; render(); scrollEnd(); });
+        grid.append(time);
+      });
+      box.replaceChildren(title, tabs, grid, more());
+    };
+    render();
+    const iso = date => date.toISOString().slice(0, 10);
+    fetch(`${calApi}/slots?username=${calTarget.username}&eventTypeSlug=${calTarget.eventTypeSlug}&start=${iso(new Date())}&end=${iso(new Date(Date.now() + 14 * 864e5))}&timeZone=${encodeURIComponent(tz)}`, { headers: { 'cal-api-version': '2024-09-04' } })
+      .then(response => response.json())
+      .then(result => {
+        days = Object.entries(result.data || {}).filter(([, list]) => list.length).sort(([a], [b]) => a.localeCompare(b)).slice(0, 3)
+          .map(([key, list]) => { const halves = list.filter(item => /:(00|30):/.test(item.start.slice(10))); return [key, halves.length ? halves : list]; });
+        if (!days.length) throw new Error('none');
+      })
+      .catch(() => { days = null; failed = true; })
+      .finally(() => { render(); scrollEnd(); });
+    return box;
+  }
   const cancelHoverReset = () => {
     window.clearTimeout(hoverResetTimer);
     hoverResetTimer = 0;
@@ -535,34 +760,11 @@
       input.setCustomValidity('');
       return;
     }
-    disposeWelcomeOrb?.();
-    disposeWelcomeOrb = null;
-    messages.querySelector('.theo-welcome')?.remove();
-    messages.classList.remove('has-welcome');
-    if (!messages.querySelector('.theo-chat-date')) {
-      const date = document.createElement('div');
-      date.className = 'theo-chat-date';
-      date.textContent = new Intl.DateTimeFormat(language() === 'en' ? 'en-GB' : 'nl-BE', { day: 'numeric', month: 'long' }).format(new Date());
-      messages.append(date);
-    }
-    resetButton.disabled = false;
-    addMessage(question, 'visitor');
-    input.value = '';
-    isSending = true;
-    fitComposer();
-    const pending = document.createElement('div');
-    pending.className = 'theo-message theo-message--theo theo-thinking';
-    const thinkingLabel = document.createElement('span');
-    thinkingLabel.textContent = t('thinking');
-    const thinkingBars = document.createElement('span');
-    thinkingBars.className = 'theo-thinking-bars';
-    thinkingBars.setAttribute('aria-hidden', 'true');
-    thinkingBars.innerHTML = '<i></i><i></i><i></i><i></i>';
-    pending.append(thinkingBars, thinkingLabel);
-    form.setAttribute('aria-busy', 'true');
-    messages.append(pending);
-    messages.scrollTop = messages.scrollHeight;
     const run = ++requestRun;
+    addUser(question);
+    input.value = '';
+    setBusy(true);
+    const pending = addTyping();
     const controller = new AbortController();
     activeRequest = controller;
     const timer = setTimeout(() => controller.abort(), 25000);
@@ -580,8 +782,9 @@
       if (typeof result.answer !== 'string' || !result.answer.trim()) throw new Error('unavailable');
       const href = result.link?.href;
       const safeLink = typeof href === 'string' && (href.startsWith('/') && !href.startsWith('//') || href.startsWith('https://cal.com/lio-smeers-uisp1o/') || href === 'mailto:info@bmastudio.be' || href === 'tel:+32460973736');
+      const isCal = safeLink && href.startsWith('https://cal.com/');
       pending.remove();
-      addMessage(result.answer, 'theo', safeLink ? result.link : null);
+      await addBot(result.answer, isCal ? 'book' : null, safeLink && !isCal && href !== '/contact.html' ? result.link : null, run);
       conversation.push({ role: 'user', content: question }, { role: 'assistant', content: result.answer });
       conversation.splice(0, Math.max(0, conversation.length - 10));
     } catch (error) {
@@ -591,15 +794,13 @@
       const text = error.message === 'ai_not_configured'
         ? (en ? 'My AI connection is not configured yet. You can email Lio in the meantime.' : 'Mijn AI-aansluiting is nog niet ingesteld. Je kunt Lio ondertussen mailen.')
         : (en ? 'I cannot answer right now. Please try again shortly or email Lio.' : 'Ik kan nu even niet antwoorden. Probeer het straks opnieuw of mail Lio.');
-      addMessage(text, 'theo', { href: 'mailto:info@bmastudio.be', label: en ? 'Email Lio' : 'Mail Lio' });
+      await addBot(text, null, { href: 'mailto:info@bmastudio.be', label: en ? 'Email Lio' : 'Mail Lio' }, run);
       if (!input.value) input.value = question;
     } finally {
       clearTimeout(timer);
       if (run === requestRun) {
         activeRequest = null;
-        isSending = false;
-        form.removeAttribute('aria-busy');
-        fitComposer();
+        setBusy(false);
       }
     }
   }
@@ -683,9 +884,19 @@
       onComplete: () => { root.classList.remove('is-standing-before-drop'); keepHoverIfPointerStays(); },
     });
   };
+  // "Hoi, ik ben John." bubble next to the launcher: once per session, after the first close.
+  let teaserDelay = 0, teaserHide = 0;
+  const hideTeaser = () => { clearTimeout(teaserDelay); clearTimeout(teaserHide); teaser.hidden = true; };
+  const showTeaser = () => {
+    try { if (sessionStorage.getItem('john-teased')) return; sessionStorage.setItem('john-teased', '1'); } catch { /* private mode: show it anyway */ }
+    teaser.hidden = false;
+    teaserHide = setTimeout(hideTeaser, 9000);
+  };
   const close = () => {
     if (!isOpen) return;
     isOpen = false;
+    closeBook();
+    teaserDelay = setTimeout(showTeaser, 900);
     root.classList.remove('is-open', 'is-hovered');
     trigger.setAttribute('aria-expanded', 'false');
     trigger.setAttribute('aria-label', t('open'));
@@ -696,6 +907,7 @@
   const open = () => {
     if (isOpen) return close();
     isOpen = true;
+    hideTeaser();
     hasLandedAtIdle = false;
     root.classList.add('is-open');
     trigger.setAttribute('aria-expanded', 'true');
@@ -713,8 +925,6 @@
     trigger.setAttribute('aria-label', isOpen ? t('close') : t('open'));
     trigger.title = language() === 'en' ? 'Ask John a question' : 'Stel je vraag aan John';
     panel.setAttribute('aria-label', language() === 'en' ? 'Chat with John' : 'Chat met John');
-    root.querySelector('.theo-panel-title').textContent = t('heading');
-    root.querySelector('.theo-panel-subtitle').textContent = t('subtitle');
     closeButton.setAttribute('aria-label', t('closeButton'));
     closeButton.title = t('closeButton');
     root.querySelector('label[for="theo-chat-input"]').textContent = t('inputLabel');
@@ -722,15 +932,16 @@
     resetButton.title = t('reset');
     input.setAttribute('aria-label', t('inputLabel'));
     input.placeholder = t('placeholder');
-    root.querySelector('.theo-chat-send').setAttribute('aria-label', t('send'));
+    sendButton.setAttribute('aria-label', t('send'));
     sendButton.title = t('send');
-    const welcome = messages.querySelector('.theo-welcome');
-    if (welcome) {
-      welcome.querySelector('.theo-welcome-title').textContent = t('welcomeTitle');
-      welcome.querySelector('.theo-welcome-intro').textContent = t('welcomeIntro');
-      welcome.querySelector('.theo-suggestions').setAttribute('aria-label', t('suggestionsIntro'));
-      welcome.querySelectorAll('.theo-suggestion').forEach((button, index) => { button.textContent = t('suggestions')[index]; });
-    }
+    root.querySelector('.theo-chat-note span').textContent = t('disclaimer');
+    root.querySelector('.theo-chat-note a').textContent = t('privacy');
+    teaser.querySelector('strong').textContent = t('teaserTitle');
+    teaser.querySelector('span').textContent = t('teaserText');
+    messages.querySelector('.theo-welcome')?.replaceWith(buildWelcome());
+    syncBook();
+    syncStatus();
+    renderChips();
   };
 
   form.addEventListener('submit', event => { event.preventDefault(); sendQuestion(); });
@@ -741,26 +952,26 @@
     if (!sendButton.disabled) form.requestSubmit();
   });
   trigger.addEventListener('click', open);
+  teaser.addEventListener('click', open);
   trigger.addEventListener('pointerenter', enterHover);
   trigger.addEventListener('pointerleave', leaveHover);
   trigger.addEventListener('focus', enterHover);
   trigger.addEventListener('blur', leaveHover);
   closeButton.addEventListener('click', close);
+  book.querySelector('.theo-book-back').addEventListener('click', () => { closeBook(); input.focus({ preventScroll: true }); });
   resetButton.addEventListener('click', () => {
+    closeBook();
     ++requestRun;
     activeRequest?.abort();
     activeRequest = null;
-    isSending = false;
     conversation.length = 0;
-    disposeWelcomeOrb?.();
-    disposeWelcomeOrb = null;
+    asked = new Set();
     messages.replaceChildren();
     hasGreeted = false;
     input.value = '';
-    form.removeAttribute('aria-busy');
     resetButton.disabled = true;
     addGreeting();
-    fitComposer();
+    setBusy(false);
     if (matchMedia('(pointer: fine)').matches) input.focus({ preventScroll: true });
   });
   document.addEventListener('pointerdown', event => {
@@ -768,6 +979,7 @@
   });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && isOpen) {
+      if (closeBook()) return;
       close();
       trigger.focus();
     }
@@ -776,31 +988,27 @@
     const nextLanguage = language();
     if (nextLanguage !== chatLanguage) {
       // Keep each language's conversation and draft in memory; never rewrite a visitor's words.
-      if (isSending && !input.value) input.value = [...messages.querySelectorAll('.theo-message--visitor p')].at(-1)?.textContent || '';
+      if (isSending && !input.value) input.value = [...messages.querySelectorAll('.theo-message--visitor')].at(-1)?.textContent || '';
       ++requestRun;
       activeRequest?.abort();
       activeRequest = null;
-      isSending = false;
       messages.querySelector('.theo-thinking')?.remove();
-      disposeWelcomeOrb?.();
-      disposeWelcomeOrb = null;
       const hasWelcome = !!messages.querySelector('.theo-welcome');
       languageThreads.set(chatLanguage, {
         nodes: hasWelcome ? [] : [...messages.childNodes],
-        history: conversation.slice(), draft: input.value,
+        history: conversation.slice(), asked, draft: input.value,
       });
       const saved = languageThreads.get(nextLanguage);
       chatLanguage = nextLanguage;
       messages.replaceChildren(...(saved?.nodes || []));
-      messages.classList.remove('has-welcome');
       conversation.splice(0, conversation.length, ...(saved?.history || []));
+      asked = saved?.asked || new Set();
       input.value = saved?.draft || '';
       input.setCustomValidity('');
-      form.removeAttribute('aria-busy');
       hasGreeted = !!saved?.nodes.length;
       resetButton.disabled = !hasGreeted;
       if (isOpen && !hasGreeted) addGreeting();
-      fitComposer();
+      setBusy(false);
     }
     refreshLanguage();
   };
