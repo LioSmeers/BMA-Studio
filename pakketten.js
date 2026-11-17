@@ -1,5 +1,5 @@
 (() => {
-  // PLACEHOLDER-PRIJZEN — vervang door echte bedragen voor publicatie.
+  // Jaarbetaling: 12 maanden dienstverlening voor de prijs van 10 maanden.
   const PACKAGES = {
     Websites: { careLabel: 'Hosting, updates & kleine aanpassingen', intro: 'Een website die je aanbod, realisaties en contactinformatie helder samenbrengt.', packages: [
       { name: 'One-page', price: 500, care: 19, lead: 'Eén overzichtelijke pagina voor je aanbod en contact.', items: ['Eén pagina met je diensten', 'Contactformulier', 'Responsive op gsm en tablet', 'Basis-SEO'] },
@@ -20,6 +20,7 @@
   };
   const FAQ = [
     ['Waarom staat er "vanaf"?', 'Elk project is anders. De vanaf-prijs geldt voor het pakket zoals beschreven. Na een kort gesprek krijg je een vaste prijs, zodat je vooraf weet waar je aan toe bent.'],
+    ['Hoe werkt jaarlijks betalen?', 'Je betaalt één keer per jaar voor 12 maanden, maar slechts 10 maandbedragen: 2 maanden zijn gratis. De getoonde maandkost is het jaartotaal gedeeld door 12, afgerond op 2 decimalen. Bijvoorbeeld: €19 per maand wordt €190 per jaar, gemiddeld €15,83 per maand. Het jaartotaal is het bedrag dat je betaalt; de eenmalige opstartprijs staat hier los van.'],
     ['Wat zit er in onderhoud?', 'Hosting, updates, back-ups en kleine aanpassingen. Voor websites en apps is onderhoud optioneel. Een AI-assistent heeft altijd een abonnement, omdat elk gesprek AI-gebruik kost. Je betaalt per maand of per jaar; per jaar krijg je 2 maanden gratis.'],
     ['Hoe werkt de voicemail-assistent?', 'Kan je de telefoon niet opnemen, dan neemt de assistent op. Hij beantwoordt eenvoudige vragen met jouw informatie en noteert naam, nummer en vraag. Jij krijgt meteen een samenvatting per mail en belt terug wanneer het past.'],
     ['Wat als mijn assistent meer gesprekken heeft?', 'Je krijgt een seintje voor je de limiet van gesprekken of belminuten bereikt. Dan bekijken we samen of een groter pakket beter past. Je assistent valt niet zomaar stil.'],
@@ -28,13 +29,18 @@
     ['Zijn de prijzen inclusief btw?', 'Ja. Er komt geen btw bij: de prijs die je ziet, is de prijs die je betaalt.']
   ];
 
-  const eur = n => '€' + n.toLocaleString('nl-BE');
+  const eur = n => '€' + n.toLocaleString('nl-BE', { minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2 });
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const services = Object.keys(PACKAGES);
   const state = { svc: services[0], yearly: false, care: {} };
   const $ = id => document.getElementById(id);
-  const per = () => (state.yearly ? 'jaar' : 'mnd');
-  const careAmt = c => eur(state.yearly ? c * 10 : c);
+  const yearlyTotal = c => c * 10;
+  const careAmt = c => eur(state.yearly ? yearlyTotal(c) / 12 : c);
+  const billingDetail = c => state.yearly
+    ? `<small class="pk-billing-detail">${eur(yearlyTotal(c))}/jaar · jaarlijks gefactureerd</small>` : '';
+  const priceSubtitle = (c, on) => on
+    ? `eenmalig + ${careAmt(c)}/mnd${state.yearly ? ` · ${eur(yearlyTotal(c))}/jaar` : ''} · incl. btw`
+    : 'eenmalig · incl. btw';
 
   function moveIndicator(el) {
     const selected = el.querySelector('[aria-selected="true"]');
@@ -61,10 +67,10 @@
 
   function card(p, d, i) {
     const on = d.careRequired || state.care[state.svc + i];
-    const sub = on ? `+ ${careAmt(p.care)} per ${state.yearly ? 'jaar' : 'maand'} · incl. btw` : 'eenmalig · incl. btw';
+    const sub = priceSubtitle(p.care, on);
     const care = d.careRequired
-      ? `<div class="pk-care is-fixed"><span><b>Abonnement inbegrepen</b><small>${esc(d.careLabel)}</small></span><b><em>+${careAmt(p.care)}/${per()}</em></b></div>`
-      : `<label class="pk-care${on ? ' is-on' : ''}"><span><b>Met onderhoud <em>+${careAmt(p.care)}/${per()}</em></b><small>${esc(d.careLabel)}</small></span><input type="checkbox" data-care="${i}"${on ? ' checked' : ''}><span class="pk-track" aria-hidden="true"></span></label>`;
+      ? `<div class="pk-care is-fixed"><span><b>Abonnement <em>+${careAmt(p.care)}/mnd</em></b><small>${esc(d.careLabel)}</small>${billingDetail(p.care)}</span></div>`
+      : `<label class="pk-care${on ? ' is-on' : ''}"><span><b>Met onderhoud <em>+${careAmt(p.care)}/mnd</em></b><small>${esc(d.careLabel)}</small>${billingDetail(p.care)}</span><input type="checkbox" data-care="${i}"${on ? ' checked' : ''}><span class="pk-track" aria-hidden="true"></span></label>`;
     return `<article class="card hover-lift pk-card${p.featured ? ' is-featured' : ''}">
       <div><h3>${esc(p.name)}</h3><p class="pk-lead">${esc(p.lead)}</p></div>
       <div class="pk-price"><small>vanaf</small><strong>${eur(p.price)}</strong><span>${sub}</span></div>
@@ -77,7 +83,7 @@
     const cell = v => v === true ? '<span class="pk-yes" aria-label="ja">✓</span>' : v === false ? '<span class="pk-no" aria-label="nee">—</span>' : `<strong>${esc(v)}</strong>`;
     return `<table class="pk-table"><thead><tr><th scope="col">${esc(state.svc)}</th>${d.packages.map(p => `<th scope="col">${esc(p.name)}<small>vanaf ${eur(p.price)}</small></th>`).join('')}</tr></thead><tbody>
       ${COMPARE[state.svc].map(([l, ...v]) => `<tr><th scope="row">${esc(l)}</th>${v.map(x => `<td>${cell(x)}</td>`).join('')}</tr>`).join('')}
-      <tr class="pk-care-row"><th scope="row">${d.careRequired ? 'Abonnement' : 'Onderhoud (optioneel)'}</th>${d.packages.map(p => `<td>+${careAmt(p.care)}/${per()}</td>`).join('')}</tr></tbody></table>`;
+      <tr class="pk-care-row"><th scope="row">${d.careRequired ? 'Abonnement' : 'Onderhoud (optioneel)'}</th>${d.packages.map(p => `<td>+${careAmt(p.care)}/mnd${billingDetail(p.care)}</td>`).join('')}</tr></tbody></table>`;
   }
 
   function render() {
@@ -87,9 +93,11 @@
     $('pk-badge').hidden = !state.yearly;
     $('pk-intro').textContent = d.intro;
     $('pk-grid').innerHTML = d.packages.map((p, i) => card(p, d, i)).join('');
-    $('pk-note').textContent = d.careRequired
-      ? 'Alle prijzen incl. btw. Een AI-assistent heeft altijd een abonnement voor het AI-gebruik.'
-      : 'Alle prijzen incl. btw. Onderhoud is optioneel; per jaar krijg je 2 maanden gratis.';
+    $('pk-note').textContent = 'Alle prijzen incl. btw. '
+      + (d.careRequired ? 'Een AI-assistent heeft altijd een abonnement voor het AI-gebruik. ' : 'Onderhoud is optioneel. ')
+      + (state.yearly
+        ? 'Bij jaarbetaling krijg je 2 maanden gratis. De maandkost is een afgerond gemiddelde; je betaalt het vermelde jaartotaal in één keer. De opstartprijs is eenmalig.'
+        : 'Bij jaarbetaling krijg je 2 maanden gratis.');
     $('pk-table').innerHTML = table(d);
   }
 
@@ -102,7 +110,7 @@
     const c = e.target.closest('.pk-card');
     const p = PACKAGES[state.svc].packages[i];
     c.querySelector('.pk-care').classList.toggle('is-on', e.target.checked);
-    c.querySelector('.pk-price span').textContent = e.target.checked ? `+ ${careAmt(p.care)} per ${state.yearly ? 'jaar' : 'maand'} · incl. btw` : 'eenmalig · incl. btw';
+    c.querySelector('.pk-price span').textContent = priceSubtitle(p.care, e.target.checked);
   });
   const switches = [$('pk-service'), $('pk-billing')];
   switches.forEach(el => {
@@ -126,3 +134,4 @@
   render();
   requestAnimationFrame(() => switches.forEach(el => el.classList.add("is-motion-ready")));
 })();
+
