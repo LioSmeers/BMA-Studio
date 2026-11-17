@@ -275,7 +275,7 @@
     nl: {
       open: 'Open de chat met John', close: 'Sluit de chat met John',
       reset: 'Nieuw gesprek', closeButton: 'Sluit de chat', inputLabel: 'Bericht aan John', placeholder: 'Vraag John iets…',
-      send: 'Verstuur je vraag', online: 'Online · antwoordt meteen', typing: 'Typt een antwoord…',
+      send: 'Verstuur je vraag', online: 'Online · antwoordt meteen', offline: 'Even niet bereikbaar · mail Lio', typing: 'Typt een antwoord…',
       greet: ['Goeiemorgen', 'Goeiemiddag', 'Goeieavond'],
       welcomeTitle: 'Wat bouwen we voor jouw zaak?',
       welcomeIntro: 'Ik ben John, de assistent van BMA Studio. Kies een onderwerp of stel gewoon je vraag.',
@@ -291,8 +291,8 @@
       ],
       answers: {
         services: { q: 'Welke diensten biedt BMA?', a: 'BMA Studio bouwt vier soorten dingen voor bedrijven. Swipe even door:', extra: 'services' },
-        price: { q: 'Wat kost een website?', a: 'Elke site is maatwerk: de prijs hangt af van het aantal pagina’s, functies en content. Na een korte kennismaking krijg je van Lio een voorstel op maat.', extra: 'book' },
-        process: { q: 'Hoe verloopt een project?', a: 'We bespreken eerst wat je nodig hebt en leggen daarna inhoud, timing en prijs vast. Tijdens het project heb je rechtstreeks contact met Lio.', extra: 'book' },
+        price: { q: 'Wat kost een website?' },
+        process: { q: 'Hoe verloopt een project?' },
         call: { q: 'Ik wil een gesprek met Lio', a: 'Top! Kies hieronder een moment dat jou past. Het gesprek is gratis en vrijblijvend.', extra: 'book' }
       },
       services: [
@@ -305,7 +305,7 @@
     en: {
       open: 'Open the chat with John', close: 'Close the chat with John',
       reset: 'New conversation', closeButton: 'Close the chat', inputLabel: 'Message John', placeholder: 'Ask John anything…',
-      send: 'Send your question', online: 'Online · replies instantly', typing: 'Typing a reply…',
+      send: 'Send your question', online: 'Online · replies instantly', offline: 'Unavailable right now · email Lio', typing: 'Typing a reply…',
       greet: ['Good morning', 'Good afternoon', 'Good evening'],
       welcomeTitle: 'What are we building for your business?',
       welcomeIntro: 'I’m John, BMA Studio’s assistant. Pick a topic or just ask your question.',
@@ -321,8 +321,8 @@
       ],
       answers: {
         services: { q: 'What services does BMA offer?', a: 'BMA Studio builds four kinds of things for businesses. Swipe through:', extra: 'services' },
-        price: { q: 'How much does a website cost?', a: 'Every site is custom: the price depends on pages, features and content. After a short intro call, Lio sends you a tailored proposal.', extra: 'book' },
-        process: { q: 'How does a project work?', a: 'We first discuss what you need, then agree on scope, timing and price. You work directly with Lio throughout the project.', extra: 'book' },
+        price: { q: 'How much does a website cost?' },
+        process: { q: 'How does a project work?' },
         call: { q: 'I’d like to talk to Lio', a: 'Great! Pick a time that suits you below. The call is free and without obligation.', extra: 'book' }
       },
       services: [
@@ -338,10 +338,20 @@
   let activeRequest = null;
   let asked = new Set();
   const conversation = [];
+  let log = []; // what the visitor sees, kept in sessionStorage so a page change does not wipe the chat
+  const store = () => { try { if (log.length) sessionStorage.setItem('john-chat', JSON.stringify({ lang: chatLanguage, log: log.slice(-40), history: conversation, asked: [...asked] })); else sessionStorage.removeItem('john-chat'); } catch { /* private mode: chat just will not survive a page change */ } };
   const languageThreads = new Map();
   let chatLanguage = language();
   // John runs on Cloudflare, independently of the visitor's or developer's laptop.
-  const apiBase = 'https://bma-john.sneeuwpio.workers.dev';
+  // Dev only: open any local page with ?john=local to use `wrangler dev` (port 8787); ?john=live switches back.
+  let apiBase = 'https://bma-john.sneeuwpio.workers.dev';
+  if (['localhost', '127.0.0.1'].includes(location.hostname)) {
+    try {
+      const mode = new URLSearchParams(location.search).get('john');
+      if (mode) localStorage.setItem('john-api', mode);
+      if (localStorage.getItem('john-api') === 'local') apiBase = 'http://localhost:8787';
+    } catch { /* storage blocked: stay on the live worker */ }
+  }
   const requestJohn = options => fetch(`${apiBase}/api/john`, options);
   const calUrl = 'https://cal.com/lio-smeers-uisp1o/vrijblijvend-gesprek-met-lio';
   const avatarUrl = '/assets/john/john-avatar.jpg';
@@ -365,7 +375,7 @@
     sendButton.disabled = isSending || !input.value.trim();
   };
   const scrollEnd = () => requestAnimationFrame(() => { messages.scrollTop = messages.scrollHeight; });
-  const syncStatus = () => { subtitle.textContent = t(isSending ? 'typing' : 'online'); };
+  const syncStatus = () => { subtitle.textContent = t(isSending ? 'typing' : root.classList.contains('is-offline') ? 'offline' : 'online'); };
   // Follow-up questions: only the presets the visitor has not asked yet, once a conversation is running.
   const renderChips = () => {
     chips.replaceChildren();
@@ -414,6 +424,8 @@
     messages.querySelector('.theo-welcome')?.remove();
     resetButton.disabled = false;
     messages.append(el('div', 'theo-message theo-message--visitor', text));
+    log.push({ r: 'u', text });
+    store();
     scrollEnd();
   };
   const addTyping = () => {
@@ -428,6 +440,7 @@
     scrollEnd();
     return row;
   };
+  const safeHref = href => typeof href === 'string' && (href.startsWith('/') && !href.startsWith('//') || href.startsWith('https://cal.com/lio-smeers-uisp1o/') || href === 'mailto:info@bmastudio.be' || href === 'tel:+32460973736');
   const extras = (kind, link) => {
     if (kind === 'services') {
       const row = el('div', 'theo-cards');
@@ -449,14 +462,16 @@
     return null;
   };
   // John's answer types in letter by letter; an aborted run (reset, language switch) just shows the full text.
-  const addBot = (text, kind, link, run) => new Promise(resolve => {
+  const addBot = (text, kind, link, run, instant) => new Promise(resolve => {
     const row = el('div', 'theo-message theo-message--theo');
     const portrait = el('img', 'theo-message-avatar');
     portrait.src = avatarUrl; portrait.alt = ''; portrait.width = portrait.height = 26;
     portrait.setAttribute('aria-hidden', 'true');
     const body = el('div', 'theo-message-body');
     const paragraph = el('p', 'theo-message-text is-typing');
-    body.append(paragraph);
+    // The live region announces the finished reply once, not every typed letter.
+    paragraph.setAttribute('aria-hidden', 'true');
+    body.append(paragraph, el('span', 'theo-sr-only', text));
     row.append(portrait, body);
     messages.append(row);
     const finish = () => {
@@ -467,7 +482,7 @@
       scrollEnd();
       resolve();
     };
-    if (reducedMotion.matches) return finish();
+    if (reducedMotion.matches || instant) return finish();
     let shown = 0;
     const step = () => {
       if (run !== requestRun) return finish();
@@ -481,8 +496,10 @@
   async function askPreset(key) {
     if (isSending) return;
     const answer = t('answers')[key];
-    const run = ++requestRun;
     asked.add(key);
+    // Only services (cards) and booking are canned; John answers everything else himself, with real prices.
+    if (!answer.a) return sendQuestion(answer.q);
+    const run = ++requestRun;
     addUser(answer.q);
     setBusy(true);
     const pending = addTyping();
@@ -493,6 +510,8 @@
     if (run !== requestRun) return;
     conversation.push({ role: 'user', content: answer.q }, { role: 'assistant', content: answer.a });
     conversation.splice(0, Math.max(0, conversation.length - 10));
+    log.push({ r: 'b', text: answer.a, kind: answer.extra });
+    store();
     setBusy(false);
   }
   // The real Cal.com calendar runs inside a white sheet over the chat: availability and confirmation stay with Cal.
@@ -781,17 +800,21 @@
       if (!response.ok) throw new Error(result.error || 'unavailable');
       if (typeof result.answer !== 'string' || !result.answer.trim()) throw new Error('unavailable');
       const href = result.link?.href;
-      const safeLink = typeof href === 'string' && (href.startsWith('/') && !href.startsWith('//') || href.startsWith('https://cal.com/lio-smeers-uisp1o/') || href === 'mailto:info@bmastudio.be' || href === 'tel:+32460973736');
-      const isCal = safeLink && href.startsWith('https://cal.com/');
+      const safeLink = safeHref(href);
+      const isCal = safeLink && (href.startsWith('https://cal.com/') || href === '/contact.html');
       pending.remove();
-      await addBot(result.answer, isCal ? 'book' : null, safeLink && !isCal && href !== '/contact.html' ? result.link : null, run);
+      await addBot(result.answer, isCal ? 'book' : null, safeLink && !isCal ? result.link : null, run);
       conversation.push({ role: 'user', content: question }, { role: 'assistant', content: result.answer });
       conversation.splice(0, Math.max(0, conversation.length - 10));
+      log.push({ r: 'b', text: result.answer, kind: isCal ? 'book' : null, link: safeLink && !isCal ? result.link : null });
+      store();
     } catch (error) {
       if (run !== requestRun) return;
       pending.remove();
       const en = language() === 'en';
-      const text = error.message === 'ai_not_configured'
+      const text = error.message === 'rate_limited' || error.message === 'provider_limited'
+        ? (en ? 'Lots of questions right now. Please try again in a minute.' : 'Er komen veel vragen binnen. Probeer het over een minuut opnieuw.')
+        : error.message === 'ai_not_configured'
         ? (en ? 'My AI connection is not configured yet. You can email Lio in the meantime.' : 'Mijn AI-aansluiting is nog niet ingesteld. Je kunt Lio ondertussen mailen.')
         : (en ? 'I cannot answer right now. Please try again shortly or email Lio.' : 'Ik kan nu even niet antwoorden. Probeer het straks opnieuw of mail Lio.');
       await addBot(text, null, { href: 'mailto:info@bmastudio.be', label: en ? 'Email Lio' : 'Mail Lio' }, run);
@@ -904,6 +927,9 @@
     panel.inert = true;
     hideLaptop();
   };
+  // The green dot is only honest if the worker answers and has its AI key.
+  const checkStatus = () => fetch(`${apiBase}/api/john-status`).then(r => r.json()).then(r => r.configured, () => false)
+    .then(ok => { root.classList.toggle('is-offline', !ok); syncStatus(); });
   const open = () => {
     if (isOpen) return close();
     isOpen = true;
@@ -915,6 +941,8 @@
     panel.setAttribute('aria-hidden', 'false');
     panel.inert = false;
     addGreeting();
+    checkStatus();
+    scrollEnd();
     if (matchMedia('(pointer: fine)').matches) input.focus({ preventScroll: true });
     showLaptop();
   };
@@ -965,6 +993,8 @@
     activeRequest?.abort();
     activeRequest = null;
     conversation.length = 0;
+    log = [];
+    store();
     asked = new Set();
     messages.replaceChildren();
     hasGreeted = false;
@@ -996,16 +1026,18 @@
       const hasWelcome = !!messages.querySelector('.theo-welcome');
       languageThreads.set(chatLanguage, {
         nodes: hasWelcome ? [] : [...messages.childNodes],
-        history: conversation.slice(), asked, draft: input.value,
+        history: conversation.slice(), log, asked, draft: input.value,
       });
       const saved = languageThreads.get(nextLanguage);
       chatLanguage = nextLanguage;
       messages.replaceChildren(...(saved?.nodes || []));
       conversation.splice(0, conversation.length, ...(saved?.history || []));
+      log = saved?.log || [];
       asked = saved?.asked || new Set();
       input.value = saved?.draft || '';
       input.setCustomValidity('');
       hasGreeted = !!saved?.nodes.length;
+      store();
       resetButton.disabled = !hasGreeted;
       if (isOpen && !hasGreeted) addGreeting();
       setBusy(false);
@@ -1018,4 +1050,22 @@
   }, { once: true });
   fitComposer();
   refreshLanguage();
+  try {
+    const saved = JSON.parse(sessionStorage.getItem('john-chat') || 'null');
+    if (saved?.lang === language() && Array.isArray(saved.log) && saved.log.length) {
+      saved.log.slice(-40).forEach(item => {
+        if (typeof item?.text !== 'string') return;
+        if (item.r === 'u') { messages.append(el('div', 'theo-message theo-message--visitor', item.text)); log.push({ r: 'u', text: item.text }); return; }
+        const kind = ['services', 'book'].includes(item.kind) ? item.kind : null;
+        const link = kind || !safeHref(item.link?.href) || typeof item.link.label !== 'string' ? null : { href: item.link.href, label: item.link.label };
+        addBot(item.text, kind, link, requestRun, true);
+        log.push({ r: 'b', text: item.text, kind, link });
+      });
+      (saved.history || []).forEach(m => { if (['user', 'assistant'].includes(m?.role) && typeof m.content === 'string') conversation.push({ role: m.role, content: m.content }); });
+      asked = new Set((saved.asked || []).filter(key => key in copy.nl.answers));
+      hasGreeted = true;
+      resetButton.disabled = false;
+      renderChips();
+    }
+  } catch { /* corrupt storage: start fresh */ }
 })();
